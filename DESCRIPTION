@@ -1,6 +1,6 @@
 Package: dataclock
 Type: Package
-Title: Shows event time on a 24 hours clock
+Title: Show event time on a 24 hours clock
 Version: 0.1.0
 Author: Abdullah Al Mahmud
 Maintainer: The package maintainer <yourself@somewhere.net>
