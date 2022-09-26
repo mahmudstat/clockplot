@@ -1,3 +1,17 @@
+#' Give a data set containing times in 24 hours format
+#'
+#' This function will find plot those times on a 24 hour clock to show which
+#' events took place at what times. The line segments are drawn using
+#' trigonometric angles and complex equations.
+#'
+#' @param Data A data set
+#' @param Time Time in 24 hours format in the data set
+#' @param Criteria The variable by which to change color/width of time lines
+#' @return A ggplot data clock
+#' @examples
+#' data_clock(data = df, time = time, criteria = crit)
+
+
 #' @export
 
 data_clock <- function(Data, Time, Criteria){
@@ -40,3 +54,4 @@ data_clock <- function(Data, Time, Criteria){
           axis.ticks.y=element_blank(),
           legend.position = "none")
 }
+
