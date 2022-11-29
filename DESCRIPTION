@@ -9,6 +9,7 @@ Description: More about what it does (maybe more than one line)
 License: What license is it under?
 Imports:
   dplyr,
+  readr,
   tidyr,
   rlang,
   tibble,
@@ -16,3 +17,5 @@ Imports:
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.2.1
+Depends: 
+    R (>= 2.10)

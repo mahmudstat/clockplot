@@ -1,4 +1,6 @@
 library(tidyverse)
+library(devtools)
+has_devel()
 install.packages(c("devtools", "roxygen2", "testthat", "knitr"))
 df <- data.frame(x = c(2250,2300,1300,1925,1745,1425,335,947,100,
                        rep(2230, 10), 2235, 2231, 2225,
@@ -8,4 +10,8 @@ df$y <- sample(100, 36)
 
 data_clock(Data = df, Time = x)
 
+
+roxygen2::roxygenise()
+
+usethis::use_vignette("Introduction")
 
