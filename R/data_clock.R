@@ -8,8 +8,6 @@
 #' @param Time Time in 24 hours format in the data set
 #' @param Criteria The variable by which to change color/width of time lines
 #' @return A ggplot data clock
-#' @examples
-#' data_clock(data = df, time = time, criteria = crit)
 
 
 #' @export
