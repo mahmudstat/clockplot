@@ -4,6 +4,7 @@
 #' events took place at what times. The line segments are drawn using
 #' trigonometric angles and complex equations.
 #'
+#' @import dplyr ggplot2
 #' @return A ggplot data clock
 #' @examples
 #' basic_clock()
