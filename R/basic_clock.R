@@ -5,6 +5,8 @@
 #' trigonometric angles and complex equations.
 #'
 #' @import dplyr ggplot2
+NULL
+
 #' @return A ggplot data clock
 #' @examples
 #' basic_clock()
