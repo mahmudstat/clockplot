@@ -10,7 +10,6 @@
 #' @examples
 #' clock_chart(data = df, time = time)
 
-
 #' @export
 
 basic_clock <- function(){
@@ -19,7 +18,7 @@ basic_clock <- function(){
   times <- exp(1i * 2 * pi * (k:1) / k)
   subtimes <- data.frame(SubT = exp(1i * 2 * pi * (subk:1) / subk))
   ampm = c(rep(" AM",6), rep(" PM",12), rep(" AM",6))
-  dfclock <- tibble(time = times,
+  dfclock <- tibble::tibble(time = times,
                     hour = c(6:12, 1:12, 1:5), # May not be needed
                     label = paste0(c(6:12, 1:5), ampm))
   clock_skeleton <-  dfclock %>% ggplot()+
