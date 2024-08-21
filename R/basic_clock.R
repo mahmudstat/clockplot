@@ -4,6 +4,7 @@
 #' events took place at what times. The line segments are drawn using
 #' trigonometric angles and complex equations.
 #'
+#' @name basic_clock
 #' @import dplyr ggplot2
 NULL
 
@@ -12,7 +13,6 @@ NULL
 #' basic_clock()
 
 #' @export
-
 basic_clock <- function(){
   k <- 24 # Hours
   subk <- 24*5
