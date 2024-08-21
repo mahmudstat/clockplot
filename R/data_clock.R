@@ -10,7 +10,6 @@
 #' @return A ggplot data clock
 
 
-#' @export
 
 data_clock <- function(Data, Time, Criteria){
   # data preparation
