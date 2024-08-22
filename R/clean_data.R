@@ -12,5 +12,11 @@
 #' rm_sec(df, time)
 
 #' @export
-rm_sec <- function(df, time) gsub('.{3}$', '', df$time)
+rm_sec <- function(df, time) {
+  df <- mutate(df, time = gsub('.{3}$', '', time))
+}
 
+# Old function
+rm_sec <- function(df, time) {
+  df["time"] <- gsub('.{3}$', '', df["time"])
+}

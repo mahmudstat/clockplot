@@ -2,14 +2,14 @@
 % Please edit documentation in R/clock_chart.R
 \name{clock_chart}
 \alias{clock_chart}
-\title{Give a data set containing times in 24 hours format (19:30, for example)}
+\title{Give a data set containing times in 24 hours format}
 \usage{
 clock_chart(data, time)
 }
 \arguments{
-\item{data}{A data set}
+\item{data}{A data frame}
 
-\item{time}{Time in 24 hours format in the data set}
+\item{time}{Time in 24 hours HH:MM format in the data set  (19:30, for example)}
 }
 \value{
 A ggplot data clock

@@ -19,14 +19,14 @@ conv_data <- function(data, time){
   return(dt)
 }
 
-#' Give a data set containing times in 24 hours format (19:30, for example)
+#' Give a data set containing times in 24 hours format
 #'
 #' This function will plot those times on a 24 hour clock to show which
 #' events took place at what times. The line segments are drawn using
 #' trigonometric angles and complex equations.
 #'
-#' @param data A data set
-#' @param time Time in 24 hours format in the data set
+#' @param data A data frame
+#' @param time Time in 24 hours HH:MM format in the data set  (19:30, for example)
 #' @return A ggplot data clock
 #' @name clock_chart
 NULL
