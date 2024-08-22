@@ -31,7 +31,7 @@ conv_data <- function(data, time){
 #' @name clock_chart
 NULL
 #' @examples
-#' df <- data.frame(time = c("06:00:00", "08:00:00", "17:30:00"))
+#' df <- data.frame(time = c("06:00", "08:00", "17:30"))
 #' clock_chart(df, time)
 #' @export
 clock_chart <- function(data, time){
