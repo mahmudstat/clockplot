@@ -1,37 +1,21 @@
-
-conv_data <- function(data, time){
-  # Data Preparation
-  dt <- tidyr::separate_wider_delim(data, cols = {{time}},
-                         names = c("hour", "minute"),
-                         cols_remove = FALSE,
-                         delim = ":") %>% # Separate minute
-    dplyr::mutate(minute = as.numeric(ifelse(is.na(minute),0,minute)),
-           minute = ifelse(minute<10, minute * 5/30, minute * 5/300),
-           hour = as.numeric(hour),
-           timc = hour+minute,
-           time_angle = ifelse(0<=timc & timc<=6,
-                               (6-timc)*pi/12,
-                               (30-timc)*pi/12),
-           x1 = cos(time_angle)*0.97,
-           y1 = sin(time_angle)*0.97,
-           x0 = rep(0, dim(data)[1]),
-           y0 = rep(0, dim(data)[1]))
-  return(dt)
-}
-
-#' Give a data set containing times in 24 hours format
+#' Give a 24 hours clock chart
 #'
-#' This function will plot those times on a 24 hour clock to show which
-#' events took place at what times. The line segments are drawn using
-#' trigonometric angles and complex equations.
+#' This function will plot time of events on a 24 hour clock to show which
+#' events took place at what times. The lines are black are not colored or size
+#' altered. to do so, use `clock_chart_col` or `clock_chart_len`. To do both
+#' simultaneously, use `clock_chart_qnt`. To use a qualitative variable as
+#' the criterion, use `clock_chart_qlt`.
+#'
 #'
 #' @param data A data frame
-#' @param time Time in 24 hours HH:MM format in the data set  (19:30, for example)
+#' @param time Time in 24 hours HH:MM:SS format in the data set
+#' (19:30:01, for example, although the SS part is ignored due to having
+#' negligible impact on the final plot, but is kept for better ...)
 #' @return A ggplot data clock
 #' @name clock_chart
 NULL
 #' @examples
-#' df <- data.frame(time = c("06:00", "08:00", "17:30"))
+#' df <- data.frame(time = c("06:00:00", "08:00:00", "17:30:00"))
 #' clock_chart(df, time)
 #' @export
 clock_chart <- function(data, time){
@@ -42,4 +26,6 @@ clock_chart <- function(data, time){
     ggplot2::geom_point(data = mydata, ggplot2::aes(x1, y1))
   return(clock)
 }
+
+
 
