@@ -19,3 +19,7 @@ This function will plot those times on a 24 hour clock to show which
 events took place at what times. The line segments are drawn using
 trigonometric angles and complex equations.
 }
+\examples{
+df <- data.frame(time = c("06:00:00", "08:00:00", "17:30:00"))
+clock_chart(df, time)
+}

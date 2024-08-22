@@ -1,7 +1,7 @@
 
 conv_data <- function(data, time){
   # Data Preparation
-  dt <- dplyr::separate_wider_delim(data, cols = {{time}},
+  dt <- tidyr::separate_wider_delim(data, cols = {{time}},
                          names = c("hour", "minute"),
                          cols_remove = FALSE,
                          delim = ":") %>% # Separate minute
@@ -28,7 +28,12 @@ conv_data <- function(data, time){
 #' @param data A data set
 #' @param time Time in 24 hours format in the data set
 #' @return A ggplot data clock
-
+#' @name clock_chart
+NULL
+#' @examples
+#' df <- data.frame(time = c("06:00:00", "08:00:00", "17:30:00"))
+#' clock_chart(df, time)
+#' @export
 clock_chart <- function(data, time){
   mydata <- dataclock:::conv_data(data = data, time = {{time}})
   clock <- basic_clock()+

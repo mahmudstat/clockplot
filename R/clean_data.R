@@ -1,9 +1,9 @@
 #' Remove second part from time value
 #'
 #' This function removes second part from time value
-#' @param data A data set
+#' @param df A data set
 #' @param time a variable in the format `HH:MM:SS`
-#' @name rm_sec h
+#' @name rm_sec
 
 
 #' @return Time in HH:MM format

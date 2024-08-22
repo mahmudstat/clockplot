@@ -2,21 +2,19 @@
 % Please edit documentation in R/clean_data.R
 \name{rm_sec}
 \alias{rm_sec}
-\title{Remove second part from time value
-This function removes second part from time value}
+\title{Remove second part from time value}
 \usage{
 rm_sec(df, time)
 }
 \arguments{
-\item{time}{a variable in the format `HH:MM:SS`}
+\item{df}{A data set}
 
-\item{data}{A data set}
+\item{time}{a variable in the format `HH:MM:SS`}
 }
 \value{
 Time in HH:MM format
 }
 \description{
-Remove second part from time value
 This function removes second part from time value
 }
 \examples{
