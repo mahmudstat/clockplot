@@ -6,8 +6,8 @@
 #' @param data A data frame
 #' @param time Time in 24 hours HH:MM:SS format in the data set  (19:30:01, for example)
 #' @param crit a quantitative vector by which lines will be colored.
-#' @param high color of high values. The default is `red`
-#' @param low color of high values. The default is `green`.
+#' @param high The color name for the high values. The default is `red`
+#' @param low The color name for the high values. The default is `green`.
 #' The color names can be vice versa or other colors, depending on the context.
 #' @return A ggplot data clock with colored hands.
 #' @name clock_chart_col

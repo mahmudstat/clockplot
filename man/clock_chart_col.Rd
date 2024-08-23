@@ -13,9 +13,9 @@ clock_chart_col(data, time, crit, high = "red", low = "green")
 
 \item{crit}{a quantitative vector by which lines will be colored.}
 
-\item{high}{color of high values. The default is `red`}
+\item{high}{The color name for the high values. The default is `red`}
 
-\item{low}{color of high values. The default is `green`.
+\item{low}{The color name for the high values. The default is `green`.
 The color names can be vice versa or other colors, depending on the context.}
 }
 \value{
