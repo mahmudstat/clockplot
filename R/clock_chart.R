@@ -1,10 +1,15 @@
-#' Give a 24 hours clock chart
+#' Clock charts
 #'
-#' This function will plot time of events on a 24 hour clock to show which
-#' events took place at what times. The lines are black are not colored or size
-#' altered. to do so, use `clock_chart_col` or `clock_chart_len`. To do both
-#' simultaneously, use `clock_chart_qnt`. To use a qualitative variable as
-#' the criterion, use `clock_chart_qlt`.
+#' There are five types of clock charts, `clock_chart` being the simplest one.
+#' It just shows the event times on a 24 hour clock. The lines are neither
+#' colored, nor length modified. `clock_chart_col` is used to colorize and
+#' `clock_chart_len` to change the length of the hands by a quantitative vector.
+#' To do both simultaneously, use `clock_chart_qnt`. To use a qualitative
+#' variable as the criterion, use `clock_chart_qlt`.
+#'
+#' The output gives a ggplot, so you can further modify it by applying some
+#' ggplot2 function, most importantly the `labs` function, with which the title,
+#' subtitle, and captions can be added to the plot.
 #'
 #'
 #' @param data A data frame
@@ -17,6 +22,8 @@ NULL
 #' @examples
 #' df <- data.frame(time = c("06:00:00", "08:00:00", "17:30:00"))
 #' clock_chart(df, time)
+#' p1 <- clock_chart(df, time)
+#' p1 + ggplot2::labs(title = "Sample plot")
 #' @export
 clock_chart <- function(data, time){
   mydata <- dataclock:::conv_data(data = data, time = {{time}})
@@ -26,6 +33,4 @@ clock_chart <- function(data, time){
     ggplot2::geom_point(data = mydata, ggplot2::aes(x1, y1))
   return(clock)
 }
-
-
 

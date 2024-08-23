@@ -47,8 +47,9 @@ conv_data_col <- function(data, time, colby){
 }
 
 
-#
-conv_data_len <- function(data, time, lngth){
+# Change length of hands by a quantitative vector, optionally select a
+# color for the hands
+conv_data_len <- function(data, time, len){
   len <- dplyr::pull(data, {{len}})
   # Normalize length
   len <- (len-min(len))/(max(len)-min(len))
@@ -61,7 +62,7 @@ conv_data_len <- function(data, time, lngth){
   dt <- data %>%
     dplyr::mutate(len = len) %>%
     tidyr::separate_wider_delim(cols = {{time}},
-                         names = c("hour", "minute"),
+                         names = c("hour", "minute", "second"),
                          cols_remove = FALSE,
                          delim = ":") %>% # Separate minute
     dplyr::mutate(minute = as.numeric(ifelse(is.na(minute),0,minute)),
@@ -77,3 +78,4 @@ conv_data_len <- function(data, time, lngth){
            y0 = rep(0, dim(data)[1]))
   return(dt)
 }
+

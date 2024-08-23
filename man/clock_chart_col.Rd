@@ -2,14 +2,14 @@
 % Please edit documentation in R/clock_chart_col.R
 \name{clock_chart_col}
 \alias{clock_chart_col}
-\title{Give a data set containing times in 24 hours format (HH:MM:SS)}
+\title{Give a 24 hours clock chart with hands colored by a criteria}
 \usage{
 clock_chart_col(data, time, crit, high = "red", low = "green")
 }
 \arguments{
 \item{data}{A data frame}
 
-\item{time}{Time in 24 hours HH:MM format in the data set  (19:30, for example)}
+\item{time}{Time in 24 hours HH:MM:SS format in the data set  (19:30:01, for example)}
 
 \item{crit}{a quantitative vector by which lines will be colored.}
 
@@ -22,9 +22,8 @@ The color names can be vice versa or other colors, depending on the context.}
 A ggplot data clock with colored hands.
 }
 \description{
-This function will plot those times on a 24 hour clock to show which
-events took place at what times. The line segments are drawn using
-trigonometric angles and complex equations. The lines are colored based on a variable.
+This function will plot time of events on a 24 hour clock to show which
+events took place at what times. The lines are colored by a criteria.
 }
 \examples{
 df <- data.frame(time = c("06:00:00", "08:00:00", "17:30:00"),

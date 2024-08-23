@@ -2,24 +2,36 @@
 % Please edit documentation in R/clock_chart.R
 \name{clock_chart}
 \alias{clock_chart}
-\title{Give a data set containing times in 24 hours format}
+\title{Clock charts}
 \usage{
 clock_chart(data, time)
 }
 \arguments{
 \item{data}{A data frame}
 
-\item{time}{Time in 24 hours HH:MM format in the data set  (19:30, for example)}
+\item{time}{Time in 24 hours HH:MM:SS format in the data set
+(19:30:01, for example, although the SS part is ignored due to having
+negligible impact on the final plot, but is kept for better ...)}
 }
 \value{
 A ggplot data clock
 }
 \description{
-This function will plot those times on a 24 hour clock to show which
-events took place at what times. The line segments are drawn using
-trigonometric angles and complex equations.
+There are five types of clock charts, `clock_chart` being the simplest one.
+It just shows the event times on a 24 hour clock. The lines are neither
+colored, nor length modified. `clock_chart_col` is used to colorize and
+`clock_chart_len` to change the length of the hands by a quantitative vector.
+To do both simultaneously, use `clock_chart_qnt`. To use a qualitative
+variable as the criterion, use `clock_chart_qlt`.
+}
+\details{
+The output gives a ggplot, so you can further modify it by applying some
+ggplot2 function, most importantly the `labs` function, with which the title,
+subtitle, and captions can be added to the plot.
 }
 \examples{
 df <- data.frame(time = c("06:00:00", "08:00:00", "17:30:00"))
 clock_chart(df, time)
+p1 <- clock_chart(df, time)
+p1 + ggplot2::labs(title = "Sample plot")
 }
