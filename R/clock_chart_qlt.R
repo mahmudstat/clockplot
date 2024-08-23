@@ -1,0 +1,34 @@
+#' Clock Chart with Colored Hands
+#'
+#' This function will plot time of events on a 24 hour clock to show which
+#' events took place at what times. The hands are colored by a
+#' qualitative vector.
+#'
+#' @param data A data frame
+#' @param time Time in 24 hours HH:MM:SS format in the data set  (19:30:01, for example)
+#' @param crit The qualitative vector by which hands will be colored.
+#' @return A ggplot clock chart with hands colored by a criteria.
+#' @name clock_chart_qlt
+NULL
+#' @examples
+#' df <- tibble::tibble(hr = sample(0:23, 50, replace = TRUE),
+#'                   mnt = sample(0:59, 50, replace = TRUE),
+#'                   sec = sample(0:59, 50, replace = TRUE),
+#'                   time = paste(hr, mnt, sec, sep = ":"),
+#'                   value = factor(sample(5,50, replace = TRUE)))
+#' clock_chart_qlt(df, time, crit = value)
+#' p1 <- clock_chart_qlt(df, time, crit = value)
+#' p1 + ggplot2::theme(legend.position = "right")+
+#' ggplot2::labs(title = "Clock chart of factor values")
+#' @export
+clock_chart_qlt<- function(data, time, crit){
+  crit = dplyr::pull(data, {{crit}})
+  if(length(unique(crit))>5) warning("No. of categories is more than 5. Plot may not look good. Try clock_chart() function instead?")
+  mydata <- conv_data(data = data, time = {{time}})
+  clock <- basic_clock()+
+    ggplot2::geom_segment(data = mydata,
+                          ggplot2::aes(x= x0, y = y0, xend = x1, yend = y1, color = {{crit}}))+
+    ggplot2::geom_point(data = mydata, ggplot2::aes(x1, y1, color = {{crit}}))+
+    ggplot2::theme(legend.position = "bottom")
+  return(clock)
+}
