@@ -1,11 +1,11 @@
 #' Clock charts
 #'
-#' There are five types of clock charts, `clock_chart` being the simplest one.
+#' There are five types of clock charts, `clock_chart()` being the simplest one.
 #' It just shows the event times on a 24 hour clock. The lines are neither
-#' colored, nor length modified. `clock_chart_col` is used to colorize and
-#' `clock_chart_len` to change the length of the hands by a quantitative vector.
-#' To do both simultaneously, use `clock_chart_qnt`. To use a qualitative
-#' variable as the criterion, use `clock_chart_qlt`.
+#' colored, nor length modified. `clock_chart_col()` is used to colorize and
+#' `clock_chart_len()` to change the length of the hands by a quantitative vector.
+#' To do both simultaneously, use `clock_chart_qnt()`. To use a qualitative
+#' variable as the criterion, use `clock_chart_qlt()`.
 #'
 #' The output gives a ggplot, so you can further modify it by applying some
 #' ggplot2 function, most importantly the `labs` function, with which the title,

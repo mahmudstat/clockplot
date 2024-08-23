@@ -2,7 +2,7 @@
 % Please edit documentation in R/clock_chart_len.R
 \name{clock_chart_len}
 \alias{clock_chart_len}
-\title{Clock Chart with Modified length}
+\title{Clock Chart with Modified Length}
 \usage{
 clock_chart_len(data, time, len, col = "black")
 }
@@ -22,10 +22,13 @@ A ggplot data clock with modified hands.
 This function will plot time of events on a 24 hour clock to show which
 events took place at what times. The length of the hands are modified
 according to a quantitative vector. A color name can be used for the hands.
-For better use of color and length together, consider using `clock_chart_qnt`.
+For better use of color and length together, consider using `clock_chart_qnt()`.
 }
 \examples{
-df <- data.frame(time = c("06:00:00", "08:00:00", "17:30:00"),
-value = c(3,6,9))
-clock_chart_len(data = df, time = time, len = value, col = "blue")
+df <- tibble::tibble(hr = sample(0:23, 30, replace = TRUE),
+                  mnt = sample(0:59, 30, replace = TRUE),
+                  sec = sample(0:59, 30, replace = TRUE),
+                  time = paste(hr, mnt, sec, sep = ":"),
+                  value = sample(40,30))
+clock_chart_len(df, time, len = value, col = "blue")
 }
