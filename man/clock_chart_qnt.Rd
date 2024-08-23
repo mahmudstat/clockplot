@@ -16,7 +16,8 @@ clock_chart_qnt(data, time, crit, high = "red", low = "green")
 \item{high}{The color name for the high values. The default is `red`}
 
 \item{low}{The color name for the high values. The default is `green`.
-The color names can be vice versa or other colors, depending on the context.}
+The color names can be vice versa or other colors, depending on the context.
+To use a single color for all lines, use same value for `high` and `low`}
 }
 \value{
 A ggplot data clock with modified hands.
@@ -27,10 +28,13 @@ events took place at what times. The length and color of the hands are
 modified according to a quantitative vector.
 }
 \examples{
-df <- tibble::tibble(hr = sample(0:23, 30, replace = TRUE),
-                  mnt = sample(0:59, 30, replace = TRUE),
-                  sec = sample(0:59, 30, replace = TRUE),
+df <- tibble::tibble(hr = sample(0:23, 50, replace = TRUE),
+                  mnt = sample(0:59, 50, replace = TRUE),
+                  sec = sample(0:59, 50, replace = TRUE),
                   time = paste(hr, mnt, sec, sep = ":"),
-                  value = sample(40,30))
+                  value = sample(60,50))
 clock_chart_qnt(df, time, crit = value)
+p1 <- clock_chart_qnt(df, time, crit = value)
+p1 + ggplot2::theme(legend.position = "right")+
+ggplot2::labs(title = "Clock chart of random values")
 }

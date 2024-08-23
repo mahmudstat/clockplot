@@ -21,7 +21,7 @@ clock_chart_col <- function(data, time, crit, high = "red", low = "green"){
   mydata <- conv_data_col(data = data, time = {{time}}, colby = {{crit}})
   clock <- basic_clock()+
     ggplot2::geom_segment(data = mydata,
-                 aes(x= x0, y = y0, xend = x1, yend = y1, color = {{crit}}))+
+                          aes(x= x0, y = y0, xend = x1, yend = y1, color = {{crit}}))+
     ggplot2::geom_point(data = mydata, ggplot2::aes(x1, y1, color = {{crit}}))+
     ggplot2::scale_color_gradient(high = {{high}}, low = {{low}})
   return(clock)
