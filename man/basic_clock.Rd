@@ -7,7 +7,7 @@
 basic_clock()
 }
 \value{
-A ggplot data clock
+A ggplot clock chart
 }
 \description{
 This function will plot those times on a 24 hour clock to show which

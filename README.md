@@ -1,29 +1,29 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# dataclock <a href=""><img src="man/figures/logo.png" align="right" height="100" /></a>
+# clockplot <a href=""><img src="man/figures/logo.png" align="right" height="100" /></a>
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The primary goal of dataclock is to plot event time on a clock chart.
+The primary goal of clockplot is to plot event time on a clock chart.
 Additionally it helps you make a day chart, week chart, or month chart,
 or plan events in those periods.
 
 ## Installation
 
-You can install the development version of dataclock from
+You can install the development version of clockplot from
 [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("pak")
-pak::pak("mahmudstat/dataclock")
+pak::pak("mahmudstat/clockplot")
 ```
 
 ## Usage
 
 ``` r
-library(dataclock)
+library(clockplot)
 
 set.seed(10)
 df <- tibble::tibble(hr = sample(0:23, 50, replace = TRUE),

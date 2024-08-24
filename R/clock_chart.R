@@ -26,7 +26,7 @@ NULL
 #' p1 + ggplot2::labs(title = "Sample plot")
 #' @export
 clock_chart <- function(data, time){
-  mydata <- dataclock:::conv_data(data = data, time = {{time}})
+  mydata <- conv_data(data = data, time = {{time}})
   clock <- basic_clock()+
     ggplot2::geom_segment(data = mydata,
                           ggplot2::aes(x= x0, y = y0, xend = x1, yend = y1))+

@@ -1,4 +1,4 @@
-Package: dataclock
+Package: clockplot
 Type: Package
 Title: Show event time on a 24 hours clock
 Version: 0.1.0

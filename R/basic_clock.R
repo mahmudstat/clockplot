@@ -8,7 +8,7 @@
 #' @import dplyr ggplot2
 NULL
 
-#' @return A ggplot data clock
+#' @return A ggplot clock chart
 #' @examples
 #' basic_clock()
 
