@@ -22,6 +22,8 @@ pak::pak("mahmudstat/clockplot")
 
 ## Usage
 
+### Clock Chart
+
 ``` r
 library(clockplot)
 
@@ -37,6 +39,16 @@ ggplot2::labs(title = "Clock chart of random values")
 ```
 
 <img src="man/figures/README-example-1.png" alt="Clock chart of random event times based on a random sample." width="100%" />
+
+### Week Chart
+
+``` r
+set.seed(15)
+wtemp <- sample(10:40,7)
+week_chart(wtemp, high = "yellow", lgnm = "Temperature")
+```
+
+<img src="man/figures/README-week-chart-1.png" alt="Week chart of Temperature" width="100%" />
 
 ## Functions
 
