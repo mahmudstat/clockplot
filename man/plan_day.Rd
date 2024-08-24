@@ -7,8 +7,12 @@
 plan_day(dwork, width = 1, brdcol = "grey")
 }
 \arguments{
-\item{swork}{A character vector having names of work at each of 24 hours (starts
+\item{dwork}{A character vector having names of work at each of 24 hours (starts
 from 6 am)}
+
+\item{width}{Width of bars}
+
+\item{brdcol}{Color of bar border. To have no (transparent color, use `NA`)}
 }
 \value{
 A circular chart showing work at each hour on a 24-hour clock
