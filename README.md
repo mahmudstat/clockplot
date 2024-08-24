@@ -6,8 +6,8 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of dataclock is to plot event time on a clock chart.
-Additionally it help you make a day chart, week chart, or month chart,
+The primary goal of dataclock is to plot event time on a clock chart.
+Additionally it helps you make a day chart, week chart, or month chart,
 or plan events in those periods.
 
 ## Installation
@@ -40,3 +40,23 @@ ggplot2::labs(title = "Clock chart of random values")
 ```
 
 <img src="man/figures/README-example-1.png" alt="Clock chart of random event times based on a random sample." width="100%" />
+
+## Functions
+
+To know more about a specific function, use `?function_name`
+
+| Function          | For                                                                                       | Remark          |
+|-------------------|-------------------------------------------------------------------------------------------|-----------------|
+| clock_chart()     | Simplest Clock Chart with event times plotted on a 24-hour clock.                         |                 |
+| clock_chart_col() | Clock Chart with hands colored based on a criteria.                                       |                 |
+| clock_chart_len() | Clock Chart with hands length modified based on a criteria.                               |                 |
+| clock_chart_qnt() | Clock Chart with length modified and colored based on a criteria.                         |                 |
+| clock_chart_qlt() | Clock Chart with hands colored by a criteria.                                             |                 |
+| day_chart()       | Rose plot with values shown at each hour.                                                 |                 |
+| plan_day()        | Rose plot showing tasks at each hour.                                                     |                 |
+| week_chart()      | Plot with values shown on each day of week.                                               | Yet to be ready |
+| plan_week()       | Plot with task shown on each day of week.                                                 | Yet to be ready |
+| month_chart()     | Plot with values shown on each day of month.                                              | Yet to be ready |
+| plan_month()      | Plot with task shown on each day of month.                                                | Yet to be ready |
+| make_itinerary()  | Plot showing tour or work plan on arbitrary time or date.                                 | Yet to be ready |
+| event_chart()     | Plots a few random events on the clock. Give names and lines; Lines start where text ends | Yet to be ready |
