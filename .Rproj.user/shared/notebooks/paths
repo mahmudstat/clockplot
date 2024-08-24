@@ -1,3 +1,4 @@
+/home/mahmud/Documents/works/dataclock/.git/hooks/pre-commit="49EC7D32"
 /home/mahmud/Documents/works/dataclock/DESCRIPTION="EE18D9DC"
 /home/mahmud/Documents/works/dataclock/LICENSE="EFDDD6C6"
 /home/mahmud/Documents/works/dataclock/NAMESPACE="569D69F2"
@@ -13,5 +14,7 @@
 /home/mahmud/Documents/works/dataclock/R/day_chart.R="45D24A13"
 /home/mahmud/Documents/works/dataclock/R/pkg.R="33993C67"
 /home/mahmud/Documents/works/dataclock/R/plan_day.R="F31C2D8A"
+/home/mahmud/Documents/works/dataclock/README.Rmd="DA72E7DE"
+/home/mahmud/Documents/works/dataclock/README.md="0C1FD1AB"
 /home/mahmud/Documents/works/dataclock/man/clock_chart.Rd="4DC00FAA"
 /home/mahmud/Documents/works/dataclock/man/dataclock-package.Rd="52A4CBC9"
