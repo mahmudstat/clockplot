@@ -35,8 +35,9 @@ basic_clock <- function(){
                    axis.ticks.x=ggplot2::element_blank(),
                    axis.text.y=ggplot2::element_blank(),
                    axis.ticks.y=ggplot2::element_blank(),
-                   legend.position = "none")+
-    ggplot2::geom_point(ggplot2::aes(0,0), color = "black", size = 2)
+                   legend.position = "none",
+                   aspect.ratio = 1)#+
+    #ggplot2::geom_point(ggplot2::aes(0,0), color = "black", size = 2)
   return(clock_skeleton)
 }
 
