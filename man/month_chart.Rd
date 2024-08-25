@@ -5,6 +5,8 @@
 \title{Month Chart}
 \usage{
 month_chart(
+  df,
+  Days,
   mvalue,
   lgnm = "Value",
   width = 0.9,
@@ -13,8 +15,16 @@ month_chart(
 )
 }
 \arguments{
+\item{df}{A data frame containing days of the month and corresponding values.}
+
+\item{Days}{Days of the month; should start from 1 and be between 28 and 31}
+
 \item{mvalue}{A numeric vector having values in each month of the year (starts
 from January, obviously)}
+
+\item{lgnm}{Title of legend. The legend position can also be changed by
+adding `legend.position = "POSITION"`, where the accepted positions are
+`top`, `bottom`, `left`, and `right`.}
 
 \item{width}{Width of bars}
 
@@ -30,6 +40,12 @@ A circular chart showing values in each month of the year.
 This function plots values corresponding to each month on a rose plot.
 }
 \examples{
-syltmp <- c(18.4, 20.8, 24.3, 26.0, 26.8, 27.6, 28.0, 28.2, 27.9, 26.7, 23.3, 19.7)
-month_chart(mvalue = syltmp)
+Days <- 1:30
+expense <- c(sample(15:20, 15, replace = TRUE),
+             sample(10:15, 5, replace = TRUE),
+             sample(8:10, 5, replace = TRUE),
+             sample(5:8, 3, replace = TRUE),
+             sample(4:7, 2, replace = TRUE))
+dfm <- tibble::tibble(Days, expense)
+month_chart(df = dfm, Days = Days, mvalue = expense)
 }
