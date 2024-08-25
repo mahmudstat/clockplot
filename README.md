@@ -63,8 +63,8 @@ To know more about a specific function, use `?function_name`
 | clock_chart_qlt() | Clock Chart with hands colored by a criteria.                                             |                 |
 | day_chart()       | Rose plot with values shown at each hour.                                                 |                 |
 | plan_day()        | Rose plot showing tasks at each hour.                                                     |                 |
-| week_chart()      | Plot with values shown on each day of week.                                               | Yet to be ready |
-| plan_week()       | Plot with task shown on each day of week.                                                 | Yet to be ready |
+| week_chart()      | Plot with values shown on each day of week.                                               |                 |
+| plan_week()       | Plot with task shown on each day of week.                                                 |                 |
 | month_chart()     | Plot with values shown on each day of month.                                              | Yet to be ready |
 | plan_month()      | Plot with task shown on each day of month.                                                | Yet to be ready |
 | make_itinerary()  | Plot showing tour or work plan on arbitrary time or date.                                 | Yet to be ready |

@@ -12,10 +12,10 @@ from 6 am)}
 
 \item{high}{The color name for the high values. The default is `red`}
 
-\item{low}{The color name for the high values. The default is `green`.}
+\item{low}{The color name for the high values. The default is `green`.
+#' The color names can be vice versa or other colors, depending on the context.}
 
-\item{width}{Width of bars
-The color names can be vice versa or other colors, depending on the context.}
+\item{width}{Width of bars}
 }
 \value{
 A circular chart showing values at each hour on a 24-hour clock
