@@ -2,7 +2,8 @@
 #'
 #' This function plots values corresponding to each day on a rose plot.
 #'
-#' @param wvalue A numeric vector having values on each day
+#' @param wvalue A numeric vector having values on each day, starting from
+#' Saturday
 #' @param lgnm Title of legend
 #' @param high The color name for the high values. The default is `red`
 #' @param low The color name for the high values. The default is `green`.

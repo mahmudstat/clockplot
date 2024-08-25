@@ -4,10 +4,11 @@
 \alias{week_chart}
 \title{Week Chart}
 \usage{
-week_chart(wvalue, lgnm = "Value", high = "red", low = "green")
+week_chart(wvalue, lgnm = "Value", high = "yellow", low = "green")
 }
 \arguments{
-\item{wvalue}{A numeric vector having values on each day}
+\item{wvalue}{A numeric vector having values on each day, starting from
+Saturday}
 
 \item{lgnm}{Title of legend}
 
@@ -25,5 +26,5 @@ This function plots values corresponding to each day on a rose plot.
 \examples{
 set.seed(10)
 wtemp <- sample(10:40,7)
-week_chart(wtemp, high = "blue")+ggplot2::labs(title = "Random Values by Weekday")
+week_chart(wtemp, high = "yellow")+ggplot2::labs(title = "Random Values by Weekday")
 }
