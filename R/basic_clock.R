@@ -23,13 +23,18 @@ basic_clock <- function(){
                             hour = c(6:12, 1:12, 1:5), # May not be needed
                             label = paste0(c(6:12, 1:5), ampm))
   clock_skeleton <-  ggplot2::ggplot(dfclock)+
-    ggplot2::geom_text(data = dfclock, ggplot2::aes(Re(time)*1.1, Im(time)*1.1, label = label))+
+    ggplot2::geom_text(data = dfclock, ggplot2::aes(Re(.data$time)*1.1,
+                                                    Im(.data$time)*1.1,
+                                                    label = .data$label))+
     ggplot2::geom_point(data = subtimes,
-                        ggplot2::aes(Re(SubT), Im(SubT)), shape = 19, color = "black", size = 0.6)+
-    ggplot2::geom_path(data = subtimes, ggplot2::aes(Re(SubT), Im(SubT)))+
+                        ggplot2::aes(Re(.data$SubT), Im(.data$SubT)),
+                        shape = 19, color = "black", size = 0.6)+
+    ggplot2::geom_path(data = subtimes, ggplot2::aes(Re(.data$SubT), Im(.data$SubT)))+
     # Connect Last two missing points
-    ggplot2::geom_line(data = dplyr::slice(subtimes, -c(2:119)), ggplot2::aes(Re(SubT), Im(SubT)))+
-    ggplot2::geom_point(ggplot2::aes(Re(time), Im(time)), color = "black", size = 1.8)+
+    ggplot2::geom_line(data = dplyr::slice(subtimes, -c(2:119)),
+                       ggplot2::aes(Re(.data$SubT), Im(.data$SubT)))+
+    ggplot2::geom_point(ggplot2::aes(Re(.data$time), Im(.data$time)),
+                        color = "black", size = 1.8)+
     ggplot2::labs(x = "", y = "")+
     ggplot2::theme(axis.text.x=ggplot2::element_blank(),
                    axis.ticks.x=ggplot2::element_blank(),
