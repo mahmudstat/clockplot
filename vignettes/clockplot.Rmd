@@ -1,0 +1,62 @@
+---
+title: "clockplot"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{clockplot}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(clockplot)
+```
+
+The clockpolot offers three types of plot
+
+1. Clock chart
+2. Period chart
+3. Period planner
+
+The first shows event times (HH:MM:SS) on a 24 hour clock. The times can be arbitrary and not necessarily specific hours at all. 
+
+The second type allows you to show values during a certain duration (day, week, month, and year)
+
+Finally, the third one can help you make a plan in a certain period (day, week, month, and year), presenting tasks against period. 
+
+Will create another vignette to explain how it all was made.
+
+## Examples 
+
+Let us see examples of each of the function. 
+
+### clock_chart()
+
+This creates a clockplot, showing event times on a 24-hour clock. The hands are
+neither colored nor length modified by a criteria. To do so, please use other 
+`clock_chart*()` functions (see below).
+
+To make use of this simple chart, we need a data frame with at least one column
+showing the times of a certain event. The format should be in HH:MM:SS (for
+example 19:50:10). If you have times in HH:MM format, use `make_hms` function to
+convert to HH:MM:SS format. 
+
+First, let's create a sample data.
+
+```{r clock-chart, fig.align = 'center'}
+library(tibble) # to make a tibble (tidy data frame)
+df <- tibble::tibble(hr = sample(0:23, 30, replace = TRUE), # 30 values
+                  mnt = sample(0:59, 30, replace = TRUE),
+                  sec = sample(0:59, 30, replace = TRUE),
+                  time = paste(hr, mnt, sec, sep = ":"),
+                  value = sample(40,30))
+clock_chart_len(df, time, len = value, col = "blue")
+```
+
+

@@ -1,11 +1,12 @@
 Package: clockplot
 Type: Package
-Title: Show event time on a 24 hours clock
-Version: 0.1.0
+Title: Show event time on a 24 hours clock and other cyclic plots
+Version: 0.1.5
 Author: Abdullah Al Mahmud
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Maintainer: The package maintainer <almahmud.sbi@gmail.com>
+Description: The primary goal of clockplot is to plot event time 
+    on a clock chart. Additionally it helps you make a day chart, 
+    week chart, or month chart, or plan events in those periods.
 License: file LICENSE
 Imports:
   dplyr,
@@ -18,3 +19,7 @@ LazyData: true
 RoxygenNote: 7.3.2
 Depends: 
     R (>= 2.10)
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
