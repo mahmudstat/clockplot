@@ -14,6 +14,17 @@ knitr::opts_chunk$set(
 )
 ```
 
+The package `clockplot` is used to generate clock charts showing event times 
+on a 24-hour clock. Additionally it helps you make a day chart, week chart, 
+or month chart, or plan events in those periods.
+
+<span style = "color:Orange;">⚠</span> The plots shown here may have unusual appearance due to the behavior of
+Rmarkdown. To see the actual appearance, [visit this link](https://github.com/mahmudstat/clockplot) or run the codes given. 
+
+## Getting started
+
+After installing the package, load it to use the available functions. 
+
 ```{r setup}
 library(clockplot)
 ```
@@ -51,12 +62,24 @@ First, let's create a sample data.
 
 ```{r clock-chart, fig.align = 'center'}
 library(tibble) # to make a tibble (tidy data frame)
-df <- tibble::tibble(hr = sample(0:23, 30, replace = TRUE), # 30 values
-                  mnt = sample(0:59, 30, replace = TRUE),
-                  sec = sample(0:59, 30, replace = TRUE),
+df <- tibble::tibble(hr = sample(0:23, 50, replace = TRUE),
+                  mnt = sample(0:59, 50, replace = TRUE),
+                  sec = sample(0:59, 50, replace = TRUE),
                   time = paste(hr, mnt, sec, sep = ":"),
-                  value = sample(40,30))
-clock_chart_len(df, time, len = value, col = "blue")
+                  value = sample(60,50))
+clock_chart(df, time)
 ```
 
+
+### clock_chart_qnt()
+
+```{r clock-chart-qn, fig.align = 'center', fig.width=4}
+clock_chart_qnt(df, time, crit = value)
+```
+
+```{r exmpl, fig.align = 'center'}
+library(ggplot2)
+ggplot(mtcars, aes(x=hp, y=mpg)) +
+    geom_point(size=3)
+```
 
