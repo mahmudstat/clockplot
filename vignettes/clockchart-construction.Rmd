@@ -94,12 +94,12 @@ dfclock <- tibble(time = times,
                   label = paste0(c(6:12, 1:5), ampm))
 ```
 
-```{r}
+```{r, fig.height=4, fig.width=4, fig.align='center'}
 library(ggplot2) # Load the package ggplot2
 dfclock %>% ggplot()+
   geom_path(data = subtimes, aes(Re(SubT), Im(SubT)))+
   # Connect Last two missing points
-  geom_line(data = subtimes %>% slice(-c(2:95)), aes(Re(SubT), Im(SubT)))+
+  geom_line(data = subtimes %>% dplyr::slice(-c(2:95)), aes(Re(SubT), Im(SubT)))+
   theme(aspect.ratio = 1)+
   geom_text(data = dfclock, aes(Re(time)*1.1, Im(time)*1.1, label = label))+
   geom_point(data = subtimes, 
