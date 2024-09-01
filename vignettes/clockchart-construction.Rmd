@@ -14,23 +14,68 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
-library(clockplot)
-```
-
 This document reveals what's going on behind the scene--how the charts are 
 constructed. For the details on how to use the package, see [clockplot](clockplot.html).
 
-Broadly speaking, the construction of the clockcharts have two steps. First, 
-the skeleton, the clock on which event times are plotted is constructed. For 
-this, we need a circle, on which we have to mark 24 dots to denote 24 hours, 
-starting from 00:00 (12 AM) to 23:00 (11 PM). 
+<span style = "color:Orange;">⚠</span> The plots shown here do not produce
+expected output due to the behavior of Rmarkdown. To see the actual appearance,
+run the codes given. 
+
+
+Broadly speaking, the construction of the clockcharts have two steps. 
+
+i. Construction of the 24-hour clock
+ii. Plotting event times on the clock
+
+Each steps has two substeps:
+
+a. The mathematical idea
+b. The programming
+
+### The Clock Skeleton
+
+First we need to construct the skeleton, the clock on which event times are 
+plotted. For this, we need a circle, on which we have to mark 24 
+dots to denote 24 hours, starting from 00:00 (12 AM) to 23:00 (11 PM). 
 
 It is enough to draw a unit circle, although a circle of any radius would do. 
 In `R`, it is easiest to draw a circle using the complex equation. For a unit
 circle, the equation is $e^{i\theta}$, where $e$ is Euler's number, an 
 irrational constant having the approximate value of 2.71828; $i$ stands for 
 imaginary unit, equal to $\sqrt{-1}$; and $\theta$ refers to the trigonometric
-angle (in radian?). 
+angle in radian. To make a complete circle, we need to allow $\theta$ to
+take values from 0 to 360 degrees ($2\pi$ in radian). 
 
+Programmatically, we need to create some angles ranging from 0 to $2\pi$ and 
+then connect them to make a complete circle. Let us create 100 angles and use
+them in the circle equation ($e^{i\theta}$). The trigonometric form of the 
+equation is $sin^2 \theta + cos^2 \theta = 1$, while the algebraic form is
+$x^2+y^2 = 1$. The complex form, however, is more convenient. 
 
+```{r}
+k <- 100
+timepoint <- exp(1i * 2 * pi * (k:1) / k)
+plot(timepoint, pch = 19)
+```
+
+Here `R` just takes the complex numbers and plots the values of the real part
+on the X axis and the corresponding values of the imaginary part on the Y axis. 
+
+Now we have to mark the hours on the circle to make it look like a clock. We 
+have to show 24 hours marks as well some marks for minute marks, corresponding 
+to the fraction of the hour. This clock is slightly different from a traditional
+clock not only in that it has 24 hours instead of 12, but also that it has 
+only one hand, the hour hand, with minute part added to the hour mark as the 
+fraction; the second part, having minor contribution, is ignored. 
+
+First, let us see the output with 24 hour marks. 
+
+```{r}
+k <- 24
+hour <- exp(1i * 2 * pi * (k:1) / k)
+plot(hour, pch = 19)
+```
+
+At this time, we move to the `R` package `ggplot2` to produce better graphics. 
+We need to create an `R` data frame for plotting ggplots. We also mark some 
+points for minutes. 
