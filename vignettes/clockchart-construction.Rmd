@@ -1,0 +1,36 @@
+---
+title: "clockchart-construction"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{clockchart-construction}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(clockplot)
+```
+
+This document reveals what's going on behind the scene--how the charts are 
+constructed. For the details on how to use the package, see [clockplot](clockplot.html).
+
+Broadly speaking, the construction of the clockcharts have two steps. First, 
+the skeleton, the clock on which event times are plotted is constructed. For 
+this, we need a circle, on which we have to mark 24 dots to denote 24 hours, 
+starting from 00:00 (12 AM) to 23:00 (11 PM). 
+
+It is enough to draw a unit circle, although a circle of any radius would do. 
+In `R`, it is easiest to draw a circle using the complex equation. For a unit
+circle, the equation is $e^{i\theta}$, where $e$ is Euler's number, an 
+irrational constant having the approximate value of 2.71828; $i$ stands for 
+imaginary unit, equal to $\sqrt{-1}$; and $\theta$ refers to the trigonometric
+angle (in radian?). 
+
+

@@ -4,10 +4,10 @@
 \name{clockplot-package}
 \alias{clockplot}
 \alias{clockplot-package}
-\title{clockplot: Show event time on a 24 hours clock}
+\title{clockplot: Show Event Time on a 24 Hours Clock and Other Cyclic Plots}
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-More about what it does (maybe more than one line) Use four spaces when indenting paragraphs within the Description.
+The primary goal of clockplot is to plot event time on a clock chart. Additionally it helps you make a day chart, week chart, or month chart, or plan events in those periods.
 }
 \keyword{internal}

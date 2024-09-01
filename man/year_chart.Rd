@@ -8,7 +8,8 @@ year_chart(mvalue, lgnm = "Value", width = 0.9, high = "yellow", low = "green")
 }
 \arguments{
 \item{mvalue}{A numeric vector having values in each month of the year (starts
-from January, obviously)}
+from January, obviously). If you have it in a data frame, you need to
+extract it (one way is this: data$mvalue)}
 
 \item{lgnm}{Title of legend. The legend position can also be changed by
 adding `legend.position = "top"`, where the accepted positions are

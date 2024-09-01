@@ -18,8 +18,9 @@ The package `clockplot` is used to generate clock charts showing event times
 on a 24-hour clock. Additionally it helps you make a day chart, week chart, 
 or month chart, or plan events in those periods.
 
-<span style = "color:Orange;">⚠</span> The plots shown here may have unusual appearance due to the behavior of
-Rmarkdown. To see the actual appearance, [visit this link](https://github.com/mahmudstat/clockplot) or run the codes given. 
+<span style = "color:Orange;">⚠</span> The plots shown here do not produce
+expected output due to the behavior of Rmarkdown. To see the actual appearance,
+[visit this link](https://github.com/mahmudstat/clockplot) or run the codes given. 
 
 ## Getting started
 
