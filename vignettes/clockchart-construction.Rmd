@@ -121,7 +121,7 @@ they are unequal dimensions.
 
 ```{r skeleton, fig.height=4, fig.width=4, fig.align='center'}
 library(ggplot2) # Load the package ggplot2
-dfclock %>% ggplot()+
+p1 <- dfclock %>% ggplot()+
   geom_path(data = subtimes, aes(Re(SubT), Im(SubT)))+
   # Connect Last two missing points
   geom_line(data = subtimes %>% dplyr::slice(-c(2:95)), aes(Re(SubT), Im(SubT)))+
@@ -130,9 +130,29 @@ dfclock %>% ggplot()+
   geom_point(data = subtimes, 
              aes(Re(SubT), Im(SubT)), shape = 19, color = "black", size = 0.6)+
   geom_point(aes(Re(time), Im(time)), color = "black", size = 1.8)
+p1
 ```
 
 Next, we plot the lines using the `ggplot2` package. The functions `geom_path()`
 does the job, while `geom_line()` is used to fill the gap between the first and 
 the last point. `aspect.ratio = 1` is set to ensure the chart size do not 
 depend on resizing of `Rstudio` Viewer size.
+
+The points corresponding to the hours are labelled AM or PM using the 
+`geom_text()` function. We do not need the axis labels and ticks. Let us 
+remove them:
+
+```{r skeleton_clean, fig.height=4, fig.width=4, fig.align='center'}
+p1 + theme(axis.text.x=element_blank(), 
+        axis.ticks.x=element_blank(), 
+        axis.text.y=element_blank(),  
+        axis.ticks.y=element_blank())+
+  labs(x = "", y = "")
+```
+
+This completes our first part of the plot; we get the skeleton of the clock. 
+
+The second and final part of the task involves plotting event times on the
+appropriate points. Now, this task has several variations. In the simplest 
+form, we just have a chart, so called `clock_chart`, which plots the event
+times on the 24-hour clock. 
