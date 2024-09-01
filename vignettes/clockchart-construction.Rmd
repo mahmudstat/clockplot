@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 This document reveals what's going on behind the scene--how the charts are 
 constructed. For the details on how to use the package, see [clockplot](clockplot.html).
 
-<span style = "color:Orange;">⚠</span> The plots shown here do not produce
+<span style = "color:Orange;">⚠</span> The plots shown here may not produce the
 expected output due to the behavior of Rmarkdown. To see the actual appearance,
 run the codes given. 
 
@@ -52,10 +52,10 @@ them in the circle equation ($e^{i\theta}$). The trigonometric form of the
 equation is $sin^2 \theta + cos^2 \theta = 1$, while the algebraic form is
 $x^2+y^2 = 1$. The complex form, however, is more convenient. 
 
-```{r}
+```{r, fig.height=4, fig.width=4, fig.align='center', fig.cap="The Unit Circle"}
 k <- 100
 timepoint <- exp(1i * 2 * pi * (k:1) / k)
-plot(timepoint, pch = 19)
+plot(timepoint, pch = 19, type = "b")
 ```
 
 Here `R` just takes the complex numbers and plots the values of the real part
@@ -70,7 +70,7 @@ fraction; the second part, having minor contribution, is ignored.
 
 First, let us see the output with 24 hour marks. 
 
-```{r}
+```{r circle, fig.height=4, fig.width=4, fig.align='center'}
 k <- 24
 hour <- exp(1i * 2 * pi * (k:1) / k)
 plot(hour, pch = 19)
@@ -82,7 +82,7 @@ points for minutes.
 
 First, let us create the required data frame
 
-```{r}
+```{r, fig.height=4, fig.width=4, fig.align='center'}
 k <- 24 # Hours
 subk <- 24*4 # Fraction of hours
 times <- exp(1i * 2 * pi * (k:1) / k)
@@ -94,7 +94,32 @@ dfclock <- tibble(time = times,
                   label = paste0(c(6:12, 1:5), ampm))
 ```
 
-```{r, fig.height=4, fig.width=4, fig.align='center'}
+**Explanation**
+
+`k = 24` indicates there are 24 hours. Then in each hour is divided into 4 parts
+, corresponding to the elapse of successive 15 minutes. Thus, a small point on 
+\@ref(fig:clock24) in the middle of two larger point (hour) means half an hour
+has elapsed. For instance, the the point in the middle of 7 PM and 8 PM is 7:30 
+PM. 
+
+Now the code `exp(1i * 2 * pi * (k:1) / k)` gives us all the angles 
+corresponding to 24 hours on the clock. Here, we have to note that the angles
+in trigonometry starts from $0^o$ (X-axis) and rotates counter-clockwise, the 
+direction opposite to the rotation of clock hands (the significance of the
+difference will be seen shortly). 
+
+Similarly, the code `SubT = exp(1i * 2 * pi * (subk:1) / subk)` gives us the
+angles corresponding to the fraction of an hour. As we have already mentioned, 
+the clock hand rotates clock-wise, starting from the $0^o$ angle, so we name 
+the labels 6 PM to 11 PM, then we have 12 PM to 11 PM, followed by 12 AM to 
+5 AM. 
+
+The code `c(rep(" AM",6), rep(" PM",12), rep(" AM",6))` ensures this sequence. 
+
+We then place the data into two data frames `subtimes` and `dfclock`, since
+they are unequal dimensions. 
+
+```{r skeleton, fig.height=4, fig.width=4, fig.align='center'}
 library(ggplot2) # Load the package ggplot2
 dfclock %>% ggplot()+
   geom_path(data = subtimes, aes(Re(SubT), Im(SubT)))+
@@ -103,7 +128,11 @@ dfclock %>% ggplot()+
   theme(aspect.ratio = 1)+
   geom_text(data = dfclock, aes(Re(time)*1.1, Im(time)*1.1, label = label))+
   geom_point(data = subtimes, 
-             aes(Re(SubT), Im(SubT)), shape = 19, color = "black", size = 0.4)+
-  geom_point(aes(Re(time), Im(time)), color = "red", size = 1.8)
+             aes(Re(SubT), Im(SubT)), shape = 19, color = "black", size = 0.6)+
+  geom_point(aes(Re(time), Im(time)), color = "black", size = 1.8)
 ```
 
+Next, we plot the lines using the `ggplot2` package. The functions `geom_path()`
+does the job, while `geom_line()` is used to fill the gap between the first and 
+the last point. `aspect.ratio = 1` is set to ensure the chart size do not 
+depend on resizing of `Rstudio` Viewer size.
