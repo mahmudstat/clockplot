@@ -79,3 +79,31 @@ plot(hour, pch = 19)
 At this time, we move to the `R` package `ggplot2` to produce better graphics. 
 We need to create an `R` data frame for plotting ggplots. We also mark some 
 points for minutes. 
+
+First, let us create the required data frame
+
+```{r}
+k <- 24 # Hours
+subk <- 24*4 # Fraction of hours
+times <- exp(1i * 2 * pi * (k:1) / k)
+subtimes <- data.frame(SubT = exp(1i * 2 * pi * (subk:1) / subk)) 
+ampm = c(rep(" AM",6), rep(" PM",12), rep(" AM",6))
+library(tibble)
+dfclock <- tibble(time = times,
+                  hour = c(6:12, 1:12, 1:5), # May not be needed
+                  label = paste0(c(6:12, 1:5), ampm))
+```
+
+```{r}
+library(ggplot2) # Load the package ggplot2
+dfclock %>% ggplot()+
+  geom_path(data = subtimes, aes(Re(SubT), Im(SubT)))+
+  # Connect Last two missing points
+  geom_line(data = subtimes %>% slice(-c(2:95)), aes(Re(SubT), Im(SubT)))+
+  theme(aspect.ratio = 1)+
+  geom_text(data = dfclock, aes(Re(time)*1.1, Im(time)*1.1, label = label))+
+  geom_point(data = subtimes, 
+             aes(Re(SubT), Im(SubT)), shape = 19, color = "black", size = 0.4)+
+  geom_point(aes(Re(time), Im(time)), color = "red", size = 1.8)
+```
+
