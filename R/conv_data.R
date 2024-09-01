@@ -9,7 +9,7 @@ conv_data <- function(data, time){
                                     cols_remove = FALSE,
                                     delim = ":") %>% # Separate minute
     dplyr::mutate(minute = as.numeric(ifelse(is.na(.data$minute),0,.data$minute)),
-                  minute = ifelse(.data$minute<10, .data$minute * 5/30, .data$minute * 5/300),
+                  #minute = ifelse(.data$minute<10, .data$minute * 5/30, .data$minute * 5/300),
                   hour = as.numeric(.data$hour),
                   timc = .data$hour+.data$minute,
                   time_angle = ifelse(0<=.data$timc & .data$timc<=6,
@@ -32,7 +32,7 @@ conv_data_col <- function(data, time, colby){
                                 cols_remove = FALSE,
                                 delim = ":") %>% # Separate minute
     mutate(minute = as.numeric(ifelse(is.na(.data$minute),0,.data$minute)),
-           minute = ifelse(.data$minute<10, .data$minute * 5/30, .data$minute * 5/300),
+           #minute = ifelse(.data$minute<10, .data$minute * 5/30, .data$minute * 5/300),
            hour = as.numeric(.data$hour),
            timc = .data$hour+.data$minute, # Ignore second
            time_angle = ifelse(0<=.data$timc & .data$timc<=6,
@@ -66,7 +66,7 @@ conv_data_len <- function(data, time, len){
                          cols_remove = FALSE,
                          delim = ":") %>% # Separate minute
     dplyr::mutate(minute = as.numeric(ifelse(is.na(.data$minute),0,.data$minute)),
-           minute = ifelse(.data$minute<10, .data$minute * 5/30, .data$minute * 5/300),
+           #minute = ifelse(.data$minute<10, .data$minute * 5/30, .data$minute * 5/300),
            hour = as.numeric(.data$hour),
            timc = .data$hour+.data$minute,
            time_angle = ifelse(0<=.data$timc & .data$timc<=6,

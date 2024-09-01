@@ -106,7 +106,8 @@ Now the code `exp(1i * 2 * pi * (k:1) / k)` gives us all the angles
 corresponding to 24 hours on the clock. Here, we have to note that the angles
 in trigonometry starts from $0^o$ (X-axis) and rotates counter-clockwise, the 
 direction opposite to the rotation of clock hands (the significance of the
-difference will be seen shortly). 
+difference will be seen shortly). But the clock moves clockwise. 
+At 0 degree, we have 3 in a 12-hour clock and 6 in 24-hours clock.
 
 Similarly, the code `SubT = exp(1i * 2 * pi * (subk:1) / subk)` gives us the
 angles corresponding to the fraction of an hour. As we have already mentioned, 
@@ -155,4 +156,62 @@ This completes our first part of the plot; we get the skeleton of the clock.
 The second and final part of the task involves plotting event times on the
 appropriate points. Now, this task has several variations. In the simplest 
 form, we just have a chart, so called `clock_chart`, which plots the event
-times on the 24-hour clock. 
+times on the 24-hour clock. An optional argument `Col` can be used to change
+the color of the clock hands. The other variations will be discussed later, when
+we complete the discussion on how the event times are prepared for plotting.
+
+#### Preparation of Event Times Data
+
+We have data in the format `HH:MM:SS`. We need to convert this data to `(x,y)`
+coordinates. In the unit circle, for example, the 12 AM should be plotted on
+the Y-axis (x = 0, y = 1) and 6 AM on the X axis (x = 1, y = 0), although, to
+avoid plotting on the circumference, we decrease the length a little (more on
+this later). 
+
+To convert the `HH:MM:SS` to coordinates of the unit circle, we first separate 
+the parts of time into `HH`, `MM`, and `SS`. We accomplish that using the 
+`dplyr` and `tidyr` package. 
+
+```{r}
+# Data to check on
+chkdf <- data.frame(time = c("06:00:00", "12:00:00", "17:30:00", "00:05:25"),
+                    value = sample(10,4))
+library(dplyr)
+chkdf %>% tidyr::separate_wider_delim(cols = time, 
+                         names = c("hour", "minute", "second"), 
+                         cols_remove = FALSE,
+                         delim = ":")
+```
+
+This gives us `hour`, `minute`, and `second` as character (`chr`) vectors, but 
+we need them as numeric vectors. The conversion is made with `as.numeric` 
+function. 
+
+Here the challenge now is to combine the hour and the minute into one singe
+time, which we would later convert to coordinate. We intentionally ignore the
+second (`SS`), since it has too negligible contribution on the plot.
+
+Here a short algorithm is to be used:
+
+Note here that 30 minutes is equivalent to half an hour, so `1:30:00` corresponds
+to 1.5 hour. We need to recall that time values range from 0 to 60, while 
+our decimal number system gives us the suitable range 1 to 100. In our number
+system, reaching 100 indicates we have completed some work, while clockworks 
+say reaching 60 completes one cycle of the task. 
+
+The hour part does not need conversion. 23 is 23 and 22 is 22. 
+
+Thus, 15 minutes on the clock says $\frac{15}{60} = \frac14$ th or $25\%$ work, 
+30 means $\frac{30}{60} = \frac12 = 0.5$ or $50\%$ work, and 50 means 
+$\frac{50}{60}$ or $83\%$ work have been completed. 
+
+The task is further complicated due to the clock and angles rotating in
+opposite directions. 
+
+////THIS CONVERSION IS A BUG////
+ifelse(.data$minute<10, .data$minute * 5/30, .data$minute * 5/300)
+////MAY DEPEND ON OLD TIME FORMAT HHMM hrs/////
+
+
+
+

@@ -25,10 +25,10 @@ NULL
 #' p1 <- clock_chart(df, time)
 #' p1 + ggplot2::labs(title = "Sample plot")
 #' @export
-clock_chart <- function(data, time){
+clock_chart <- function(data, time, Col = "black"){
   mydata <- conv_data(data = data, time = {{time}})
   clock <- basic_clock()+
-    ggplot2::geom_segment(data = mydata,
+    ggplot2::geom_segment(data = mydata, color = Col,
                           ggplot2::aes(x= .data$x0, y = .data$y0,
                                        xend = .data$x1, yend = .data$y1))+
     ggplot2::geom_point(data = mydata, ggplot2::aes(.data$x1, .data$y1))
