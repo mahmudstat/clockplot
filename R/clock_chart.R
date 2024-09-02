@@ -16,6 +16,7 @@
 #' @param time Time in 24 hours HH:MM:SS format in the data set
 #' (19:30:01, for example, although the SS part is ignored due to having
 #' negligible impact on the final plot, but is kept for better ...)
+#' @param Col Color name for the lines. The default is `black`.
 #' @return A ggplot data clock
 #' @name clock_chart
 NULL

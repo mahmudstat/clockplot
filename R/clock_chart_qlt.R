@@ -20,6 +20,8 @@ NULL
 #' p1 <- clock_chart_qlt(df, time, crit = value)
 #' p1 + ggplot2::theme(legend.position = "right")+
 #' ggplot2::labs(title = "Clock chart of factor values")
+#' data(chatdf)
+#' clock_chart_qlt(chatdf, time = time, crit = name)
 #' @export
 clock_chart_qlt<- function(data, time, crit){
   crit = dplyr::pull(data, {{crit}})

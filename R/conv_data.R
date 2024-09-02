@@ -9,6 +9,7 @@ conv_data <- function(data, time){
                                     cols_remove = FALSE,
                                     delim = ":") %>% # Separate minute
     dplyr::mutate(minute = as.numeric(ifelse(is.na(.data$minute),0,.data$minute)),
+                  minute = .data$minute/60,
                   #minute = ifelse(.data$minute<10, .data$minute * 5/30, .data$minute * 5/300),
                   hour = as.numeric(.data$hour),
                   timc = .data$hour+.data$minute,
@@ -32,6 +33,7 @@ conv_data_col <- function(data, time, colby){
                                 cols_remove = FALSE,
                                 delim = ":") %>% # Separate minute
     mutate(minute = as.numeric(ifelse(is.na(.data$minute),0,.data$minute)),
+           minute = .data$minute/60,
            #minute = ifelse(.data$minute<10, .data$minute * 5/30, .data$minute * 5/300),
            hour = as.numeric(.data$hour),
            timc = .data$hour+.data$minute, # Ignore second
@@ -66,6 +68,7 @@ conv_data_len <- function(data, time, len){
                          cols_remove = FALSE,
                          delim = ":") %>% # Separate minute
     dplyr::mutate(minute = as.numeric(ifelse(is.na(.data$minute),0,.data$minute)),
+                  minute = .data$minute/60,
            #minute = ifelse(.data$minute<10, .data$minute * 5/30, .data$minute * 5/300),
            hour = as.numeric(.data$hour),
            timc = .data$hour+.data$minute,

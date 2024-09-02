@@ -4,7 +4,7 @@
 \alias{clock_chart}
 \title{Clock charts}
 \usage{
-clock_chart(data, time)
+clock_chart(data, time, Col = "black")
 }
 \arguments{
 \item{data}{A data frame}
@@ -12,6 +12,8 @@ clock_chart(data, time)
 \item{time}{Time in 24 hours HH:MM:SS format in the data set
 (19:30:01, for example, although the SS part is ignored due to having
 negligible impact on the final plot, but is kept for better ...)}
+
+\item{Col}{Color name for the lines. The default is `black`.}
 }
 \value{
 A ggplot data clock
