@@ -22,6 +22,8 @@ events took place at what times. The hands are colored by a
 qualitative vector.
 }
 \examples{
+# A plot showing sms receiving times based on criteria (type/sender/invoked)
+clock_chart_qlt(smsclock, time = time, crit = sender)
 df <- tibble::tibble(hr = sample(0:23, 50, replace = TRUE),
                   mnt = sample(0:59, 50, replace = TRUE),
                   sec = sample(0:59, 50, replace = TRUE),
