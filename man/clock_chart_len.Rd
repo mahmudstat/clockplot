@@ -4,7 +4,7 @@
 \alias{clock_chart_len}
 \title{Clock Chart with Modified Length}
 \usage{
-clock_chart_len(data, time, len, col = "black")
+clock_chart_len(data, time, len, Col = "black")
 }
 \arguments{
 \item{data}{A data frame}
@@ -13,7 +13,7 @@ clock_chart_len(data, time, len, col = "black")
 
 \item{len}{A quantitative vector by which length of hands will be modified.}
 
-\item{col}{An optional color name for the hands, defaulted to `black`.}
+\item{Col}{An optional color name for the hands, defaulted to `black`.}
 }
 \value{
 A ggplot data clock with modified hands.
@@ -30,5 +30,5 @@ df <- tibble::tibble(hr = sample(0:23, 30, replace = TRUE),
                   sec = sample(0:59, 30, replace = TRUE),
                   time = paste(hr, mnt, sec, sep = ":"),
                   value = sample(40,30))
-clock_chart_len(df, time, len = value, col = "blue")
+clock_chart_len(df, time, len = value, Col = "blue")
 }

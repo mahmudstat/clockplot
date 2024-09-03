@@ -2,7 +2,7 @@
 % Please edit documentation in R/clock_chart.R
 \name{clock_chart}
 \alias{clock_chart}
-\title{Clock charts}
+\title{The simplest Clock chart, lines neither modified or colored by variable}
 \usage{
 clock_chart(data, time, Col = "black")
 }

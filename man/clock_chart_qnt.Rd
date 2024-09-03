@@ -2,7 +2,7 @@
 % Please edit documentation in R/clock_chart_qnt.R
 \name{clock_chart_qnt}
 \alias{clock_chart_qnt}
-\title{Clock Chart with Modified Length}
+\title{Clock Chart, Length and Color Modified by a quantitative variable}
 \usage{
 clock_chart_qnt(data, time, crit, high = "red", low = "green")
 }

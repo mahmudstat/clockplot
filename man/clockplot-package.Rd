@@ -10,4 +10,11 @@
 
 The primary goal of clockplot is to plot event time on a clock chart. Additionally it helps you make a day chart, week chart, or month chart, or plan events in those periods.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://mahmudstat.github.io/clockplot/}
+}
+
+}
 \keyword{internal}

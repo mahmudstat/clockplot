@@ -8,7 +8,7 @@
 #' @param data A data frame
 #' @param time Time in 24 hours HH:MM:SS format in the data set  (19:30:01, for example)
 #' @param len A quantitative vector by which length of hands will be modified.
-#' @param col An optional color name for the hands, defaulted to `black`.
+#' @param Col An optional color name for the hands, defaulted to `black`.
 #' @return A ggplot data clock with modified hands.
 #' @name clock_chart_len
 NULL
@@ -18,15 +18,15 @@ NULL
 #'                   sec = sample(0:59, 30, replace = TRUE),
 #'                   time = paste(hr, mnt, sec, sep = ":"),
 #'                   value = sample(40,30))
-#' clock_chart_len(df, time, len = value, col = "blue")
+#' clock_chart_len(df, time, len = value, Col = "blue")
 #' @export
-clock_chart_len <- function(data, time, len, col = "black"){
+clock_chart_len <- function(data, time, len, Col = "black"){
   mydata <- conv_data_len(data = data, time = {{time}}, len = {{len}})
   clock <- basic_clock()+
-    ggplot2::geom_segment(data = mydata,
+    ggplot2::geom_segment(data = mydata, color = Col,
                           ggplot2::aes(x= .data$x0, y = .data$y0,
-                                       xend = .data$x1, yend = .data$y1, color = {{col}}))+
+                                       xend = .data$x1, yend = .data$y1))+
     ggplot2::geom_point(data = mydata,
-                        ggplot2::aes(.data$x1, .data$y1, color = {{col}}))
+                        ggplot2::aes(.data$x1, .data$y1, color = {{Col}}))
   return(clock)
 }

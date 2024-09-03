@@ -2,7 +2,7 @@
 % Please edit documentation in R/clock_chart_col.R
 \name{clock_chart_col}
 \alias{clock_chart_col}
-\title{Give a 24 hours clock chart with hands colored by a criteria}
+\title{A Clock Chart, hands colored by a quantitative variable}
 \usage{
 clock_chart_col(data, time, crit, high = "red", low = "green")
 }

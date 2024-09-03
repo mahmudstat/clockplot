@@ -14,6 +14,3 @@ This function will plot those times on a 24 hour clock to show which
 events took place at what times. The line segments are drawn using
 trigonometric angles and complex equations.
 }
-\examples{
-basic_clock()
-}

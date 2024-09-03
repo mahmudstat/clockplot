@@ -2,7 +2,7 @@
 % Please edit documentation in R/clock_chart_qlt.R
 \name{clock_chart_qlt}
 \alias{clock_chart_qlt}
-\title{Clock Chart with Colored Hands}
+\title{A Clock Chart, hands colored by a factor}
 \usage{
 clock_chart_qlt(data, time, crit)
 }
@@ -22,17 +22,27 @@ events took place at what times. The hands are colored by a
 qualitative vector.
 }
 \examples{
-# A plot showing sms receiving times based on criteria (type/sender/invoked)
+# A plot showing sms receiving times based on
+# criteria (type/sender/invoked)
 clock_chart_qlt(smsclock, time = time, crit = sender)
+# Now let's check a random data
 df <- tibble::tibble(hr = sample(0:23, 50, replace = TRUE),
                   mnt = sample(0:59, 50, replace = TRUE),
                   sec = sample(0:59, 50, replace = TRUE),
                   time = paste(hr, mnt, sec, sep = ":"),
                   value = factor(sample(5,50, replace = TRUE)))
 clock_chart_qlt(df, time, crit = value)
+# Add more stuff to the plot
 p1 <- clock_chart_qlt(df, time, crit = value)
 p1 + ggplot2::theme(legend.position = "right")+
 ggplot2::labs(title = "Clock chart of factor values")
+
+# Plot chats of two friends during the course of a day.
 data(chatdf)
 clock_chart_qlt(chatdf, time = time, crit = name)
+
+# To choose your own colors, add the following code
+mycol <- c("#5dff06", "#47c144", "#318483", "#1a46c1", "#0408ff")
+clock_chart_qlt(smsclock, time = time, crit = sender)+
+ggplot2::scale_color_manual(values = mycol)
 }

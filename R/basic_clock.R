@@ -9,8 +9,6 @@
 NULL
 
 #' @return A ggplot clock chart
-#' @examples
-#' basic_clock()
 
 basic_clock <- function(){
   k <- 24 # Hours
