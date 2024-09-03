@@ -85,30 +85,21 @@
 </h2>
 <p>The charts produce <code>ggplot</code> objects, so you can make use of many of the functions of the <code>ggplot2</code> package. You can use the <code>labs</code> function, for example, to add <code>title</code>, <code>subtitle</code>, <code>caption</code> etc. Some examples are shown in the next segment.</p>
 <p>You can also add legend or change its position by using the code <code>theme(legend.position = "right")</code>; the accepted positions are <code>top</code>, <code>bottom</code>, <code>left</code>, and <code>right</code>.</p>
+</div>
+<div class="section level2">
+<h2 id="applications">Applications<a class="anchor" aria-label="anchor" href="#applications"></a>
+</h2>
+<p>Below we mention some relevant applications. <a href="https://github.com/mahmudstat/clockplot/blob/main/README.Rmd" class="external-link">Click here</a> to see the reproducible codes.</p>
+<p>We have a small data of times of messages received throughout a particular day, along with sender of the messages and their types. Let us the pattern of messages by senders.</p>
+<p><img src="reference/figures/README-exqlt-1.png" alt="SMS times" width="100%"></p>
 <div class="section level3">
-<h3 id="clock-chart">Clock Chart<a class="anchor" aria-label="anchor" href="#clock-chart"></a>
+<h3 id="modifying-clock-hands">Modifying Clock Hands<a class="anchor" aria-label="anchor" href="#modifying-clock-hands"></a>
 </h3>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mahmudstat.github.io/clockplot/">clockplot</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span>
-<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a></span><span class="op">(</span>hr <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">23</span>, <span class="fl">50</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
-<span>                  mnt <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">59</span>, <span class="fl">50</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
-<span>                  sec <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">59</span>, <span class="fl">50</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
-<span>                  time <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="va">hr</span>, <span class="va">mnt</span>, <span class="va">sec</span>, sep <span class="op">=</span> <span class="st">":"</span><span class="op">)</span>,</span>
-<span>                  value <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fl">60</span>,<span class="fl">50</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/clock_chart_qnt.html">clock_chart_qnt</a></span><span class="op">(</span><span class="va">df</span>, <span class="va">time</span>, crit <span class="op">=</span> <span class="va">value</span><span class="op">)</span></span>
-<span><span class="va">p1</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"right"</span><span class="op">)</span><span class="op">+</span></span>
-<span><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Clock chart of random values"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-example-1.png" alt="Clock chart of random event times based on a random sample." width="100%"></p>
 </div>
 <div class="section level3">
 <h3 id="week-chart">Week Chart<a class="anchor" aria-label="anchor" href="#week-chart"></a>
 </h3>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">15</span><span class="op">)</span></span>
-<span><span class="va">wtemp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fl">10</span><span class="op">:</span><span class="fl">40</span>,<span class="fl">7</span><span class="op">)</span></span>
-<span><span class="fu"><a href="reference/week_chart.html">week_chart</a></span><span class="op">(</span><span class="va">wtemp</span>, high <span class="op">=</span> <span class="st">"yellow"</span>, lgnm <span class="op">=</span> <span class="st">"Temperature"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-week-chart-1.png" alt="Week chart of Temperature" width="100%"></p>
 </div>
 </div>
