@@ -34,7 +34,7 @@ df <- tibble::tibble(hr = sample(0:23, 50, replace = TRUE),
                   time = paste(hr, mnt, sec, sep = ":"),
                   value = sample(60,50))
 clock_chart_qnt(df, time, crit = value)
-p1 <- clock_chart_qnt(df, time, crit = value)
+p1 <- clock_chart_qnt(df, time, crit = value, high = "red", low = "blue")
 p1 + ggplot2::theme(legend.position = "right")+
 ggplot2::labs(title = "Clock chart of random values")
 }
