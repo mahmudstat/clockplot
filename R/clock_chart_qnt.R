@@ -34,6 +34,7 @@ clock_chart_qnt <- function(data, time, crit, high = "red", low = "green"){
                                        color = {{crit}}))+
     ggplot2::geom_point(data = mydata,
                         ggplot2::aes(.data$x1, .data$y1, color = {{crit}}))+
-    ggplot2::scale_color_gradient(high = {{high}}, low = {{low}})
+    ggplot2::scale_color_gradient(high = {{high}}, low = {{low}})+
+    ggplot2::theme(legend.position = "bottom")
   return(clock)
 }

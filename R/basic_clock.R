@@ -1,14 +1,4 @@
-#' Give a data set containing times in 24 hours format (19:30, for example)
-#'
-#' This function will plot those times on a 24 hour clock to show which
-#' events took place at what times. The line segments are drawn using
-#' trigonometric angles and complex equations.
-#'
-#' @name basic_clock
-#' @import dplyr ggplot2
-NULL
-
-#' @return A ggplot clock chart
+# The clock skeleton
 
 basic_clock <- function(){
   k <- 24 # Hours

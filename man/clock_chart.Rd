@@ -37,3 +37,6 @@ clock_chart(df, time)
 p1 <- clock_chart(df, time)
 p1 + ggplot2::labs(title = "Sample plot")
 }
+\seealso{
+\code{\link{clock_chart_col}}
+}

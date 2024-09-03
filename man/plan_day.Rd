@@ -12,7 +12,7 @@ from 6 am)}
 
 \item{width}{Width of bars}
 
-\item{brdcol}{Color of bar border. To have no (transparent color, use `NA`)}
+\item{brdcol}{Color of bar border. To have no (transparent color), use `NA`}
 }
 \value{
 A circular chart showing work at each hour on a 24-hour clock

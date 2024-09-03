@@ -20,6 +20,7 @@
 #' @return A ggplot data clock
 #' @name clock_chart
 NULL
+#' @seealso \code{\link{clock_chart_col}}
 #' @examples
 #' df <- data.frame(time = c("06:00:00", "08:00:00", "17:30:00"))
 #' clock_chart(df, time)

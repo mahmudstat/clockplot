@@ -22,6 +22,8 @@ pak::pak("mahmudstat/clockplot")
 
 ## Usage
 
+[Click here](/reference) to see the available functions.
+
 ### Clock Chart
 
 ``` r
@@ -49,24 +51,3 @@ week_chart(wtemp, high = "yellow", lgnm = "Temperature")
 ```
 
 <img src="man/figures/README-week-chart-1.png" alt="Week chart of Temperature" width="100%" />
-
-## Functions
-
-To know more about a specific function, use `?function_name`
-
-| Function          | For                                                                                       | Remark          |
-|-------------------|-------------------------------------------------------------------------------------------|-----------------|
-| clock_chart()     | Simplest Clock Chart with event times plotted on a 24-hour clock.                         |                 |
-| clock_chart_col() | Clock Chart with hands colored based on a criteria.                                       |                 |
-| clock_chart_len() | Clock Chart with hands length modified based on a criteria.                               |                 |
-| clock_chart_qnt() | Clock Chart with length modified and colored based on a criteria.                         |                 |
-| clock_chart_qlt() | Clock Chart with hands colored by a criteria.                                             |                 |
-| cyclic_chart()    | Plot task shown on each period.                                                           |                 |
-| day_chart()       | Rose plot with values shown at each hour.                                                 |                 |
-| plan_day()        | Rose plot showing tasks at each hour.                                                     |                 |
-| week_chart()      | Plot with values shown on each day of week.                                               |                 |
-| plan_week()       | Plot with task shown on each day of week.                                                 |                 |
-| month_chart()     | Plot with values shown on each day of month.                                              |                 |
-| plan_month()      | Plot with task shown on each day of month.                                                | Yet to be ready |
-| make_itinerary()  | Plot showing tour or work plan on arbitrary time or date.                                 | Yet to be ready |
-| event_chart()     | Plots a few random events on the clock. Give names and lines; Lines start where text ends | Yet to be ready |

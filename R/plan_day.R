@@ -5,7 +5,7 @@
 #' @param dwork A character vector having names of work at each of 24 hours (starts
 #' from 6 am)
 #' @param width Width of bars
-#' @param brdcol Color of bar border. To have no (transparent color, use `NA`)
+#' @param brdcol Color of bar border. To have no (transparent color), use `NA`
 #' @return A circular chart showing work at each hour on a 24-hour clock
 #' @name plan_day
 NULL
