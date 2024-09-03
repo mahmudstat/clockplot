@@ -1,6 +1,6 @@
 Package: clockplot
 Type: Package
-Title: Show Event Time on a 24 Hours Clock and Other Cyclic Plots
+Title: Chart with Event Times on Clock
 Version: 0.1.5
 Author: Abdullah Al Mahmud
 Maintainer: Abdullah Al Mahmud <almahmud.sbi@gmail.com>

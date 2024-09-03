@@ -4,7 +4,7 @@
 \name{clockplot-package}
 \alias{clockplot}
 \alias{clockplot-package}
-\title{clockplot: Show Event Time on a 24 Hours Clock and Other Cyclic Plots}
+\title{clockplot: Chart with Event Times on Clock}
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 

@@ -28,5 +28,5 @@ events took place at what times. The lines are colored by a criteria.
 \examples{
 df <- data.frame(time = c("06:00:00", "08:00:00", "17:30:00"),
 crit = c(3,6,9))
-clock_chart_col(df, time, crit = value, high = "blue", low = "red")
+clock_chart_col(df, time, crit = crit, high = "blue", low = "red")
 }
