@@ -33,7 +33,8 @@ pak::pak("mahmudstat/clockplot")
 
 ## Usage
 
-[Click here](/reference) to see the available functions. 
+[Click here](https://mahmudstat.github.io/clockplot/reference/index.html) to 
+see all the available functions. 
 
 ### Clock Chart
 
