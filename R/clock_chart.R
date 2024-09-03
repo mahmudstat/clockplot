@@ -1,4 +1,4 @@
-#' Clock charts
+#' The simplest Clock chart, lines neither modified or colored by variable
 #'
 #' There are five types of clock charts, `clock_chart()` being the simplest one.
 #' It just shows the event times on a 24 hour clock. The lines are neither

@@ -1,4 +1,4 @@
-#' Give a 24 hours clock chart with hands colored by a criteria
+#' A Clock Chart, hands colored by a quantitative variable
 #'
 #' This function will plot time of events on a 24 hour clock to show which
 #' events took place at what times. The lines are colored by a criteria.

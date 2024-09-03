@@ -12,7 +12,6 @@ NULL
 #' @examples
 #' basic_clock()
 
-#' @export
 basic_clock <- function(){
   k <- 24 # Hours
   subk <- 24*5

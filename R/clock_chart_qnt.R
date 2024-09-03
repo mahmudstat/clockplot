@@ -1,4 +1,4 @@
-#' Clock Chart with Modified Length
+#' Clock Chart, Length and Color Modified by a quantitative variable
 #'
 #' This function will plot time of events on a 24 hour clock to show which
 #' events took place at what times. The length and color of the hands are
