@@ -15,7 +15,7 @@ NULL
 #' @examples
 #' df <- data.frame(time = c("06:00:00", "08:00:00", "17:30:00"),
 #' crit = c(3,6,9))
-#' clock_chart_col(df, time, crit)
+#' clock_chart_col(df, time, crit = value, high = "blue", low = "red")
 #' @export
 clock_chart_col <- function(data, time, crit, high = "red", low = "green"){
   mydata <- conv_data_col(data = data, time = {{time}}, colby = {{crit}})
