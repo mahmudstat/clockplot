@@ -3,7 +3,6 @@
 #' This function will plot time of events on a 24 hour clock to show which
 #' events took place at what times. The lines are colored by a criteria.
 #'
-#' To
 #'
 #' @param data A data frame
 #' @param time Time in 24 hours HH:MM:SS format in the data set  (19:30:01, for example)
@@ -18,6 +17,8 @@ NULL
 #' df <- data.frame(time = c("06:00:00", "08:00:00", "17:30:00"),
 #' crit = c(3,6,9))
 #' clock_chart_col(df, time, crit = crit, high = "blue", low = "red")
+#'
+#'
 #' @export
 clock_chart_col <- function(data, time, crit, high = "red", low = "green"){
   mydata <- conv_data_col(data = data, time = {{time}}, colby = {{crit}})

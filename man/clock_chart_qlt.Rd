@@ -43,6 +43,8 @@ clock_chart_qlt(chatdf, time = time, crit = name)
 
 # To choose your own colors, add the following code
 mycol <- c("#5dff06", "#47c144", "#318483", "#1a46c1", "#0408ff")
-clock_chart_qlt(smsclock, time = time, crit = sender)+
+p2 <- clock_chart_qlt(smsclock, time = time, crit = sender)+
 ggplot2::scale_color_manual(values = mycol)
+# Change legend name
+p2 + ggplot2::scale_color_discrete(name = "Sender")
 }
