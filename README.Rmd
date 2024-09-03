@@ -47,12 +47,29 @@ You can also add legend or change its position by using the code
 `theme(legend.position = "right")`; the accepted positions are `top`, 
 `bottom`, `left`, and `right`.
 
-### Clock Chart
+## Applications
 
-```{r example}
-#| fig.alt = "Clock chart of random event times based on a random sample."
+Below we mention some relevant applications. [Click here](https://github.com/mahmudstat/clockplot/blob/main/README.Rmd) to 
+see the reproducible codes. 
+
+We have a small data of times of messages received throughout a particular
+day, along with sender of the messages and their types. Let us the pattern
+of messages by senders. 
+
+```{r exqlt, echo=FALSE}
+#| fig.alt = "SMS times"
 library(clockplot)
+clock_chart_qlt(smsclock, time = time, crit = sender)+
+  ggplot2::scale_color_discrete(name = "Sender")+
+  ggplot2::labs(title = "Times of Receiving SMS on a Particular Day")+
+  ggplot2::theme(legend.position = "right")
+```
 
+### Modifying Clock Hands
+
+
+```{r example, echo=FALSE}
+#| fig.alt = "Clock chart of random event times based on a random sample."
 set.seed(10)
 df <- tibble::tibble(hr = sample(0:23, 50, replace = TRUE),
                   mnt = sample(0:59, 50, replace = TRUE),
@@ -61,14 +78,16 @@ df <- tibble::tibble(hr = sample(0:23, 50, replace = TRUE),
                   value = sample(60,50))
 p1 <- clock_chart_qnt(df, time, crit = value)
 p1 + ggplot2::theme(legend.position = "right")+
-ggplot2::labs(title = "Clock chart of random values")
+ggplot2::labs(title = "Times of Departure of Trains", 
+              color = "Distance from Destination")
 ```
 
 ### Week Chart
 
-```{r week-chart}
+```{r week-chart, echo=FALSE}
 #| fig.alt = "Week chart of Temperature"
 set.seed(15)
 wtemp <- sample(10:40,7)
-week_chart(wtemp, high = "yellow", lgnm = "Temperature")
+week_chart(wtemp, high = "yellow", lgnm = "Temperature")+
+  ggplot2::labs(title = "Temperature Variation throughout the Week")
 ```

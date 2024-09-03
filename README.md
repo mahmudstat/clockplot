@@ -37,30 +37,22 @@ You can also add legend or change its position by using the code
 `theme(legend.position = "right")`; the accepted positions are `top`,
 `bottom`, `left`, and `right`.
 
-### Clock Chart
+## Applications
 
-``` r
-library(clockplot)
+Below we mention some relevant applications. [Click
+here](https://github.com/mahmudstat/clockplot/blob/main/README.Rmd) to
+see the reproducible codes.
 
-set.seed(10)
-df <- tibble::tibble(hr = sample(0:23, 50, replace = TRUE),
-                  mnt = sample(0:59, 50, replace = TRUE),
-                  sec = sample(0:59, 50, replace = TRUE),
-                  time = paste(hr, mnt, sec, sep = ":"),
-                  value = sample(60,50))
-p1 <- clock_chart_qnt(df, time, crit = value)
-p1 + ggplot2::theme(legend.position = "right")+
-ggplot2::labs(title = "Clock chart of random values")
-```
+We have a small data of times of messages received throughout a
+particular day, along with sender of the messages and their types. Let
+us the pattern of messages by senders.
+
+<img src="man/figures/README-exqlt-1.png" alt="SMS times" width="100%" />
+
+### Modifying Clock Hands
 
 <img src="man/figures/README-example-1.png" alt="Clock chart of random event times based on a random sample." width="100%" />
 
 ### Week Chart
-
-``` r
-set.seed(15)
-wtemp <- sample(10:40,7)
-week_chart(wtemp, high = "yellow", lgnm = "Temperature")
-```
 
 <img src="man/figures/README-week-chart-1.png" alt="Week chart of Temperature" width="100%" />
