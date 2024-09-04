@@ -26,13 +26,14 @@ This function will plot time of events on a 24 hour clock to show which
 events took place at what times. The lines are colored by a criteria.
 }
 \details{
-Change the legend title by adding `ggplot2::labs(color = "TITLE")`
+Change the legend title by adding `ggplot2::labs(color = "TITLE")`. See
+the examples for details
 }
 \examples{
 df <- data.frame(time = c("06:00:00", "08:00:00", "17:30:00"),
 crit = c(3,6,9))
 clock_chart_col(df, time, crit = crit)+
-ggplot2::labs(color = "Indicator")
+ggplot2::labs(color = "TITLE")
 
 
 }

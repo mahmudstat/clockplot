@@ -3,7 +3,8 @@
 #' This function will plot time of events on a 24 hour clock to show which
 #' events took place at what times. The lines are colored by a criteria.
 #'
-#' Change the legend title by adding `ggplot2::labs(color = "TITLE")`
+#' Change the legend title by adding `ggplot2::labs(color = "TITLE")`. See
+#' the examples for details
 #'
 #' @param data A data frame
 #' @param time Time in 24 hours HH:MM:SS format in the data set  (19:30:01, for example)
@@ -18,7 +19,7 @@ NULL
 #' df <- data.frame(time = c("06:00:00", "08:00:00", "17:30:00"),
 #' crit = c(3,6,9))
 #' clock_chart_col(df, time, crit = crit)+
-#' ggplot2::labs(color = "Indicator")
+#' ggplot2::labs(color = "TITLE")
 #'
 #'
 #' @export

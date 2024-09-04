@@ -4,14 +4,14 @@
 \alias{clock_chart_len}
 \title{Clock Chart with Modified Length}
 \usage{
-clock_chart_len(data, time, len, Col = "black")
+clock_chart_len(data, time, crit, Col = "black")
 }
 \arguments{
 \item{data}{A data frame}
 
 \item{time}{Time in 24 hours HH:MM:SS format in the data set  (19:30:01, for example)}
 
-\item{len}{A quantitative vector by which length of hands will be modified.}
+\item{crit}{A quantitative vector by which length of hands will be modified.}
 
 \item{Col}{An optional color name for the hands, defaulted to `black`.}
 }
@@ -30,5 +30,5 @@ df <- tibble::tibble(hr = sample(0:23, 30, replace = TRUE),
                   sec = sample(0:59, 30, replace = TRUE),
                   time = paste(hr, mnt, sec, sep = ":"),
                   value = sample(40,30))
-clock_chart_len(df, time, len = value, Col = "blue")
+clock_chart_len(df, time, crit = value, Col = "blue")
 }
