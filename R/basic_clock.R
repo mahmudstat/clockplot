@@ -2,7 +2,7 @@
 
 basic_clock <- function(){
   k <- 24 # Hours
-  subk <- 24*5
+  subk <- 24*4
   times <- exp(1i * 2 * pi * (k:1) / k)
   subtimes <- data.frame(SubT = exp(1i * 2 * pi * (subk:1) / subk))
   ampm = c(rep(" AM",6), rep(" PM",12), rep(" AM",6))
@@ -18,7 +18,7 @@ basic_clock <- function(){
                         shape = 19, color = "black", size = 0.6)+
     ggplot2::geom_path(data = subtimes, ggplot2::aes(Re(.data$SubT), Im(.data$SubT)))+
     # Connect Last two missing points
-    ggplot2::geom_line(data = dplyr::slice(subtimes, -c(2:119)),
+    ggplot2::geom_line(data = dplyr::slice(subtimes, -c(2:95)),
                        ggplot2::aes(Re(.data$SubT), Im(.data$SubT)))+
     ggplot2::geom_point(ggplot2::aes(Re(.data$time), Im(.data$time)),
                         color = "black", size = 1.8)+
