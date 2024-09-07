@@ -3,7 +3,15 @@
 #' This function will plot time of events on a 24 hour clock to show which
 #' events took place at what times. The length and color of the hands are
 #' modified according to a numeric vector.
+
+#' Change the title, subtitle or the caption of the plot with
+#' `ggplot2::labs()` .Change the legend title by adding
+#' `ggplot2::labs(color = "TITLE")`. Add
+#' or modify legend by `theme(legend.position = "POSITION")`; the valid
+#' postion names in `ggplot2` are `top`, `bottom`, `right`, and `left`,
+#' excluding more complex options.
 #'
+
 #' @seealso
 #'  [clock_chart_col()] for coloring by a numeric variable,
 #'  [clock_chart_qlt()] for coloring by a qualitative variable,

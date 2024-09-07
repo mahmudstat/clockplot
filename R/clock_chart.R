@@ -11,6 +11,14 @@
 #' ggplot2 function, most importantly the `labs` function, with which the title,
 #' subtitle, and captions can be added to the plot.
 #'
+#' Change the title, subtitle or the caption of the plot with
+#' `ggplot2::labs()` .Change the legend title by adding
+#' `ggplot2::labs(color = "TITLE")`. Add
+#' or modify legend by `theme(legend.position = "POSITION")`; the valid
+#' postion names in `ggplot2` are `top`, `bottom`, `right`, and `left`,
+#' excluding more complex options.
+#'
+#'
 #' @seealso
 #'  [clock_chart_col()] for coloring by a numeric variable,
 #'  [clock_chart_len()] for modifying length by a numeric variable,
