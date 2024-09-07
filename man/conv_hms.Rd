@@ -9,7 +9,7 @@ conv_hms(df, time)
 \arguments{
 \item{df}{A data set}
 
-\item{time}{a variable in the format `HH:MM:SS`}
+\item{time}{a variable in the format \code{HH:MM:SS}}
 }
 \value{
 Time in HH:MM format

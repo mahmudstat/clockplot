@@ -23,14 +23,14 @@ month_chart(
 from January, obviously)}
 
 \item{lgnm}{Title of legend. The legend position can also be changed by
-adding `legend.position = "POSITION"`, where the accepted positions are
-`top`, `bottom`, `left`, and `right`.}
+adding \code{legend.position = "POSITION"}, where the accepted positions are
+\code{top}, \code{bottom}, \code{left}, and \code{right}.}
 
 \item{width}{Width of bars}
 
-\item{high}{The color name for the high values. The default is `red`}
+\item{high}{The color name for the high values. The default is \code{red}}
 
-\item{low}{The color name for the high values. The default is `green`.
+\item{low}{The color name for the high values. The default is \code{green}.
 #' The color names can be vice versa or other colors, depending on the context.}
 }
 \value{

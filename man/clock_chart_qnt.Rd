@@ -2,7 +2,7 @@
 % Please edit documentation in R/clock_chart_qnt.R
 \name{clock_chart_qnt}
 \alias{clock_chart_qnt}
-\title{Clock Chart, Length and Color Modified by a quantitative variable}
+\title{Clock Chart, Length and Color Modified by a Numeric Variable}
 \usage{
 clock_chart_qnt(data, time, crit, high = "red", low = "green")
 }
@@ -11,13 +11,13 @@ clock_chart_qnt(data, time, crit, high = "red", low = "green")
 
 \item{time}{Time in 24 hours HH:MM:SS format in the data set  (19:30:01, for example)}
 
-\item{crit}{The quantitative vector by which hands will be modified and colored.}
+\item{crit}{The numeric vector by which hands will be modified and colored.}
 
-\item{high}{The color name for the high values. The default is `red`}
+\item{high}{The color name for the high values. The default is \code{red}}
 
-\item{low}{The color name for the high values. The default is `green`.
+\item{low}{The color name for the high values. The default is \code{green}.
 The color names can be vice versa or other colors, depending on the context.
-To use a single color for all lines, use same value for `high` and `low`}
+To use a single color for all lines, use same value for \code{high} and \code{low}}
 }
 \value{
 A ggplot data clock with modified hands.
@@ -25,7 +25,7 @@ A ggplot data clock with modified hands.
 \description{
 This function will plot time of events on a 24 hour clock to show which
 events took place at what times. The length and color of the hands are
-modified according to a quantitative vector.
+modified according to a numeric vector.
 }
 \examples{
 df <- tibble::tibble(hr = sample(0:23, 50, replace = TRUE),
@@ -37,4 +37,10 @@ clock_chart_qnt(df, time, crit = value)
 p1 <- clock_chart_qnt(df, time, crit = value, high = "red", low = "blue")
 p1 + ggplot2::theme(legend.position = "right")+
 ggplot2::labs(title = "Clock chart of random values")
+}
+\seealso{
+\code{\link[=clock_chart_col]{clock_chart_col()}} for coloring by a numeric variable,
+\code{\link[=clock_chart_qlt]{clock_chart_qlt()}} for coloring by a qualitative variable,
+\code{\link[=clock_chart_len]{clock_chart_len()}} for modifying length by a numeric variable,
+\code{\link[=clock_chart]{clock_chart()}} for the simplest clock chart
 }

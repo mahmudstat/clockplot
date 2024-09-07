@@ -1,12 +1,18 @@
-#' Clock Chart, Length and Color Modified by a quantitative variable
+#' Clock Chart, Length and Color Modified by a Numeric Variable
 #'
 #' This function will plot time of events on a 24 hour clock to show which
 #' events took place at what times. The length and color of the hands are
-#' modified according to a quantitative vector.
+#' modified according to a numeric vector.
+#'
+#' @seealso
+#'  [clock_chart_col()] for coloring by a numeric variable,
+#'  [clock_chart_qlt()] for coloring by a qualitative variable,
+#'  [clock_chart_len()] for modifying length by a numeric variable,
+#'  [clock_chart()] for the simplest clock chart
 #'
 #' @param data A data frame
 #' @param time Time in 24 hours HH:MM:SS format in the data set  (19:30:01, for example)
-#' @param crit The quantitative vector by which hands will be modified and colored.
+#' @param crit The numeric vector by which hands will be modified and colored.
 #' @param high The color name for the high values. The default is `red`
 #' @param low The color name for the high values. The default is `green`.
 #' The color names can be vice versa or other colors, depending on the context.

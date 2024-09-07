@@ -2,7 +2,7 @@
 % Please edit documentation in R/clock_chart.R
 \name{clock_chart}
 \alias{clock_chart}
-\title{The simplest Clock chart, lines neither modified or colored by variable}
+\title{The Simplest Clock Chart, Lines Unmodified}
 \usage{
 clock_chart(data, time, Col = "black")
 }
@@ -13,22 +13,24 @@ clock_chart(data, time, Col = "black")
 (19:30:01, for example, although the SS part is ignored due to having
 negligible impact on the final plot, but is kept for better ...)}
 
-\item{Col}{Color name for the lines. The default is `black`.}
+\item{Col}{Color name for the lines. The default is \code{black}.}
 }
 \value{
-A ggplot data clock
+A ggplot data clock, so you can further modify it by applying some
+ggplot2 function, most importantly the \code{labs} function, with which the title,
+subtitle, and captions can be added to the plot.
 }
 \description{
-There are five types of clock charts, `clock_chart()` being the simplest one.
+There are five types of clock charts, \code{clock_chart()} being the simplest one.
 It just shows the event times on a 24 hour clock. The lines are neither
-colored, nor length modified. `clock_chart_col()` is used to colorize and
-`clock_chart_len()` to change the length of the hands by a quantitative vector.
-To do both simultaneously, use `clock_chart_qnt()`. To use a qualitative
-variable as the criterion, use `clock_chart_qlt()`.
+colored, nor length modified. \code{clock_chart_col()} is used to colorize and
+\code{clock_chart_len()} to change the length of the hands by a numeric vector.
+To do both simultaneously, use \code{clock_chart_qnt()}. To use a qualitative
+variable as the criterion, use \code{clock_chart_qlt()}.
 }
 \details{
 The output gives a ggplot, so you can further modify it by applying some
-ggplot2 function, most importantly the `labs` function, with which the title,
+ggplot2 function, most importantly the \code{labs} function, with which the title,
 subtitle, and captions can be added to the plot.
 }
 \examples{
@@ -38,5 +40,8 @@ p1 <- clock_chart(df, time)
 p1 + ggplot2::labs(title = "Sample plot")
 }
 \seealso{
-\code{\link{clock_chart_col}}
+\code{\link[=clock_chart_col]{clock_chart_col()}} for coloring by a numeric variable,
+\code{\link[=clock_chart_len]{clock_chart_len()}} for modifying length by a numeric variable,
+\code{\link[=clock_chart_qnt]{clock_chart_qnt()}} for coloring and modifying length by a numeric variable,
+\code{\link[=clock_chart_qlt]{clock_chart_qlt()}} for coloring by a qualitative variable,
 }

@@ -11,9 +11,9 @@ clock_chart_len(data, time, crit, Col = "black")
 
 \item{time}{Time in 24 hours HH:MM:SS format in the data set  (19:30:01, for example)}
 
-\item{crit}{A quantitative vector by which length of hands will be modified.}
+\item{crit}{A numeric vector by which length of hands will be modified.}
 
-\item{Col}{An optional color name for the hands, defaulted to `black`.}
+\item{Col}{An optional color name for the hands, defaulted to \code{black}.}
 }
 \value{
 A ggplot data clock with modified hands.
@@ -21,8 +21,8 @@ A ggplot data clock with modified hands.
 \description{
 This function will plot time of events on a 24 hour clock to show which
 events took place at what times. The length of the hands are modified
-according to a quantitative vector. A color name can be used for the hands.
-For better use of color and length together, consider using `clock_chart_qnt()`.
+according to a numeric vector. A color name can be used for the hands.
+For better use of color and length together, consider using \code{clock_chart_qnt()}.
 }
 \examples{
 df <- tibble::tibble(hr = sample(0:23, 30, replace = TRUE),
@@ -31,4 +31,10 @@ df <- tibble::tibble(hr = sample(0:23, 30, replace = TRUE),
                   time = paste(hr, mnt, sec, sep = ":"),
                   value = sample(40,30))
 clock_chart_len(df, time, crit = value, Col = "blue")
+}
+\seealso{
+\code{\link[=clock_chart_col]{clock_chart_col()}} for coloring by a numeric variable,
+\code{\link[=clock_chart_qnt]{clock_chart_qnt()}} for coloring and modifying length by a numeric variable,
+\code{\link[=clock_chart_qlt]{clock_chart_qlt()}} for coloring by a qualitative variable,
+\code{\link[=clock_chart]{clock_chart()}} for the simplest clock chart
 }

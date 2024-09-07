@@ -2,20 +2,20 @@
 % Please edit documentation in R/clock_chart_col.R
 \name{clock_chart_col}
 \alias{clock_chart_col}
-\title{A Clock Chart, hands colored by a quantitative variable}
+\title{A Clock Chart, Hands Colored by a Numeric Variable}
 \usage{
 clock_chart_col(data, time, crit, high = "red", low = "green")
 }
 \arguments{
 \item{data}{A data frame}
 
-\item{time}{Time in 24 hours HH:MM:SS format in the data set  (19:30:01, for example)}
+\item{time}{Time in 24 hours \code{HH:MM:SS} format in the data set  (19:30:01, for example)}
 
-\item{crit}{a quantitative vector by which lines will be colored.}
+\item{crit}{a numeric vector by which lines will be colored.}
 
-\item{high}{The color name for the high values. The default is `red`}
+\item{high}{The color name for the high values. The default is \code{red}}
 
-\item{low}{The color name for the high values. The default is `green`.
+\item{low}{The color name for the high values. The default is \code{green}.
 The color names can be vice versa or other colors, depending on the context.}
 }
 \value{
@@ -26,8 +26,12 @@ This function will plot time of events on a 24 hour clock to show which
 events took place at what times. The lines are colored by a criteria.
 }
 \details{
-Change the legend title by adding `ggplot2::labs(color = "TITLE")`. See
-the examples for details
+Change the title, subtitle or the caption of the plot with
+\code{ggplot2::labs()} .Change the legend title by adding
+\code{ggplot2::labs(color = "TITLE")}. Add
+or modify legend by \code{theme(legend.position = "POSITION")}; the valid
+postion names in \code{ggplot2} are \code{top}, \code{bottom}, \code{right}, and \code{left},
+excluding more complex options.
 }
 \examples{
 df <- data.frame(time = c("06:00:00", "08:00:00", "17:30:00"),
@@ -36,4 +40,10 @@ clock_chart_col(df, time, crit = crit)+
 ggplot2::labs(color = "TITLE")
 
 
+}
+\seealso{
+\code{\link[=clock_chart_len]{clock_chart_len()}} for modifying length by a numeric variable,
+\code{\link[=clock_chart_qnt]{clock_chart_qnt()}} for coloring and modifying length by a numeric variable,
+\code{\link[=clock_chart_qlt]{clock_chart_qlt()}} for coloring by a qualitative variable,
+\code{\link[=clock_chart]{clock_chart()}} for the simplest clock chart
 }

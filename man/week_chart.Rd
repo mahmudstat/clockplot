@@ -12,9 +12,9 @@ Saturday}
 
 \item{lgnm}{Title of legend}
 
-\item{high}{The color name for the high values. The default is `red`}
+\item{high}{The color name for the high values. The default is \code{red}}
 
-\item{low}{The color name for the high values. The default is `green`.
+\item{low}{The color name for the high values. The default is \code{green}.
 The color names can be vice versa or other colors, depending on the context.}
 }
 \value{

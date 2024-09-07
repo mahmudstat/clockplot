@@ -1,8 +1,14 @@
-#' A Clock Chart, hands colored by a factor
+#' A Clock Chart, Hands Clored by a Factor
 #'
 #' This function will plot time of events on a 24 hour clock to show which
 #' events took place at what times. The hands are colored by a
-#' qualitative vector.
+#' qualitative (factor) vector.
+#'
+#' @seealso
+#'  [clock_chart_col()] for coloring by a numeric variable,
+#'  [clock_chart_qnt()] for coloring and modifying length by a numeric variable,
+#'  [clock_chart_len()] for modifying length by a numeric variable,
+#'  [clock_chart()] for the simplest clock chart
 #'
 #' @param data A data frame
 #' @param time Time in 24 hours HH:MM:SS format in the data set  (19:30:01, for example)

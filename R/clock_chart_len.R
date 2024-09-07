@@ -2,12 +2,19 @@
 #'
 #' This function will plot time of events on a 24 hour clock to show which
 #' events took place at what times. The length of the hands are modified
-#' according to a quantitative vector. A color name can be used for the hands.
+#' according to a numeric vector. A color name can be used for the hands.
 #' For better use of color and length together, consider using `clock_chart_qnt()`.
+#'
+#' @seealso
+#'  [clock_chart_col()] for coloring by a numeric variable,
+#'  [clock_chart_qnt()] for coloring and modifying length by a numeric variable,
+#'  [clock_chart_qlt()] for coloring by a qualitative variable,
+#'  [clock_chart()] for the simplest clock chart
+#'
 #'
 #' @param data A data frame
 #' @param time Time in 24 hours HH:MM:SS format in the data set  (19:30:01, for example)
-#' @param crit A quantitative vector by which length of hands will be modified.
+#' @param crit A numeric vector by which length of hands will be modified.
 #' @param Col An optional color name for the hands, defaulted to `black`.
 #' @return A ggplot data clock with modified hands.
 #' @name clock_chart_len

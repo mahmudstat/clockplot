@@ -24,3 +24,4 @@ Suggests:
     rmarkdown
 VignetteBuilder: knitr
 URL: https://mahmudstat.github.io/clockplot/
+Roxygen: list(markdown = TRUE)

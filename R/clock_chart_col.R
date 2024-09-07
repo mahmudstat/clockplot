@@ -1,14 +1,24 @@
-#' A Clock Chart, hands colored by a quantitative variable
+#' A Clock Chart, Hands Colored by a Numeric Variable
 #'
 #' This function will plot time of events on a 24 hour clock to show which
 #' events took place at what times. The lines are colored by a criteria.
 #'
-#' Change the legend title by adding `ggplot2::labs(color = "TITLE")`. See
-#' the examples for details
+#' Change the title, subtitle or the caption of the plot with
+#' `ggplot2::labs()` .Change the legend title by adding
+#' `ggplot2::labs(color = "TITLE")`. Add
+#' or modify legend by `theme(legend.position = "POSITION")`; the valid
+#' postion names in `ggplot2` are `top`, `bottom`, `right`, and `left`,
+#' excluding more complex options.
+#'
+#' @seealso
+#'  [clock_chart_len()] for modifying length by a numeric variable,
+#'  [clock_chart_qnt()] for coloring and modifying length by a numeric variable,
+#'  [clock_chart_qlt()] for coloring by a qualitative variable,
+#'  [clock_chart()] for the simplest clock chart
 #'
 #' @param data A data frame
-#' @param time Time in 24 hours HH:MM:SS format in the data set  (19:30:01, for example)
-#' @param crit a quantitative vector by which lines will be colored.
+#' @param time Time in 24 hours `HH:MM:SS` format in the data set  (19:30:01, for example)
+#' @param crit a numeric vector by which lines will be colored.
 #' @param high The color name for the high values. The default is `red`
 #' @param low The color name for the high values. The default is `green`.
 #' The color names can be vice versa or other colors, depending on the context.

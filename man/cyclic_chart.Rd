@@ -12,7 +12,7 @@ cyclic_chart(df, Period, Value, Crit, ColV)
 \item{Period}{A list of periodical values such as hours of the day, days of
 the week, months of the year and so on.}
 
-\item{Value}{A numeric vector with the values corresponding to the `Period`}
+\item{Value}{A numeric vector with the values corresponding to the \code{Period}}
 
 \item{Crit}{A factor variable based on which the bars would be colored.}
 
@@ -25,7 +25,7 @@ A circular chart showing values in each month of the year.
 }
 \description{
 This function plots values corresponding to random periods such as hours,
- days, months and so on.
+days, months and so on.
 }
 \examples{
 dhktmp <- c(18.4, 22.1, 26.4, 28.6, 28.9, 29.1, 28.9, 29.0, 28.7, 27.5, 24.0, 19.9)
