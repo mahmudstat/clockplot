@@ -25,7 +25,7 @@
 #' @param low The color name for the high values. The default is `green`.
 #' The color names can be vice versa or other colors, depending on the context.
 #' To use a single color for all lines, use same value for `high` and `low`
-#' @return A ggplot data clock with modified hands.
+
 #' @name clock_chart_qnt
 NULL
 #' @examples

@@ -24,7 +24,7 @@
 #' @param time Time in 24 hours HH:MM:SS format in the data set  (19:30:01, for example)
 #' @param crit A numeric vector by which length of hands will be modified.
 #' @param Col An optional color name for the hands, defaulted to `black`.
-#' @return A ggplot data clock with modified hands.
+
 #' @name clock_chart_len
 NULL
 #' @examples

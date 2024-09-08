@@ -21,7 +21,7 @@
 #' @param data A data frame
 #' @param time Time in 24 hours HH:MM:SS format in the data set  (19:30:01, for example)
 #' @param crit The qualitative vector by which hands will be colored.
-#' @return A ggplot clock chart with hands colored by a criteria.
+
 #' @name clock_chart_qlt
 NULL
 #' @examples

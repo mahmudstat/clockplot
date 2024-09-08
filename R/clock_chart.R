@@ -30,7 +30,6 @@
 #' (19:30:01, for example, although the SS part is ignored due to having
 #' negligible impact on the final plot, but is kept for better ...)
 #' @param Col Color name for the lines. The default is `black`.
-#' @return A ggplot data clock, so you can further modify it by applying some
 #' ggplot2 function, most importantly the `labs` function, with which the title,
 #' subtitle, and captions can be added to the plot.
 #' @name clock_chart
