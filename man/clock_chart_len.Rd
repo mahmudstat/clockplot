@@ -15,9 +15,6 @@ clock_chart_len(data, time, crit, Col = "black")
 
 \item{Col}{An optional color name for the hands, defaulted to \code{black}.}
 }
-\value{
-A ggplot data clock with modified hands.
-}
 \description{
 This function will plot time of events on a 24 hour clock to show which
 events took place at what times. The length of the hands are modified

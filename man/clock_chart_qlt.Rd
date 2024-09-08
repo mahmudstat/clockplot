@@ -13,13 +13,16 @@ clock_chart_qlt(data, time, crit)
 
 \item{crit}{The qualitative vector by which hands will be colored.}
 }
-\value{
-A ggplot clock chart with hands colored by a criteria.
-}
 \description{
 This function will plot time of events on a 24 hour clock to show which
 events took place at what times. The hands are colored by a
 qualitative (factor) vector.
+Change the title, subtitle or the caption of the plot with
+\code{ggplot2::labs()} .Change the legend title by adding
+\code{ggplot2::labs(color = "TITLE")}. Add
+or modify legend by \code{theme(legend.position = "POSITION")}; the valid
+postion names in \code{ggplot2} are \code{top}, \code{bottom}, \code{right}, and \code{left},
+excluding more complex options.
 }
 \examples{
 # A plot showing sms receiving times based on

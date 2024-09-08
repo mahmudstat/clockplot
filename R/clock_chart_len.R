@@ -5,12 +5,6 @@
 #' according to a numeric vector. A color name can be used for the hands.
 #' For better use of color and length together, consider using `clock_chart_qnt()`.
 
-#' Change the title, subtitle or the caption of the plot with
-#' `ggplot2::labs()` .Change the legend title by adding
-#' `ggplot2::labs(color = "TITLE")`. Add
-#' or modify legend by `theme(legend.position = "POSITION")`; the valid
-#' postion names in `ggplot2` are `top`, `bottom`, `right`, and `left`,
-#' excluding more complex options.
 #'
 
 #' @seealso

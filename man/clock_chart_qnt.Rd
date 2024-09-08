@@ -19,13 +19,16 @@ clock_chart_qnt(data, time, crit, high = "red", low = "green")
 The color names can be vice versa or other colors, depending on the context.
 To use a single color for all lines, use same value for \code{high} and \code{low}}
 }
-\value{
-A ggplot data clock with modified hands.
-}
 \description{
 This function will plot time of events on a 24 hour clock to show which
 events took place at what times. The length and color of the hands are
 modified according to a numeric vector.
+Change the title, subtitle or the caption of the plot with
+\code{ggplot2::labs()} .Change the legend title by adding
+\code{ggplot2::labs(color = "TITLE")}. Add
+or modify legend by \code{theme(legend.position = "POSITION")}; the valid
+postion names in \code{ggplot2} are \code{top}, \code{bottom}, \code{right}, and \code{left},
+excluding more complex options.
 }
 \examples{
 df <- tibble::tibble(hr = sample(0:23, 50, replace = TRUE),

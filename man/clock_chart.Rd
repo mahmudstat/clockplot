@@ -13,12 +13,9 @@ clock_chart(data, time, Col = "black")
 (19:30:01, for example, although the SS part is ignored due to having
 negligible impact on the final plot, but is kept for better ...)}
 
-\item{Col}{Color name for the lines. The default is \code{black}.}
-}
-\value{
-A ggplot data clock, so you can further modify it by applying some
+\item{Col}{Color name for the lines. The default is \code{black}.
 ggplot2 function, most importantly the \code{labs} function, with which the title,
-subtitle, and captions can be added to the plot.
+subtitle, and captions can be added to the plot.}
 }
 \description{
 There are five types of clock charts, \code{clock_chart()} being the simplest one.
@@ -32,6 +29,13 @@ variable as the criterion, use \code{clock_chart_qlt()}.
 The output gives a ggplot, so you can further modify it by applying some
 ggplot2 function, most importantly the \code{labs} function, with which the title,
 subtitle, and captions can be added to the plot.
+
+Change the title, subtitle or the caption of the plot with
+\code{ggplot2::labs()} .Change the legend title by adding
+\code{ggplot2::labs(color = "TITLE")}. Add
+or modify legend by \code{theme(legend.position = "POSITION")}; the valid
+postion names in \code{ggplot2} are \code{top}, \code{bottom}, \code{right}, and \code{left},
+excluding more complex options.
 }
 \examples{
 df <- data.frame(time = c("06:00:00", "08:00:00", "17:30:00"))

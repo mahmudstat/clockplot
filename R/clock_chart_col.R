@@ -26,8 +26,8 @@
 NULL
 #' @examples
 #' df <- data.frame(time = c("06:00:00", "08:00:00", "17:30:00"),
-#' crit = c(3,6,9))
-#' clock_chart_col(df, time, crit = crit)+
+#' value = c(3,6,9))
+#' clock_chart_col(df, time, crit = value)+
 #' ggplot2::labs(color = "TITLE")
 #'
 #'
