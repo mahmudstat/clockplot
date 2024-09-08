@@ -26,17 +26,6 @@ pak::pak("mahmudstat/clockplot")
 here](https://mahmudstat.github.io/clockplot/reference/index.html) to
 see all the available functions.
 
-## Aditional Components
-
-The charts produce `ggplot` objects, so you can make use of many of the
-functions of the `ggplot2` package. You can use the `labs` function, for
-example, to add `title`, `subtitle`, `caption` etc. Some examples are
-shown in the next segment.
-
-You can also add legend or change its position by using the code
-`theme(legend.position = "right")`; the accepted positions are `top`,
-`bottom`, `left`, and `right`.
-
 ## Applications
 
 Below we mention some relevant applications. [Click
@@ -56,3 +45,14 @@ us the pattern of messages by senders.
 ### Week Chart
 
 <img src="man/figures/README-week-chart-1.png" alt="Week chart of Temperature" width="100%" />
+
+## Aditional Components
+
+The charts produce `ggplot` objects, so you can make use of many of the
+functions of the `ggplot2` package. You can use the `labs` function, for
+example, to add `title`, `subtitle`, `caption` etc. Some examples are
+shown in the next segment.
+
+You can also add legend or change its position by using the code
+`theme(legend.position = "right")`; the accepted positions are `top`,
+`bottom`, `left`, and `right`.
