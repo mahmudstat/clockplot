@@ -78,11 +78,22 @@ to create a beautiful color palette.</p></dd>
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A circular chart showing values in each month of the year.</p>
     </div>
+    <div class="section level2">
+    <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
+    <p>This can plot values corresponding to multiple categories, for example,
+temperature in different cities.</p>
+    </div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p><code><a href="day_chart.html">day_chart()</a></code> for plotting values on a day by hours
+<code><a href="week_chart.html">week_chart()</a></code> for plotting values in a week by days
+<code><a href="year_chart.html">year_chart()</a></code> for plotting values on in a year by months</p></div>
+    </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Using package built-in bdtemp data</span></span></span>
-<span class="r-in"><span><span class="va">Col</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#bfff00"</span>, <span class="st">"#ffff00"</span>, <span class="st">"#ffbf00"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">Col</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#0040ff"</span>, <span class="st">"#00bfff"</span>, <span class="st">"#8000ff"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">cyclic_chart</span><span class="op">(</span><span class="va">bdtemp</span>, Period <span class="op">=</span> <span class="va">Month</span>, Value <span class="op">=</span> <span class="va">Temperature</span>,</span></span>
 <span class="r-in"><span>crit <span class="op">=</span> <span class="va">City</span>, ColV <span class="op">=</span> <span class="va">Col</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="cyclic_chart-1.png" alt="" width="700" height="433"></span>
