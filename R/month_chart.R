@@ -25,7 +25,7 @@ NULL
 #'              sample(4:7, 2, replace = TRUE))
 #' dfm <- tibble::tibble(Days, expense)
 #' month_chart(df = dfm, Days = Days, mvalue = expense)
-#' @export
+
 month_chart <- function(df, Days, mvalue, lgnm = "Value", width = 0.9,
                         high = "yellow", low = "green"){
   df <- df %>% dplyr::mutate(Days = factor(Days, levels = Days))

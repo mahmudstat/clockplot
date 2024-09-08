@@ -2,6 +2,12 @@
 #'
 #' This function plots values corresponding to each month on a rose plot.
 #'
+#'
+#' @seealso
+#'  [day_chart()] for plotting values on a day by hours
+#'  [week_chart()] for plotting values in a week by days
+#'  [cyclic_chart()] for plotting values by arbitrary period
+#'
 #' @param mvalue A numeric vector having values in each month of the year (starts
 #' from January, obviously). If you have it in a data frame, you need to
 #' extract it (one way is this: data$mvalue)

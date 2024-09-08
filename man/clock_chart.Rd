@@ -30,7 +30,7 @@ Change the title, subtitle or the caption of the plot with
 \code{ggplot2::labs()}.
 }
 \examples{
-p1 <- clock_chart(smsclock, time)
+p1 <- clock_chart(smsclock, time) # Using package built-in data
 p1 + ggplot2::labs(title = "Sample plot")
 }
 \seealso{

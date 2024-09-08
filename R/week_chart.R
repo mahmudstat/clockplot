@@ -2,6 +2,12 @@
 #'
 #' This function plots values corresponding to each day on a rose plot.
 #'
+#'
+#' @seealso
+#'  [day_chart()] for plotting values in on a day hours
+#'  [year_chart()] for plotting values on in a year by months
+#'  [cyclic_chart()] for plotting values by arbitrary period
+#'
 #' @param wvalue A numeric vector having values on each day, starting from
 #' Saturday
 #' @param lgnm Title of legend

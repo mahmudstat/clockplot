@@ -1,4 +1,4 @@
-#' Time of chat by two individuals
+#' Data Containing Chat Times of Two Individuals
 #'
 #' A dataset containing timings of chat by two individuals Abid and Abir
 #' The set contains 25 pushes by each individual
