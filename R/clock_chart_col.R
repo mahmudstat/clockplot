@@ -30,7 +30,6 @@ NULL
 #' clock_chart_col(df, time, crit = value)+
 #' ggplot2::labs(color = "TITLE")
 #'
-#'
 #' @export
 clock_chart_col <- function(data, time, crit, high = "red", low = "green"){
   mydata <- conv_data_col(data = data, time = {{time}}, colby = {{crit}})

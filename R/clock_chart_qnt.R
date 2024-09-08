@@ -37,7 +37,8 @@ NULL
 #' clock_chart_qnt(df, time, crit = value)
 #' p1 <- clock_chart_qnt(df, time, crit = value, high = "red", low = "blue")
 #' p1 + ggplot2::theme(legend.position = "right")+
-#' ggplot2::labs(title = "Clock chart of random values")
+#' ggplot2::labs(title = "Clock chart of random values")+
+#' ggplot2::labs(color = "Indicator")
 #' @export
 clock_chart_qnt <- function(data, time, crit, high = "red", low = "green"){
   mydata <- conv_data_len(data = data, time = {{time}}, len = {{crit}})

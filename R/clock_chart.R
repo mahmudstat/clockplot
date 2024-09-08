@@ -7,9 +7,8 @@
 #' To do both simultaneously, use `clock_chart_qnt()`. To use a qualitative
 #' variable as the criterion, use `clock_chart_qlt()`.
 #'
-#' The output gives a ggplot, so you can further modify it by applying some
-#' ggplot2 function, most importantly the `labs` function, with which the title,
-#' subtitle, and captions can be added to the plot.
+#' Change the title, subtitle or the caption of the plot with
+#' `ggplot2::labs()`.
 #'
 #' @seealso
 #'  [clock_chart_col()] for coloring by a numeric variable,
@@ -28,8 +27,6 @@
 NULL
 
 #' @examples
-#' df <- data.frame(time = c("06:00:00", "08:00:00", "17:30:00"))
-#' clock_chart(df, time)
 #' p1 <- clock_chart(df, time)
 #' p1 + ggplot2::labs(title = "Sample plot")
 #' @export
