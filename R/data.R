@@ -1,4 +1,4 @@
-#' Timings of chat by two individuals
+#' Time of chat by two individuals
 #'
 #' A dataset containing timings of chat by two individuals Abid and Abir
 #' The set contains 25 pushes by each individual
@@ -15,7 +15,7 @@
 
 
 
-#' Timings of Receiving of SMS
+#' Times of Receiving of SMS
 #'
 #' A dataset containing timings of receiving sms on mobile phone.
 #' Real data for a particular day
@@ -30,3 +30,18 @@
 #' }
 #' @source {Phone Messages}
 "smsclock"
+
+
+#' Temperature data of Bangladesh Divisional Cities
+#'
+#' A dataset containing temperature of Dhaka, Sylhet, and Chittagong Cities.
+#'
+#' @format A data frame with 36 rows and 3 variables:
+#' \describe{
+#' \item{Temperature}{Average monthly temperature}
+#' \item{Month}{Month of the year}
+#' \item{City}{Name of the city}
+#' ...
+#' }
+#' @source \url{https://www.weatherbase.com/weather/weather.php3?s=032914&refer=/}
+"bdtemp"

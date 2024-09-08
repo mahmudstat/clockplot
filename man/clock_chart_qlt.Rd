@@ -2,7 +2,7 @@
 % Please edit documentation in R/clock_chart_qlt.R
 \name{clock_chart_qlt}
 \alias{clock_chart_qlt}
-\title{A Clock Chart, Hands Clored by a Factor}
+\title{A Clock Chart, Hands Colored by a Factor}
 \usage{
 clock_chart_qlt(data, time, crit)
 }
@@ -17,6 +17,8 @@ clock_chart_qlt(data, time, crit)
 This function will plot time of events on a 24 hour clock to show which
 events took place at what times. The hands are colored by a
 qualitative (factor) vector.
+}
+\details{
 Change the title, subtitle or the caption of the plot with
 \code{ggplot2::labs()}. Change the legend title by adding
 \code{ggplot2::labs(color = "TITLE")}. Add
@@ -27,7 +29,8 @@ excluding more complex options.
 \examples{
 # A plot showing sms receiving times based on
 # criteria (type/sender/invoked)
-clock_chart_qlt(smsclock, time = time, crit = sender)
+clock_chart_qlt(smsclock, time = time, crit = sender)+
+ggplot2::labs(color = "Sender", title = "SMS's Received throughout th Day")
 }
 \seealso{
 \code{\link[=clock_chart_col]{clock_chart_col()}} for coloring by a numeric variable,

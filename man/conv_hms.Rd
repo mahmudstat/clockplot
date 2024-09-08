@@ -2,20 +2,21 @@
 % Please edit documentation in R/clean_data.R
 \name{conv_hms}
 \alias{conv_hms}
-\title{Remove second part from time value}
+\title{Convert \code{HH:MM} to \code{HH:MM:SS}}
 \usage{
 conv_hms(df, time)
 }
 \arguments{
 \item{df}{A data set}
 
-\item{time}{a variable in the format \code{HH:MM:SS}}
+\item{time}{a \code{time} or \code{character} variable in the format \code{HH:MM:SS}}
 }
 \value{
 Time in HH:MM format
 }
 \description{
-This function removes second part from time value
+This function converts \code{HH:MM} to \code{HH:MM:SS}. \code{19:30}, for example, is
+turned into \code{19:30:00}. This prepares the times for plotting
 }
 \examples{
 df <- data.frame(time = c("06:00", "08:00", "17:30"))

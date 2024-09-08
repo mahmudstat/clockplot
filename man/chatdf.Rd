@@ -3,7 +3,7 @@
 \docType{data}
 \name{chatdf}
 \alias{chatdf}
-\title{Timings of chat by two individuals}
+\title{Time of chat by two individuals}
 \format{
 A data frame with 25 rows and 2 variables:
 \describe{

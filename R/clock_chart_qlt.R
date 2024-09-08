@@ -1,9 +1,9 @@
-#' A Clock Chart, Hands Clored by a Factor
+#' A Clock Chart, Hands Colored by a Factor
 #'
 #' This function will plot time of events on a 24 hour clock to show which
 #' events took place at what times. The hands are colored by a
 #' qualitative (factor) vector.
-
+#'
 #' Change the title, subtitle or the caption of the plot with
 #' `ggplot2::labs()`. Change the legend title by adding
 #' `ggplot2::labs(color = "TITLE")`. Add

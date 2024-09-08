@@ -20,8 +20,10 @@ This function will plot time of events on a 24 hour clock to show which
 events took place at what times. The length of the hands are modified
 according to a numeric vector. A color name can be used for the hands.
 For better use of color and length together, consider using \code{clock_chart_qnt()}.
+}
+\details{
 Change the title, subtitle or the caption of the plot with
-\code{ggplot2::labs()}.
+\code{ggplot2::labs()}. See examples.
 }
 \examples{
 df <- tibble::tibble(hr = sample(0:23, 30, replace = TRUE),
@@ -29,7 +31,8 @@ df <- tibble::tibble(hr = sample(0:23, 30, replace = TRUE),
                   sec = sample(0:59, 30, replace = TRUE),
                   time = paste(hr, mnt, sec, sep = ":"),
                   value = sample(40,30))
-clock_chart_len(df, time, crit = value, Col = "blue")
+clock_chart_len(df, time, crit = value, Col = "blue")+
+ggplot2::labs(title = "Plot Title")
 }
 \seealso{
 \code{\link[=clock_chart_col]{clock_chart_col()}} for coloring by a numeric variable,

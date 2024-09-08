@@ -23,6 +23,8 @@ To use a single color for all lines, use same value for \code{high} and \code{lo
 This function will plot time of events on a 24 hour clock to show which
 events took place at what times. The length and color of the hands are
 modified according to a numeric vector.
+}
+\details{
 Change the title, subtitle or the caption of the plot with
 \code{ggplot2::labs()} .Change the legend title by adding
 \code{ggplot2::labs(color = "TITLE")}. Add
@@ -40,7 +42,7 @@ clock_chart_qnt(df, time, crit = value)
 p1 <- clock_chart_qnt(df, time, crit = value, high = "red", low = "blue")
 p1 + ggplot2::theme(legend.position = "right")+
 ggplot2::labs(title = "Clock chart of random values")+
-ggplot2::labs(color = "Indicator")
+ggplot2::labs(color = "Indicator") #lLegend Title
 }
 \seealso{
 \code{\link[=clock_chart_col]{clock_chart_col()}} for coloring by a numeric variable,

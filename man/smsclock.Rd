@@ -3,7 +3,7 @@
 \docType{data}
 \name{smsclock}
 \alias{smsclock}
-\title{Timings of Receiving of SMS}
+\title{Times of Receiving of SMS}
 \format{
 A data frame with 17 rows and 4 variables:
 \describe{

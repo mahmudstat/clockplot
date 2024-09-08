@@ -25,9 +25,9 @@
 #' subtitle, and captions can be added to the plot.
 #' @name clock_chart
 NULL
-
+#'
 #' @examples
-#' p1 <- clock_chart(df, time)
+#' p1 <- clock_chart(smsclock, time) # Using package built-in data
 #' p1 + ggplot2::labs(title = "Sample plot")
 #' @export
 clock_chart <- function(data, time, Col = "black"){
