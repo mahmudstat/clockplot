@@ -27,7 +27,8 @@ NULL
 #' @examples
 #' # A plot showing sms receiving times based on
 #' # criteria (type/sender/invoked)
-#' clock_chart_qlt(smsclock, time = time, crit = sender)
+#' clock_chart_qlt(smsclock, time = time, crit = sender)+
+#' ggplot2::labs(color = "Sender", title = "SMS's Received throughout th Day")
 
 #' @export
 clock_chart_qlt<- function(data, time, crit){
