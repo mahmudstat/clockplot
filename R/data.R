@@ -45,3 +45,18 @@
 #' }
 #' @source \url{https://www.weatherbase.com/weather/weather.php3?s=032914&refer=/}
 "bdtemp"
+
+#' Earthquakes in and around Bangladesh
+#'
+#' A dataset containing earthquakes magnitude, dpeth, and location information.
+#'
+#' @format A data frame with 13 rows and 5 variables:
+#' \describe{
+#' \item{latitude}{Latitude}
+#' \item{longitude}{Longitude}
+#' \item{depth}{Depth}
+#' \item{mag}{Magnitude}
+#' \item{hms}{Time}
+#' }
+#' @source {USGS: https://earthquake.usgs.gov/earthquakes/search/}
+"bdquake"

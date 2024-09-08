@@ -1,0 +1,14 @@
+time,latitude,longitude,depth,mag,magType,nst,gap,dmin,rms,net,id,updated,place,type,horizontalError,depthError,magError,magNst,status,locationSource,magSource
+2024-07-04T21:12:27.022Z,24.3726,92.6936,35,4.4,mb,60,88,1.944,0.68,us,us7000mx4s,2024-07-31T23:25:07.040Z,"16 km N of Kolasib, India",earthquake,5.94,1.901,0.087,38,reviewed,us,us
+2024-05-31T02:20:09.465Z,25.7318,91.0047,41.021,4.1,mb,16,124,3.096,1.12,us,us7000mqqy,2024-08-06T20:32:51.040Z,"35 km NW of Nongstoin, India",earthquake,7,10.081,0.197,7,reviewed,us,us
+2024-04-20T16:46:37.024Z,21.9812,92.651,44.892,4.1,mb,28,160,1.162,0.58,us,us6000mu0v,2024-06-25T21:02:32.040Z,"50 km ESE of Bāndarban, Bangladesh",earthquake,8.89,5.798,0.131,16,reviewed,us,us
+2024-03-12T08:57:52.678Z,25.7414,90.2866,10,4.4,mb,59,78,3.292,0.79,us,us7000m4tz,2024-05-18T21:24:40.040Z,"26 km NNE of Tura, India",earthquake,8.18,1.845,0.081,44,reviewed,us,us
+2023-12-08T03:16:57.576Z,25.2901,91.786,46.386,4.2,mb,37,111,2.605,0.66,us,us7000lh84,2024-02-10T23:47:41.040Z,"9 km E of Cherrapunji, India",earthquake,7.71,5.262,0.115,21,reviewed,us,us
+2023-12-02T03:35:33.040Z,23.1475,90.9317,45.057,5.5,mww,118,35,0.806,0.6,us,us7000lfaa,2024-02-10T18:52:02.328Z,"9 km ENE of Rāmganj, Bangladesh",earthquake,6.91,4.538,0.073,18,reviewed,us,us
+2023-11-01T21:44:36.662Z,21.033,92.127,22.237,4.1,mb,26,165,1.697,0.78,us,us7000l972,2024-01-10T06:01:35.040Z,"26 km NW of Teknāf, Bangladesh",earthquake,9.22,6.028,0.158,11,reviewed,us,us
+2023-10-02T12:45:15.979Z,25.9206,90.5798,10,4.9,mww,119,36,3.799,0.6,us,us6000lc8t,2023-12-14T21:26:51.040Z,"28 km S of Goālpāra, India",earthquake,7.21,1.834,0.098,10,reviewed,us,us
+2023-09-17T06:49:48.834Z,23.9369,90.5926,10,4.2,mb,35,112,5.255,0.28,us,us7000kwaj,2023-12-02T23:01:06.040Z,"12 km W of Narsingdi, Bangladesh",earthquake,5.04,1.909,0.11,23,reviewed,us,us
+2023-09-09T10:18:30.146Z,24.6464,92.7849,47.764,4.8,mb,115,36,5.249,0.5,us,us7000kuka,2023-11-17T19:47:51.040Z,"19 km ENE of Lāla, India",earthquake,7.91,5.251,0.043,165,reviewed,us,us
+2023-08-19T15:20:35.313Z,26.3499,92.845,35,4.8,mb,47,70,3.669,0.76,us,us7000kpgy,2024-05-29T13:27:55.290Z,"31 km S of Tezpur, India",earthquake,9.29,1.898,0.059,89,reviewed,us,us
+2023-08-14T14:49:48.667Z,24.9796,92.2481,36.648,5.3,mww,153,16,2.358,0.75,us,us6000kzvl,2023-12-02T03:54:13.016Z,"16 km NW of Karīmganj, India",earthquake,6.48,4.095,0.093,11,reviewed,us,us
+2023-07-16T14:23:32.031Z,25.722,91.3559,10,4.3,mb,39,94,3.971,0.76,us,us7000kg5v,2023-09-28T21:33:30.040Z,"24 km NNE of Nongstoin, India",earthquake,4.1,1.874,0.101,28,reviewed,us,us

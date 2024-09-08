@@ -17,14 +17,14 @@
 #' @name month_chart
 NULL
 #' @examples
-#' Days <- 1:30
-#' expense <- c(sample(15:20, 15, replace = TRUE),
-#'              sample(10:15, 5, replace = TRUE),
-#'              sample(8:10, 5, replace = TRUE),
-#'              sample(5:8, 3, replace = TRUE),
-#'              sample(4:7, 2, replace = TRUE))
-#' dfm <- tibble::tibble(Days, expense)
-#' month_chart(df = dfm, Days = Days, mvalue = expense)
+#' #Days <- 1:30
+#' #expense <- c(sample(15:20, 15, replace = TRUE),
+#'#              sample(10:15, 5, replace = TRUE),
+#' #             sample(8:10, 5, replace = TRUE),
+#'  #            sample(5:8, 3, replace = TRUE),
+#'  #            sample(4:7, 2, replace = TRUE))
+#' #dfm <- tibble::tibble(Days, expense)
+#' #month_chart(df = dfm, Days = Days, mvalue = expense)
 
 month_chart <- function(df, Days, mvalue, lgnm = "Value", width = 0.9,
                         high = "yellow", low = "green"){

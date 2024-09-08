@@ -37,5 +37,5 @@ p1 + ggplot2::labs(title = "Sample plot")
 \code{\link[=clock_chart_col]{clock_chart_col()}} for coloring by a numeric variable,
 \code{\link[=clock_chart_len]{clock_chart_len()}} for modifying length by a numeric variable,
 \code{\link[=clock_chart_qnt]{clock_chart_qnt()}} for coloring and modifying length by a numeric variable,
-\code{\link[=clock_chart_qlt]{clock_chart_qlt()}} for coloring by a qualitative variable,
+\code{\link[=clock_chart_qlt]{clock_chart_qlt()}} for coloring by a qualitative variable
 }

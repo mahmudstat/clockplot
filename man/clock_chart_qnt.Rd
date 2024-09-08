@@ -4,14 +4,16 @@
 \alias{clock_chart_qnt}
 \title{Clock Chart, Length and Color Modified by a Numeric Variable}
 \usage{
-clock_chart_qnt(data, time, crit, high = "red", low = "green")
+clock_chart_qnt(data, time, len, Col, high = "red", low = "green")
 }
 \arguments{
 \item{data}{A data frame}
 
 \item{time}{Time in 24 hours HH:MM:SS format in the data set  (19:30:01, for example)}
 
-\item{crit}{The numeric vector by which hands will be modified and colored.}
+\item{len}{The numeric vector by which hands will be modified and colored.}
+
+\item{Col}{The color of line segments and points.}
 
 \item{high}{The color name for the high values. The default is \code{red}}
 
@@ -33,16 +35,18 @@ postion names in \code{ggplot2} are \code{top}, \code{bottom}, \code{right}, and
 excluding more complex options.
 }
 \examples{
+clock_chart_qnt(data = bdquake, time = hms, len = depth,
+Col = mag, high = "red", low = "green")
 df <- tibble::tibble(hr = sample(0:23, 50, replace = TRUE),
                   mnt = sample(0:59, 50, replace = TRUE),
                   sec = sample(0:59, 50, replace = TRUE),
                   time = paste(hr, mnt, sec, sep = ":"),
                   value = sample(60,50))
-clock_chart_qnt(df, time, crit = value)
-p1 <- clock_chart_qnt(df, time, crit = value, high = "red", low = "blue")
+clock_chart_qnt(df, time, len = value, Col = value)
+p1 <- clock_chart_qnt(df, time, len = value, Col = value, high = "red", low = "blue")
 p1 + ggplot2::theme(legend.position = "right")+
 ggplot2::labs(title = "Clock chart of random values")+
-ggplot2::labs(color = "Indicator") #lLegend Title
+ggplot2::labs(color = "Indicator") #Legend Title
 }
 \seealso{
 \code{\link[=clock_chart_col]{clock_chart_col()}} for coloring by a numeric variable,

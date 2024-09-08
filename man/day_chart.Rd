@@ -27,3 +27,8 @@ This function plots values corresponding to each hour on a rose plot.
 value <- sample(15:30,24, replace = TRUE)
 day_chart(hvalue = value, high = "blue", low = "yellow", width = 0.8)
 }
+\seealso{
+\code{\link[=week_chart]{week_chart()}} for plotting values in a week by days
+\code{\link[=year_chart]{year_chart()}} for plotting values on in a year by months
+\code{\link[=cyclic_chart]{cyclic_chart()}} for plotting values by arbitrary period
+}

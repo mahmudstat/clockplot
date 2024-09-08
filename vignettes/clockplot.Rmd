@@ -75,7 +75,7 @@ clock_chart(df, time)
 ### clock_chart_qnt()
 
 ```{r clock-chart-qn, fig.align = 'center', fig.height=4, fig.width=4}
-clock_chart_qnt(df, time, crit = value)
+clock_chart_qnt(df, time, len = value)
 ```
 
 

@@ -32,3 +32,8 @@ This function plots values corresponding to each month on a rose plot.
 syltmp <- c(18.4, 20.8, 24.3, 26.0, 26.8, 27.6, 28.0, 28.2, 27.9, 26.7, 23.3, 19.7)
 year_chart(mvalue = syltmp)
 }
+\seealso{
+\code{\link[=day_chart]{day_chart()}} for plotting values on a day by hours
+\code{\link[=week_chart]{week_chart()}} for plotting values in a week by days
+\code{\link[=cyclic_chart]{cyclic_chart()}} for plotting values by arbitrary period
+}

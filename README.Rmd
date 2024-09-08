@@ -65,8 +65,8 @@ df <- tibble::tibble(hr = sample(0:23, 50, replace = TRUE),
                   sec = sample(0:59, 50, replace = TRUE),
                   time = paste(hr, mnt, sec, sep = ":"),
                   value = sample(60,50))
-p1 <- clock_chart_qnt(df, time, crit = value)
-p1 + ggplot2::theme(legend.position = "right")+
+p1 <- clock_chart_qnt(df, time, len = value, Col = value)
+p1 + ggplot2::theme(legend.position = "bottom")+
 ggplot2::labs(title = "Times of Departure of Trains", 
               color = "Distance from Destination")
 ```

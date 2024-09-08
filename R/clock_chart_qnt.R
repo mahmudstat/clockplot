@@ -19,7 +19,8 @@
 #'
 #' @param data A data frame
 #' @param time Time in 24 hours HH:MM:SS format in the data set  (19:30:01, for example)
-#' @param crit The numeric vector by which hands will be modified and colored.
+#' @param len The numeric vector by which hands will be modified and colored.
+#' @param Col The color of line segments and points.
 #' @param high The color name for the high values. The default is `red`
 #' @param low The color name for the high values. The default is `green`.
 #' The color names can be vice versa or other colors, depending on the context.
@@ -28,26 +29,28 @@
 #' @name clock_chart_qnt
 NULL
 #' @examples
+#' clock_chart_qnt(data = bdquake, time = hms, len = depth,
+#' Col = mag, high = "red", low = "green")
 #' df <- tibble::tibble(hr = sample(0:23, 50, replace = TRUE),
 #'                   mnt = sample(0:59, 50, replace = TRUE),
 #'                   sec = sample(0:59, 50, replace = TRUE),
 #'                   time = paste(hr, mnt, sec, sep = ":"),
 #'                   value = sample(60,50))
-#' clock_chart_qnt(df, time, crit = value)
-#' p1 <- clock_chart_qnt(df, time, crit = value, high = "red", low = "blue")
+#' clock_chart_qnt(df, time, len = value, Col = value)
+#' p1 <- clock_chart_qnt(df, time, len = value, Col = value, high = "red", low = "blue")
 #' p1 + ggplot2::theme(legend.position = "right")+
 #' ggplot2::labs(title = "Clock chart of random values")+
-#' ggplot2::labs(color = "Indicator") #lLegend Title
+#' ggplot2::labs(color = "Indicator") #Legend Title
 #' @export
-clock_chart_qnt <- function(data, time, crit, high = "red", low = "green"){
-  mydata <- conv_data_len(data = data, time = {{time}}, len = {{crit}})
+clock_chart_qnt <- function(data, time, len, Col, high = "red", low = "green"){
+  mydata <- conv_data_len(data = data, time = {{time}}, len = {{len}})
   clock <- basic_clock()+
     ggplot2::geom_segment(data = mydata,
                           ggplot2::aes(x= .data$x0, y = .data$y0,
                                        xend = .data$x1, yend = .data$y1,
-                                       color = {{crit}}))+
+                                       color = {{Col}}))+
     ggplot2::geom_point(data = mydata,
-                        ggplot2::aes(.data$x1, .data$y1, color = {{crit}}))+
+                        ggplot2::aes(.data$x1, .data$y1, color = {{Col}}))+
     ggplot2::scale_color_gradient(high = {{high}}, low = {{low}})+
     ggplot2::theme(legend.position = "bottom")
   return(clock)

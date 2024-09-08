@@ -27,9 +27,18 @@ A circular chart showing values in each month of the year.
 This function plots values corresponding to random periods such as hours,
 days, months and so on.
 }
+\details{
+This can plot values corresponding to multiple categories, for example,
+temperature in different cities.
+}
 \examples{
 # Using package built-in bdtemp data
-Col <- c("#bfff00", "#ffff00", "#ffbf00")
+Col <- c("#0040ff", "#00bfff", "#8000ff")
 cyclic_chart(bdtemp, Period = Month, Value = Temperature,
 crit = City, ColV = Col)
+}
+\seealso{
+\code{\link[=day_chart]{day_chart()}} for plotting values on a day by hours
+\code{\link[=week_chart]{week_chart()}} for plotting values in a week by days
+\code{\link[=year_chart]{year_chart()}} for plotting values on in a year by months
 }

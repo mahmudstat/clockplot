@@ -28,3 +28,8 @@ set.seed(10)
 wtemp <- sample(10:40,7)
 week_chart(wtemp, high = "yellow")+ggplot2::labs(title = "Random Values by Weekday")
 }
+\seealso{
+\code{\link[=day_chart]{day_chart()}} for plotting values in on a day hours
+\code{\link[=year_chart]{year_chart()}} for plotting values on in a year by months
+\code{\link[=cyclic_chart]{cyclic_chart()}} for plotting values by arbitrary period
+}
