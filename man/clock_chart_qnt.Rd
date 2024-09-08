@@ -39,7 +39,8 @@ df <- tibble::tibble(hr = sample(0:23, 50, replace = TRUE),
 clock_chart_qnt(df, time, crit = value)
 p1 <- clock_chart_qnt(df, time, crit = value, high = "red", low = "blue")
 p1 + ggplot2::theme(legend.position = "right")+
-ggplot2::labs(title = "Clock chart of random values")
+ggplot2::labs(title = "Clock chart of random values")+
+ggplot2::labs(color = "Indicator")
 }
 \seealso{
 \code{\link[=clock_chart_col]{clock_chart_col()}} for coloring by a numeric variable,

@@ -18,7 +18,7 @@ This function will plot time of events on a 24 hour clock to show which
 events took place at what times. The hands are colored by a
 qualitative (factor) vector.
 Change the title, subtitle or the caption of the plot with
-\code{ggplot2::labs()} .Change the legend title by adding
+\code{ggplot2::labs()}. Change the legend title by adding
 \code{ggplot2::labs(color = "TITLE")}. Add
 or modify legend by \code{theme(legend.position = "POSITION")}; the valid
 postion names in \code{ggplot2} are \code{top}, \code{bottom}, \code{right}, and \code{left},
@@ -28,28 +28,6 @@ excluding more complex options.
 # A plot showing sms receiving times based on
 # criteria (type/sender/invoked)
 clock_chart_qlt(smsclock, time = time, crit = sender)
-# Now let's check a random data
-df <- tibble::tibble(hr = sample(0:23, 50, replace = TRUE),
-                  mnt = sample(0:59, 50, replace = TRUE),
-                  sec = sample(0:59, 50, replace = TRUE),
-                  time = paste(hr, mnt, sec, sep = ":"),
-                  value = factor(sample(5,50, replace = TRUE)))
-clock_chart_qlt(df, time, crit = value)
-# Add more stuff to the plot
-p1 <- clock_chart_qlt(df, time, crit = value)
-p1 + ggplot2::theme(legend.position = "right")+
-ggplot2::labs(title = "Clock chart of factor values")
-
-# Plot chats of two friends during the course of a day.
-data(chatdf)
-clock_chart_qlt(chatdf, time = time, crit = name)
-
-# To choose your own colors, add the following code
-mycol <- c("#5dff06", "#47c144", "#318483", "#1a46c1", "#0408ff")
-p2 <- clock_chart_qlt(smsclock, time = time, crit = sender)+
-ggplot2::scale_color_manual(values = mycol)
-# Change legend name
-p2 + ggplot2::scale_color_discrete(name = "Sender")
 }
 \seealso{
 \code{\link[=clock_chart_col]{clock_chart_col()}} for coloring by a numeric variable,

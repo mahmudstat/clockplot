@@ -26,20 +26,10 @@ To do both simultaneously, use \code{clock_chart_qnt()}. To use a qualitative
 variable as the criterion, use \code{clock_chart_qlt()}.
 }
 \details{
-The output gives a ggplot, so you can further modify it by applying some
-ggplot2 function, most importantly the \code{labs} function, with which the title,
-subtitle, and captions can be added to the plot.
-
 Change the title, subtitle or the caption of the plot with
-\code{ggplot2::labs()} .Change the legend title by adding
-\code{ggplot2::labs(color = "TITLE")}. Add
-or modify legend by \code{theme(legend.position = "POSITION")}; the valid
-postion names in \code{ggplot2} are \code{top}, \code{bottom}, \code{right}, and \code{left},
-excluding more complex options.
+\code{ggplot2::labs()}.
 }
 \examples{
-df <- data.frame(time = c("06:00:00", "08:00:00", "17:30:00"))
-clock_chart(df, time)
 p1 <- clock_chart(df, time)
 p1 + ggplot2::labs(title = "Sample plot")
 }

@@ -36,7 +36,6 @@ value = c(3,6,9))
 clock_chart_col(df, time, crit = value)+
 ggplot2::labs(color = "TITLE")
 
-
 }
 \seealso{
 \code{\link[=clock_chart_len]{clock_chart_len()}} for modifying length by a numeric variable,
