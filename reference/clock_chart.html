@@ -74,20 +74,22 @@ negligible impact on the final plot, but is kept for better ...)</p></dd>
 
 
 <dt id="arg-col">Col<a class="anchor" aria-label="anchor" href="#arg-col"></a></dt>
-<dd><p>Color name for the lines. The default is <code>black</code>.</p></dd>
+<dd><p>Color name for the lines. The default is <code>black</code>.
+ggplot2 function, most importantly the <code>labs</code> function, with which the title,
+subtitle, and captions can be added to the plot.</p></dd>
 
 </dl></div>
-    <div class="section level2">
-    <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A ggplot data clock, so you can further modify it by applying some
-ggplot2 function, most importantly the <code>labs</code> function, with which the title,
-subtitle, and captions can be added to the plot.</p>
-    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>The output gives a ggplot, so you can further modify it by applying some
 ggplot2 function, most importantly the <code>labs</code> function, with which the title,
 subtitle, and captions can be added to the plot.</p>
+<p>Change the title, subtitle or the caption of the plot with
+<code><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ggplot2::labs()</a></code> .Change the legend title by adding
+<code>ggplot2::labs(color = "TITLE")</code>. Add
+or modify legend by <code>theme(legend.position = "POSITION")</code>; the valid
+postion names in <code>ggplot2</code> are <code>top</code>, <code>bottom</code>, <code>right</code>, and <code>left</code>,
+excluding more complex options.</p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
