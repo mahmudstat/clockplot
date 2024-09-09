@@ -29,18 +29,10 @@
 #' @name clock_chart_qnt
 NULL
 #' @examples
-#' clock_chart_qnt(data = bdquake, time = hms, len = depth,
-#' Col = mag, high = "red", low = "green")
-#' df <- tibble::tibble(hr = sample(0:23, 50, replace = TRUE),
-#'                   mnt = sample(0:59, 50, replace = TRUE),
-#'                   sec = sample(0:59, 50, replace = TRUE),
-#'                   time = paste(hr, mnt, sec, sep = ":"),
-#'                   value = sample(60,50))
-#' clock_chart_qnt(df, time, len = value, Col = value)
-#' p1 <- clock_chart_qnt(df, time, len = value, Col = value, high = "red", low = "blue")
-#' p1 + ggplot2::theme(legend.position = "right")+
-#' ggplot2::labs(title = "Clock chart of random values")+
-#' ggplot2::labs(color = "Indicator") #Legend Title
+#' p1 <- clock_chart_qnt(data = bdquake, time = hms, len = depth,
+#' Col = mag, high = "red", low = "yellow")
+#' p1 + ggplot2::labs(color = "Depth", size = "Magnitude",
+#' title = "Earthquakes in Bangladesh since 2023")
 #' @export
 clock_chart_qnt <- function(data, time, len, Col, high = "red", low = "green"){
   mydata <- conv_data_len(data = data, time = {{time}}, len = {{len}})
@@ -48,9 +40,10 @@ clock_chart_qnt <- function(data, time, len, Col, high = "red", low = "green"){
     ggplot2::geom_segment(data = mydata,
                           ggplot2::aes(x= .data$x0, y = .data$y0,
                                        xend = .data$x1, yend = .data$y1,
-                                       color = {{Col}}))+
+                                       color = {{len}}))+
     ggplot2::geom_point(data = mydata,
-                        ggplot2::aes(.data$x1, .data$y1, color = {{Col}}))+
+                        ggplot2::aes(.data$x1, .data$y1,
+                                     color = {{len}}, size = {{Col}}))+
     ggplot2::scale_color_gradient(high = {{high}}, low = {{low}})+
     ggplot2::theme(legend.position = "bottom")
   return(clock)

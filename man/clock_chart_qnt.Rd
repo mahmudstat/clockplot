@@ -35,18 +35,10 @@ postion names in \code{ggplot2} are \code{top}, \code{bottom}, \code{right}, and
 excluding more complex options.
 }
 \examples{
-clock_chart_qnt(data = bdquake, time = hms, len = depth,
-Col = mag, high = "red", low = "green")
-df <- tibble::tibble(hr = sample(0:23, 50, replace = TRUE),
-                  mnt = sample(0:59, 50, replace = TRUE),
-                  sec = sample(0:59, 50, replace = TRUE),
-                  time = paste(hr, mnt, sec, sep = ":"),
-                  value = sample(60,50))
-clock_chart_qnt(df, time, len = value, Col = value)
-p1 <- clock_chart_qnt(df, time, len = value, Col = value, high = "red", low = "blue")
-p1 + ggplot2::theme(legend.position = "right")+
-ggplot2::labs(title = "Clock chart of random values")+
-ggplot2::labs(color = "Indicator") #Legend Title
+p1 <- clock_chart_qnt(data = bdquake, time = hms, len = depth,
+Col = mag, high = "red", low = "yellow")
+p1 + ggplot2::labs(color = "Depth", size = "Magnitude",
+title = "Earthquakes in Bangladesh since 2023")
 }
 \seealso{
 \code{\link[=clock_chart_col]{clock_chart_col()}} for coloring by a numeric variable,
