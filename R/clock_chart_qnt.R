@@ -1,4 +1,4 @@
-#' Clock Chart, Length and Color Modified by a Numeric Variable
+#' Clock Chart, Length and Color Modified by Numeric Variables
 #'
 #' This function will plot time of events on a 24 hour clock to show which
 #' events took place at what times. The length and color of the hands are
@@ -30,7 +30,7 @@
 NULL
 #' @examples
 #' p1 <- clock_chart_qnt(data = bdquake, time = hms, len = depth,
-#' Col = mag, high = "red", low = "yellow")
+#' Col = mag, high = "red", low = "blue")
 #' p1 + ggplot2::labs(color = "Depth", size = "Magnitude",
 #' title = "Earthquakes in Bangladesh since 2023")
 #' @export

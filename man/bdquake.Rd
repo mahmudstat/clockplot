@@ -3,7 +3,7 @@
 \docType{data}
 \name{bdquake}
 \alias{bdquake}
-\title{Earthquakes in and around Bangladesh}
+\title{Data of Earthquakes in and around Bangladesh}
 \format{
 A data frame with 13 rows and 5 variables:
 \describe{

@@ -10,12 +10,10 @@
 #' \item{turn}{Turn of the chat}
 #' ...
 #' }
-#' @source \url{#}
+#' @source {Randomly generated}
 "chatdf"
 
-
-
-#' Times of Receiving of SMS
+#' Data of Times of Receiving of SMS
 #'
 #' A dataset containing timings of receiving sms on mobile phone.
 #' Real data for a particular day
@@ -32,7 +30,7 @@
 "smsclock"
 
 
-#' Temperature data of Bangladesh Divisional Cities
+#' Data of Average Monthly Temperature of Bangladesh Divisional Cities
 #'
 #' A dataset containing temperature of Dhaka, Sylhet, and Chittagong Cities.
 #'
@@ -46,7 +44,7 @@
 #' @source \url{https://www.weatherbase.com/weather/weather.php3?s=032914&refer=/}
 "bdtemp"
 
-#' Earthquakes in and around Bangladesh
+#' Data of Earthquakes in and around Bangladesh
 #'
 #' A dataset containing earthquakes magnitude, dpeth, and location information.
 #'

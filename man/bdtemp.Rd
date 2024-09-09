@@ -3,7 +3,7 @@
 \docType{data}
 \name{bdtemp}
 \alias{bdtemp}
-\title{Temperature data of Bangladesh Divisional Cities}
+\title{Data of Average Monthly Temperature of Bangladesh Divisional Cities}
 \format{
 A data frame with 36 rows and 3 variables:
 \describe{

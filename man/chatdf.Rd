@@ -14,7 +14,7 @@ A data frame with 25 rows and 2 variables:
 }
 }
 \source{
-\url{#}
+{Randomly generated}
 }
 \usage{
 chatdf

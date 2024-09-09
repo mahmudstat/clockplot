@@ -2,7 +2,7 @@
 % Please edit documentation in R/clock_chart_qnt.R
 \name{clock_chart_qnt}
 \alias{clock_chart_qnt}
-\title{Clock Chart, Length and Color Modified by a Numeric Variable}
+\title{Clock Chart, Length and Color Modified by Numeric Variables}
 \usage{
 clock_chart_qnt(data, time, len, Col, high = "red", low = "green")
 }
@@ -36,7 +36,7 @@ excluding more complex options.
 }
 \examples{
 p1 <- clock_chart_qnt(data = bdquake, time = hms, len = depth,
-Col = mag, high = "red", low = "yellow")
+Col = mag, high = "red", low = "blue")
 p1 + ggplot2::labs(color = "Depth", size = "Magnitude",
 title = "Earthquakes in Bangladesh since 2023")
 }

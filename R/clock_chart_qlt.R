@@ -1,4 +1,4 @@
-#' A Clock Chart, Hands Colored by a Factor
+#' Clock Chart, Hands Colored by a Factor
 #'
 #' This function will plot time of events on a 24 hour clock to show which
 #' events took place at what times. The hands are colored by a

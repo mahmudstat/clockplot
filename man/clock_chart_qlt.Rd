@@ -2,7 +2,7 @@
 % Please edit documentation in R/clock_chart_qlt.R
 \name{clock_chart_qlt}
 \alias{clock_chart_qlt}
-\title{A Clock Chart, Hands Colored by a Factor}
+\title{Clock Chart, Hands Colored by a Factor}
 \usage{
 clock_chart_qlt(data, time, crit)
 }

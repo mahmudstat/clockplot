@@ -2,7 +2,7 @@
 % Please edit documentation in R/clock_chart_col.R
 \name{clock_chart_col}
 \alias{clock_chart_col}
-\title{A Clock Chart, Hands Colored by a Numeric Variable}
+\title{Clock Chart, Hands Colored by a Numeric Variable}
 \usage{
 clock_chart_col(data, time, crit, high = "red", low = "green")
 }

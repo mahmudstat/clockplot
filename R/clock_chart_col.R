@@ -1,4 +1,4 @@
-#' A Clock Chart, Hands Colored by a Numeric Variable
+#' Clock Chart, Hands Colored by a Numeric Variable
 #'
 #' This function will plot time of events on a 24 hour clock to show which
 #' events took place at what times. The lines are colored by a criteria.
