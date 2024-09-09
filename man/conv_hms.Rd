@@ -16,7 +16,12 @@ Time in HH:MM format
 }
 \description{
 This function converts \code{HH:MM} to \code{HH:MM:SS}. \code{19:30}, for example, is
-turned into \code{19:30:00}. This prepares the times for plotting
+turned into \code{19:30:00}. This prepares the times for plotting, in case you
+do not have it in \code{HH:MM:SS} format.
+}
+\details{
+The converted \code{HH:MM:SS} actually gives \code{HH:MM:00} format, the second part
+made \code{00}, since in practice it has negligible effect on the plot.
 }
 \examples{
 df <- data.frame(time = c("06:00", "08:00", "17:30"))

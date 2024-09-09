@@ -9,7 +9,8 @@ clock_chart_col(data, time, crit, high = "red", low = "green")
 \arguments{
 \item{data}{A data frame}
 
-\item{time}{Time in 24 hours \code{HH:MM:SS} format in the data set  (19:30:01, for example)}
+\item{time}{Time in 24 hours \code{HH:MM:SS} format in the data set
+(19:30:01, for example)}
 
 \item{crit}{a numeric vector by which lines will be colored.}
 

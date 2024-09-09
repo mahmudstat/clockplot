@@ -4,12 +4,13 @@
 #'  days, months and so on.
 #'
 #' This can plot values corresponding to multiple categories, for example,
-#' temperature in different cities.
+#' temperature in different cities on the days of a week, or rainfall by month
+#' in a year.
 #'
 #' @seealso
 #'  [day_chart()] for plotting values on a day by hours
 #'  [week_chart()] for plotting values in a week by days
-#'  [year_chart()] for plotting values on in a year by months
+#'  [year_chart()] for plotting values in a year by months
 #'
 #' @param df A data frame
 #' @param Period A list of periodical values such as hours of the day, days of

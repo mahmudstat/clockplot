@@ -2,6 +2,7 @@
 #'
 #' This function plots values corresponding to each hour on a rose plot.
 #'
+#' The color names can be vice versa or other colors, depending on the context.
 #'
 #' @seealso
 #'  [week_chart()] for plotting values in a week by days
@@ -12,7 +13,6 @@
 #' from 6 am)
 #' @param high The color name for the high values. The default is `red`
 #' @param low The color name for the high values. The default is `green`.
-#' #' The color names can be vice versa or other colors, depending on the context.
 #' @param width Width of bars
 #' @return A circular chart showing values at each hour on a 24-hour clock
 #' @name day_chart

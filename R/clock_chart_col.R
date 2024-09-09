@@ -17,7 +17,8 @@
 #'  [clock_chart()] for the simplest clock chart
 #'
 #' @param data A data frame
-#' @param time Time in 24 hours `HH:MM:SS` format in the data set  (19:30:01, for example)
+#' @param time Time in 24 hours `HH:MM:SS` format in the data set
+#'  (19:30:01, for example)
 #' @param crit a numeric vector by which lines will be colored.
 #' @param high The color name for the high values. The default is `red`
 #' @param low The color name for the high values. The default is `green`.

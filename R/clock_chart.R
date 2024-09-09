@@ -17,12 +17,11 @@
 #'  [clock_chart_qlt()] for coloring by a qualitative variable
 #'
 #' @param data A data frame
-#' @param time Time in 24 hours HH:MM:SS format in the data set
+#' @param time Time in 24 hours `HH:MM:SS` format in the data set
+#'  (19:30:01, for example)
 #' (19:30:01, for example, although the SS part is ignored due to having
 #' negligible impact on the final plot, but is kept for better ...)
 #' @param Col Color name for the lines. The default is `black`.
-#' ggplot2 function, most importantly the `labs` function, with which the title,
-#' subtitle, and captions can be added to the plot.
 #' @name clock_chart
 NULL
 #'

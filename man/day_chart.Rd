@@ -12,8 +12,7 @@ from 6 am)}
 
 \item{high}{The color name for the high values. The default is \code{red}}
 
-\item{low}{The color name for the high values. The default is \code{green}.
-#' The color names can be vice versa or other colors, depending on the context.}
+\item{low}{The color name for the high values. The default is \code{green}.}
 
 \item{width}{Width of bars}
 }
@@ -22,6 +21,9 @@ A circular chart showing values at each hour on a 24-hour clock
 }
 \description{
 This function plots values corresponding to each hour on a rose plot.
+}
+\details{
+The color names can be vice versa or other colors, depending on the context.
 }
 \examples{
 value <- sample(15:30,24, replace = TRUE)

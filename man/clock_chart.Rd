@@ -9,13 +9,12 @@ clock_chart(data, time, Col = "black")
 \arguments{
 \item{data}{A data frame}
 
-\item{time}{Time in 24 hours HH:MM:SS format in the data set
+\item{time}{Time in 24 hours \code{HH:MM:SS} format in the data set
+(19:30:01, for example)
 (19:30:01, for example, although the SS part is ignored due to having
 negligible impact on the final plot, but is kept for better ...)}
 
-\item{Col}{Color name for the lines. The default is \code{black}.
-ggplot2 function, most importantly the \code{labs} function, with which the title,
-subtitle, and captions can be added to the plot.}
+\item{Col}{Color name for the lines. The default is \code{black}.}
 }
 \description{
 There are five types of clock charts, \code{clock_chart()} being the simplest one.
