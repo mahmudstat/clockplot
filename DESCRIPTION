@@ -1,7 +1,7 @@
 Package: clockplot
 Type: Package
 Title: Clock Chart with Event Times on Clock
-Version: 0.2.5.9000
+Version: 0.5.1.9000
 Author: Abdullah Al Mahmud
 Maintainer: Abdullah Al Mahmud <almahmud.sbi@gmail.com>
 Description: The primary goal of clockplot is to plot event time 

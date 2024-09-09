@@ -32,7 +32,9 @@ NULL
 cyclic_chart <- function(df, Period, Value, crit, ColV){
   x=c(seq(75, 0, -30), seq(345, 90, -30))
   p <- ggplot(df, aes({{Period}}, {{Value}}, color = {{Value}})) +
-    geom_col(width = 1, aes(fill = {{crit}}), position = position_dodge(width = 1)) +
+    geom_col(width = 1, aes(fill = {{crit}}), position = position_dodge(width = 1))+
+    #ggplot2::geom_text(data = df, label = Value,
+    #                 position = position_stack(vjust = 0.8), color = "black")+
     geom_vline(xintercept = 1:13 - 0.5, color = "gray") +
     geom_hline(yintercept = 0:3 * 10, color = "gray") +
     scale_fill_manual(values = {{ColV}}) +

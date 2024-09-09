@@ -24,7 +24,7 @@ basic_clock <- function(){
                           linetype = "dotted")+
     ggplot2::geom_point(data = subtimes,
                         ggplot2::aes(Re(.data$SubT), Im(.data$SubT)),
-                        shape = 19, color = "black", size = 0.6)+
+                        shape = 5, color = "black", size = 0.8)+
     ggplot2::geom_path(data = subtimes, ggplot2::aes(Re(.data$SubT), Im(.data$SubT)))+
     # Connect Last two missing points
     ggplot2::geom_line(data = dplyr::slice(subtimes, -c(2:95)),

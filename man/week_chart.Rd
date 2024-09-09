@@ -4,7 +4,7 @@
 \alias{week_chart}
 \title{Week Chart}
 \usage{
-week_chart(wvalue, lgnm = "Value", high = "yellow", low = "green")
+week_chart(wvalue, lgnm = "Value", high = "yellow", low = "green", width = 0.5)
 }
 \arguments{
 \item{wvalue}{A numeric vector having values on each day, starting from
@@ -16,6 +16,8 @@ Saturday}
 
 \item{low}{The color name for the high values. The default is \code{green}.
 The color names can be vice versa or other colors, depending on the context.}
+
+\item{width}{The width of bars.}
 }
 \value{
 A circular chart showing values at each hour on a 24-hour clock
