@@ -18,7 +18,7 @@
 #' A dataset containing timings of receiving sms on mobile phone.
 #' Real data for a particular day
 
-#' @format A data frame with 17 rows and 4 variables:
+#' @format A data frame with 40 rows and 5 variables:
 #' \describe{
 #' \item{Date}{Date}
 #' \item{time}{Time in HH:MM:SS format}
@@ -57,5 +57,27 @@
 #' \item{mag}{Magnitude}
 #' \item{hms}{Time}
 #' }
-#' @source {USGS: https://earthquake.usgs.gov/earthquakes/search/}
+#' @source USGS \url{https://earthquake.usgs.gov/earthquakes/search/}
 "bdquake"
+
+
+#' Data of Bangladesh Railway Express Train Schedule
+#'
+#' A dataset containing Bangladesh Railway Express Train schedule
+#'
+#' @format A data frame with 84 rows and 10 variables:
+#' \describe{
+#' \item{Sl}{Serial}
+#' \item{Train_no}{Train No.}
+#' \item{Name}{Train name}
+#' \item{Type}{Type of train}
+#' \item{Off_day}{The day of the week when the train does not run}
+#' \item{Origin}{The station from where the train departs}
+#' \item{Departure}{The time of departure}
+#' \item{Destination}{The station where the train is heading}
+#' \item{Arrival}{The time of arrival}
+#' \item{Zone}{East/West}
+#' }
+#' @source BR \url{https://railway.portal.gov.bd/}
+"brintcity"
+

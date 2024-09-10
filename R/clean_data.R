@@ -8,17 +8,20 @@
 #' made `00`, since in practice it has negligible effect on the plot.
 #'
 #' @param df A data set
-#' @param time a `time` or `character` variable in the format `HH:MM:SS`
+#' @param time a `time` or `character` variable in the format `HH:MM`
+#' @param new New name of the variable
 #' @name conv_hms
 
 #' @return Time in HH:MM format
 #' @examples
 #' df <- data.frame(time = c("06:00", "08:00", "17:30"))
-#' conv_hms(df, time)
+#' df = conv_hms(df, time, New)
+#' df
 
 #' @export
-conv_hms <- function(df, time){
-  df <- mutate(df, time = hms::parse_hm({{time}}))
+conv_hms <- function(df, time, new){
+  df <- mutate(df, new = hms::parse_hm({{time}}))
+  .Deprecated("hms::parse_hm")
 }
 
 # Old function. Will be deprecated

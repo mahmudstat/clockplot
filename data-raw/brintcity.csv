@@ -1,0 +1,85 @@
+Sl,Train_no,Name,Type,Off_day,Origin,Departure,Destination,Arrival,Zone
+1,701,Subarna,Express,Friday,Chittagong,7:00,Dhaka,12:40,East
+2,702,Subarna,Express,Friday,Dhaka,15:00,Chittagong,20:30,East
+3,703,Mohanagar Goduli,Express,No,Chittagong,15:00,Dhaka,22:15,East
+4,704,Mohanagar Provati,Express,No,Dhaka,7:40,Chittagong,14:55,East
+5,705,Ekota,Express,Tuesday,Dhaka,10:00,Dinajpur,19:45,East
+6,706,Ekota,Express,Monday,Dinajpur,21:20,Dhaka,7:10,East
+7,707,Tista,Express,Monday,Dhaka,7:20,Dewangong,12:45,East
+8,708,Tista,Express,Monday,Dewangong,15:00,Dhaka,20:45,East
+9,709,Parabat,Express,Tuesday,Dhaka,6:40,Sylhet,13:40,East
+10,710,Parabat,Express,Tuesday,Sylhet,15:00,Dhaka,22:35,East
+11,711,Upukol,Express,Wednesday,Noakhali,6:00,Dhaka,12:30,East
+12,712,Upukol,Express,Tuesday,Dhaka,15:20,Noakhali,21:40,East
+13,713,Karutoa,Express,No,Santahar,16:25,Borimari,22:30,East
+14,714,Karutoa,Express,No,Borimari,17:00,Santahar,23:10,East
+15,717,Joyantika,Express,No,Dhaka,12:00,Sylhet,19:45,East
+16,718,Joyantika,Express,Thursday,Sylhet,8:40,Dhaka,16:20,East
+17,719,Paharika,Express,Monday,Chittagong,8:45,Sylhet,18:00,East
+18,720,Paharika,Express,Saturday,Sylhet,10:15,Chittagong,20:05,East
+19,721,Mohanagar,Express,Sunday,Chittagong,12:30,Dhaka,19:30,East
+20,722,Mohanagar,Express,Sunday,Dhaka,21:00,Chittagong,5:00,East
+21,723,Uddayan,Express,Saturday,Chittagong,21:45,Sylhet,6:55,East
+22,724,Uddayan,Express,Sunday,Sylhet,21:20,Chittagong,6:35,East
+23,729,Meghna,Express,No,Chittagong,17:00,Chandpur,22:00,East
+24,730,Meghna,Express,No,Chandpur,5:00,Chittagong,10:00,East
+25,735,Agnibina,Express,No,Dhaka,9:40,Tarakandi,15:20,East
+26,736,Agnibina,Express,No,Tarakandi,16:30,Dhaka,22:55,East
+27,737,Egarosindhur Goduli,Express,Wednesday,Dhaka,7:00,Kisoregonj,11:00,East
+28,738,Egarosindhur Goduli,Express,No,Kisoregonj,6:45,Dhaka,10:45,East
+29,739,Upaban,Express,Wednesday,Dhaka,21:50,Sylhet,5:30,East
+30,740,Upaban,Express,No,Sylhet,22:00,Dhaka,5:25,East
+31,741,Turna,Express,No,Chittagong,23:00,Dhaka,6:30,East
+32,742,Turna,Express,No,Dhaka,23:30,Chittagong,7:10,East
+33,743,Bharamaputra,Express,No,Dhaka,18:00,Dewangong,0:20,East
+34,744,Bharamaputra,Express,No,Dewangong,6:30,Dhaka,12:50,East
+35,745,Jamuna,Express,No,Dhaka,16:40,B.B. East,0:20,East
+36,746,Jamuna,Express,No,B.B. East,1:10,Dhaka,8:00,East
+37,749,Egarosindhur Goduli,Express,No,Dhaka,18:30,Kisoregonj,22:45,East
+38,750,Egarosindhur Goduli,Express,Wednesday,Kisoregonj,12:30,Dhaka,16:45,East
+39,751,Lalmoni,Express,Friday,Dhaka,22:10,Lalmonirhat,8:20,East
+40,752,Lalmoni,Express,Friday,Lalmonirhat,10:40,Dhaka,21:05,East
+41,757,Drutojan,Express,Wednesday,Dhaka,19:40,Dinajpur,5:30,East
+42,758,Drutojan,Express,Wednesday,Dinajpur,7:40,Dhaka,17:55,East
+43,767,Dolonchapa,Express,No,Santahar,13:30,Dinajpur,20:30,East
+44,768,Dolonchapa,Express,No,Dinajpur,5:40,Santahar,12:20,East
+45,771,Rangpur,Express,Sunday,Dhaka,9:00,Rangpur,19:00,East
+46,772,Rangpur,Express,Sunday,Rangpur,20:00,Dhaka,6:05,East
+47,773,Kalani,Express,Friday,Dhaka,16:00,Sylhet,22:45,East
+48,774,Kalani,Express,Friday,Sylhet,7:00,Dhaka,14:10,East
+49,777,Haor,Express,Wednesday,Dhaka,23:50,Mohangonj,6:10,East
+50,778,Haor,Express,Thursday,Mohangonj,8:30,Dhaka,15:00,East
+51,781,Kishorgonj,Express,Friday,Dhaka,10:20,Kishorgonj,14:15,East
+52,782,Kishorgonj,Express,Friday,Kishorgonj,14:40,Dhaka,18:50,East
+53,785,Bijoy,Express,Wednesday,Chittagong,7:20,Mymensingh,16:45,East
+54,785,Bijoy,Express,Tuesday,Mymensingh,20:00,Chittagong,5:30,East
+55,715,Kapotaskh,Express,Saturday,Khulna,6:30,Rajshahi,13:10,West
+56,716,Kapotaskh,Express,Saturday,Rajshahi,14:00,Khulna,20:50,West
+57,725,Sundarban,Express,Tuesday,Khulna,19:30,Dhaka,5:40,West
+58,726,Sundarban,Express,Wednesday,Dhaka,6:20,Khulna,16:20,West
+59,727,Rupsha,Express,Thursday,Khulna,7:45,Saidpur,17:15,West
+60,728,Rupsha,Express,Thursday,Saidpur,7:45,Khulna,18:00,West
+61,731,Barendra,Express,Sunday,Rajshahi,15:00,Nilphamari,21:00,West
+62,732,Barendra,Express,Sunday,Nilphamari,6:20,Rajshahi,12:35,West
+63,733,Titumir,Express,Wednesday,Rajshahi,6:30,Chilahati,13:40,West
+64,734,Titumir,Express,Wednesday,Chilahati,14:20,Rajshahi,22:00,West
+65,747,Simanta,Express,No,Khulna,21:00,Saidpur,6:20,West
+66,748,Simanta,Express,No,Saidpur,19:00,Khulna,4:30,West
+67,753,Silk City,Express,Sunday,Dhaka,14:40,Rajshahi,21:05,West
+68,754,Silk City,Express,Sunday,Rajshahi,7:30,Dhaka,13:45,West
+69,755,Madhumati,Express,Thursday,Goalonda Ghat,15:00,Rajshahi,20:30,West
+70,756,Madhumati,Express,Thursday,Rajshahi,7:10,Goalonda Ghat,12:40,West
+71,759,Padma,Express,Tuesday,Dhaka,23:10,Rajshahi,4:50,West
+72,760,Padma,Express,Tuesday,Rajshahi,16:00,Dhaka,21:50,West
+73,761,Sagardari,Express,Monday,Khulna,14:50,Rajshahi,21:40,West
+74,762,Sagardari,Express,Monday,Rajshahi,6:50,Khulna,13:30,West
+75,763,Chittra,Express,Monday,Khulna,8:30,Dhaka,18:20,West
+76,764,Chittra,Express,Monday,Dhaka,19:00,Khulna,5:10,West
+77,765,Nilsagar,Express,Monday,Dhaka Cantt,8:25,Chilahati,18:15,West
+78,766,Nilsagar,Express,Sunday,Chilahati,21:20,Dhaka Cantt,7:50,West
+79,769,Dhumketue,Express,Saturday,Dhaka,6:00,Rajshahi,11:50,West
+80,770,Dhumketue,Express,Friday,Rajshahi,23:20,Dhaka,4:55,West
+81,775,Sirajgong,Express,Saturday,Ishurdi,7:40,Dhaka,15:20,West
+82,776,Sirajgong,Express,Saturday,Dhaka,17:00,Ishurdi,0:00,West
+83,779,KalukhaliVatiapara,Express,Thursday,Vatiapara Ghat,13:40,Goalondho,17:50,West
+84,780,KalukhaliVatiapara,Express,Thursday,Rajbari,10:40,Vatiapara Ghat,13:15,West

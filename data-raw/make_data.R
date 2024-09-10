@@ -38,3 +38,19 @@ bdquake <- bdquake[-c(1,6:22)]
 
 usethis::use_data(bdquake, overwrite = TRUE)
 
+# Train data
+
+brintcity <- read.csv("data-raw/brintcity.csv")
+
+View(brintcity)
+
+# Correct departure and arrival time (add SS)
+
+brintcity <- brintcity %>%
+  mutate(Departure = hms::parse_hm(Departure),
+         Arrival = hms::parse_hm(Departure))
+
+head(brintcity)
+
+usethis::use_data(brintcity, overwrite = TRUE)
+

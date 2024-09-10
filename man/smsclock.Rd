@@ -5,7 +5,7 @@
 \alias{smsclock}
 \title{Data of Times of Receiving of SMS}
 \format{
-A data frame with 17 rows and 4 variables:
+A data frame with 40 rows and 5 variables:
 \describe{
 \item{Date}{Date}
 \item{time}{Time in HH:MM:SS format}

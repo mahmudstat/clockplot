@@ -33,7 +33,7 @@ NULL
 #' @export
 clock_chart_qlt<- function(data, time, crit){
   crit = dplyr::pull(data, {{crit}})
-  if(length(unique(crit))>5) warning("No. of categories is more than 5. Plot may not look good. Try clock_chart() function instead?")
+  if(length(unique(crit))>5) warning("No. of categories is more than 5 and may not be distinguished well. Try clock_chart() function instead?")
   mydata <- conv_data(data = data, time = {{time}})
   clock <- basic_clock()+
     ggplot2::geom_segment(data = mydata,

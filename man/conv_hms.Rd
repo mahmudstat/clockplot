@@ -4,12 +4,14 @@
 \alias{conv_hms}
 \title{Convert \code{HH:MM} to \code{HH:MM:SS}}
 \usage{
-conv_hms(df, time)
+conv_hms(df, time, new)
 }
 \arguments{
 \item{df}{A data set}
 
-\item{time}{a \code{time} or \code{character} variable in the format \code{HH:MM:SS}}
+\item{time}{a \code{time} or \code{character} variable in the format \code{HH:MM}}
+
+\item{new}{New name of the variable}
 }
 \value{
 Time in HH:MM format
@@ -25,5 +27,6 @@ made \code{00}, since in practice it has negligible effect on the plot.
 }
 \examples{
 df <- data.frame(time = c("06:00", "08:00", "17:30"))
-conv_hms(df, time)
+df = conv_hms(df, time, New)
+df
 }

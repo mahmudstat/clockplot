@@ -15,7 +15,7 @@ A data frame with 13 rows and 5 variables:
 }
 }
 \source{
-{USGS: https://earthquake.usgs.gov/earthquakes/search/}
+USGS \url{https://earthquake.usgs.gov/earthquakes/search/}
 }
 \usage{
 bdquake
