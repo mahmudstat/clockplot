@@ -10,7 +10,7 @@
 #'
 #' @param mvalue A numeric vector having values in each month of the year (starts
 #' from January, obviously). If you have it in a data frame, you need to
-#' extract it (one way is this: data$mvalue)
+#' extract it (one way is this: `data$mvalue`)
 #' @param lgnm Title of legend. The legend position can also be changed by
 #' adding `legend.position = "top"`, where the accepted positions are
 #' `top`, `bottom`, `left`, and `right`.
