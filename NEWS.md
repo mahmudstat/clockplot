@@ -1,5 +1,6 @@
 # clockplot (development version)
 
+* Started testing using `usethis::use_testthat(3)`
 * Added Bangladesh Railway data set (`brintcity`)
 * `conv_hms` is being deprecated. Use `hms::parse_hm` instead.
 
