@@ -42,7 +42,7 @@
 #' \item{City}{Name of the city}
 #' ...
 #' }
-#' @source \url{https://www.weatherbase.com/weather/weather.php3?s=032914&refer=/}
+#' @source \href{https://www.weatherbase.com/weather/weather.php3?s=032914&refer=/}{Weather Base}
 "bdtemp"
 
 #' Data of Earthquakes in and around Bangladesh
@@ -57,7 +57,7 @@
 #' \item{mag}{Magnitude}
 #' \item{hms}{Time}
 #' }
-#' @source USGS \url{https://earthquake.usgs.gov/earthquakes/search/}
+#' @source \href{https://earthquake.usgs.gov/earthquakes/search/}{USGS}
 "bdquake"
 
 
@@ -78,6 +78,6 @@
 #' \item{Arrival}{The time of arrival}
 #' \item{Zone}{East/West}
 #' }
-#' @source BR \url{https://railway.portal.gov.bd/}
+#' @source \href{https://railway.portal.gov.bd/sites/default/files/files/railway.portal.gov.bd/page/e64d9448_0615_4316_87f0_deb10f5c847d/Intercity%20Trains%20.pdf}{Bangladesh Railway}
 "brintcity"
 
