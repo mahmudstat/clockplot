@@ -5,7 +5,7 @@ Version: 0.5.1.9000
 Authors@R: person(given = c("Abdullah", "Al"),
                     family = "Mahmud",
                     role = c("aut", "cre"),
-                    comment = c(ORCID = "0000-0003-2814-8798")
+                    comment = c(ORCID = "0000-0003-2814-8798"),
                     email = "almahmud.sbi@gmail.com")
 Description: The primary goal of clockplot is to plot event time 
     on a clock chart. Additionally it helps you make a day chart, 
