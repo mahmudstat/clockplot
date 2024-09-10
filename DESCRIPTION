@@ -2,12 +2,15 @@ Package: clockplot
 Type: Package
 Title: Clock Chart with Event Times on Clock
 Version: 0.5.1.9000
-Author: Abdullah Al Mahmud
-Maintainer: Abdullah Al Mahmud <almahmud.sbi@gmail.com>
+Authors@R: person(given = c("Abdullah", "Al"),
+                    family = "Mahmud",
+                    role = c("aut", "cre"),
+                    comment = c(ORCID = "0000-0003-2814-8798")
+                    email = "almahmud.sbi@gmail.com")
 Description: The primary goal of clockplot is to plot event time 
     on a clock chart. Additionally it helps you make a day chart, 
     week chart, or month chart, or plan events in those periods.
-License: file LICENSE
+License: MIT + file LICENSE
 Imports:
   dplyr,
   tidyr,
