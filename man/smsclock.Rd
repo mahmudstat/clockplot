@@ -7,8 +7,9 @@
 \format{
 A data frame with 17 rows and 4 variables:
 \describe{
-\item{sender}{Name of the sms sender}
+\item{Date}{Date}
 \item{time}{Time in HH:MM:SS format}
+\item{sender}{Name of the sms sender}
 \item{invoked}{Whether the sms is invoked by the user}
 \item{type}{The category of the sms; offer, info, ad, service etc.}
 ...
