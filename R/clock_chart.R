@@ -28,6 +28,7 @@ NULL
 #' @examples
 #' p1 <- clock_chart(smsclock, time) # Using package built-in data
 #' p1 + ggplot2::labs(title = "SMS Receiving Times")
+#' #  Add clock_chart(brintcity %>% filter(Origin == "Dhaka"), time = Departure)
 #' @export
 clock_chart <- function(data, time, Col = "black"){
   mydata <- conv_data(data = data, time = {{time}})
