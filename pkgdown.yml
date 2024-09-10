@@ -4,7 +4,7 @@ pkgdown_sha: ~
 articles:
   clockchart-construction: clockchart-construction.html
   clockplot: clockplot.html
-last_built: 2024-09-09T16:17Z
+last_built: 2024-09-10T00:37Z
 urls:
   reference: https://mahmudstat.github.io/clockplot/reference
   article: https://mahmudstat.github.io/clockplot/articles
