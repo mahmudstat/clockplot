@@ -14,7 +14,7 @@ A data frame with 36 rows and 3 variables:
 }
 }
 \source{
-\url{https://www.weatherbase.com/weather/weather.php3?s=032914&refer=/}
+\href{https://www.weatherbase.com/weather/weather.php3?s=032914&refer=/}{Weather Base}
 }
 \usage{
 bdtemp

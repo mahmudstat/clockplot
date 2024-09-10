@@ -31,6 +31,7 @@ Change the title, subtitle or the caption of the plot with
 \examples{
 p1 <- clock_chart(smsclock, time) # Using package built-in data
 p1 + ggplot2::labs(title = "SMS Receiving Times")
+#  Add clock_chart(brintcity \%>\% filter(Origin == "Dhaka"), time = Departure)
 }
 \seealso{
 \code{\link[=clock_chart_col]{clock_chart_col()}} for coloring by a numeric variable,
