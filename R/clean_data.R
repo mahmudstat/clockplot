@@ -18,7 +18,7 @@
 #' df = conv_hms(df, time, New)
 #' df
 
-#' @export
+
 conv_hms <- function(df, time, new){
   df <- mutate(df, new = hms::parse_hm({{time}}))
   .Deprecated("hms::parse_hm")
