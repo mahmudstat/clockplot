@@ -48,7 +48,7 @@ do not have it in <code>HH:MM:SS</code> format.</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">conv_hms</span><span class="op">(</span><span class="va">df</span>, <span class="va">time</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">conv_hms</span><span class="op">(</span><span class="va">df</span>, <span class="va">time</span>, <span class="va">new</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -60,7 +60,11 @@ do not have it in <code>HH:MM:SS</code> format.</p>
 
 
 <dt id="arg-time">time<a class="anchor" aria-label="anchor" href="#arg-time"></a></dt>
-<dd><p>a <code>time</code> or <code>character</code> variable in the format <code>HH:MM:SS</code></p></dd>
+<dd><p>a <code>time</code> or <code>character</code> variable in the format <code>HH:MM</code></p></dd>
+
+
+<dt id="arg-new">new<a class="anchor" aria-label="anchor" href="#arg-new"></a></dt>
+<dd><p>New name of the variable</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -76,7 +80,12 @@ made <code>00</code>, since in practice it has negligible effect on the plot.</p
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>time <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"06:00"</span>, <span class="st">"08:00"</span>, <span class="st">"17:30"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu">conv_hms</span><span class="op">(</span><span class="va">df</span>, <span class="va">time</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">df</span> <span class="op">=</span> <span class="fu">conv_hms</span><span class="op">(</span><span class="va">df</span>, <span class="va">time</span>, <span class="va">New</span><span class="op">)</span></span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>'conv_hms' is deprecated.</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> Use 'hms::parse_hm' instead.</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> See help("Deprecated")</span>
+<span class="r-in"><span><span class="va">df</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "'conv_hms' is deprecated.\nUse 'hms::parse_hm' instead.\nSee help(\"Deprecated\")"</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
