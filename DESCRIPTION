@@ -21,7 +21,9 @@ Depends:
     R (>= 2.10)
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    testthat (>= 3.0.0)
 VignetteBuilder: knitr
 URL: https://mahmudstat.github.io/clockplot/
 Roxygen: list(markdown = TRUE)
+Config/testthat/edition: 3
