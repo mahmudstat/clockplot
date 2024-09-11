@@ -17,4 +17,8 @@ Useful links:
 }
 
 }
+\author{
+\strong{Maintainer}: Abdullah Al Mahmud \email{almahmud.sbi@gmail.com} (\href{https://orcid.org/0000-0003-2814-8798}{ORCID})
+
+}
 \keyword{internal}
