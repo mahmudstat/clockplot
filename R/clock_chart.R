@@ -36,7 +36,8 @@ clock_chart <- function(data, time, Col = "black"){
     ggplot2::geom_segment(data = mydata, color = Col,
                           ggplot2::aes(x= .data$x0, y = .data$y0,
                                        xend = .data$x1, yend = .data$y1))+
-    ggplot2::geom_point(data = mydata, ggplot2::aes(.data$x1, .data$y1))
+    ggplot2::geom_point(data = mydata, color = Col,
+                        ggplot2::aes(.data$x1, .data$y1))
   return(clock)
 }
 
