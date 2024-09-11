@@ -117,7 +117,7 @@ format using <code><a href="https://hms.tidyverse.org/reference/parse_hms.html" 
 <p>This is the simplest clock chart; the hands are neither colored nor
 length modified by a criteria.</p>
 <p>We are going to use the <code>smsclock</code> data set. Let us have a
-look.</p>
+look on it.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">smsclock</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 5</span></span></span>
@@ -129,18 +129,41 @@ look.</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> 02-09-2024 19:02:00 Airtel      No      offer  </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> 02-09-2024 18:21:00 Airtel      No      offer  </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> 02-09-2024 17:20:00 Airtel      No      offer</span></span></code></pre></div>
-<p>The necessary code to produce, using a clock is just this:</p>
+<p>The necessary code to produce a chart is just this:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/clock_chart.html">clock_chart</a></span><span class="op">(</span><span class="va">smsclock</span>, <span class="va">time</span><span class="op">)</span></span></code></pre></div>
-<p>We, however can add extra components to make it look better.</p>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/clock_chart.html">clock_chart</a></span><span class="op">(</span><span class="va">smsclock</span>, <span class="va">time</span>, Col <span class="op">=</span> <span class="st">"green"</span><span class="op">)</span></span></code></pre></div>
+<p>The code produces a <code>ggplot2</code> object, so we can add
+(<code>+</code>) add extra components to make it more informative.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/clock_chart.html">clock_chart</a></span><span class="op">(</span><span class="va">smsclock</span>, <span class="va">time</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/clock_chart.html">clock_chart</a></span><span class="op">(</span><span class="va">smsclock</span>, <span class="va">time</span>, Col <span class="op">=</span> <span class="st">"green"</span><span class="op">)</span></span>
 <span><span class="va">p1</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"SMS Receiving Times"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="clockplot_files/figure-html/unnamed-chunk-4-1.png" width="700"></p>
+<p><img src="clockplot_files/figure-html/clock-chart-1.png" width="480" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level3">
-<h3 id="clock_chart_qnt">clock_chart_qnt()<a class="anchor" aria-label="anchor" href="#clock_chart_qnt"></a>
+<h3 id="colored-clock-chart">Colored Clock Chart<a class="anchor" aria-label="anchor" href="#colored-clock-chart"></a>
 </h3>
+<p>In the previous chart, we colored the hands by an arbitrary color. We
+may want to color it by a <code>numeric</code> variable.
+<code>clock_chart_col</code> exactly does this.</p>
+<p>We may use <code>bdquake</code> data set for this.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">bdquake</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   latitude longitude  depth mag      hms</span></span>
+<span><span class="co">#&gt; 1  24.3726   92.6936 35.000 4.4 21:12:27</span></span>
+<span><span class="co">#&gt; 2  25.7318   91.0047 41.021 4.1 02:20:09</span></span>
+<span><span class="co">#&gt; 3  21.9812   92.6510 44.892 4.1 16:46:37</span></span>
+<span><span class="co">#&gt; 4  25.7414   90.2866 10.000 4.4 08:57:52</span></span>
+<span><span class="co">#&gt; 5  25.2901   91.7860 46.386 4.2 03:16:57</span></span>
+<span><span class="co">#&gt; 6  23.1475   90.9317 45.057 5.5 03:35:33</span></span></code></pre></div>
+<p>The code without added components.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/clock_chart_col.html">clock_chart_col</a></span><span class="op">(</span><span class="va">bdquake</span>, time <span class="op">=</span> <span class="va">hms</span>, crit <span class="op">=</span> <span class="va">mag</span><span class="op">)</span></span></code></pre></div>
+<p>Let us modify it.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/clock_chart_col.html">clock_chart_col</a></span><span class="op">(</span><span class="va">bdquake</span>, time <span class="op">=</span> <span class="va">hms</span>, crit <span class="op">=</span> <span class="va">mag</span><span class="op">)</span></span>
+<span><span class="va">p</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>size <span class="op">=</span> <span class="st">"Magnitude"</span>, title <span class="op">=</span> <span class="st">"Earthquakes in Bangladesh since 2023"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="clockplot_files/figure-html/clock-chart-col-1.png" width="480" style="display: block; margin: auto;"></p>
+<p>to be continued …</p>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
