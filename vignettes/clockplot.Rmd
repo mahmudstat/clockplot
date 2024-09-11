@@ -30,52 +30,55 @@ After installing the package, load it to use the available functions.
 library(clockplot)
 ```
 
+## Types of Charts
+
 The clockpolot offers three types of plot
 
-1. Clock chart
-2. Period chart
+1. Clock charts
+2. Cyclic Charts
 3. Period planner
 
-The first shows event times (HH:MM:SS) on a 24 hour clock. The times can be arbitrary and not necessarily specific hours at all. 
+The first type shows event times (HH:MM:SS) on a 24 hour clock. The times can be 
+arbitrary (such as `16:54:34`) and not necessarily specific hours at all. 
 
-The second type allows you to show values during a certain duration (day, week, month, and year)
+
+The second type allows you to show values during a certain duration (day, week, month, and year). There is a generic function `cyclic_chart()` for arbitrary period, while
+there charts specially made for specific period (day, week, year etc.)
 
 Finally, the third one can help you make a plan in a certain period (day, week, month, and year), presenting tasks against period. 
 
-Will create another vignette to explain how it all was made.
+## Clock Charts
 
-## Examples 
+The examples use built-in data sets. If your times are in `HH:MM` format,
+you can covert to `HH:MM:SS` format using `hms::parse_hm()`. 
 
-Let us see examples of each of the function. 
+### Basic Clock Chart
 
-### clock_chart()
+This is the simplest clock chart; the hands are
+neither colored nor length modified by a criteria. 
 
-This creates a clockplot, showing event times on a 24-hour clock. The hands are
-neither colored nor length modified by a criteria. To do so, please use other 
-`clock_chart*()` functions (see below).
+We are going to use the `smsclock` data set. Let us have a look. 
 
-To make use of this simple chart, we need a data frame with at least one column
-showing the times of a certain event. The format should be in HH:MM:SS (for
-example 19:50:10). If you have times in HH:MM format, use `make_hms` function to
-convert to HH:MM:SS format. 
+```{r}
+head(smsclock)
+```
 
-First, let's create a sample data.
+The necessary code to produce, using  a clock is just this:
 
-```{r clock-chart, fig.align = 'center' , fig.height=4, fig.width=4}
-library(tibble) # to make a tibble (tidy data frame)
-df <- tibble::tibble(hr = sample(0:23, 50, replace = TRUE),
-                  mnt = sample(0:59, 50, replace = TRUE),
-                  sec = sample(0:59, 50, replace = TRUE),
-                  time = paste(hr, mnt, sec, sep = ":"),
-                  value = sample(60,50))
-clock_chart(df, time)
+```{r eval=FALSE}
+clock_chart(smsclock, time)
+```
+
+We, however can add extra components to make it look better. 
+
+
+```{r}
+p1 <- clock_chart(smsclock, time)
+p1 + ggplot2::labs(title = "SMS Receiving Times")
 ```
 
 
 ### clock_chart_qnt()
 
-```{r clock-chart-qn, fig.align = 'center', fig.height=4, fig.width=4}
-clock_chart_qnt(df, time, len = value)
-```
 
 
