@@ -104,4 +104,34 @@ p + ggplot2::labs(size = "Magnitude", title = "Earthquakes in Bangladesh since 2
 ```
 
 
-to be continued ...
+It would be great if we could modify the length of the hands as well. We see 
+that in the next chart. 
+
+### Chart with Modified and Colored Hands
+
+We now use `clock_chart_qnt()`. We color the chart magnitude and change 
+length by the depth of the earthquake epicenter?
+
+```{r eval=FALSE}
+clock_chart_qnt(data = bdquake, time = hms, len = depth,
+Col = mag, high = "red", low = "blue")
+```
+
+**The custom plot**
+
+```{r clock-chart-qnt, fig.align = 'center', fig.height=5, fig.width=5}
+p1 <- clock_chart_qnt(data = bdquake, time = hms, len = depth,
+Col = mag, high = "red", low = "blue")
+p1 + ggplot2::labs(color = "Depth", size = "Magnitude",
+title = "Earthquakes in Bangladesh since 2023")
+```
+
+
+As is evident from the chart, the size of the points represents the magnitude 
+of the earthquakes, while the color and the length of the hands stand for 
+depth of the earthquakes. 
+
+The plot shows that the quakes are roughly randomly distributed with respect 
+to time. Most earthquakes occurred between around 1 PM to around 5 PM. Two 
+of the biggest gaps can be seen between 5 PM to 9 PM (a gap amounting to 4 
+hours) and 10 PM to quarter after 2 AM (almost 4.25 hours). 
