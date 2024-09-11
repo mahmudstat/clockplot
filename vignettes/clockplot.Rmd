@@ -57,28 +57,51 @@ you can covert to `HH:MM:SS` format using `hms::parse_hm()`.
 This is the simplest clock chart; the hands are
 neither colored nor length modified by a criteria. 
 
-We are going to use the `smsclock` data set. Let us have a look. 
+We are going to use the `smsclock` data set. Let us have a look on it. 
 
 ```{r}
 head(smsclock)
 ```
 
-The necessary code to produce, using  a clock is just this:
+The necessary code to produce a chart is just this:
 
 ```{r eval=FALSE}
-clock_chart(smsclock, time)
+clock_chart(smsclock, time, Col = "green")
 ```
 
-We, however can add extra components to make it look better. 
+The code produces a `ggplot2` object, so we can add (`+`) add extra components 
+to make it more informative. 
 
 
-```{r}
-p1 <- clock_chart(smsclock, time)
+```{r clock-chart, fig.align = 'center', fig.height=5, fig.width=5}
+p1 <- clock_chart(smsclock, time, Col = "green")
 p1 + ggplot2::labs(title = "SMS Receiving Times")
 ```
 
 
-### clock_chart_qnt()
+### Colored Clock Chart
+
+In the previous chart, we colored the hands by an arbitrary color. We may want
+to color it by a `numeric` variable. `clock_chart_col` exactly does this. 
+
+We may use `bdquake` data set for this. 
+
+```{r}
+head(bdquake)
+```
+
+The code without added components. 
+
+```{r eval=FALSE}
+clock_chart_col(bdquake, time = hms, crit = mag)
+```
+
+Let us modify it.
+
+```{r clock-chart-col, fig.align = 'center', fig.height=5, fig.width=5}
+p <- clock_chart_col(bdquake, time = hms, crit = mag)
+p + ggplot2::labs(size = "Magnitude", title = "Earthquakes in Bangladesh since 2023")
+```
 
 
-
+to be continued ...
