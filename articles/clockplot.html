@@ -171,10 +171,14 @@ We see that in the next chart.</p>
 </h3>
 <p>We now use <code><a href="../reference/clock_chart_qnt.html">clock_chart_qnt()</a></code>. We color the chart
 magnitude and change length by the depth of the earthquake
-epicenter?</p>
+hypocenter.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/clock_chart_qnt.html">clock_chart_qnt</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">bdquake</span>, time <span class="op">=</span> <span class="va">hms</span>, len <span class="op">=</span> <span class="va">depth</span>,</span>
 <span>Col <span class="op">=</span> <span class="va">mag</span>, high <span class="op">=</span> <span class="st">"red"</span>, low <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span></span></code></pre></div>
+<p>The <code>high</code> and <code>low</code> color names can be vice
+versa or other colors, depending on the context. To use a single color
+for all lines, use same value for <code>high</code> and
+<code>low</code></p>
 <p><strong>The custom plot</strong></p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/clock_chart_qnt.html">clock_chart_qnt</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">bdquake</span>, time <span class="op">=</span> <span class="va">hms</span>, len <span class="op">=</span> <span class="va">depth</span>,</span>
@@ -182,6 +186,8 @@ epicenter?</p>
 <span><span class="va">p1</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"Depth"</span>, size <span class="op">=</span> <span class="st">"Magnitude"</span>,</span>
 <span>title <span class="op">=</span> <span class="st">"Earthquakes in Bangladesh since 2023"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="clockplot_files/figure-html/clock-chart-qnt-1.png" width="480" style="display: block; margin: auto;"></p>
+<p>If you do not have two variables for <code>len</code> and
+<code>Col</code>, use one single variable for both options.</p>
 <p>As is evident from the chart, the size of the points represents the
 magnitude of the earthquakes, while the color and the length of the
 hands stand for depth of the earthquakes.</p>
@@ -190,6 +196,29 @@ respect to time. Most earthquakes occurred between around 1 PM to around
 5 PM. Two of the biggest gaps can be seen between 5 PM to 9 PM (a gap
 amounting to 4 hours) and 10 PM to quarter after 2 AM (almost 4.25
 hours).</p>
+</div>
+<div class="section level3">
+<h3 id="modified-length">Modified Length<a class="anchor" aria-label="anchor" href="#modified-length"></a>
+</h3>
+<p>Although there is another function <code><a href="../reference/clock_chart_len.html">clock_chart_len()</a></code> to
+modify length of the clock hands, this is rarely useful. Here you can
+use a variable to modify the length by and an argument <code>Col</code>
+to choose a specific color for the hands.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/clock_chart_len.html">clock_chart_len</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">bdquake</span>, time <span class="op">=</span> <span class="va">hms</span>, crit <span class="op">=</span> <span class="va">depth</span><span class="op">)</span></span>
+<span><span class="va">p1</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Earthquakes in Bangladesh since 2023"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="clockplot_files/figure-html/clock-chart-len-1.png" width="480" style="display: block; margin: auto;">
+### Qualitative variable</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/clock_chart_qlt.html">clock_chart_qlt</a></span><span class="op">(</span><span class="va">smsclock</span>, time <span class="op">=</span> <span class="va">time</span>, crit <span class="op">=</span> <span class="va">sender</span><span class="op">)</span><span class="op">+</span></span>
+<span><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"Sender"</span>, title <span class="op">=</span> <span class="st">"SMS's Received throughout the Day"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning in clock_chart_qlt(smsclock, time = time, crit = sender): No. of</span></span>
+<span><span class="co">#&gt; categories is more than 5 and may not be distinguished well. Try clock_chart()</span></span>
+<span><span class="co">#&gt; function instead?</span></span></code></pre></div>
+<p><img src="clockplot_files/figure-html/clock-chart-qlt-1.png" width="576" style="display: block; margin: auto;"></p>
+<p>This makes it convenient to see which sender sent messages when.</p>
+<p><strong>Instructions from the beginning which args to use in
+labs.</strong></p>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
