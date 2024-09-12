@@ -110,12 +110,14 @@ that in the next chart.
 ### Chart with Modified and Colored Hands
 
 We now use `clock_chart_qnt()`. We color the chart magnitude and change 
-length by the depth of the earthquake epicenter?
+length by the depth of the earthquake hypocenter.
 
 ```{r eval=FALSE}
 clock_chart_qnt(data = bdquake, time = hms, len = depth,
 Col = mag, high = "red", low = "blue")
 ```
+
+The `high` and `low` color names can be vice versa or other colors, depending on the context. To use a single color for all lines, use same value for `high` and `low`
 
 **The custom plot**
 
@@ -126,6 +128,8 @@ p1 + ggplot2::labs(color = "Depth", size = "Magnitude",
 title = "Earthquakes in Bangladesh since 2023")
 ```
 
+If you do not have two variables for `len` and `Col`, use one single variable 
+for both options. 
 
 As is evident from the chart, the size of the points represents the magnitude 
 of the earthquakes, while the color and the length of the hands stand for 
@@ -135,3 +139,25 @@ The plot shows that the quakes are roughly randomly distributed with respect
 to time. Most earthquakes occurred between around 1 PM to around 5 PM. Two 
 of the biggest gaps can be seen between 5 PM to 9 PM (a gap amounting to 4 
 hours) and 10 PM to quarter after 2 AM (almost 4.25 hours). 
+
+### Modified Length
+
+Although there is another function `clock_chart_len()` to modify length of the
+clock hands, this is rarely useful. Here you can use a variable to modify the
+length by and an argument `Col` to choose a specific color for the hands. 
+
+```{r clock-chart-len, fig.align = 'center', fig.height=5, fig.width=5}
+p1 <- clock_chart_len(data = bdquake, time = hms, crit = depth)
+p1 + ggplot2::labs(title = "Earthquakes in Bangladesh since 2023")
+```
+### Qualitative variable
+
+
+```{r clock-chart-qlt, fig.align = 'center', fig.height=6, fig.width=6}
+clock_chart_qlt(smsclock, time = time, crit = sender)+
+ggplot2::labs(color = "Sender", title = "SMS's Received throughout the Day")
+```
+
+This makes it convenient to see which sender sent messages when. 
+
+**Instructions from the beginning which args to use in labs.**
