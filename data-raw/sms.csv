@@ -1,42 +1,88 @@
-Date, time,sender, invoked, type
-02-09-2024, 20:36,Airtel, No, offer
-02-09-2024, 20:19,Airtel, No, offer
-02-09-2024, 19:10,Pubali Bank, Yes, service
-02-09-2024, 19:02,Airtel, No, offer
-02-09-2024, 18:21,Airtel, No, offer
-02-09-2024, 17:20,Airtel, No, offer
-02-09-2024, 17:20,Airtel, No, Ad
-02-09-2024, 14:40,Airtel, No, offer
-02-09-2024, 13:20,Govt, No, info
-02-09-2024, 11:56,Airtel, No, service
-02-09-2024, 10:43,Airtel, No, offer
-02-09-2024, 8:55,Airtel, No, offer
-02-09-2024, 8:53,Airtel, No, offer
-02-09-2024, 7:26,Airtel, No, offer
-02-09-2024, 6:37,Airtel, No, offer
-02-09-2024, 6:07,People, Yes, info
-02-09-2024, 5:55,GP, Yes, info
-03-09-2024,06:37, Airtel, No, offer
-03-09-2024, 13:08, Airtel, No, promotion
-03-09-2024, 13:36, GP, Yes, OTP
-03-09-2024, 17:11, EBL, No, info
-05-09-2024, 8:53, People, No, info
-05-09-2024, 13:39, Airtel, No, info
-05-09-2024, 18:01, Aarong, No, offer
-06-09-2024, 8:24, Airtel, No, promotion
-06-09-2024, 18:03, Govt, No, info
-07-09-2024, 10:11, Airtel, No, offer
-07-09-2024, 10:55, Airtel, No, promotion
-07-09-2024, 10:58, People, Yes, info
-07-09-2024, 12:46, GP, No, promotion
-07-09-2024, 14:56, Airtel, No, offer
-07-09-2024, 22:01, Airtel, No, offer
-08-09-2024, 10:59, Airtel, Yes, service
-08-09-2024, 10:59, bKash, Yes, service
-08-09-2024, 10:59, bKash, Yes, service
-08-09-2024, 11:00, Airtel, Yes, service
-08-09-2024, 12:29, Airtel, No, offer
-08-09-2024, 20:46, Airtel, No, offer
-08-09-2024, 21:49, Airtel, No, offer
-08-09-2024, 22:29, Airtel, No, offer
-
+Date,day, time,sender, invoked, type,Title
+02-09-2024,, 20:36,Airtel, No, offer,
+02-09-2024,, 20:19,Airtel, No, offer,
+02-09-2024,, 19:10,Pubali Bank, Yes, service,
+02-09-2024,, 19:02,Airtel, No, offer,
+02-09-2024,, 18:21,Airtel, No, offer,
+02-09-2024,, 17:20,Airtel, No, offer,
+02-09-2024,, 17:20,Airtel, No, Ad,
+02-09-2024,, 14:40,Airtel, No, offer,
+02-09-2024,, 13:20,Govt, No, info,
+02-09-2024,, 11:56,Airtel, No, service,
+02-09-2024,, 10:43,Airtel, No, offer,
+02-09-2024,, 8:55,Airtel, No, offer,
+02-09-2024,, 8:53,Airtel, No, offer,
+02-09-2024,, 7:26,Airtel, No, offer,
+02-09-2024,, 6:37,Airtel, No, offer,
+02-09-2024,, 6:07,People, Yes, info,
+02-09-2024,, 5:55,GP, Yes, info,
+03-09-2024,,06:37, Airtel, No, offer,
+03-09-2024,, 13:08, Airtel, No, promotion,
+03-09-2024,, 13:36, GP, Yes, OTP,
+03-09-2024,, 17:11, EBL, No, info,
+05-09-2024,, 8:53, People, No, info,
+05-09-2024,, 13:39, Airtel, No, info,
+05-09-2024,, 18:01, Aarong, No, offer,
+06-09-2024,, 8:24, Airtel, No, promotion,
+06-09-2024,, 18:03, Govt, No, info,
+07-09-2024,, 10:11, Airtel, No, offer,
+07-09-2024,, 10:55, Airtel, No, promotion,
+07-09-2024,, 10:58, People, Yes, info,
+07-09-2024,, 12:46, GP, No, promotion,
+07-09-2024,, 14:56, Airtel, No, offer,
+07-09-2024,, 22:01, Airtel, No, offer,
+08-09-2024,, 10:59, Airtel, Yes, service,
+08-09-2024,, 10:59, bKash, Yes, service,
+08-09-2024,, 10:59, bKash, Yes, service,
+08-09-2024,, 11:00, Airtel, Yes, service,
+08-09-2024,, 12:29, Airtel, No, offer,
+08-09-2024,, 20:46, Airtel, No, offer,
+08-09-2024,, 21:49, Airtel, No, offer,
+08-09-2024,, 22:29, Airtel, No, offer,
+,,,,,,
+01-09-2024,Sunday,14:29,Airtel,No,offer,AirtelTune
+01-09-2024,Sunday,20:28,Airtel,No,offer,AirtelTune
+02-09-2024,Monday,10:43,Airtel,No,offer,AirtelTune
+03-09-2024,Tuesday,13:15,Airtel,No,offer,AirtelTune
+04-09-2024,Wednesday,12:24,Airtel,No,offer,AirtelTune
+04-09-2024,Wednesday,17:45,Airtel,No,offer,AirtelTune
+06-09-2024,Friday,6:21,Airtel,No,offer,AirtelTune
+06-09-2024,Friday,11:14,Airtel,No,offer,AirtelTune
+08-09-2024,Sunday,9:47,Airtel,No,offer,AirtelTune
+08-09-2024,Sunday,11:49,Airtel,No,offer,AirtelTune
+08-09-2024,Sunday,20:43,Airtel,No,offer,AirtelTune
+09-09-2024,Monday,12:34,Airtel,No,offer,AirtelTune
+02-09-2024,Monday,13:20,Govt,No,info,GovtInfo
+06-09-2024,Friday,18:03,Govt,No,info,GovtInfo
+02-09-2024,Monday,20:19,Airtel,No,info,Beshi_Kotha
+04-09-2024,Wednesday,22:29,Airtel,No,info,Beshi_Kotha
+05-09-2024,Thursday,14:15,Airtel,No,info,Beshi_Kotha
+08-09-2024,Sunday,16:02,Airtel,No,info,Beshi_Kotha
+09-09-2024,Monday,19:33,Airtel,No,info,Beshi_Kotha
+01-09-2024,Sunday,19:10,Airtel,No,offer,AirtelOffer
+02-09-2024,Monday,20:55,Airtel,No,offer,AirtelOffer
+03-09-2024,Tuesday,10:20,Airtel,No,offer,AirtelOffer
+04-09-2024,Wednesday,21:37,Airtel,No,offer,AirtelOffer
+05-09-2024,Thursday,21:39,Airtel,No,offer,AirtelOffer
+08-09-2024,Sunday,12:29,Airtel,No,offer,AirtelOffer
+02-09-2024,Monday,18:21,Airtel,No,offer,AT_4GB@68TK
+03-09-2024,Tuesday,13:26,Airtel,No,offer,AT_4GB@68TK
+04-09-2024,Wednesday,18:07,Airtel,No,offer,AT_4GB@68TK
+05-09-2024,Thursday,11:57,Airtel,No,offer,AT_4GB@68TK
+07-09-2024,Saturday,10:55,Airtel,No,offer,AT_4GB@68TK
+01-09-2024,Sunday,16:36,Airtel,No,offer,Super_Offer
+01-09-2024,Sunday,16:40,Airtel,No,offer,Super_Offer
+02-09-2024,Monday,17:20,Airtel,No,offer,Super_Offer
+02-09-2024,Monday,17:20,Airtel,No,offer,Super_Offer
+03-09-2024,Tuesday,16:46,Airtel,No,offer,Super_Offer
+03-09-2024,Tuesday,16:47,Airtel,No,offer,Super_Offer
+04-09-2024,Wednesday,17:56,Airtel,No,offer,Super_Offer
+04-09-2024,Wednesday,17:57,Airtel,No,offer,Super_Offer
+05-09-2024,Thursday,17:52,Airtel,No,offer,Super_Offer
+05-09-2024,Thursday,17:53,Airtel,No,offer,Super_Offer
+06-09-2024,Friday,17:11,Airtel,No,offer,Super_Offer
+06-09-2024,Friday,17:12,Airtel,No,offer,Super_Offer
+07-09-2024,Saturday,17:04,Airtel,No,offer,Super_Offer
+07-09-2024,Saturday,17:05,Airtel,No,offer,Super_Offer
+09-09-2024,Monday,17:23,Airtel,No,offer,Super_Offer
+09-09-2024,Monday,17:27,Airtel,No,offer,Super_Offer
