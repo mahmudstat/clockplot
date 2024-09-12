@@ -54,3 +54,9 @@ head(brintcity)
 
 usethis::use_data(brintcity, overwrite = TRUE)
 
+## Commit
+
+gitcommit <- read.csv("data-raw/gitcommit.csv")
+
+usethis::use_data(gitcommit, overwrite = TRUE)
+

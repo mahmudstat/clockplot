@@ -81,3 +81,20 @@
 #' @source \href{https://railway.portal.gov.bd/sites/default/files/files/railway.portal.gov.bd/page/e64d9448_0615_4316_87f0_deb10f5c847d/Intercity%20Trains%20.pdf}{Bangladesh Railway}
 "brintcity"
 
+#' Data of git commits in this repository
+#'
+#' A dataset containing commit information of all the commits in this
+#' repository (`clockplot`) up to 12 Sep, 2024. Some columns, including the
+#' commit message have been omitted.
+#'
+#' @format A data frame with 110 rows and 6 variables:
+#' \describe{
+#' \item{id}{Commit ID}
+#' \item{weekday}{Week Day}
+#' \item{month}{Month}
+#' \item{day}{Day of the month}
+#' \item{time}{Time--this is our desired column}
+#' \item{year}{Year}
+#' }
+#' @source \href{clockplot repository}{Weather Base}
+"gitcommit"

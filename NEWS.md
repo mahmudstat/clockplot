@@ -1,5 +1,7 @@
 # clockplot (development version)
 
+* Added gitcommit data up to 12 Sep, 2024
+
 # clockplot 0.6.1.9000
 
 * Started testing using `usethis::use_testthat(3)`
