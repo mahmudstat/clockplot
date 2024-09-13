@@ -13,12 +13,14 @@ conv_half_1 <- function(x){
 
 conv_data <- function(data, time){
   # Data Preparation
-  dt <- tidyr::separate_wider_delim(data, cols = {{ time }},
-                                    names = c("hr", "mn", "sc"),
-                                    cols_remove = FALSE,
-                                    delim = ":") %>% # Separate minute
+  dt <- data %>%
+    mutate(time = hms::parse_hm({{ time }})) %>%
+    tidyr::separate_wider_delim(cols = {{ time }},
+                                names = c("hr", "mn", "sc"),
+                                cols_remove = FALSE,
+                                delim = ":") %>% # Separate minute
     dplyr::mutate(mn = as.numeric(ifelse(is.na(.data$mn),0,.data$mn)),
-                  minute = .data$mn/60,
+                  mn = .data$mn/60,
                   #minute = ifelse(.data$minute<10, .data$minute * 5/30, .data$minute * 5/300),
                   hr = as.numeric(.data$hr),
                   timc = .data$hr+.data$mn,
