@@ -225,10 +225,13 @@ meaningfully present a variable, we can confine ourselves to
 <h3 id="qualitative-variable">Qualitative variable<a class="anchor" aria-label="anchor" href="#qualitative-variable"></a>
 </h3>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/clock_chart_qlt.html">clock_chart_qlt</a></span><span class="op">(</span><span class="va">smsclock</span>, time <span class="op">=</span> <span class="va">time</span>, crit <span class="op">=</span> <span class="va">sender</span><span class="op">)</span><span class="op">+</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/clock_chart_qlt.html">clock_chart_qlt</a></span><span class="op">(</span><span class="va">smsclock</span>, time <span class="op">=</span> <span class="va">time</span>, crit <span class="op">=</span> <span class="va">Title</span><span class="op">)</span><span class="op">+</span></span>
 <span><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"Sender"</span>, title <span class="op">=</span> <span class="st">"SMS's Received throughout the Day"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="clockplot_files/figure-html/clock-chart-qlt-1.png" width="576" style="display: block; margin: auto;"></p>
-<p>This makes it convenient to see which sender sent messages when.</p>
+<p>This makes it convenient to see which types of messages were sent
+when. Certain types of messages, such as Supper_Offer, are always sent
+around the same time. Other messages are spread throughout the day.
+Between 11 PM and 6 AM, no messages are received.</p>
 <p>We can also make use of the <code><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap()</a></code> function from
 the <code>ggplot2</code> package.</p>
 <p><strong>Instructions from the beginning which args to use in
