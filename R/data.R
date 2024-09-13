@@ -16,16 +16,17 @@
 #' Data of Times of Receiving of SMS
 #'
 #' A dataset containing timings of receiving sms on mobile phone.
-#' Real data for a particular day
+#' Real data from 01 to 09 September, 2024
 
-#' @format A data frame with 40 rows and 5 variables:
+#' @format A data frame with 82 rows and 7 variables:
 #' \describe{
 #' \item{Date}{Date}
+#' \item{day}{Day}
 #' \item{time}{Time in HH:MM:SS format}
 #' \item{sender}{Name of the sms sender}
 #' \item{invoked}{Whether the sms is invoked by the user}
 #' \item{type}{The category of the sms; offer, info, ad, service etc.}
-#' ...
+#' \item{Title}{Message Title}
 #' }
 #' @source {Phone Messages}
 "smsclock"
@@ -90,11 +91,11 @@
 #' @format A data frame with 110 rows and 6 variables:
 #' \describe{
 #' \item{id}{Commit ID}
-#' \item{weekday}{Week Day}
+#' \item{weekday}{Day of the week}
 #' \item{month}{Month}
 #' \item{day}{Day of the month}
 #' \item{time}{Time--this is our desired column}
 #' \item{year}{Year}
 #' }
-#' @source \href{clockplot repository}{Weather Base}
+#' @source \href{https://github.com/mahmudstat/clockplot}{clockplot repository}
 "gitcommit"
