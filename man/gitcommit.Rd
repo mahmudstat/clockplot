@@ -8,7 +8,7 @@
 A data frame with 110 rows and 6 variables:
 \describe{
 \item{id}{Commit ID}
-\item{weekday}{Week Day}
+\item{weekday}{Day of the week}
 \item{month}{Month}
 \item{day}{Day of the month}
 \item{time}{Time--this is our desired column}
@@ -16,7 +16,7 @@ A data frame with 110 rows and 6 variables:
 }
 }
 \source{
-\href{clockplot repository}{Weather Base}
+\href{https://github.com/mahmudstat/clockplot}{clockplot repository}
 }
 \usage{
 gitcommit

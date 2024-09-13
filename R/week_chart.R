@@ -21,7 +21,7 @@ NULL
 #' @examples
 #' set.seed(10)
 #' wtemp <- sample(10:40,7)
-#' week_chart(wtemp, high = "yellow")+ggplot2::labs(title = "Random Values by Weekday")
+#' week_chart(wtemp, high = "yellow")+ggplot2::labs(title = "Random Values by Day")
 #' @export
 week_chart <- function(wvalue, lgnm = "Value",
                        high = "yellow", low = "green", width = 0.5){

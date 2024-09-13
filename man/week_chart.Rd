@@ -28,7 +28,7 @@ This function plots values corresponding to each day on a rose plot.
 \examples{
 set.seed(10)
 wtemp <- sample(10:40,7)
-week_chart(wtemp, high = "yellow")+ggplot2::labs(title = "Random Values by Weekday")
+week_chart(wtemp, high = "yellow")+ggplot2::labs(title = "Random Values by Day")
 }
 \seealso{
 \code{\link[=day_chart]{day_chart()}} for plotting values in on a day hours

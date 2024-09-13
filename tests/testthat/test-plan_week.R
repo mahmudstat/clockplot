@@ -6,3 +6,4 @@ test_that("A character vector", {
   expect_vector(wt, ptype = character())
 })
 
+
