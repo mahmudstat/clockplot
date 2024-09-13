@@ -21,13 +21,8 @@
 #' @name clock_chart_len
 NULL
 #' @examples
-#' df <- tibble::tibble(hor = sample(0:23, 30, replace = TRUE),
-#'                   mnt = sample(0:59, 30, replace = TRUE),
-#'                   sec = sample(0:59, 30, replace = TRUE),
-#'                   time = paste(hor, mnt, sec, sep = ":"),
-#'                   value = sample(40,30))
-#' clock_chart_len(df, time, crit = value, Col = "blue")+
-#' ggplot2::labs(title = "Plot Title")
+#' p1 <- clock_chart_len(data = bdquake, time = hms, crit = depth)
+#' p1 + ggplot2::labs(title = "Earthquakes in Bangladesh since 2023")
 #' @export
 clock_chart_len <- function(data, time, crit, Col = "black"){
   mydata <- conv_data_len(data = data, time = {{ time }}, len = {{ crit }})
