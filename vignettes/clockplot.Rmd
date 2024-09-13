@@ -160,6 +160,13 @@ to `clock_chart_qnt()`.
 
 ### Qualitative variable
 
+Here we use the built-in `smsclock` data set. 
+
+```{r}
+head(smsclock, 4)
+```
+
+Now let us plot times with respect to message title. 
 
 ```{r clock-chart-qlt, fig.align = 'center', fig.height=6, fig.width=6}
 clock_chart_qlt(smsclock, time = time, crit = Title)+
