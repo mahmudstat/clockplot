@@ -38,8 +38,12 @@ clock_chart_qlt<- function(data, time, crit){
   clock <- basic_clock()+
     ggplot2::geom_segment(data = mydata,
                           ggplot2::aes(x= .data$x0, y = .data$y0,
-                                       xend = .data$x1, yend = .data$y1, color = {{crit}}))+
-    ggplot2::geom_point(data = mydata, ggplot2::aes(.data$x1, .data$y1, color = {{crit}}))+
+                                       xend = .data$x1,
+                                       yend = .data$y1,
+                                       color = {{crit}}))+
+    ggplot2::geom_point(data = mydata,
+                        ggplot2::aes(.data$x1, .data$y1,
+                                     color = {{crit}}))+
     ggplot2::theme(legend.position = "right")
   return(clock)
 }
