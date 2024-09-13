@@ -9,10 +9,10 @@ clock_chart(data, time, Col = "black")
 \arguments{
 \item{data}{A data frame}
 
-\item{time}{Time in 24 hours \code{HH:MM:SS} format in the data set
-(19:30:01, for example)
-(19:30:01, for example, although the SS part is ignored due to having
-negligible impact on the final plot, but is kept for better ...)}
+\item{time}{Time in 24 hours. The allowed time formats for these family
+of charts are \code{HH:MM:SS}, \code{HH:MM} or even \code{H:M} (such as \verb{12;30:09}
+or \code{9:3}), although the SS part is ignored due to having
+negligible impact on the final plot).}
 
 \item{Col}{Color name for the lines. The default is \code{black}.}
 }

@@ -14,7 +14,9 @@
 #'  [clock_chart()] for the simplest clock chart
 #'
 #' @param data A data frame
-#' @param time Time in 24 hours HH:MM:SS format in the data set  (19:30:01, for example)
+#' @param time Time in 24 hours. The allowed time formats for these family
+#' of charts are `HH:MM:SS`, `HH:MM` or even `H:M` (such as `12;30:09`
+#' or `9:3`).
 #' @param crit A numeric vector by which length of hands will be modified.
 #' @param Col An optional color name for the hands, defaulted to `black`.
 #'

@@ -9,7 +9,9 @@ clock_chart_qlt(data, time, crit)
 \arguments{
 \item{data}{A data frame}
 
-\item{time}{Time in 24 hours HH:MM:SS format in the data set  (19:30:01, for example)}
+\item{time}{Time in 24 hours. The allowed time formats for these family
+of charts are \code{HH:MM:SS}, \code{HH:MM} or even \code{H:M} (such as \verb{12;30:09}
+or \code{9:3}).}
 
 \item{crit}{The qualitative vector by which hands will be colored.}
 }

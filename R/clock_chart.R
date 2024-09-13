@@ -17,10 +17,10 @@
 #'  [clock_chart_qlt()] for coloring by a qualitative variable
 #'
 #' @param data A data frame
-#' @param time Time in 24 hours `HH:MM:SS` format in the data set
-#'  (19:30:01, for example)
-#' (19:30:01, for example, although the SS part is ignored due to having
-#' negligible impact on the final plot, but is kept for better ...)
+#' @param time Time in 24 hours. The allowed time formats for these family
+#' of charts are `HH:MM:SS`, `HH:MM` or even `H:M` (such as `12;30:09`
+#' or `9:3`), although the SS part is ignored due to having
+#' negligible impact on the final plot).
 #' @param Col Color name for the lines. The default is `black`.
 #' @name clock_chart
 NULL

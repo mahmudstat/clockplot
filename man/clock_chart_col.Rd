@@ -9,8 +9,9 @@ clock_chart_col(data, time, crit, high = "red", low = "green")
 \arguments{
 \item{data}{A data frame}
 
-\item{time}{Time in 24 hours \code{HH:MM:SS} format in the data set
-(19:30:01, for example)}
+\item{time}{Time in 24 hours. The allowed time formats for these family
+of charts are \code{HH:MM:SS}, \code{HH:MM} or even \code{H:M} (such as \verb{12;30:09}
+or \code{9:3}).}
 
 \item{crit}{a numeric vector by which lines will be colored.}
 
@@ -26,7 +27,7 @@ events took place at what times. The lines are colored by a criteria.
 \details{
 Change the title, subtitle or the caption of the plot with
 \code{ggplot2::labs()} .Change the legend title by adding
-\code{ggplot2::labs(size = "TITLE")}.
+\code{ggplot2::labs(size = "TITLE")} or \code{labs(color = "TITLE")}.
 
 Add
 or modify legend by \code{theme(legend.position = "POSITION")}; the valid
