@@ -1,5 +1,7 @@
 # clockplot (development version)
 
+* Fixed bug while allowing free time format. `clock_chart()` and 
+`clock_chart_qlt` were plotting hands along 24 hours. 
 * User does not have give time in `HH:MM:SS`; `HH:MM` or even `H:M` are also
 allowed. 
 * Fixed a bug containing `hour`, `minute`, and `second` variable during internal
