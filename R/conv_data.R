@@ -13,15 +13,15 @@ conv_half_1 <- function(x){
 
 conv_data <- function(data, time){
   # Data Preparation
-  dt <- tidyr::separate_wider_delim(data, cols = {{time}},
-                                    names = c("hour", "minute", "second"),
+  dt <- tidyr::separate_wider_delim(data, cols = {{ time }},
+                                    names = c("hr", "mn", "sc"),
                                     cols_remove = FALSE,
                                     delim = ":") %>% # Separate minute
-    dplyr::mutate(minute = as.numeric(ifelse(is.na(.data$minute),0,.data$minute)),
-                  minute = .data$minute/60,
+    dplyr::mutate(mn = as.numeric(ifelse(is.na(.data$mn),0,.data$mn)),
+                  minute = .data$mn/60,
                   #minute = ifelse(.data$minute<10, .data$minute * 5/30, .data$minute * 5/300),
-                  hour = as.numeric(.data$hour),
-                  timc = .data$hour+.data$minute,
+                  hr = as.numeric(.data$hr),
+                  timc = .data$hr+.data$mn,
                   time_angle = ifelse(0<=.data$timc & .data$timc<=6,
                                       (6-.data$timc)*pi/12,
                                       (30-.data$timc)*pi/12),
@@ -37,15 +37,15 @@ conv_data <- function(data, time){
 conv_data_col <- function(data, time, colby){
   # Data Preparation
   dt <- data %>%
-    tidyr::separate_wider_delim(cols = {{time}},
-                                names = c("hour", "minute", "second"),
+    tidyr::separate_wider_delim(cols = {{ time }},
+                                names = c("hr", "mn", "sc"),
                                 cols_remove = FALSE,
                                 delim = ":") %>% # Separate minute
-    mutate(minute = as.numeric(ifelse(is.na(.data$minute),0,.data$minute)),
-           minute = .data$minute/60,
+    mutate(mn = as.numeric(ifelse(is.na(.data$mn),0,.data$mn)),
+           mn = .data$mn/60,
            #minute = ifelse(.data$minute<10, .data$minute * 5/30, .data$minute * 5/300),
-           hour = as.numeric(.data$hour),
-           timc = .data$hour+.data$minute, # Ignore second
+           hr = as.numeric(.data$hr),
+           timc = .data$hr+.data$mn, # Ignore second
            time_angle = ifelse(0<=.data$timc & .data$timc<=6,
                                (6-.data$timc)*pi/12,
                                (30-.data$timc)*pi/12),
@@ -53,7 +53,7 @@ conv_data_col <- function(data, time, colby){
            y1 = sin(.data$time_angle)*0.95,
            x0 = rep(0, dim(data)[1]),
            y0 = rep(0, dim(data)[1]),
-           colby = {{colby}})
+           colby = {{ colby }})
   return(dt)
 }
 
@@ -61,7 +61,7 @@ conv_data_col <- function(data, time, colby){
 # Change length of hands by a quantitative vector, optionally select a
 # color for the hands
 conv_data_len <- function(data, time, len){
-  len <- dplyr::pull(data, {{len}})
+  len <- dplyr::pull(data, {{ len }})
   # Normalize length. This will be replace by rn
   len <- (len-min(len))/(max(len)-min(len))
   len[which(len==0)] = (
@@ -73,15 +73,15 @@ conv_data_len <- function(data, time, len){
   # Data Preparation
   dt <- data %>%
     dplyr::mutate(len = rn) %>%
-    tidyr::separate_wider_delim(cols = {{time}},
-                         names = c("hour", "minute", "second"),
+    tidyr::separate_wider_delim(cols = {{ time }},
+                         names = c("hr", "mn", "sc"),
                          cols_remove = FALSE,
                          delim = ":") %>% # Separate minute
-    dplyr::mutate(minute = as.numeric(ifelse(is.na(.data$minute),0,.data$minute)),
-                  minute = .data$minute/60,
+    dplyr::mutate(mn = as.numeric(ifelse(is.na(.data$mn),0,.data$mn)),
+                  mn = .data$mn/60,
            #minute = ifelse(.data$minute<10, .data$minute * 5/30, .data$minute * 5/300),
-           hour = as.numeric(.data$hour),
-           timc = .data$hour+.data$minute,
+           hr = as.numeric(.data$hr),
+           timc = .data$hr+.data$mn,
            time_angle = ifelse(0<=.data$timc & .data$timc<=6,
                                (6-.data$timc)*pi/12,
                                (30-.data$timc)*pi/12),

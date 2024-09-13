@@ -26,10 +26,10 @@ Change the title, subtitle or the caption of the plot with
 \code{ggplot2::labs()}. See examples.
 }
 \examples{
-df <- tibble::tibble(hr = sample(0:23, 30, replace = TRUE),
+df <- tibble::tibble(hor = sample(0:23, 30, replace = TRUE),
                   mnt = sample(0:59, 30, replace = TRUE),
                   sec = sample(0:59, 30, replace = TRUE),
-                  time = paste(hr, mnt, sec, sep = ":"),
+                  time = paste(hor, mnt, sec, sep = ":"),
                   value = sample(40,30))
 clock_chart_len(df, time, crit = value, Col = "blue")+
 ggplot2::labs(title = "Plot Title")

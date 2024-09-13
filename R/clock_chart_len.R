@@ -21,21 +21,21 @@
 #' @name clock_chart_len
 NULL
 #' @examples
-#' df <- tibble::tibble(hr = sample(0:23, 30, replace = TRUE),
+#' df <- tibble::tibble(hor = sample(0:23, 30, replace = TRUE),
 #'                   mnt = sample(0:59, 30, replace = TRUE),
 #'                   sec = sample(0:59, 30, replace = TRUE),
-#'                   time = paste(hr, mnt, sec, sep = ":"),
+#'                   time = paste(hor, mnt, sec, sep = ":"),
 #'                   value = sample(40,30))
 #' clock_chart_len(df, time, crit = value, Col = "blue")+
 #' ggplot2::labs(title = "Plot Title")
 #' @export
 clock_chart_len <- function(data, time, crit, Col = "black"){
-  mydata <- conv_data_len(data = data, time = {{time}}, len = {{crit}})
+  mydata <- conv_data_len(data = data, time = {{ time }}, len = {{ crit }})
   clock <- basic_clock()+
     ggplot2::geom_segment(data = mydata, color = Col,
                           ggplot2::aes(x= .data$x0, y = .data$y0,
                                        xend = .data$x1, yend = .data$y1))+
     ggplot2::geom_point(data = mydata,
-                        ggplot2::aes(.data$x1, .data$y1, color = {{Col}}))
+                        ggplot2::aes(.data$x1, .data$y1, color = {{ Col }}))
   return(clock)
 }
