@@ -29,22 +29,26 @@ see all the available functions.
 ## Applications
 
 Below we mention some relevant applications. [Click
-here](https://github.com/mahmudstat/clockplot/blob/main/README.Rmd) to
+here](https://mahmudstat.github.io/clockplot/articles/clockplot.html) to
 see the reproducible codes.
 
 We have a small data of times of messages received throughout a
 particular day, along with sender of the messages and their types. Let
 us the pattern of messages by senders.
 
-<img src="man/figures/README-exqlt-1.png" alt="SMS times" width="100%" />
+    #> Warning in clock_chart_qlt(smsclock, time = time, crit = sender): No. of
+    #> categories is more than 5 and may not be distinguished well. Try clock_chart()
+    #> function instead?
+
+<img src="man/figures/README-exqlt-1.png" alt="SMS times" width="100%" style="display: block; margin: auto;" />
 
 ### Modifying Clock Hands
 
-<img src="man/figures/README-example-1.png" alt="Clock chart of random event times based on a random sample." width="100%" />
+<img src="man/figures/README-example-1.png" alt="Clock chart of random event times based on a random sample." width="100%" style="display: block; margin: auto;" />
 
 ### Week Chart
 
-<img src="man/figures/README-week-chart-1.png" alt="Week chart of Temperature" width="100%" />
+<img src="man/figures/README-week-chart-1.png" alt="Week chart of Temperature" width="100%" style="display: block; margin: auto;" />
 
 ## Aditional Components
 

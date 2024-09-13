@@ -38,14 +38,14 @@ see all the available functions.
 
 ## Applications
 
-Below we mention some relevant applications. [Click here](https://github.com/mahmudstat/clockplot/blob/main/README.Rmd) to 
+Below we mention some relevant applications. [Click here](https://mahmudstat.github.io/clockplot/articles/clockplot.html) to 
 see the reproducible codes. 
 
 We have a small data of times of messages received throughout a particular
 day, along with sender of the messages and their types. Let us the pattern
 of messages by senders. 
 
-```{r exqlt, echo=FALSE}
+```{r exqlt, echo=FALSE, fig.align = 'center', fig.height=6, fig.width=6}
 #| fig.alt = "SMS times"
 library(clockplot)
 clock_chart_qlt(smsclock, time = time, crit = sender)+
@@ -57,7 +57,7 @@ clock_chart_qlt(smsclock, time = time, crit = sender)+
 ### Modifying Clock Hands
 
 
-```{r example, echo=FALSE}
+```{r example, echo=FALSE, fig.align = 'center', fig.height=6, fig.width=6}
 #| fig.alt = "Clock chart of random event times based on a random sample."
 set.seed(10)
 df <- tibble::tibble(hr = sample(0:23, 50, replace = TRUE),
@@ -68,12 +68,13 @@ df <- tibble::tibble(hr = sample(0:23, 50, replace = TRUE),
 p1 <- clock_chart_qnt(df, time, len = value, Col = value)
 p1 + ggplot2::theme(legend.position = "bottom")+
 ggplot2::labs(title = "Times of Departure of Trains", 
-              color = "Distance from Destination")
+              size = "Distance from Destination",
+              color = "")
 ```
 
 ### Week Chart
 
-```{r week-chart, echo=FALSE}
+```{r week-chart, echo=FALSE, fig.align = 'center', fig.height=6, fig.width=6}
 #| fig.alt = "Week chart of Temperature"
 set.seed(15)
 wtemp <- sample(10:40,7)
