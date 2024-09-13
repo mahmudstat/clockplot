@@ -39,8 +39,8 @@ The clockpolot offers three types of plot
 2. Cyclic Charts
 3. Period planner
 
-The first type shows event times (HH:MM:SS) on a 24 hour clock. The times can be 
-arbitrary (such as `16:54:34`) and not necessarily specific hours at all. 
+The first type shows event times on a 24 hour clock. The times can be 
+arbitrary in the formats `HH:MM:SS`, `HH:MM` or even `H:M (such as `9:3`) and not necessarily specific hours at all. 
 
 
 The second type allows you to show values during a certain duration (day, week, month, and year). There is a generic function `cyclic_chart()` for arbitrary period, while
@@ -50,8 +50,8 @@ Finally, the third one can help you make a plan in a certain period (day, week, 
 
 ## Clock Charts
 
-The examples use built-in data sets. If your times are in `HH:MM` format,
-you can covert to `HH:MM:SS` format using `hms::parse_hm()`. 
+The examples use built-in data sets. The allowed time formats for these family
+of charts are `HH:MM:SS`, `HH:MM` or even `H:M` (such as `12;30:09` or `9:3`). 
 
 ### Basic Clock Chart
 
@@ -104,7 +104,6 @@ p <- clock_chart_col(bdquake, time = hms, crit = mag)
 p + ggplot2::labs(size = "Magnitude", title = "Earthquakes in Bangladesh since 2023")
 ```
 
-
 It would be great if we could modify the length of the hands as well. We see 
 that in the next chart. 
 
@@ -151,6 +150,13 @@ length by and an argument `Col` to choose a specific color for the hands.
 p1 <- clock_chart_len(data = bdquake, time = hms, crit = depth)
 p1 + ggplot2::labs(title = "Earthquakes in Bangladesh since 2023")
 ```
+
+#### Choosing between `clock_chart_len()` and `clock_chart_qnt()`
+
+If we have a column which represents length, distance, or an amount, or 
+something similar, we may go ahead and use `clock_chart_qnt`, otherwise, when
+the length does not meaningfully present a variable, we can confine ourselves
+to `clock_chart_qnt()`. 
 
 ### Qualitative variable
 
