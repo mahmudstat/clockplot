@@ -95,9 +95,10 @@ functions.</p>
 <li>Cyclic Charts</li>
 <li>Period planner</li>
 </ol>
-<p>The first type shows event times (HH:MM:SS) on a 24 hour clock. The
-times can be arbitrary (such as <code>16:54:34</code>) and not
-necessarily specific hours at all.</p>
+<p>The first type shows event times on a 24 hour clock. The times can be
+arbitrary in the formats <code>HH:MM:SS</code>, <code>HH:MM</code> or
+even <code>H:M (such as</code>9:3`) and not necessarily specific hours
+at all.</p>
 <p>The second type allows you to show values during a certain duration
 (day, week, month, and year). There is a generic function
 <code><a href="../reference/cyclic_chart.html">cyclic_chart()</a></code> for arbitrary period, while there charts
@@ -108,9 +109,10 @@ specially made for specific period (day, week, year etc.)</p>
 <div class="section level2">
 <h2 id="clock-charts">Clock Charts<a class="anchor" aria-label="anchor" href="#clock-charts"></a>
 </h2>
-<p>The examples use built-in data sets. If your times are in
-<code>HH:MM</code> format, you can covert to <code>HH:MM:SS</code>
-format using <code><a href="https://hms.tidyverse.org/reference/parse_hms.html" class="external-link">hms::parse_hm()</a></code>.</p>
+<p>The examples use built-in data sets. The allowed time formats for
+these family of charts are <code>HH:MM:SS</code>, <code>HH:MM</code> or
+even <code>H:M</code> (such as <code>12;30:09</code> or
+<code>9:3</code>).</p>
 <div class="section level3">
 <h3 id="basic-clock-chart">Basic Clock Chart<a class="anchor" aria-label="anchor" href="#basic-clock-chart"></a>
 </h3>
@@ -208,6 +210,16 @@ to choose a specific color for the hands.</p>
 <code class="sourceCode R"><span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/clock_chart_len.html">clock_chart_len</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">bdquake</span>, time <span class="op">=</span> <span class="va">hms</span>, crit <span class="op">=</span> <span class="va">depth</span><span class="op">)</span></span>
 <span><span class="va">p1</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Earthquakes in Bangladesh since 2023"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="clockplot_files/figure-html/clock-chart-len-1.png" width="576" style="display: block; margin: auto;"></p>
+<div class="section level4">
+<h4 id="choosing-between-clock_chart_len-and-clock_chart_qnt">Choosing between <code>clock_chart_len()</code> and
+<code>clock_chart_qnt()</code><a class="anchor" aria-label="anchor" href="#choosing-between-clock_chart_len-and-clock_chart_qnt"></a>
+</h4>
+<p>If we have a column which represents length, distance, or an amount,
+or something similar, we may go ahead and use
+<code>clock_chart_qnt</code>, otherwise, when the length does not
+meaningfully present a variable, we can confine ourselves to
+<code><a href="../reference/clock_chart_qnt.html">clock_chart_qnt()</a></code>.</p>
+</div>
 </div>
 <div class="section level3">
 <h3 id="qualitative-variable">Qualitative variable<a class="anchor" aria-label="anchor" href="#qualitative-variable"></a>
