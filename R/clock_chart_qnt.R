@@ -38,16 +38,16 @@ NULL
 #' title = "Earthquakes in Bangladesh since 2023")
 #' @export
 clock_chart_qnt <- function(data, time, len, Col, high = "red", low = "green"){
-  mydata <- conv_data_len(data = data, time = {{time}}, len = {{len}})
+  mydata <- conv_data_len(data = data, time = {{ time }}, len = {{ len }})
   clock <- basic_clock()+
     ggplot2::geom_segment(data = mydata,
                           ggplot2::aes(x= .data$x0, y = .data$y0,
                                        xend = .data$x1, yend = .data$y1,
-                                       color = {{len}}))+
+                                       color = {{ len }}))+
     ggplot2::geom_point(data = mydata,
                         ggplot2::aes(.data$x1, .data$y1,
-                                     color = {{len}}, size = {{Col}}))+
-    ggplot2::scale_color_gradient(high = {{high}}, low = {{low}})+
+                                     color = {{ len }}, size = {{ Col }}))+
+    ggplot2::scale_color_gradient(high = {{ high }}, low = {{ low }})+
     ggplot2::theme(legend.position = "bottom")
   return(clock)
 }

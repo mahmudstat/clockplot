@@ -34,18 +34,18 @@ NULL
 
 #' @export
 clock_chart_qlt<- function(data, time, crit){
-  crit = dplyr::pull(data, {{crit}})
+  crit = dplyr::pull(data, {{ crit }})
   if(length(unique(crit))>5) warning("No. of categories is more than 5 and may not be distinguished well. Try clock_chart() function instead?")
-  mydata <- conv_data(data = data, time = {{time}})
+  mydata <- conv_data(data = data, time = {{ time }})
   clock <- basic_clock()+
     ggplot2::geom_segment(data = mydata,
                           ggplot2::aes(x= .data$x0, y = .data$y0,
                                        xend = .data$x1,
                                        yend = .data$y1,
-                                       color = {{crit}}))+
+                                       color = {{ crit }}))+
     ggplot2::geom_point(data = mydata,
                         ggplot2::aes(.data$x1, .data$y1,
-                                     color = {{crit}}))+
+                                     color = {{ crit }}))+
     ggplot2::theme(legend.position = "right")
   return(clock)
 }

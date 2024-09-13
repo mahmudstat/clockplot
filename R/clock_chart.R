@@ -31,7 +31,7 @@ NULL
 #' #  Add clock_chart(brintcity %>% filter(Origin == "Dhaka"), time = Departure)
 #' @export
 clock_chart <- function(data, time, Col = "black"){
-  mydata <- conv_data(data = data, time = {{time}})
+  mydata <- conv_data(data = data, time = {{ time }})
   clock <- basic_clock()+
     ggplot2::geom_segment(data = mydata, color = Col,
                           ggplot2::aes(x= .data$x0, y = .data$y0,
