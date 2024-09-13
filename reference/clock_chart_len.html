@@ -13,7 +13,7 @@ For better use of color and length together, consider using clock_chart_qnt().">
 
     <a class="navbar-brand me-2" href="../index.html">clockplot</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.6.1.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.6.3.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,7 +63,9 @@ For better use of color and length together, consider using <code><a href="clock
 
 
 <dt id="arg-time">time<a class="anchor" aria-label="anchor" href="#arg-time"></a></dt>
-<dd><p>Time in 24 hours HH:MM:SS format in the data set  (19:30:01, for example)</p></dd>
+<dd><p>Time in 24 hours. The allowed time formats for these family
+of charts are <code>HH:MM:SS</code>, <code>HH:MM</code> or even <code>H:M</code> (such as <code>12;30:09</code>
+or <code>9:3</code>).</p></dd>
 
 
 <dt id="arg-crit">crit<a class="anchor" aria-label="anchor" href="#arg-crit"></a></dt>
@@ -89,13 +91,8 @@ For better use of color and length together, consider using <code><a href="clock
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a></span><span class="op">(</span>hr <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">23</span>, <span class="fl">30</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span></span>
-<span class="r-in"><span>                  mnt <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">59</span>, <span class="fl">30</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span></span>
-<span class="r-in"><span>                  sec <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">59</span>, <span class="fl">30</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span></span>
-<span class="r-in"><span>                  time <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="va">hr</span>, <span class="va">mnt</span>, <span class="va">sec</span>, sep <span class="op">=</span> <span class="st">":"</span><span class="op">)</span>,</span></span>
-<span class="r-in"><span>                  value <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fl">40</span>,<span class="fl">30</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu">clock_chart_len</span><span class="op">(</span><span class="va">df</span>, <span class="va">time</span>, crit <span class="op">=</span> <span class="va">value</span>, Col <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span><span class="op">+</span></span></span>
-<span class="r-in"><span><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Plot Title"</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="fu">clock_chart_len</span><span class="op">(</span>data <span class="op">=</span> <span class="va">bdquake</span>, time <span class="op">=</span> <span class="va">hms</span>, crit <span class="op">=</span> <span class="va">depth</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">p1</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Earthquakes in Bangladesh since 2023"</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="clock_chart_len-1.png" alt="" width="700" height="433"></span>
 </code></pre></div>
     </div>

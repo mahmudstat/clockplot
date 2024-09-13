@@ -11,7 +11,7 @@ modified according to a numeric vector."><meta property="og:image" content="http
 
     <a class="navbar-brand me-2" href="../index.html">clockplot</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.6.1.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.6.3.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,7 +60,9 @@ modified according to a numeric vector.</p>
 
 
 <dt id="arg-time">time<a class="anchor" aria-label="anchor" href="#arg-time"></a></dt>
-<dd><p>Time in 24 hours HH:MM:SS format in the data set  (19:30:01, for example)</p></dd>
+<dd><p>Time in 24 hours. The allowed time formats for these family
+of charts are <code>HH:MM:SS</code>, <code>HH:MM</code> or even <code>H:M</code> (such as <code>12;30:09</code>
+or <code>9:3</code>).</p></dd>
 
 
 <dt id="arg-len">len<a class="anchor" aria-label="anchor" href="#arg-len"></a></dt>
@@ -85,7 +87,8 @@ To use a single color for all lines, use same value for <code>high</code> and <c
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Change the title, subtitle or the caption of the plot with
 <code><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ggplot2::labs()</a></code> .Change the legend title by adding
-<code>ggplot2::labs(color = "TITLE")</code>. Add
+<code>ggplot2::labs(color = "TITLE 1", size = "TITLE2")</code>.
+Add
 or modify legend by <code>theme(legend.position = "POSITION")</code>; the valid
 postion names in <code>ggplot2</code> are <code>top</code>, <code>bottom</code>, <code>right</code>, and <code>left</code>,
 excluding more complex options.</p>

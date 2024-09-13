@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">clockplot</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.6.1.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.6.3.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,7 +37,10 @@
 
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="development version" id="clockplot-development-version">clockplot (development version)<a class="anchor" aria-label="anchor" href="#clockplot-development-version"></a></h2>
-<ul><li>Added gitcommit data up to 12 Sep, 2024</li>
+<ul><li>User does not have give time in <code>HH:MM:SS</code>; <code>HH:MM</code> or even <code>H:M</code> are also allowed.</li>
+<li>Fixed a bug containing <code>hour</code>, <code>minute</code>, and <code>second</code> variable during internal data conversion.</li>
+<li>Updated <code>smsclock</code> data (Sep 01 to Sep 09 (2024))</li>
+<li>Added gitcommit data up to 12 Sep, 2024</li>
 </ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.6.1.9000" id="clockplot-0619000">clockplot 0.6.1.9000<a class="anchor" aria-label="anchor" href="#clockplot-0619000"></a></h2>
@@ -45,8 +48,9 @@
 </li>
 <li>Added Bangladesh Railway data set (<code>brintcity</code>)</li>
 <li>
-<code>conv_hms</code> is being deprecated. Use <code><a href="https://hms.tidyverse.org/reference/parse_hms.html" class="external-link">hms::parse_hm</a></code> instead.</li>
-<li>Added legend by size of `geom_point</li>
+<code>conv_hms</code> is being deprecated. Use <code><a href="https://hms.tidyverse.org/reference/parse_hms.html" class="external-link">hms::parse_hm()</a></code> instead.</li>
+<li>Added legend by size of <code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point()</a></code>
+</li>
 <li>Added and explained <code><a href="../reference/clock_chart.html">clock_chart()</a></code> examples in vignettes.</li>
 </ul></div>
     <div class="section level2">

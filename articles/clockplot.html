@@ -26,7 +26,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">clockplot</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.6.1.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.6.3.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -137,14 +137,14 @@ look on it.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/clock_chart.html">clock_chart</a></span><span class="op">(</span><span class="va">smsclock</span>, <span class="va">time</span>, Col <span class="op">=</span> <span class="st">"green"</span><span class="op">)</span></span>
 <span><span class="va">p1</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"SMS Receiving Times"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="clockplot_files/figure-html/clock-chart-1.png" width="480" style="display: block; margin: auto;"></p>
+<p><img src="clockplot_files/figure-html/clock-chart-1.png" width="576" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level3">
 <h3 id="colored-clock-chart">Colored Clock Chart<a class="anchor" aria-label="anchor" href="#colored-clock-chart"></a>
 </h3>
 <p>In the previous chart, we colored the hands by an arbitrary color. We
 may want to color it by a <code>numeric</code> variable.
-<code>clock_chart_col</code> exactly does this.</p>
+<code><a href="../reference/clock_chart_col.html">clock_chart_col()</a></code> exactly does this.</p>
 <p>We may use <code>bdquake</code> data set for this.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">bdquake</span><span class="op">)</span></span>
@@ -162,7 +162,7 @@ may want to color it by a <code>numeric</code> variable.
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/clock_chart_col.html">clock_chart_col</a></span><span class="op">(</span><span class="va">bdquake</span>, time <span class="op">=</span> <span class="va">hms</span>, crit <span class="op">=</span> <span class="va">mag</span><span class="op">)</span></span>
 <span><span class="va">p</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>size <span class="op">=</span> <span class="st">"Magnitude"</span>, title <span class="op">=</span> <span class="st">"Earthquakes in Bangladesh since 2023"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="clockplot_files/figure-html/clock-chart-col-1.png" width="480" style="display: block; margin: auto;"></p>
+<p><img src="clockplot_files/figure-html/clock-chart-col-1.png" width="576" style="display: block; margin: auto;"></p>
 <p>It would be great if we could modify the length of the hands as well.
 We see that in the next chart.</p>
 </div>
@@ -185,7 +185,7 @@ for all lines, use same value for <code>high</code> and
 <span>Col <span class="op">=</span> <span class="va">mag</span>, high <span class="op">=</span> <span class="st">"red"</span>, low <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span></span>
 <span><span class="va">p1</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"Depth"</span>, size <span class="op">=</span> <span class="st">"Magnitude"</span>,</span>
 <span>title <span class="op">=</span> <span class="st">"Earthquakes in Bangladesh since 2023"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="clockplot_files/figure-html/clock-chart-qnt-1.png" width="480" style="display: block; margin: auto;"></p>
+<p><img src="clockplot_files/figure-html/clock-chart-qnt-1.png" width="576" style="display: block; margin: auto;"></p>
 <p>If you do not have two variables for <code>len</code> and
 <code>Col</code>, use one single variable for both options.</p>
 <p>As is evident from the chart, the size of the points represents the
@@ -207,13 +207,18 @@ to choose a specific color for the hands.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/clock_chart_len.html">clock_chart_len</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">bdquake</span>, time <span class="op">=</span> <span class="va">hms</span>, crit <span class="op">=</span> <span class="va">depth</span><span class="op">)</span></span>
 <span><span class="va">p1</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Earthquakes in Bangladesh since 2023"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="clockplot_files/figure-html/clock-chart-len-1.png" width="480" style="display: block; margin: auto;">
-### Qualitative variable</p>
+<p><img src="clockplot_files/figure-html/clock-chart-len-1.png" width="576" style="display: block; margin: auto;"></p>
+</div>
+<div class="section level3">
+<h3 id="qualitative-variable">Qualitative variable<a class="anchor" aria-label="anchor" href="#qualitative-variable"></a>
+</h3>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/clock_chart_qlt.html">clock_chart_qlt</a></span><span class="op">(</span><span class="va">smsclock</span>, time <span class="op">=</span> <span class="va">time</span>, crit <span class="op">=</span> <span class="va">sender</span><span class="op">)</span><span class="op">+</span></span>
 <span><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"Sender"</span>, title <span class="op">=</span> <span class="st">"SMS's Received throughout the Day"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="clockplot_files/figure-html/clock-chart-qlt-1.png" width="576" style="display: block; margin: auto;"></p>
 <p>This makes it convenient to see which sender sent messages when.</p>
+<p>We can also make use of the <code><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap()</a></code> function from
+the <code>ggplot2</code> package.</p>
 <p><strong>Instructions from the beginning which args to use in
 labs.</strong></p>
 </div>
