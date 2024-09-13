@@ -5,14 +5,15 @@
 \alias{smsclock}
 \title{Data of Times of Receiving of SMS}
 \format{
-A data frame with 40 rows and 5 variables:
+A data frame with 82 rows and 7 variables:
 \describe{
 \item{Date}{Date}
+\item{day}{Day}
 \item{time}{Time in HH:MM:SS format}
 \item{sender}{Name of the sms sender}
 \item{invoked}{Whether the sms is invoked by the user}
 \item{type}{The category of the sms; offer, info, ad, service etc.}
-...
+\item{Title}{Message Title}
 }
 }
 \source{
@@ -23,6 +24,6 @@ smsclock
 }
 \description{
 A dataset containing timings of receiving sms on mobile phone.
-Real data for a particular day
+Real data from 01 to 09 September, 2024
 }
 \keyword{datasets}
