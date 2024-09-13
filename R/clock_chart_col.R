@@ -5,7 +5,9 @@
 #'
 #' Change the title, subtitle or the caption of the plot with
 #' `ggplot2::labs()` .Change the legend title by adding
-#' `ggplot2::labs(color = "TITLE")`. Add
+#' `ggplot2::labs(size = "TITLE")` or `labs(color = "TITLE")`.
+#'
+#' Add
 #' or modify legend by `theme(legend.position = "POSITION")`; the valid
 #' postion names in `ggplot2` are `top`, `bottom`, `right`, and `left`,
 #' excluding more complex options.
@@ -29,7 +31,7 @@ NULL
 #' df <- data.frame(time = c("06:00:00", "08:00:00", "17:30:00"),
 #' value = c(3,6,9))
 #' clock_chart_col(df, time, crit = value)+
-#' ggplot2::labs(color = "TITLE")
+#' ggplot2::labs(size = "TITLE")
 #'
 #' @export
 clock_chart_col <- function(data, time, crit, high = "red", low = "green"){

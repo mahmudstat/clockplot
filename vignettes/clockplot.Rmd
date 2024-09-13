@@ -10,6 +10,7 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
+  warning = FALSE,
   comment = "#>"
 )
 ```
@@ -73,7 +74,7 @@ The code produces a `ggplot2` object, so we can add (`+`) add extra components
 to make it more informative. 
 
 
-```{r clock-chart, fig.align = 'center', fig.height=5, fig.width=5}
+```{r clock-chart, fig.align = 'center', fig.height=6, fig.width=6}
 p1 <- clock_chart(smsclock, time, Col = "green")
 p1 + ggplot2::labs(title = "SMS Receiving Times")
 ```
@@ -82,7 +83,7 @@ p1 + ggplot2::labs(title = "SMS Receiving Times")
 ### Colored Clock Chart
 
 In the previous chart, we colored the hands by an arbitrary color. We may want
-to color it by a `numeric` variable. `clock_chart_col` exactly does this. 
+to color it by a `numeric` variable. `clock_chart_col()` exactly does this. 
 
 We may use `bdquake` data set for this. 
 
@@ -98,7 +99,7 @@ clock_chart_col(bdquake, time = hms, crit = mag)
 
 Let us modify it.
 
-```{r clock-chart-col, fig.align = 'center', fig.height=5, fig.width=5}
+```{r clock-chart-col, fig.align = 'center', fig.height=6, fig.width=6}
 p <- clock_chart_col(bdquake, time = hms, crit = mag)
 p + ggplot2::labs(size = "Magnitude", title = "Earthquakes in Bangladesh since 2023")
 ```
@@ -121,7 +122,7 @@ The `high` and `low` color names can be vice versa or other colors, depending on
 
 **The custom plot**
 
-```{r clock-chart-qnt, fig.align = 'center', fig.height=5, fig.width=5}
+```{r clock-chart-qnt, fig.align = 'center', fig.height=6, fig.width=6}
 p1 <- clock_chart_qnt(data = bdquake, time = hms, len = depth,
 Col = mag, high = "red", low = "blue")
 p1 + ggplot2::labs(color = "Depth", size = "Magnitude",
@@ -146,10 +147,11 @@ Although there is another function `clock_chart_len()` to modify length of the
 clock hands, this is rarely useful. Here you can use a variable to modify the
 length by and an argument `Col` to choose a specific color for the hands. 
 
-```{r clock-chart-len, fig.align = 'center', fig.height=5, fig.width=5}
+```{r clock-chart-len, fig.align = 'center', fig.height=6, fig.width=6}
 p1 <- clock_chart_len(data = bdquake, time = hms, crit = depth)
 p1 + ggplot2::labs(title = "Earthquakes in Bangladesh since 2023")
 ```
+
 ### Qualitative variable
 
 
@@ -159,5 +161,9 @@ ggplot2::labs(color = "Sender", title = "SMS's Received throughout the Day")
 ```
 
 This makes it convenient to see which sender sent messages when. 
+
+We can also make use of the `facet_wrap()` function from the `ggplot2` package.
+
+
 
 **Instructions from the beginning which args to use in labs.**
