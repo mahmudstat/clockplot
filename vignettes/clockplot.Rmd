@@ -162,11 +162,14 @@ to `clock_chart_qnt()`.
 
 
 ```{r clock-chart-qlt, fig.align = 'center', fig.height=6, fig.width=6}
-clock_chart_qlt(smsclock, time = time, crit = sender)+
+clock_chart_qlt(smsclock, time = time, crit = Title)+
 ggplot2::labs(color = "Sender", title = "SMS's Received throughout the Day")
 ```
 
-This makes it convenient to see which sender sent messages when. 
+This makes it convenient to see which types of messages were sent when. Certain 
+types of messages, such as Supper_Offer, are always sent around the same time. 
+Other messages are spread throughout the day. Between 11 PM and 6 AM, no 
+messages are received. 
 
 We can also make use of the `facet_wrap()` function from the `ggplot2` package.
 
