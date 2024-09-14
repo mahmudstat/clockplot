@@ -40,7 +40,8 @@ The clockpolot offers three types of plot
 3. Period planner
 
 The first type shows event times on a 24 hour clock. The times can be 
-arbitrary in the formats `HH:MM:SS`, `HH:MM` or even `H:M (such as `9:3`) and not necessarily specific hours at all. 
+arbitrary in the formats `HH:MM:SS`, `HH:MM` or even `H:M` (such as `9:3`),
+and not necessarily specific hours at all. 
 
 
 The second type allows you to show values during a certain duration (day, week, month, and year). There is a generic function `cyclic_chart()` for arbitrary period, while
@@ -79,6 +80,10 @@ p1 <- clock_chart(smsclock, time, Col = "green")
 p1 + ggplot2::labs(title = "SMS Receiving Times")
 ```
 
+The chart shows when the messages are sent. The largest break is seen during 
+the night time (approximately 11 PM to 6 AM). Only one (01) message is received
+from 2:30 PM to 4:30 PM. Other than a few intermissions which are worth around
+30 minutes, messages are received round the clock. 
 
 ### Colored Clock Chart
 
@@ -140,6 +145,29 @@ to time. Most earthquakes occurred between around 1 PM to around 5 PM. Two
 of the biggest gaps can be seen between 5 PM to 9 PM (a gap amounting to 4 
 hours) and 10 PM to quarter after 2 AM (almost 4.25 hours). 
 
+If we want a single variable to determine color and length, we can use the 
+following method to properly show the legend. The plot code is shown
+as a comment. To see the result, uncomment and run. 
+
+```{r, eval=FALSE}
+labs(size = "TITLE", color = "")
+# clock_chart_qnt(acdt, time = Time, len = Temperature.F., Col = Temperature.F.)+labs(size = "Temperature", color = "")
+```
+
+#### US Accidents plot
+
+The data is taken from 
+[Kaggle](https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents)
+and a small part (100 rows) extracted. To see the modified data, visit 
+[this link](https://raw.githubusercontent.com/mahmudstat/open-analysis/main/data/usacc.csv). 
+
+```{r, clock-chart-acdt, fig.align = 'center', fig.height=6, fig.width=6}
+acdt <- read.csv("https://raw.githubusercontent.com/mahmudstat/open-analysis/main/data/usacc.csv")
+clock_chart_qnt(acdt, time = Time, len = Humidity... , Col = Temperature.F.)+
+  ggplot2::labs(size = "Humidity", color = "Temperature")
+```
+
+
 ### Modified Length
 
 Although there is another function `clock_chart_len()` to modify length of the
@@ -151,12 +179,13 @@ p1 <- clock_chart_len(data = bdquake, time = hms, crit = depth)
 p1 + ggplot2::labs(title = "Earthquakes in Bangladesh since 2023")
 ```
 
+
 #### Choosing between `clock_chart_len()` and `clock_chart_qnt()`
 
 If we have a column which represents length, distance, or an amount, or 
-something similar, we may go ahead and use `clock_chart_qnt`, otherwise, when
+something similar, we may go ahead and use `clock_chart_qnt()`, otherwise, when
 the length does not meaningfully present a variable, we can confine ourselves
-to `clock_chart_qnt()`. 
+to `clock_chart_len()`. 
 
 ### Qualitative variable
 
@@ -174,12 +203,27 @@ ggplot2::labs(color = "Sender", title = "SMS's Received throughout the Day")
 ```
 
 This makes it convenient to see which types of messages were sent when. Certain 
-types of messages, such as Supper_Offer, are always sent around the same time. 
+types of messages, such as Supper_Offer, are always sent around the same time 
+(4:30 PM to 6 PM). 
 Other messages are spread throughout the day. Between 11 PM and 6 AM, no 
 messages are received. 
 
 We can also make use of the `facet_wrap()` function from the `ggplot2` package.
 
+We can use the following to see the visual relationship between message 
+Sender and the Day of the week. 
 
+```{r eval=FALSE}
+clock_chart_qlt(smsclock, time = time, crit = sender)+facet_wrap(~day)
+```
+
+Or we may be interested to see the association between message title and the 
+time when they are sent. 
+
+```{r eval=FALSE}
+clock_chart_qlt(smsclock, time = time, crit = sender)+facet_wrap(~Title)
+```
 
 **Instructions from the beginning which args to use in labs.**
+
+

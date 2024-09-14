@@ -60,3 +60,20 @@ gitcommit <- read.csv("data-raw/gitcommit.csv")
 
 usethis::use_data(gitcommit, overwrite = TRUE)
 
+
+# US Accidents
+
+acdt <- read.csv("https://raw.githubusercontent.com/mahmudstat/open-analysis/main/data/usacc.csv")
+
+acdt <- acdt %>% select(c("Start_Time", "Start_Lat", "Start_Lng",
+                          "City", "County", "State", "Weather_Timestamp",
+                          "Temperature.F.", "Humidity...", "Weather_Condition"))
+
+
+acdt <- acdt %>% mutate(
+  Time = unlist(lapply(strsplit(Start_Time ," "), '[[', 2)),
+  Wether_Time <- unlist(lapply(strsplit(Weather_Timestamp ," "), '[[', 2))
+)
+
+write.csv(acdt, file = "../acdt.csv")
+
