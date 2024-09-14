@@ -1,7 +1,7 @@
 Package: clockplot
 Type: Package
 Title: Clock Chart with Event Times on Clock
-Version: 0.6.3.9000
+Version: 0.6.4.9000
 Authors@R: person(given = c("Abdullah", "Al"),
                     family = "Mahmud",
                     role = c("aut", "cre"),

@@ -4,10 +4,10 @@
 `clock_chart_qlt` were plotting hands along 24 hours. 
 * User does not have give time in `HH:MM:SS`; `HH:MM` or even `H:M` are also
 allowed. 
-* Fixed a bug containing `hour`, `minute`, and `second` variable during internal
-data conversion. 
+* Fixed a bug containing `hour`, `minute`, and `second` variable 
+during internal data conversion. 
 * Updated `smsclock` data (Sep 01 to Sep 09 (2024))
-* Added gitcommit data up to 12 Sep, 2024
+* Added `gitcommit` data up to 12 Sep, 2024
 
 # clockplot 0.6.1.9000
 
