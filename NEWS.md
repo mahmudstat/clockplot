@@ -1,5 +1,9 @@
 # clockplot (development version)
 
+* Added US Accidents data and example. 
+
+# clockplot 0.6.3.9000
+
 * Fixed bug while allowing free time format. `clock_chart()` and 
 `clock_chart_qlt` were plotting hands along 24 hours. 
 * User does not have give time in `HH:MM:SS`; `HH:MM` or even `H:M` are also
