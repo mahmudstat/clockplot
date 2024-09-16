@@ -4,7 +4,7 @@
 \alias{week_chart}
 \title{Week Chart}
 \usage{
-week_chart(wvalue, lgnm = "Value", high = "yellow", low = "green", width = 0.5)
+week_chart(wvalue, lgnm = "Value", high = "yellow", low = "green", width = 0.9)
 }
 \arguments{
 \item{wvalue}{A numeric vector having values on each day, starting from

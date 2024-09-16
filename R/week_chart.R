@@ -24,7 +24,8 @@ NULL
 #' week_chart(wtemp, high = "yellow")+ggplot2::labs(title = "Random Values by Day")
 #' @export
 week_chart <- function(wvalue, lgnm = "Value",
-                       high = "yellow", low = "green", width = 0.5){
+                       high = "yellow", low = "green", width = 0.9){
+  stopifnot("Give a numeric vector" = is.numeric(x))
   days <- paste(c("Satur", "Sun", "Mon", "Tues", "Wednes", "Thurs", "Fri"), "day", sep = "")
   df <- tibble::tibble(days, wvalue) %>%
     dplyr::mutate(days = factor(days, levels = days))
