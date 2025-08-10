@@ -43,7 +43,7 @@ We have a small data of times of messages received throughout a particular
 day, along with sender of the messages and their types. Let us the pattern
 of messages by senders. 
 
-```{r exqlt, echo=FALSE, fig.align = 'center', fig.height=6, fig.width=6}
+```{r exqlt, warning=FALSE, echo=FALSE, fig.align = 'center', fig.height=6, fig.width=6}
 #| fig.alt = "SMS times"
 library(clockplot)
 clock_chart_qlt(smsclock, time = time, crit = sender)+
@@ -52,7 +52,7 @@ clock_chart_qlt(smsclock, time = time, crit = sender)+
   ggplot2::theme(legend.position = "right")
 ```
 
-### Modifying Clock Hands
+### Modifying the Clock Hands
 
 
 ```{r example, echo=FALSE, fig.align = 'center', fig.height=6, fig.width=6}

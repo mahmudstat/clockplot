@@ -40,7 +40,7 @@ us the pattern of messages by senders.
 
 <img src="man/figures/README-exqlt-1.png" alt="SMS times" width="100%" style="display: block; margin: auto;" />
 
-### Modifying Clock Hands
+### Modifying the Clock Hands
 
 <img src="man/figures/README-example-1.png" alt="Clock chart of random event times based on a random sample." width="100%" style="display: block; margin: auto;" />
 
