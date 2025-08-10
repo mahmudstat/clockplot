@@ -38,6 +38,9 @@ NULL
 #' title = "Earthquakes in Bangladesh since 2023")
 #' @export
 clock_chart_qnt <- function(data, time, len, Col, high = "red", low = "green"){
+  if (!inherits(data, "data.frame")) {
+    stop("`data` must be a data frame or tibble")
+  }
   mydata <- conv_data_len(data = data, time = {{ time }}, len = {{ len }})
   clock <- basic_clock()+
     ggplot2::geom_segment(data = mydata,

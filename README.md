@@ -4,11 +4,13 @@
 # clockplot <a href=""><img src="man/figures/logo.png" align="right" height="100" /></a>
 
 <!-- badges: start -->
+
 <!-- badges: end -->
 
-The primary goal of clockplot is to plot event time on a clock chart.
-Additionally it helps you make a day chart, week chart, or month chart,
-or plan events in those periods.
+The *clockplot* is designed to visualize event times on a circular clock
+chart, helping you create day, week, or month charts for analyzing
+patterns or planning events. It’s perfect for time-based data, from
+personal schedules to periodic trend analysis.
 
 ## Installation
 
@@ -35,10 +37,6 @@ see the reproducible codes.
 We have a small data of times of messages received throughout a
 particular day, along with sender of the messages and their types. Let
 us the pattern of messages by senders.
-
-    #> Warning in clock_chart_qlt(smsclock, time = time, crit = sender): No. of
-    #> categories is more than 5 and may not be distinguished well. Try clock_chart()
-    #> function instead?
 
 <img src="man/figures/README-exqlt-1.png" alt="SMS times" width="100%" style="display: block; margin: auto;" />
 
