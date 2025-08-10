@@ -6,16 +6,21 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>clockchart-construction • clockplot</title>
-<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
-<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
-<script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+<link rel="icon" type="”image/svg+xml”" href="../favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="icon" sizes="any" href="../favicon.ico">
+<link rel="manifest" href="../site.webmanifest">
+<!-- mathjax math --><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script><script>
+  window.MathJax = {
+    chtml: {
+      fontURL: "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/output/chtml/fonts/woff-v2"
+    }
+  };
+</script><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.4.2/css/all.min.css" rel="stylesheet">
-<link href="../deps/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="clockchart-construction">
 </head>
 <body>
@@ -100,33 +105,18 @@ times are plotted. For this, we need a circle, on which we have to mark
 PM).</p>
 <p>It is enough to draw a unit circle, although a circle of any radius
 would do. In <code>R</code>, it is easiest to draw a circle using the
-complex equation. For a unit circle, the equation is
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><mi>i</mi><mi>θ</mi></mrow></msup><annotation encoding="application/x-tex">e^{i\theta}</annotation></semantics></math>,
-where
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math>
-is Euler’s number, an irrational constant having the approximate value
-of 2.71828;
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>
-stands for imaginary unit, equal to
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mrow><mo>−</mo><mn>1</mn></mrow></msqrt><annotation encoding="application/x-tex">\sqrt{-1}</annotation></semantics></math>;
-and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>
-refers to the trigonometric angle in radian. To make a complete circle,
-we need to allow
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>
-to take values from 0 to 360 degrees
-(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>π</mi></mrow><annotation encoding="application/x-tex">2\pi</annotation></semantics></math>
-in radian).</p>
+complex equation. For a unit circle, the equation is <span class="math inline">\(e^{i\theta}\)</span>, where <span class="math inline">\(e\)</span> is Euler’s number, an irrational
+constant having the approximate value of 2.71828; <span class="math inline">\(i\)</span> stands for imaginary unit, equal to
+<span class="math inline">\(\sqrt{-1}\)</span>; and <span class="math inline">\(\theta\)</span> refers to the trigonometric angle
+in radian. To make a complete circle, we need to allow <span class="math inline">\(\theta\)</span> to take values from 0 to 360
+degrees (<span class="math inline">\(2\pi\)</span> in radian).</p>
 <p>Programmatically, we need to create some angles ranging from 0 to
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>π</mi></mrow><annotation encoding="application/x-tex">2\pi</annotation></semantics></math>
-and then connect them to make a complete circle. Let us create 100
-angles and use them in the circle equation
-(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><mi>i</mi><mi>θ</mi></mrow></msup><annotation encoding="application/x-tex">e^{i\theta}</annotation></semantics></math>).
-The trigonometric form of the equation is
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mi>i</mi><msup><mi>n</mi><mn>2</mn></msup><mi>θ</mi><mo>+</mo><mi>c</mi><mi>o</mi><msup><mi>s</mi><mn>2</mn></msup><mi>θ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">sin^2 \theta + cos^2 \theta = 1</annotation></semantics></math>,
-while the algebraic form is
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x^2+y^2 = 1</annotation></semantics></math>.
-The complex form, however, is more convenient.</p>
+<span class="math inline">\(2\pi\)</span> and then connect them to make
+a complete circle. Let us create 100 angles and use them in the circle
+equation (<span class="math inline">\(e^{i\theta}\)</span>). The
+trigonometric form of the equation is <span class="math inline">\(sin^2
+\theta + cos^2 \theta = 1\)</span>, while the algebraic form is <span class="math inline">\(x^2+y^2 = 1\)</span>. The complex form, however,
+is more convenient.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">k</span> <span class="op">&lt;-</span> <span class="fl">100</span></span>
 <span><span class="va">timepoint</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">exp</a></span><span class="op">(</span><span class="fl">1i</span> <span class="op">*</span> <span class="fl">2</span> <span class="op">*</span> <span class="va">pi</span> <span class="op">*</span> <span class="op">(</span><span class="va">k</span><span class="op">:</span><span class="fl">1</span><span class="op">)</span> <span class="op">/</span> <span class="va">k</span><span class="op">)</span></span>
@@ -175,19 +165,16 @@ larger point (hour) means half an hour has elapsed. For instance, the
 the point in the middle of 7 PM and 8 PM is 7:30 PM.</p>
 <p>Now the code <code>exp(1i * 2 * pi * (k:1) / k)</code> gives us all
 the angles corresponding to 24 hours on the clock. Here, we have to note
-that the angles in trigonometry starts from
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>0</mn><mi>o</mi></msup><annotation encoding="application/x-tex">0^o</annotation></semantics></math>
-(X-axis) and rotates counter-clockwise, the direction opposite to the
-rotation of clock hands (the significance of the difference will be seen
-shortly). But the clock moves clockwise. At 0 degree, we have 3 in a
-12-hour clock and 6 in 24-hours clock.</p>
+that the angles in trigonometry starts from <span class="math inline">\(0^o\)</span> (X-axis) and rotates
+counter-clockwise, the direction opposite to the rotation of clock hands
+(the significance of the difference will be seen shortly). But the clock
+moves clockwise. At 0 degree, we have 3 in a 12-hour clock and 6 in
+24-hours clock.</p>
 <p>Similarly, the code
 <code>SubT = exp(1i * 2 * pi * (subk:1) / subk)</code> gives us the
 angles corresponding to the fraction of an hour. As we have already
-mentioned, the clock hand rotates clock-wise, starting from the
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>0</mn><mi>o</mi></msup><annotation encoding="application/x-tex">0^o</annotation></semantics></math>
-angle, so we name the labels 6 PM to 11 PM, then we have 12 PM to 11 PM,
-followed by 12 AM to 5 AM.</p>
+mentioned, the clock hand rotates clock-wise, starting from the <span class="math inline">\(0^o\)</span> angle, so we name the labels 6 PM to
+11 PM, then we have 12 PM to 11 PM, followed by 12 AM to 5 AM.</p>
 <p>The code <code>c(rep(" AM",6), rep(" PM",12), rep(" AM",6))</code>
 ensures this sequence.</p>
 <p>We then place the data into two data frames <code>subtimes</code> and
@@ -281,24 +268,11 @@ the suitable range 1 to 100. In our number system, reaching 100
 indicates we have completed some work, while clockworks say reaching 60
 completes one cycle of the task.</p>
 <p>The hour part does not need conversion. 23 is 23 and 22 is 22.</p>
-<p>Thus, 15 minutes on the clock says
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>15</mn><mn>60</mn></mfrac><mo>=</mo><mfrac><mn>1</mn><mn>4</mn></mfrac></mrow><annotation encoding="application/x-tex">\frac{15}{60} = \frac14</annotation></semantics></math>
-th or
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>25</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">25\%</annotation></semantics></math>
-work, 30 means
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>30</mn><mn>60</mn></mfrac><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>=</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">\frac{30}{60} = \frac12 = 0.5</annotation></semantics></math>
-or
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>50</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">50\%</annotation></semantics></math>
-work, and 50 means
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mn>50</mn><mn>60</mn></mfrac><annotation encoding="application/x-tex">\frac{50}{60}</annotation></semantics></math>
-or
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>83</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">83\%</annotation></semantics></math>
-work have been completed.</p>
+<p>Thus, 15 minutes on the clock says <span class="math inline">\(\frac{15}{60} = \frac14\)</span> th or <span class="math inline">\(25\%\)</span> work, 30 means <span class="math inline">\(\frac{30}{60} = \frac12 = 0.5\)</span> or <span class="math inline">\(50\%\)</span> work, and 50 means <span class="math inline">\(\frac{50}{60}\)</span> or <span class="math inline">\(83\%\)</span> work have been completed.</p>
 <p>The task is further complicated due to the clock and angles rotating
 in opposite directions.</p>
-<p>////THIS CONVERSION IS A BUG////
-ifelse(.data<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mi>i</mi><mi>n</mi><mi>u</mi><mi>t</mi><mi>e</mi><mo>&lt;</mo><mn>10</mn><mo>,</mo><mi>.</mi><mi>d</mi><mi>a</mi><mi>t</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">minute&lt;10, .data</annotation></semantics></math>minute
-* 5/30, .data$minute * 5/300) ////MAY DEPEND ON OLD TIME FORMAT HHMM
+<p>////THIS CONVERSION IS A BUG//// ifelse(.data<span class="math inline">\(minute&lt;10, .data\)</span>minute * 5/30,
+.data$minute * 5/300) ////MAY DEPEND ON OLD TIME FORMAT HHMM
 hrs/////</p>
 </div>
 </div>
@@ -313,7 +287,7 @@ hrs/////</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
 </div>
 
     </footer>
