@@ -28,5 +28,6 @@ Suggests:
     testthat (>= 3.0.0)
 VignetteBuilder: knitr
 URL: https://mahmudstat.github.io/clockplot/
+Language: en-US
 Roxygen: list(markdown = TRUE)
 Config/testthat/edition: 3

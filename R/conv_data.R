@@ -40,7 +40,7 @@ conv_data_col <- function(data, time, colby){
   # Data Preparation
   dt <- data %>%
     mutate(time = hms::parse_hm({{ time }})) %>%
-    tidyr::separate_wider_delim(cols = {{ time }},
+    tidyr::separate_wider_delim(cols = time,
                                 names = c("hr", "mn", "sc"),
                                 cols_remove = FALSE,
                                 delim = ":") %>% # Separate minute
@@ -77,7 +77,7 @@ conv_data_len <- function(data, time, len){
   dt <- data %>%
     dplyr::mutate(len = rn,
                   time = hms::parse_hm({{ time }})) %>%
-    tidyr::separate_wider_delim(cols = {{ time }},
+    tidyr::separate_wider_delim(cols = time,
                          names = c("hr", "mn", "sc"),
                          cols_remove = FALSE,
                          delim = ":") %>% # Separate minute

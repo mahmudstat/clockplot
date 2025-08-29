@@ -8,7 +8,7 @@
 #' `ggplot2::labs()`. Change the legend title by adding
 #' `ggplot2::labs(color = "TITLE")`. Add
 #' or modify legend by `theme(legend.position = "POSITION")`; the valid
-#' postion names in `ggplot2` are `top`, `bottom`, `right`, and `left`,
+#' position names in `ggplot2` are `top`, `bottom`, `right`, and `left`,
 #' excluding more complex options.
 #'
 

@@ -1,6 +1,6 @@
 # clockplot (development version)
 
-* Add a few tests to `clock_chart_qnt.R`
+* Added a few tests to `clock_chart_qnt` as well as `clock_chart_len` and `clock_chart_col`
 * Removed bug from `week_chart()` in `stopifnot` part
 * Added US Accidents data and example. 
 * Added error for non-numeric input to `week_chart()`.

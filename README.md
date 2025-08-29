@@ -48,7 +48,7 @@ us the pattern of messages by senders.
 
 <img src="man/figures/README-week-chart-1.png" alt="Week chart of Temperature" width="100%" style="display: block; margin: auto;" />
 
-## Aditional Components
+## Additional Components
 
 The charts produce `ggplot` objects, so you can make use of many of the
 functions of the `ggplot2` package. You can use the `labs` function, for

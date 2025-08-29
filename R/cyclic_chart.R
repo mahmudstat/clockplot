@@ -1,4 +1,4 @@
-#' Clyclic Chart
+#' Cyclic Chart
 #'
 #' This function plots values corresponding to random periods such as hours,
 #'  days, months and so on.

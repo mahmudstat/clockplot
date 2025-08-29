@@ -30,17 +30,26 @@ NULL
 #' p1 + ggplot2::labs(title = "SMS Receiving Times")
 #' #  Add clock_chart(brintcity %>% filter(Origin == "Dhaka"), time = Departure)
 #' @export
-clock_chart <- function(data, time, Col = "black"){
+clock_chart <- function(data, time, Col = "black") {
   if (!is.data.frame(data)) {
     stop("`data` must be a data frame", call. = FALSE)
   }
+
   mydata <- conv_data(data = data, time = {{ time }})
-  clock <- basic_clock()+
-    ggplot2::geom_segment(data = mydata, color = Col,
-                          ggplot2::aes(x= .data$x0, y = .data$y0,
-                                       xend = .data$x1, yend = .data$y1))+
-    ggplot2::geom_point(data = mydata, color = Col,
-                        ggplot2::aes(.data$x1, .data$y1))
+
+  # Add a new column for the color
+  mydata$line_color <- Col
+
+  clock <- basic_clock() +
+    ggplot2::geom_segment(data = mydata,
+                          ggplot2::aes(x = .data$x0, y = .data$y0,
+                                       xend = .data$x1, yend = .data$y1,
+                                       color = .data$line_color)) +
+    ggplot2::geom_point(data = mydata,
+                        ggplot2::aes(x = .data$x1, y = .data$y1,
+                                     color = .data$line_color)) +
+    # Use scale_color_identity to treat the color value literally
+    ggplot2::scale_color_identity()
+
   return(clock)
 }
-

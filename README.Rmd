@@ -81,7 +81,7 @@ week_chart(wtemp, high = "yellow", lgnm = "Temperature")+
 ```
 
 
-## Aditional Components
+## Additional Components
 
 The charts produce `ggplot` objects, so you can make use of many of the
 functions of the `ggplot2` package. You can use the `labs` function, for 

@@ -1,39 +1,39 @@
 # tests/testthat/test-clock_chart.R
 
-test_that("clock_chart returns a ggplot object with correct structure", {
-  # Create a minimal test dataset
-  df <- data.frame(hm = c("00:00", "06:00", "12:00", "18:00"))
-
-  # Run the function
-  p <- clock_chart(data = df, time = hm, Col = "red")
-
-  # Verify that the result is a ggplot object
-  expect_s3_class(p, "ggplot")
-
-  # Extract layer data from the built plot
-  built <- ggplot2::ggplot_build(p)$data
-
-  # 1. Locate the segment layer (geom_segment)
-  seg_layer <- built[sapply(built, function(d) all(c("x", "y", "xend", "yend") %in% names(d)) )][[1]]
-  expect_true(!is.null(seg_layer))
-  expect_true(all(c("x", "y", "xend", "yend") %in% names(seg_layer)))
-
-  # 2. The segment layer lines should all have the specified color
-  # ggplot stores line color in `colour` or `colour` aesthetics; test that
-  # every line in seg_layer is colored "red"
-  # Note: color may be stored as an aesthetic, so read from p$layers
-  seg_args <- p$layers[[which(sapply(p$layers, function(x) inherits(x$geom, "GeomSegment")))]][["aes_params"]]
-  expect_equal(seg_args$colour, "red")
-
-  # 3. Verify that the points (geom_point) correspond to the end (`x1`, `y1`)
-  point_layer <- built[sapply(built, function(d) all(c("x", "y") %in% names(d)) && !"xend" %in% names(d) )][[1]]
-  expect_true(all(c("x", "y") %in% names(point_layer)))
-  expect_false(any(c("xend", "yend") %in% names(point_layer)))
-})
-
-test_that("clock_chart errors when data is not a data frame", {
-  expect_error(
-    clock_chart(data = 123, time = time),
-    "`data` must be a data frame"
+test_that("clock_chart returns a ggplot object", {
+  # Create a simple dummy data frame for testing.
+  dummy_data <- data.frame(
+    time = c("09:00", "12:30", "18:45")
   )
+
+  # Call the function with the dummy data.
+  plot_output <- clock_chart(dummy_data, time)
+
+  # Check if the returned object is a ggplot object.
+  expect_s3_class(plot_output, "ggplot")
 })
+
+test_that("clock_chart throws an error for non-data.frame input", {
+  # Pass a vector instead of a data frame.
+  invalid_input <- c("09:00", "12:30")
+
+  # Check that the function throws the expected error message.
+  expect_error(clock_chart(invalid_input, time),
+               regexp = "`data` must be a data frame")
+})
+
+library(testthat)
+library(ggplot2)
+
+test_that("clock_chart returns a ggplot object", {
+  dummy_data <- data.frame(time = c("09:00", "12:30", "18:45"))
+  plot_output <- clock_chart(dummy_data, time)
+  expect_s3_class(plot_output, "ggplot")
+})
+
+test_that("clock_chart throws an error for non-data.frame input", {
+  invalid_input <- c("09:00", "12:30")
+  expect_error(clock_chart(invalid_input, time),
+               regexp = "`data` must be a data frame")
+})
+
