@@ -59,7 +59,7 @@ of charts are `HH:MM:SS`, `HH:MM` or even `H:M` (such as `12;30:09` or `9:3`).
 This is the simplest clock chart; the hands are
 neither colored nor length modified by a criteria. 
 
-We are going to use the `smsclock` data set. Let us have a look on it. 
+We are going to use the `smsclock` data set. Let us take a look on it. 
 
 ```{r}
 head(smsclock)
@@ -226,4 +226,21 @@ clock_chart_qlt(smsclock, time = time, crit = sender)+facet_wrap(~Title)
 
 **Instructions from the beginning which args to use in labs.**
 
+### Other Charts
 
+#### Cyclic Chart
+
+```{r, cyclic-chart, fig.align = 'center', fig.height=6, fig.width=6}
+Col <- c("#0040ff", "#00bfff", "#8000ff")
+cyclic_chart(bdtemp, Period = Month, Value = Temperature,
+crit = City, ColV = Col)
+```
+
+Or we can also make day or week charts. 
+
+```{r, dayc, fig.align = 'center', fig.height=6, fig.width=6}
+value <- sample(15:30,24, replace = TRUE)
+day_chart(hvalue = value, high = "blue", low = "yellow", width = 0.8)
+```
+
+To see all the available functions, [check out this link](mahmudstat.github.io/clockplot/reference/index.html) if you are connected to the internet, otherwise run `getNamespaceExports("clockplot")` and then use `?function_name` to know more about it and see and run examples. 

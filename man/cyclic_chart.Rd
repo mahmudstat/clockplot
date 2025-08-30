@@ -2,7 +2,7 @@
 % Please edit documentation in R/cyclic_chart.R
 \name{cyclic_chart}
 \alias{cyclic_chart}
-\title{Clyclic Chart}
+\title{Cyclic Chart}
 \usage{
 cyclic_chart(df, Period, Value, crit, ColV)
 }

@@ -31,7 +31,7 @@ Change the title, subtitle or the caption of the plot with
 
 Add
 or modify legend by \code{theme(legend.position = "POSITION")}; the valid
-postion names in \code{ggplot2} are \code{top}, \code{bottom}, \code{right}, and \code{left},
+position names in \code{ggplot2} are \code{top}, \code{bottom}, \code{right}, and \code{left},
 excluding more complex options.
 }
 \examples{

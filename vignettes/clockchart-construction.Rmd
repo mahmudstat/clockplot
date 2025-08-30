@@ -14,8 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-<span style = "color:Orange;">⚠</span>  This vignette is still developing. 
-Read with caution. 
+*This is only for those who want to know how the idea came into being and got implemented.* You are NOT required to read it as part of using the package. 
 
 This document reveals what's going on behind the scene--how the charts are 
 constructed--how the idea was conceived and implemented after numerous trial
@@ -212,9 +211,12 @@ $\frac{50}{60}$ or $83\%$ work have been completed.
 The task is further complicated due to the clock and angles rotating in
 opposite directions. 
 
-////THIS CONVERSION IS A BUG////
-ifelse(.data$minute<10, .data$minute * 5/30, .data$minute * 5/300)
-////MAY DEPEND ON OLD TIME FORMAT HHMM hrs/////
+<!-- THIS CONVERSION may have an issue 
+
+`ifelse(.data$minute<10, .data$minute * 5/30, .data$minute * 5/300)`
+
+MAY DEPEND ON OLD TIME FORMAT HHMM hrs
+-->
 
 
 
