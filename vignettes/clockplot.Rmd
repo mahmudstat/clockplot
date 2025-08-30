@@ -19,9 +19,13 @@ The package `clockplot` is used to generate clock charts showing event times
 on a 24-hour clock. Additionally it helps you make a day chart, week chart, 
 or month chart, or plan events in those periods.
 
+The main focus is on the `clock_chart*()` functions. These allow you to plot event times on a 24-hour clock. 
+
+<!--
 <span style = "color:Orange;">⚠</span> The plots shown here may not produce the
 expected output due to the behavior of Rmarkdown. To see the actual appearance,
 [visit this link](https://github.com/mahmudstat/clockplot) or run the codes given. 
+-->
 
 ## Getting started
 
@@ -36,7 +40,7 @@ library(clockplot)
 The clockpolot offers three types of plot
 
 1. Clock charts
-2. Cyclic Charts
+2. Cyclic charts
 3. Period planner
 
 The first type shows event times on a 24 hour clock. The times can be 
@@ -51,9 +55,6 @@ Finally, the third one can help you make a plan in a certain period (day, week, 
 
 ## Clock Charts
 
-The examples use built-in data sets. The allowed time formats for these family
-of charts are `HH:MM:SS`, `HH:MM` or even `H:M` (such as `12;30:09` or `9:3`). 
-
 Below is a summary of each `clock_chart*()` function use case. 
 
 |    **function**   | **Purpose**                                                                                                           |
@@ -62,6 +63,11 @@ Below is a summary of each `clock_chart*()` function use case.
 | `clock_chart_col()` | To color the plot by a quantitative variable, and optionally to change size of points by the same or another variable |
 | `clock_chart_qnt()` | To modify the length of the hands by a quantitative variable, along with all the options of  `clock_chart_col()`      |
 |  `clock_chart_qlt`  | To use a qualitative variable as the criteria                                                                         |
+
+Now Let's see each in greater detail
+
+The examples use built-in data sets. The allowed time formats for these family
+of charts are `HH:MM:SS`, `HH:MM` or even `H:M` (such as `12;30:09` or `9:3`). 
 
 ### Basic Clock Chart
 
@@ -74,13 +80,13 @@ We are going to use the `smsclock` data set. Let us take a look on it.
 head(smsclock)
 ```
 
-The necessary code to produce a chart is just this:
+The necessary code to produce a chart is simply the following:
 
 ```{r eval=FALSE}
 clock_chart(smsclock, time, Col = "green")
 ```
 
-The code produces a `ggplot2` object, so we can add (`+`) add extra components 
+The code produces a `ggplot2` object, so we can add (`+`) extra components 
 to make it more informative. 
 
 
