@@ -12,11 +12,11 @@ Description: The primary goal of clockplot is to plot event time
     week chart, or month chart, or plan events in those periods.
 License: MIT + file LICENSE
 Imports:
-  dplyr,
-  tidyr,
-  tibble,
-  ggplot2,
-  hms
+    dplyr,
+    tidyr,
+    tibble,
+    ggplot2,
+    hms
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.2

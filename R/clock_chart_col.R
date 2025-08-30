@@ -13,7 +13,6 @@
 #' excluding more complex options.
 #'
 #' @seealso
-#'  [clock_chart_len()] for modifying length by a numeric variable,
 #'  [clock_chart_qnt()] for coloring and modifying length by a numeric variable,
 #'  [clock_chart_qlt()] for coloring by a qualitative variable,
 #'  [clock_chart()] for the simplest clock chart

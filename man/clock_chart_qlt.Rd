@@ -37,6 +37,5 @@ ggplot2::labs(color = "Sender", title = "SMS's Received throughout th Day")
 \seealso{
 \code{\link[=clock_chart_col]{clock_chart_col()}} for coloring by a numeric variable,
 \code{\link[=clock_chart_qnt]{clock_chart_qnt()}} for coloring and modifying length by a numeric variable,
-\code{\link[=clock_chart_len]{clock_chart_len()}} for modifying length by a numeric variable,
 \code{\link[=clock_chart]{clock_chart()}} for the simplest clock chart
 }

@@ -15,7 +15,6 @@
 #' @seealso
 #'  [clock_chart_col()] for coloring by a numeric variable,
 #'  [clock_chart_qnt()] for coloring and modifying length by a numeric variable,
-#'  [clock_chart_len()] for modifying length by a numeric variable,
 #'  [clock_chart()] for the simplest clock chart
 #'
 #' @param data A data frame

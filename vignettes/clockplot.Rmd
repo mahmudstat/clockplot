@@ -54,6 +54,15 @@ Finally, the third one can help you make a plan in a certain period (day, week, 
 The examples use built-in data sets. The allowed time formats for these family
 of charts are `HH:MM:SS`, `HH:MM` or even `H:M` (such as `12;30:09` or `9:3`). 
 
+Below is a summary of each `clock_chart*()` function use case. 
+
+|    **function**   | **Purpose**                                                                                                           |
+|:-----------------:|-----------------------------------------------------------------------------------------------------------------------|
+|   `clock_chart()`   | To plot a basic clock chart, showing event times on clock, and to optionally choose a color for the hands             |
+| `clock_chart_col()` | To color the plot by a quantitative variable, and optionally to change size of points by the same or another variable |
+| `clock_chart_qnt()` | To modify the length of the hands by a quantitative variable, along with all the options of  `clock_chart_col()`      |
+|  `clock_chart_qlt`  | To use a qualitative variable as the criteria                                                                         |
+
 ### Basic Clock Chart
 
 This is the simplest clock chart; the hands are
@@ -167,6 +176,7 @@ clock_chart_qnt(acdt, time = Time, len = Humidity... , Col = Temperature.F.)+
   ggplot2::labs(size = "Humidity", color = "Temperature")
 ```
 
+<!--
 
 ### Modified Length
 
@@ -174,7 +184,7 @@ Although there is another function `clock_chart_len()` to modify length of the
 clock hands, this is rarely useful. Here you can use a variable to modify the
 length by and an argument `Col` to choose a specific color for the hands. 
 
-```{r clock-chart-len, fig.align = 'center', fig.height=6, fig.width=6}
+```{r eval=FALSE, clock-chart-len, fig.align = 'center', fig.height=6, fig.width=6}
 p1 <- clock_chart_len(data = bdquake, time = hms, crit = depth)
 p1 + ggplot2::labs(title = "Earthquakes in Bangladesh since 2023")
 ```
@@ -186,6 +196,7 @@ If we have a column which represents length, distance, or an amount, or
 something similar, we may go ahead and use `clock_chart_qnt()`, otherwise, when
 the length does not meaningfully present a variable, we can confine ourselves
 to `clock_chart_len()`. 
+-->
 
 ### Qualitative variable
 
@@ -226,7 +237,7 @@ clock_chart_qlt(smsclock, time = time, crit = sender)+facet_wrap(~Title)
 
 **Instructions from the beginning which args to use in labs.**
 
-### Other Charts
+## Other Charts
 
 #### Cyclic Chart
 

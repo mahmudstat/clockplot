@@ -1,4 +1,5 @@
 #' Clock Chart with Modified Length
+# This functon has been seen to be unnecessary and its purpose is better
 #'
 #' This function will plot time of events on a 24 hour clock to show which
 #' events took place at what times. The length of the hands are modified
@@ -21,7 +22,7 @@
 #' @param Col An optional color name for the hands, defaulted to `black`.
 #'
 #' @name clock_chart_len
-NULL
+# # NULL
 #' @examples
 #' p1 <- clock_chart_len(data = bdquake, time = hms, crit = depth)
 #' p1 + ggplot2::labs(title = "Earthquakes in Bangladesh since 2023")
