@@ -76,8 +76,9 @@
 
     
     
-<p><span style="color:Orange;">⚠</span> This vignette is still
-developing. Read with caution.</p>
+<p><em>This is only for those who want to know how the idea came into
+being and got implemented.</em> You are NOT required to read it as part
+of using the package.</p>
 <p>This document reveals what’s going on behind the scene–how the charts
 are constructed–how the idea was conceived and implemented after
 numerous trial and error. For the details on how to use the package, see
@@ -271,9 +272,12 @@ completes one cycle of the task.</p>
 <p>Thus, 15 minutes on the clock says <span class="math inline">\(\frac{15}{60} = \frac14\)</span> th or <span class="math inline">\(25\%\)</span> work, 30 means <span class="math inline">\(\frac{30}{60} = \frac12 = 0.5\)</span> or <span class="math inline">\(50\%\)</span> work, and 50 means <span class="math inline">\(\frac{50}{60}\)</span> or <span class="math inline">\(83\%\)</span> work have been completed.</p>
 <p>The task is further complicated due to the clock and angles rotating
 in opposite directions.</p>
-<p>////THIS CONVERSION IS A BUG//// ifelse(.data<span class="math inline">\(minute&lt;10, .data\)</span>minute * 5/30,
-.data$minute * 5/300) ////MAY DEPEND ON OLD TIME FORMAT HHMM
-hrs/////</p>
+<!-- THIS CONVERSION may have an issue 
+
+`ifelse(.data$minute<10, .data$minute * 5/30, .data$minute * 5/300)`
+
+MAY DEPEND ON OLD TIME FORMAT HHMM hrs
+-->
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
