@@ -80,10 +80,13 @@
 showing event times on a 24-hour clock. Additionally it helps you make a
 day chart, week chart, or month chart, or plan events in those
 periods.</p>
-<p><span style="color:Orange;">⚠</span> The plots shown here may not
-produce the expected output due to the behavior of Rmarkdown. To see the
-actual appearance, <a href="https://github.com/mahmudstat/clockplot" class="external-link">visit this link</a> or
-run the codes given.</p>
+<p>The main focus is on the <code>clock_chart*()</code> functions. These
+allow you to plot event times on a 24-hour clock.</p>
+<!--
+<span style = "color:Orange;">⚠</span> The plots shown here may not produce the
+expected output due to the behavior of Rmarkdown. To see the actual appearance,
+[visit this link](https://github.com/mahmudstat/clockplot) or run the codes given. 
+-->
 <div class="section level2">
 <h2 id="getting-started">Getting started<a class="anchor" aria-label="anchor" href="#getting-started"></a>
 </h2>
@@ -98,7 +101,7 @@ functions.</p>
 <p>The clockpolot offers three types of plot</p>
 <ol style="list-style-type: decimal">
 <li>Clock charts</li>
-<li>Cyclic Charts</li>
+<li>Cyclic charts</li>
 <li>Period planner</li>
 </ol>
 <p>The first type shows event times on a 24 hour clock. The times can be
@@ -115,10 +118,6 @@ specially made for specific period (day, week, year etc.)</p>
 <div class="section level2">
 <h2 id="clock-charts">Clock Charts<a class="anchor" aria-label="anchor" href="#clock-charts"></a>
 </h2>
-<p>The examples use built-in data sets. The allowed time formats for
-these family of charts are <code>HH:MM:SS</code>, <code>HH:MM</code> or
-even <code>H:M</code> (such as <code>12;30:09</code> or
-<code>9:3</code>).</p>
 <p>Below is a summary of each <code>clock_chart*()</code> function use
 case.</p>
 <table class="table">
@@ -153,6 +152,11 @@ with all the options of <code><a href="../reference/clock_chart_col.html">clock_
 </tr>
 </tbody>
 </table>
+<p>Now Let’s see each in greater detail</p>
+<p>The examples use built-in data sets. The allowed time formats for
+these family of charts are <code>HH:MM:SS</code>, <code>HH:MM</code> or
+even <code>H:M</code> (such as <code>12;30:09</code> or
+<code>9:3</code>).</p>
 <div class="section level3">
 <h3 id="basic-clock-chart">Basic Clock Chart<a class="anchor" aria-label="anchor" href="#basic-clock-chart"></a>
 </h3>
@@ -171,11 +175,11 @@ look on it.</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> 03-09-2024 Tuesday   13:15:00 Airtel No      offer AirtelTune</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> 04-09-2024 Wednesday 12:24:00 Airtel No      offer AirtelTune</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> 04-09-2024 Wednesday 17:45:00 Airtel No      offer AirtelTune</span></span></code></pre></div>
-<p>The necessary code to produce a chart is just this:</p>
+<p>The necessary code to produce a chart is simply the following:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/clock_chart.html">clock_chart</a></span><span class="op">(</span><span class="va">smsclock</span>, <span class="va">time</span>, Col <span class="op">=</span> <span class="st">"green"</span><span class="op">)</span></span></code></pre></div>
 <p>The code produces a <code>ggplot2</code> object, so we can add
-(<code>+</code>) add extra components to make it more informative.</p>
+(<code>+</code>) extra components to make it more informative.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/clock_chart.html">clock_chart</a></span><span class="op">(</span><span class="va">smsclock</span>, <span class="va">time</span>, Col <span class="op">=</span> <span class="st">"green"</span><span class="op">)</span></span>
 <span><span class="va">p1</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"SMS Receiving Times"</span><span class="op">)</span></span></code></pre></div>
