@@ -10,6 +10,8 @@ Also check out [keep note](https://keep.google.com/u/1/#NOTE/1Hj4tuKO1Is743Xui9a
 - devtools::check_win_release()
 - devtools::check_mac_release()
 - devtools::spell_check()
+- devtools::build_readme()
+- urlchecker::url_check(".")
 
 ## Know Isues
 

@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# clockplot <a href=""><img src="man/figures/logo.png" align="right" height="100" /></a>
+# clockplot <a href="#"><img src="man/figures/logo.png" align="right" height="100" /></a>
 
 <!-- badges: start -->
 
@@ -25,7 +25,8 @@ pak::pak("mahmudstat/clockplot")
 ## Usage
 
 [Click here](https://github.com/mahmudstat/clockplot) to visit the
-repository and follow the website to see all the available functions.
+repository and follow the website (mentioned on the `About` section) to
+see all the available functions.
 
 ## Applications
 

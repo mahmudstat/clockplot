@@ -79,7 +79,7 @@
 #' \item{Arrival}{The time of arrival}
 #' \item{Zone}{East/West}
 #' }
-#' @source \href{https://railway.portal.gov.bd/sites/default/files/files/railway.portal.gov.bd/page/e64d9448_0615_4316_87f0_deb10f5c847d/Intercity%20Trains%20.pdf}{Bangladesh Railway}
+#' @source {Bangladesh Railway}
 "brintcity"
 
 #' Data of git commits in this repository

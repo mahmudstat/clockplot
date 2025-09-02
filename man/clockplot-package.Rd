@@ -13,7 +13,8 @@ The primary goal is to plot event times on a 24-hour clock. Additionally it help
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/mahmudstat/clockplot}
+  \item \url{https://github.com/mahmudstat/clockplot/}
+  \item Report bugs at \url{https://github.com/mahmudstat/clockplot/issues}
 }
 
 }
