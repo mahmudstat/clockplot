@@ -1,5 +1,5 @@
 #' Clock Chart with Modified Length
-# This functon has been seen to be unnecessary and its purpose is better
+# This function has been seen to be unnecessary and its purpose is better-served by `clock_chart_qnt()`, and hence will be deprecated in the next version.
 #'
 #' This function will plot time of events on a 24 hour clock to show which
 #' events took place at what times. The length of the hands are modified

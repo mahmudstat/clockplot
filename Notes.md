@@ -32,7 +32,7 @@ Also check out [keep note](https://keep.google.com/u/1/#NOTE/1Hj4tuKO1Is743Xui9a
 - In conv_data.R, change time variable name
 -  tidyr::separate_wider_delim(cols = {{ time }} may need to be changed to
  tidyr::separate_wider_delim(cols = time
- - plot time (HH:MM or HH:MM:SS), input as a vector or in a dataframe
+ - plot time (HH:MM or HH:MM:SS), input as a vector or in a data frame
  
  Ideas
 
