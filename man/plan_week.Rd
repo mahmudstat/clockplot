@@ -2,7 +2,7 @@
 % Please edit documentation in R/plan_week.R
 \name{plan_week}
 \alias{plan_week}
-\title{Plan Activities on a Week with Events on Each Day}
+\title{Visually Plan Activities on a Week with Events on Each Day}
 \usage{
 plan_week(wtask)
 }

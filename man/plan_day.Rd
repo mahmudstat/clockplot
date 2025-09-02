@@ -2,7 +2,7 @@
 % Please edit documentation in R/plan_day.R
 \name{plan_day}
 \alias{plan_day}
-\title{Plan Activities on a Day with Events on Each of 24 Hours}
+\title{Visually Plan Activities on a Day with Events on Each of 24 Hours}
 \usage{
 plan_day(dwork, width = 1, brdcol = "grey")
 }
