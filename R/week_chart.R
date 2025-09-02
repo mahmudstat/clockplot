@@ -15,7 +15,8 @@
 #' @param low The color name for the high values. The default is `green`.
 #' The color names can be vice versa or other colors, depending on the context.
 #' @param width The width of bars.
-#' @return A circular chart showing values at each hour on a 24-hour clock
+#' @returns A `ggplot` object, which can be further modified
+#' with `ggplot2` functions and themes.
 #' @name week_chart
 NULL
 #' @examples

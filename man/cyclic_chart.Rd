@@ -21,7 +21,8 @@ You can use this online tool (\url{https://r-charts.com/color-palette-generator/
 to create a beautiful color palette.}
 }
 \value{
-A circular chart showing values in each month of the year.
+A \code{ggplot} object, which can be further modified
+with \code{ggplot2} functions and themes.
 }
 \description{
 This function plots values corresponding to random periods such as hours,

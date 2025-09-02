@@ -17,7 +17,8 @@ from 6 am)}
 \item{width}{Width of bars}
 }
 \value{
-A circular chart showing values at each hour on a 24-hour clock
+A \code{ggplot} object, which can be further modified
+with \code{ggplot2} functions and themes.
 }
 \description{
 This function plots values corresponding to each hour on a rose plot.

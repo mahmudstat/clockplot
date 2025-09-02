@@ -6,7 +6,8 @@
 #' from 6 am)
 #' @param width Width of bars
 #' @param brdcol Color of bar border. To have no (transparent color), use `NA`
-#' @return A circular chart showing work at each hour on a 24-hour clock
+#' @returns A `ggplot` object, which can be further modified
+#' with `ggplot2` functions and themes.
 #' @name plan_day
 NULL
 #' @examples

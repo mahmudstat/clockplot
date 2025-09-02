@@ -16,6 +16,10 @@ negligible impact on the final plot).}
 
 \item{Col}{Color name for the lines. The default is \code{black}.}
 }
+\value{
+A \code{ggplot} object, which can be further modified
+with \code{ggplot2} functions and themes.
+}
 \description{
 There are five types of clock charts, \code{clock_chart()} being the simplest one.
 It just shows the event times on a 24 hour clock. The lines are neither

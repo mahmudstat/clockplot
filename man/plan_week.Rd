@@ -10,7 +10,8 @@ plan_week(wtask)
 \item{wtask}{A factor variable having values on each day of the week.}
 }
 \value{
-A plot showing task planned or done on each day of the week.
+A \code{ggplot} object, which can be further modified
+with \code{ggplot2} functions and themes.
 }
 \description{
 This function plots works corresponding to each day of the week.

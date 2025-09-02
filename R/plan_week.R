@@ -3,7 +3,8 @@
 #' This function plots works corresponding to each day of the week.
 #'
 #' @param wtask A factor variable having values on each day of the week.
-#' @return A plot showing task planned or done on each day of the week.
+#' @returns A `ggplot` object, which can be further modified
+#' with `ggplot2` functions and themes.
 #' @name plan_week
 NULL
 #' @examples

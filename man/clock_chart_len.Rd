@@ -17,6 +17,10 @@ or \code{9:3}).}
 
 \item{Col}{An optional color name for the hands, defaulted to \code{black}.}
 }
+\value{
+A \code{ggplot} object, which can be further modified
+with \code{ggplot2} functions and themes.
+}
 \description{
 This function will plot time of events on a 24 hour clock to show which
 events took place at what times. The length of the hands are modified

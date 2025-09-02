@@ -21,6 +21,8 @@
 #' or `9:3`), although the SS part is ignored due to having
 #' negligible impact on the final plot).
 #' @param Col Color name for the lines. The default is `black`.
+#' @returns A `ggplot` object, which can be further modified
+#' with `ggplot2` functions and themes.
 #' @name clock_chart
 NULL
 #'

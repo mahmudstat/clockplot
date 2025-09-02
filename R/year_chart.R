@@ -16,9 +16,10 @@
 #' `top`, `bottom`, `left`, and `right`.
 #' @param high The color name for the high values. The default is `red`
 #' @param low The color name for the high values. The default is `green`.
-#' #' The color names can be vice versa or other colors, depending on the context.
+#' #' The color names can be vice-versa or other colors, depending on the context.
 #' @param width Width of bars
-#' @return A circular chart showing values in each month of the year.
+#' @returns A `ggplot` object, which can be further modified
+#' with `ggplot2` functions and themes.
 #' @name year_chart
 NULL
 #' @examples

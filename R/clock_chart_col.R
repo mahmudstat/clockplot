@@ -25,6 +25,8 @@
 #' @param high The color name for the high values. The default is `red`
 #' @param low The color name for the high values. The default is `green`.
 #' The color names can be vice versa or other colors, depending on the context.
+#' @returns A `ggplot` object, which can be further modified
+#' with `ggplot2` functions and themes.
 #' @name clock_chart_col
 NULL
 #' @examples

@@ -15,7 +15,8 @@ from 6 am)}
 \item{brdcol}{Color of bar border. To have no (transparent color), use \code{NA}}
 }
 \value{
-A circular chart showing work at each hour on a 24-hour clock
+A \code{ggplot} object, which can be further modified
+with \code{ggplot2} functions and themes.
 }
 \description{
 This function plots works corresponding to each hour on a rose plot.

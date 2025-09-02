@@ -20,7 +20,8 @@ The color names can be vice versa or other colors, depending on the context.}
 \item{width}{The width of bars.}
 }
 \value{
-A circular chart showing values at each hour on a 24-hour clock
+A \code{ggplot} object, which can be further modified
+with \code{ggplot2} functions and themes.
 }
 \description{
 This function plots values corresponding to each day on a rose plot.

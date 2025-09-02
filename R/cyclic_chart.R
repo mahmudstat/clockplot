@@ -20,7 +20,8 @@
 #' @param ColV A character vector with the list of colors for the bars.
 #' You can use this online tool (\url{https://r-charts.com/color-palette-generator/})
 #' to create a beautiful color palette.
-#' @return A circular chart showing values in each month of the year.
+#' @returns A `ggplot` object, which can be further modified
+#' with `ggplot2` functions and themes.
 #' @name cyclic_chart
 NULL
 #' @examples

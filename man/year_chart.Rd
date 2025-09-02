@@ -20,10 +20,11 @@ adding \code{legend.position = "top"}, where the accepted positions are
 \item{high}{The color name for the high values. The default is \code{red}}
 
 \item{low}{The color name for the high values. The default is \code{green}.
-#' The color names can be vice versa or other colors, depending on the context.}
+#' The color names can be vice-versa or other colors, depending on the context.}
 }
 \value{
-A circular chart showing values in each month of the year.
+A \code{ggplot} object, which can be further modified
+with \code{ggplot2} functions and themes.
 }
 \description{
 This function plots values corresponding to each month on a rose plot.

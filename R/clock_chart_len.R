@@ -19,7 +19,8 @@
 #' or `9:3`).
 #' @param crit A numeric vector by which length of hands will be modified.
 #' @param Col An optional color name for the hands, defaulted to `black`.
-#'
+#' @returns A `ggplot` object, which can be further modified
+#' with `ggplot2` functions and themes.
 #' @name clock_chart_len
 # # NULL
 #' @examples

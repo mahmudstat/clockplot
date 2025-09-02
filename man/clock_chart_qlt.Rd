@@ -15,6 +15,10 @@ or \code{9:3}).}
 
 \item{crit}{The qualitative vector by which hands will be colored.}
 }
+\value{
+A \code{ggplot} object, which can be further modified
+with \code{ggplot2} functions and themes.
+}
 \description{
 This function will plot time of events on a 24 hour clock to show which
 events took place at what times. The hands are colored by a

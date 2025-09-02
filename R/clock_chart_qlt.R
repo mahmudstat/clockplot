@@ -22,7 +22,8 @@
 #' of charts are `HH:MM:SS`, `HH:MM` or even `H:M` (such as `12;30:09`
 #' or `9:3`).
 #' @param crit The qualitative vector by which hands will be colored.
-
+#' @returns A `ggplot` object, which can be further modified
+#' with `ggplot2` functions and themes.
 #' @name clock_chart_qlt
 NULL
 #' @examples

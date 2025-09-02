@@ -20,6 +20,10 @@ or \code{9:3}).}
 \item{low}{The color name for the high values. The default is \code{green}.
 The color names can be vice versa or other colors, depending on the context.}
 }
+\value{
+A \code{ggplot} object, which can be further modified
+with \code{ggplot2} functions and themes.
+}
 \description{
 This function will plot time of events on a 24 hour clock to show which
 events took place at what times. The lines are colored by a criteria.
