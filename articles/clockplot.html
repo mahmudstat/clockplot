@@ -55,6 +55,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/mahmudstat/clockplot/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -70,7 +71,7 @@
       <img src="../logo.png" class="logo" alt=""><h1>clockplot</h1>
             
       
-
+      <small class="dont-index">Source: <a href="https://github.com/mahmudstat/clockplot/blob/main/vignettes/clockplot.Rmd" class="external-link"><code>vignettes/clockplot.Rmd</code></a></small>
       <div class="d-none name"><code>clockplot.Rmd</code></div>
     </div>
 
@@ -93,7 +94,7 @@ expected output due to the behavior of Rmarkdown. To see the actual appearance,
 <p>After installing the package, load it to use the available
 functions.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mahmudstat.github.io/clockplot/">clockplot</a></span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/mahmudstat/clockplot/" class="external-link">clockplot</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="types-of-charts">Types of Charts<a class="anchor" aria-label="anchor" href="#types-of-charts"></a>
@@ -342,11 +343,12 @@ labs.</strong></p>
 <code class="sourceCode R"><span><span class="va">value</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fl">15</span><span class="op">:</span><span class="fl">30</span>,<span class="fl">24</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/day_chart.html">day_chart</a></span><span class="op">(</span>hvalue <span class="op">=</span> <span class="va">value</span>, high <span class="op">=</span> <span class="st">"blue"</span>, low <span class="op">=</span> <span class="st">"yellow"</span>, width <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span></span></code></pre></div>
 <p><img src="clockplot_files/figure-html/dayc-1.png" width="576" style="display: block; margin: auto;"></p>
-<p>To see all the available functions, <a href="mahmudstat.github.io/clockplot/reference/index.html">check out
-this link</a> if you are connected to the internet, otherwise run
+<p>To see all the available functions, run
 <code>getNamespaceExports("clockplot")</code> and then use
 <code>?function_name</code> to know more about it and see and run
-examples.</p>
+examples. If you are connected to the internet, <a href="https://github.com/mahmudstat/clockplot" class="external-link">you may visit</a> the
+repository and follow the website linked to see all the available
+functions (<code>Reference</code> menu)</p>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
