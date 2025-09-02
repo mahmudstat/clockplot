@@ -4,11 +4,11 @@
 \name{clockplot-package}
 \alias{clockplot}
 \alias{clockplot-package}
-\title{clockplot: Clock Chart with Event Times on Clock}
+\title{clockplot: Plot Event Times on a 24-Hour Clock}
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-The primary goal of clockplot is to plot event time on a clock chart. Additionally it helps you make a day chart, week chart, or month chart, or plan events in those periods.
+The primary goal of clockplot is to plot event times on a clock chart. Additionally it helps you make a day chart, week chart, or month chart, or plan events in those periods.
 }
 \seealso{
 Useful links:

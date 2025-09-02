@@ -23,6 +23,10 @@ or \code{9:3}).}
 The color names can be vice versa or other colors, depending on the context.
 To use a single color for all lines, use same value for \code{high} and \code{low}}
 }
+\value{
+A \code{ggplot} object, which can be further modified
+with \code{ggplot2} functions and themes.
+}
 \description{
 This function will plot time of events on a 24 hour clock to show which
 events took place at what times. The length and color of the hands are
