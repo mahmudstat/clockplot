@@ -260,4 +260,4 @@ value <- sample(15:30,24, replace = TRUE)
 day_chart(hvalue = value, high = "blue", low = "yellow", width = 0.8)
 ```
 
-To see all the available functions, [check out this link](mahmudstat.github.io/clockplot/reference/index.html) if you are connected to the internet, otherwise run `getNamespaceExports("clockplot")` and then use `?function_name` to know more about it and see and run examples. 
+To see all the available functions, run `getNamespaceExports("clockplot")` and then use `?function_name` to know more about it and see and run examples. If you are connected to the internet, [you may visit](https://github.com/mahmudstat/clockplot) the repository and follow the website linked to see all the available functions (`Reference` menu)

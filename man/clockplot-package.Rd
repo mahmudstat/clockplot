@@ -8,17 +8,17 @@
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-The primary goal of clockplot is to plot event times on a clock chart. Additionally it helps you make a day chart, week chart, or month chart, or plan events in those periods.
+The primary goal is to plot event times on a 24-hour clock. Additionally it helps you make cyclic charts such a day chart, a week chart, a month chart, or plan events in those periods.
 }
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://mahmudstat.github.io/clockplot/}
+  \item \url{https://github.com/mahmudstat/clockplot}
 }
 
 }
 \author{
-\strong{Maintainer}: Abdullah Al Mahmud \email{almahmud.sbi@gmail.com} (\href{https://orcid.org/0000-0003-2814-8798}{ORCID})
+\strong{Maintainer}: Abdullah Al Mahmud \email{almahmud.sbi@gmail.com} (\href{https://orcid.org/0000-0003-2814-8798}{ORCID}) [copyright holder]
 
 }
 \keyword{internal}

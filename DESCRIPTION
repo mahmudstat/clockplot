@@ -4,12 +4,12 @@ Title: Plot Event Times on a 24-Hour Clock
 Version: 0.6.5.9000
 Authors@R: person(given = c("Abdullah", "Al"),
                     family = "Mahmud",
-                    role = c("aut", "cre"),
+                    role = c("aut", "cre", "cph"),
                     comment = c(ORCID = "0000-0003-2814-8798"),
                     email = "almahmud.sbi@gmail.com")
-Description: The primary goal of clockplot is to plot event times 
-    on a clock chart. Additionally it helps you make a day chart, 
-    week chart, or month chart, or plan events in those periods.
+Description: The primary goal is to plot event times 
+    on a 24-hour clock. Additionally it helps you make cyclic charts such a day chart, 
+    a week chart, a month chart, or plan events in those periods.
 License: MIT + file LICENSE
 Imports:
     dplyr,
@@ -27,7 +27,8 @@ Suggests:
     rmarkdown,
     testthat (>= 3.0.0)
 VignetteBuilder: knitr
-URL: https://mahmudstat.github.io/clockplot/
+URL: https://github.com/mahmudstat/clockplot/
+BugReports: https://github.com/mahmudstat/clockplot/issues
 Language: en-US
 Roxygen: list(markdown = TRUE)
 Config/testthat/edition: 3

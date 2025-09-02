@@ -13,10 +13,10 @@
 #' # @name conv_hms
 
 #' # @return Time in HH:MM format
-#' # @examples
-#' # df <- data.frame(time = c("06:00", "08:00", "17:30"))
-#' # df = conv_hms(df, time, New)
-#' # df
+
+# df <- data.frame(time = c("06:00", "08:00", "17:30"))
+# df = conv_hms(df, time, New)
+# df
 
 
 # conv_hms <- function(df, time, new){
