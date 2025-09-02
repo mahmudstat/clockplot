@@ -1,5 +1,4 @@
-#' Year Chart
-#'
+#' Plot Values on Each Month of a Year
 #' This function plots values corresponding to each month on a rose plot.
 #'
 #'

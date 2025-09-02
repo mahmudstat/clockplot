@@ -1,4 +1,4 @@
-#' Cyclic Chart
+#' Plot Cyclic Data (General Format)
 #'
 #' This function plots values corresponding to random periods such as hours,
 #'  days, months and so on.

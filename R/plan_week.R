@@ -1,4 +1,4 @@
-#' Week Planner
+#' Plan Activities on a Week with Events on Each Day
 #'
 #' This function plots works corresponding to each day of the week.
 #'

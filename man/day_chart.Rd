@@ -2,7 +2,7 @@
 % Please edit documentation in R/day_chart.R
 \name{day_chart}
 \alias{day_chart}
-\title{Day Chart}
+\title{Plot Values on a 24-Hour Day, on Specific Hours}
 \usage{
 day_chart(hvalue, high = "blue", low = "yellow", width = 0.8)
 }

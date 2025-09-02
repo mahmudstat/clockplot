@@ -1,4 +1,4 @@
-#' Day Chart
+#' Plot Values on a 24-Hour Day, on Specific Hours
 #'
 #' This function plots values corresponding to each hour on a rose plot.
 #'

@@ -1,4 +1,4 @@
-#' Week Chart
+#' Plot Values on Each Day of a Week
 #'
 #' This function plots values corresponding to each day on a rose plot.
 #'

@@ -1,4 +1,4 @@
-#' Day Planner
+#' Plan Activities on a Day with Events on Each of 24 Hours
 #'
 #' This function plots works corresponding to each hour on a rose plot.
 #'

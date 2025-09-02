@@ -2,7 +2,8 @@
 % Please edit documentation in R/year_chart.R
 \name{year_chart}
 \alias{year_chart}
-\title{Year Chart}
+\title{Plot Values on Each Month of a Year
+This function plots values corresponding to each month on a rose plot.}
 \usage{
 year_chart(mvalue, lgnm = "Value", width = 0.9, high = "yellow", low = "green")
 }
@@ -26,6 +27,7 @@ adding \code{legend.position = "top"}, where the accepted positions are
 A circular chart showing values in each month of the year.
 }
 \description{
+Plot Values on Each Month of a Year
 This function plots values corresponding to each month on a rose plot.
 }
 \examples{

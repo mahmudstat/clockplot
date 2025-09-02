@@ -2,7 +2,7 @@
 % Please edit documentation in R/week_chart.R
 \name{week_chart}
 \alias{week_chart}
-\title{Week Chart}
+\title{Plot Values on Each Day of a Week}
 \usage{
 week_chart(wvalue, lgnm = "Value", high = "yellow", low = "green", width = 0.9)
 }

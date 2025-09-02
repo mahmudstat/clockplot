@@ -21,7 +21,7 @@ or \code{9:3}).}
 This function will plot time of events on a 24 hour clock to show which
 events took place at what times. The length of the hands are modified
 according to a numeric vector. A color name can be used for the hands.
-For better use of color and length together, consider using \code{clock_chart_qnt()}.
+This function has been seen to be unnecessary and its purpose is better-served by \code{clock_chart_qnt()}, and hence will be deprecated in the next version..
 }
 \details{
 Change the title, subtitle or the caption of the plot with
