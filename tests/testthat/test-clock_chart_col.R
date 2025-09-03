@@ -1,4 +1,3 @@
-
 test_that("clock_chart_col returns a ggplot object", {
   # Create a simple dummy data frame for testing.
   dummy_data <- data.frame(
@@ -12,4 +11,3 @@ test_that("clock_chart_col returns a ggplot object", {
   # Check if the returned object is a ggplot object.
   expect_s3_class(plot_output, "ggplot")
 })
-

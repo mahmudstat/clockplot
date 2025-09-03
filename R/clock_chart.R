@@ -42,13 +42,21 @@ clock_chart <- function(data, time, Col = "black") {
   mydata$line_color <- Col
 
   clock <- basic_clock() +
-    ggplot2::geom_segment(data = mydata,
-                          ggplot2::aes(x = .data$x0, y = .data$y0,
-                                       xend = .data$x1, yend = .data$y1,
-                                       color = .data$line_color)) +
-    ggplot2::geom_point(data = mydata,
-                        ggplot2::aes(x = .data$x1, y = .data$y1,
-                                     color = .data$line_color)) +
+    ggplot2::geom_segment(
+      data = mydata,
+      ggplot2::aes(
+        x = .data$x0, y = .data$y0,
+        xend = .data$x1, yend = .data$y1,
+        color = .data$line_color
+      )
+    ) +
+    ggplot2::geom_point(
+      data = mydata,
+      ggplot2::aes(
+        x = .data$x1, y = .data$y1,
+        color = .data$line_color
+      )
+    ) +
     # Use scale_color_identity to treat the color value literally
     ggplot2::scale_color_identity()
 

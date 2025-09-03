@@ -19,7 +19,8 @@ test_that("clock_chart throws an error for non-data.frame input", {
 
   # Check that the function throws the expected error message.
   expect_error(clock_chart(invalid_input, time),
-               regexp = "`data` must be a data frame")
+    regexp = "`data` must be a data frame"
+  )
 })
 
 library(testthat)
@@ -34,6 +35,6 @@ test_that("clock_chart returns a ggplot object", {
 test_that("clock_chart throws an error for non-data.frame input", {
   invalid_input <- c("09:00", "12:30")
   expect_error(clock_chart(invalid_input, time),
-               regexp = "`data` must be a data frame")
+    regexp = "`data` must be a data frame"
+  )
 })
-

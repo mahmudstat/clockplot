@@ -20,13 +20,11 @@
 
 
 # conv_hms <- function(df, time, new){
- # df <- mutate(df, new = hms::parse_hm({{time}}))
- # .Deprecated("hms::parse_hm")
+# df <- mutate(df, new = hms::parse_hm({{time}}))
+# .Deprecated("hms::parse_hm")
 # }
 
 # Old function. Will be deprecated
-#rm_sec <- function(df, time) {
- # df <- mutate(df, time = gsub('.{3}$', '', {{time}}))
+# rm_sec <- function(df, time) {
+# df <- mutate(df, time = gsub('.{3}$', '', {{time}}))
 # }
-
-

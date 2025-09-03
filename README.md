@@ -42,7 +42,7 @@ link](https://raw.githubusercontent.com/mahmudstat/open-analysis/main/data/usacc
 ``` r
 library(clockplot)
 acdt <- read.csv("https://raw.githubusercontent.com/mahmudstat/open-analysis/main/data/usacc.csv")
-clock_chart_qnt(acdt, time = Time, len = Humidity... , Col = Temperature.F.)+
+clock_chart_qnt(acdt, time = Time, len = Humidity..., Col = Temperature.F.) +
   ggplot2::labs(size = "Humidity", color = "Temperature")
 ```
 

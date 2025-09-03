@@ -5,5 +5,3 @@ test_that("A character vector", {
   plan_week(wt)
   expect_vector(wt, ptype = character())
 })
-
-

@@ -18,29 +18,32 @@
 NULL
 #' @examples
 #' Days <- 1:30
-#' expense <- c(sample(15:20, 15, replace = TRUE),
-#'              sample(10:15, 5, replace = TRUE),
-#'              sample(8:10, 5, replace = TRUE),
-#'              sample(5:8, 3, replace = TRUE),
-#'              sample(4:7, 2, replace = TRUE))
+#' expense <- c(
+#'   sample(15:20, 15, replace = TRUE),
+#'   sample(10:15, 5, replace = TRUE),
+#'   sample(8:10, 5, replace = TRUE),
+#'   sample(5:8, 3, replace = TRUE),
+#'   sample(4:7, 2, replace = TRUE)
+#' )
 #' dfm <- tibble::tibble(Days, expense)
 #' month_chart(df = dfm, Days = Days, mvalue = expense)
 #' @export
 month_chart <- function(df, Days, mvalue, lgnm = "Value", width = 0.9,
-                        high = "yellow", low = "green"){
+                        high = "yellow", low = "green") {
   df <- df %>% dplyr::mutate(Days = factor(Days, levels = Days))
-  chart <- df %>% ggplot2::ggplot(ggplot2::aes(Days, mvalue, fill = mvalue))+
-    ggplot2::geom_col(width = width)+
-    ggplot2::scale_fill_gradient(high = {{high}}, low = {{low}}, name = {{lgnm}})+
-    ggplot2::coord_polar("x", start = 270)+
-    ggplot2::theme(axis.ticks.x=element_blank(),
-          axis.text.y=element_blank(),
-          axis.ticks.y=element_blank(),
-          axis.title = element_blank(),
-          legend.position = "bottom")+
+  chart <- df %>% ggplot2::ggplot(ggplot2::aes(Days, mvalue, fill = mvalue)) +
+    ggplot2::geom_col(width = width) +
+    ggplot2::scale_fill_gradient(high = {{ high }}, low = {{ low }}, name = {{ lgnm }}) +
+    ggplot2::coord_polar("x", start = 270) +
+    ggplot2::theme(
+      axis.ticks.x = element_blank(),
+      axis.text.y = element_blank(),
+      axis.ticks.y = element_blank(),
+      axis.title = element_blank(),
+      legend.position = "bottom"
+    ) +
     ggplot2::geom_text(label = mvalue, position = position_stack(vjust = 0.8), color = "black")
   # You can also add your own custom legend title by adding the following code
   # + scale_fill_gradient(name = "NAME")
   return(chart)
 }
-

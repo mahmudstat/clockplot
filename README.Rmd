@@ -47,7 +47,7 @@ and a small part (100 rows) extracted. To see the modified data, visit
 ```{r, clock-chart-acdt, fig.align = 'center', fig.height=6, fig.width=6}
 library(clockplot)
 acdt <- read.csv("https://raw.githubusercontent.com/mahmudstat/open-analysis/main/data/usacc.csv")
-clock_chart_qnt(acdt, time = Time, len = Humidity... , Col = Temperature.F.)+
+clock_chart_qnt(acdt, time = Time, len = Humidity..., Col = Temperature.F.) +
   ggplot2::labs(size = "Humidity", color = "Temperature")
 ```
 
@@ -61,9 +61,9 @@ of messages by senders.
 
 ```{r exqlt, warning=FALSE, echo=FALSE, fig.align = 'center', fig.height=6, fig.width=6}
 #| fig.alt = "SMS times"
-clock_chart_qlt(smsclock, time = time, crit = sender)+
-  ggplot2::scale_color_discrete(name = "Sender")+
-  ggplot2::labs(title = "Times of Receiving SMS on a Particular Day")+
+clock_chart_qlt(smsclock, time = time, crit = sender) +
+  ggplot2::scale_color_discrete(name = "Sender") +
+  ggplot2::labs(title = "Times of Receiving SMS on a Particular Day") +
   ggplot2::theme(legend.position = "right")
 ```
 
@@ -76,8 +76,8 @@ Generally, there is `cyclic_chart()`, allowing to plot daily, weekly, or monthly
 ```{r week-chart, echo=FALSE, fig.align = 'center', fig.height=6, fig.width=6}
 #| fig.alt = "Week chart of Temperature"
 set.seed(15)
-wtemp <- sample(10:40,7)
-week_chart(wtemp, high = "yellow", lgnm = "Temperature")+
+wtemp <- sample(10:40, 7)
+week_chart(wtemp, high = "yellow", lgnm = "Temperature") +
   ggplot2::labs(title = "Temperature Variation throughout the Week")
 ```
 

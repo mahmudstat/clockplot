@@ -25,25 +25,28 @@ NULL
 #' year_chart(mvalue = syltmp)
 #' @export
 year_chart <- function(mvalue, lgnm = "Value", width = 0.9,
-                        high = "yellow", low = "green"){
-  Months <- c("January", "February", "March", "April", "May", "June",
-              "July", "August", "September", "October", "November", "December")
+                       high = "yellow", low = "green") {
+  Months <- c(
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  )
   Months <- keep_fct_order(Months)
   # mvalue is a vector. If you have it in a data frame, use dataframe$mvalue
   df <- tibble::tibble(Months, mvalue) %>%
     dplyr::mutate(days = factor(Months, levels = Months))
-  chart <- df %>% ggplot2::ggplot(ggplot2::aes(Months, mvalue, fill = mvalue))+
-    ggplot2::geom_col(width = width)+
-    ggplot2::scale_fill_gradient(high = {{high}}, low = {{low}}, name = {{lgnm}})+
-    ggplot2::coord_polar("x", start = 270)+
-    ggplot2::theme(axis.ticks.x=element_blank(),
-          axis.text.y=element_blank(),
-          axis.ticks.y=element_blank(),
-          axis.title = element_blank(),
-          legend.position = "bottom")+
+  chart <- df %>% ggplot2::ggplot(ggplot2::aes(Months, mvalue, fill = mvalue)) +
+    ggplot2::geom_col(width = width) +
+    ggplot2::scale_fill_gradient(high = {{ high }}, low = {{ low }}, name = {{ lgnm }}) +
+    ggplot2::coord_polar("x", start = 270) +
+    ggplot2::theme(
+      axis.ticks.x = element_blank(),
+      axis.text.y = element_blank(),
+      axis.ticks.y = element_blank(),
+      axis.title = element_blank(),
+      legend.position = "bottom"
+    ) +
     ggplot2::geom_text(label = mvalue, position = position_stack(vjust = 0.8), color = "black")
   # You can also add your own custom legend title by adding the following code
   # + scale_fill_gradient(name = "NAME")
   return(chart)
 }
-

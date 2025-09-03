@@ -133,8 +133,10 @@ We now use `clock_chart_qnt()`. We color the chart magnitude and change
 length by the depth of the earthquake hypocenter.
 
 ```{r eval=FALSE}
-clock_chart_qnt(data = bdquake, time = hms, len = depth,
-Col = mag, high = "red", low = "blue")
+clock_chart_qnt(
+  data = bdquake, time = hms, len = depth,
+  Col = mag, high = "red", low = "blue"
+)
 ```
 
 The `high` and `low` color names can be vice versa or other colors, depending on the context. To use a single color for all lines, use same value for `high` and `low`
@@ -142,10 +144,14 @@ The `high` and `low` color names can be vice versa or other colors, depending on
 **The custom plot**
 
 ```{r clock-chart-qnt, fig.align = 'center', fig.height=6, fig.width=6}
-p1 <- clock_chart_qnt(data = bdquake, time = hms, len = depth,
-Col = mag, high = "red", low = "blue")
-p1 + ggplot2::labs(color = "Depth", size = "Magnitude",
-title = "Earthquakes in Bangladesh since 2023")
+p1 <- clock_chart_qnt(
+  data = bdquake, time = hms, len = depth,
+  Col = mag, high = "red", low = "blue"
+)
+p1 + ggplot2::labs(
+  color = "Depth", size = "Magnitude",
+  title = "Earthquakes in Bangladesh since 2023"
+)
 ```
 
 If you do not have two variables for `len` and `Col`, use one single variable 
@@ -178,7 +184,7 @@ and a small part (100 rows) extracted. To see the modified data, visit
 
 ```{r, clock-chart-acdt, fig.align = 'center', fig.height=6, fig.width=6}
 acdt <- read.csv("https://raw.githubusercontent.com/mahmudstat/open-analysis/main/data/usacc.csv")
-clock_chart_qnt(acdt, time = Time, len = Humidity... , Col = Temperature.F.)+
+clock_chart_qnt(acdt, time = Time, len = Humidity..., Col = Temperature.F.) +
   ggplot2::labs(size = "Humidity", color = "Temperature")
 ```
 
@@ -215,8 +221,8 @@ head(smsclock, 4)
 Now let us plot times with respect to message title. 
 
 ```{r clock-chart-qlt, fig.align = 'center', fig.height=6, fig.width=6}
-clock_chart_qlt(smsclock, time = time, crit = Title)+
-ggplot2::labs(color = "Sender", title = "SMS's Received throughout the Day")
+clock_chart_qlt(smsclock, time = time, crit = Title) +
+  ggplot2::labs(color = "Sender", title = "SMS's Received throughout the Day")
 ```
 
 This makes it convenient to see which types of messages were sent when. Certain 
@@ -231,14 +237,14 @@ We can use the following to see the visual relationship between message
 Sender and the Day of the week. 
 
 ```{r eval=FALSE}
-clock_chart_qlt(smsclock, time = time, crit = sender)+facet_wrap(~day)
+clock_chart_qlt(smsclock, time = time, crit = sender) + facet_wrap(~day)
 ```
 
 Or we may be interested to see the association between message title and the 
 time when they are sent. 
 
 ```{r eval=FALSE}
-clock_chart_qlt(smsclock, time = time, crit = sender)+facet_wrap(~Title)
+clock_chart_qlt(smsclock, time = time, crit = sender) + facet_wrap(~Title)
 ```
 
 **Instructions from the beginning which args to use in labs.**
@@ -249,14 +255,16 @@ clock_chart_qlt(smsclock, time = time, crit = sender)+facet_wrap(~Title)
 
 ```{r, cyclic-chart, fig.align = 'center', fig.height=6, fig.width=6}
 Col <- c("#0040ff", "#00bfff", "#8000ff")
-cyclic_chart(bdtemp, Period = Month, Value = Temperature,
-crit = City, ColV = Col)
+cyclic_chart(bdtemp,
+  Period = Month, Value = Temperature,
+  crit = City, ColV = Col
+)
 ```
 
 Or we can also make day or week charts. 
 
 ```{r, dayc, fig.align = 'center', fig.height=6, fig.width=6}
-value <- sample(15:30,24, replace = TRUE)
+value <- sample(15:30, 24, replace = TRUE)
 day_chart(hvalue = value, high = "blue", low = "yellow", width = 0.8)
 ```
 

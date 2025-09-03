@@ -2,13 +2,13 @@
 # Using expect_length()
 
 test_that("Length of vector is 7", {
-  wv <- sample(10, 7)  # Create a vector of length 7
-  week_chart(wv)       # Assuming this function processes the vector
+  wv <- sample(10, 7) # Create a vector of length 7
+  week_chart(wv) # Assuming this function processes the vector
   expect_length(wv, 7) # Check that the vector itself has length 7
 })
 
 test_that("A numeric vector", {
-  wt <- sample(10,7)+runif(7)
+  wt <- sample(10, 7) + runif(7)
   week_chart(wt)
   expect_vector(wt, ptype = numeric())
 })
