@@ -11,10 +11,7 @@
 #' `ggplot2::labs()`.
 #'
 #' @seealso
-#'   [clock_chart_col()] for coloring by a numeric variable,
-#'   [clock_chart_qnt()] for coloring and modifying length by a numeric variable,
-#'   [clock_chart_qlt()] for coloring by a qualitative variable
-#'
+#'   [clock_chart_col()], [clock_chart_qnt()], and [clock_chart_qlt()].
 #' @param data A data frame
 #' @param time Time in 24 hours. The allowed time formats for these family
 #' of charts are `HH:MM:SS`, `HH:MM` or even `H:M` (such as `12;30:09`

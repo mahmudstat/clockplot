@@ -42,10 +42,14 @@ position names in \code{ggplot2} are \code{top}, \code{bottom}, \code{right}, an
 excluding more complex options.
 }
 \examples{
-p1 <- clock_chart_qnt(data = bdquake, time = hms, len = depth,
-Col = mag, high = "red", low = "blue")
-p1 + ggplot2::labs(color = "Depth", size = "Magnitude",
-title = "Earthquakes in Bangladesh since 2023")
+p1 <- clock_chart_qnt(
+  data = bdquake, time = hms, len = depth,
+  Col = mag, high = "red", low = "blue"
+)
+p1 + ggplot2::labs(
+  color = "Depth", size = "Magnitude",
+  title = "Earthquakes in Bangladesh since 2023"
+)
 }
 \seealso{
 \code{\link[=clock_chart_col]{clock_chart_col()}} for coloring by a numeric variable,

@@ -28,18 +28,13 @@ For example: \verb{ggplot2::labs(title = "My Plot",} \cr
 \verb{subtitle = "My Subtitle")}
 You can change the title of the legend by adding \cr
 \code{ggplot2::labs(color = "Legend Title")}.
-To change the legend's position, add \code{theme(legend.position = "POSITION")}. \cr
-Valid positions are \code{top}, \code{bottom}, \code{right}, and \code{left},
-excluding more complex options.
 }
 \examples{
 # A plot showing sms receiving times based on
 # criteria (type/sender/invoked)
-clock_chart_qlt(smsclock, time = time, crit = sender)+
-ggplot2::labs(color = "Sender", title = "SMS's Received throughout th Day")
+clock_chart_qlt(smsclock, time = time, crit = sender) +
+  ggplot2::labs(color = "Sender", title = "SMS's Received throughout th Day")
 }
 \seealso{
-\code{\link[=clock_chart_col]{clock_chart_col()}} for coloring by a numeric variable,
-\code{\link[=clock_chart_qnt]{clock_chart_qnt()}} for coloring and modifying length by a numeric variable,
-\code{\link[=clock_chart]{clock_chart()}} for the simplest clock chart
+\code{\link[=clock_chart_col]{clock_chart_col()}} for coloring and \code{\link[=clock_chart_qnt]{clock_chart_qnt()}} for more options.
 }

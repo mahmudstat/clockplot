@@ -39,14 +39,14 @@ position names in \code{ggplot2} are \code{top}, \code{bottom}, \code{right}, an
 excluding more complex options.
 }
 \examples{
-df <- data.frame(time = c("06:00:00", "08:00:00", "17:30:00"),
-value = c(3,6,9))
-clock_chart_col(df, time, crit = value)+
-ggplot2::labs(size = "TITLE")
+df <- data.frame(
+  time = c("06:00:00", "08:00:00", "17:30:00"),
+  value = c(3, 6, 9)
+)
+clock_chart_col(df, time, crit = value) +
+  ggplot2::labs(size = "TITLE")
 
 }
 \seealso{
-\code{\link[=clock_chart_qnt]{clock_chart_qnt()}} for coloring and modifying length by a numeric variable,
-\code{\link[=clock_chart_qlt]{clock_chart_qlt()}} for coloring by a qualitative variable,
-\code{\link[=clock_chart]{clock_chart()}} for the simplest clock chart
+\code{\link[=clock_chart_qnt]{clock_chart_qnt()}}, and \code{\link[=clock_chart_qlt]{clock_chart_qlt()}}.
 }

@@ -13,9 +13,7 @@
 #' excluding more complex options.
 #'
 #' @seealso
-#'   [clock_chart_qnt()] for coloring and modifying length by a numeric variable,
-#'   [clock_chart_qlt()] for coloring by a qualitative variable,
-#'   [clock_chart()] for the simplest clock chart
+#'   [clock_chart_qnt()], and [clock_chart_qlt()].
 #'
 #' @param data A data frame
 #' @param time Time in 24 hours. The allowed time formats for these family

@@ -6,9 +6,7 @@
 #' @param Days Days of the month; should start from 1 and be between 28 and 31
 #' @param mvalue A numeric vector having values in each month of the year (starts
 #' from January, obviously)
-#' @param lgnm Title of legend. The legend position can also be changed by
-#' adding `legend.position = "POSITION"`, where the accepted positions are
-#' `top`, `bottom`, `left`, and `right`.
+#' @param lgnm Title of legend.
 #' @param width Width of bars
 #' @param high The color name for the high values. The default is `red`
 #' @param low The color name for the high values. The default is `green`.

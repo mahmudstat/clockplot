@@ -7,11 +7,6 @@
 #'
 #' Change the title, subtitle or the caption of the plot with
 #' `ggplot2::labs()`. See examples.
-#' @seealso
-#'   [clock_chart_col()] for coloring by a numeric variable,
-#'   [clock_chart_qnt()] for coloring and modifying length by a numeric variable,
-#'   [clock_chart_qlt()] for coloring by a qualitative variable,
-#'   [clock_chart()] for the simplest clock chart
 #'
 #' @param data A data frame
 #' @param time Time in 24 hours. The allowed time formats for these family

@@ -9,9 +9,7 @@
 #' You can change the title of the legend by adding \cr
 #' `ggplot2::labs(color = "Legend Title")`.
 #' @seealso
-#'   [clock_chart_col()] for coloring by a numeric variable,
-#'   [clock_chart_qnt()] for coloring and modifying length by a numeric variable,
-#'   [clock_chart()] for the simplest clock chart
+#'   [clock_chart_col()] for coloring and [clock_chart_qnt()] for more options.
 #'
 #' @param data A data frame
 #' @param time Time in 24 hours. The allowed time formats for these family

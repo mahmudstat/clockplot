@@ -10,8 +10,7 @@
 #' @param mvalue A numeric vector having values in each month of the year (starts
 #' from January, obviously). If you have it in a data frame, you need to
 #' extract it (one way is this: `data$mvalue`)
-#' @param lgnm Title of legend. The legend position can also be changed by
-#' adding `legend.position = ""`.
+#' @param lgnm Title of legend.
 #' @param high The color name for the high values. The default is `red`
 #' @param low The color name for the high values. The default is `green`.
 #' The color names can be vice versa or other colors, depending on the context.

@@ -8,8 +8,8 @@
 #' in a year.
 #'
 #' @seealso
-#'   [day_chart()] for plotting values on a day by hours
-#'   [week_chart()] for plotting values in a week by days
+#'   [day_chart()] for plotting values on a day by hours,
+#'   [week_chart()] for plotting values in a week by days,
 #'   [year_chart()] for plotting values in a year by months
 #'
 #' @param df A data frame

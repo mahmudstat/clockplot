@@ -28,6 +28,7 @@ Also check out [keep note](https://keep.google.com/u/1/#NOTE/1Hj4tuKO1Is743Xui9a
 6. All basic goals are fulfilled
 7. Run functions with all arguments and types (numeric, factor; add error, warning if not by default by parent pkg)
 8. Follow R code style https://google.github.io/styleguide/Rguide.html
+9. Check latex error: R CMD Rd2pdf --no-clean clockplot
 
 ## Important
 

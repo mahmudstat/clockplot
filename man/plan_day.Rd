@@ -23,6 +23,7 @@ This function plots works corresponding to each hour on a rose plot.
 }
 \examples{
 work <- sample(c("Study", "Adda", "Entertainment", "Games", "Exercise", "Meal"),
-size = 24, replace = TRUE)
+  size = 24, replace = TRUE
+)
 plan_day(dwork = work, brdcol = NA)
 }

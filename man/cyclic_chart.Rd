@@ -36,11 +36,13 @@ in a year.
 \examples{
 # Using package built-in bdtemp data
 Col <- c("#0040ff", "#00bfff", "#8000ff")
-cyclic_chart(bdtemp, Period = Month, Value = Temperature,
-crit = City, ColV = Col)
+cyclic_chart(bdtemp,
+  Period = Month, Value = Temperature,
+  crit = City, ColV = Col
+)
 }
 \seealso{
-\code{\link[=day_chart]{day_chart()}} for plotting values on a day by hours
-\code{\link[=week_chart]{week_chart()}} for plotting values in a week by days
+\code{\link[=day_chart]{day_chart()}} for plotting values on a day by hours,
+\code{\link[=week_chart]{week_chart()}} for plotting values in a week by days,
 \code{\link[=year_chart]{year_chart()}} for plotting values in a year by months
 }
