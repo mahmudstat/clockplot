@@ -7,7 +7,7 @@
   };
 </script><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"><script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Plot Cyclic Data (General Format) — cyclic_chart"><meta name="description" content="This function plots values corresponding to random periods such as hours,
 days, months and so on."><meta property="og:description" content="This function plots values corresponding to random periods such as hours,
-days, months and so on."><meta property="og:image" content="https://mahmudstat.github.io/clockplot/logo.png"></head><body>
+days, months and so on."></head><body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
 
@@ -41,7 +41,8 @@ days, months and so on."><meta property="og:image" content="https://mahmudstat.g
 </nav><div class="container template-reference-topic">
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-      <img src="../logo.png" class="logo" alt=""><h1>Plot Cyclic Data (General Format)</h1>
+
+      <h1>Plot Cyclic Data (General Format)</h1>
       <small class="dont-index">Source: <a href="https://github.com/mahmudstat/clockplot/blob/main/R/cyclic_chart.R" class="external-link"><code>R/cyclic_chart.R</code></a></small>
       <div class="d-none name"><code>cyclic_chart.Rd</code></div>
     </div>
@@ -96,8 +97,8 @@ in a year.</p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
-    <div class="dont-index"><p><code><a href="day_chart.html">day_chart()</a></code> for plotting values on a day by hours
-<code><a href="week_chart.html">week_chart()</a></code> for plotting values in a week by days
+    <div class="dont-index"><p><code><a href="day_chart.html">day_chart()</a></code> for plotting values on a day by hours,
+<code><a href="week_chart.html">week_chart()</a></code> for plotting values in a week by days,
 <code><a href="year_chart.html">year_chart()</a></code> for plotting values in a year by months</p></div>
     </div>
 
@@ -105,8 +106,10 @@ in a year.</p>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Using package built-in bdtemp data</span></span></span>
 <span class="r-in"><span><span class="va">Col</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#0040ff"</span>, <span class="st">"#00bfff"</span>, <span class="st">"#8000ff"</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu">cyclic_chart</span><span class="op">(</span><span class="va">bdtemp</span>, Period <span class="op">=</span> <span class="va">Month</span>, Value <span class="op">=</span> <span class="va">Temperature</span>,</span></span>
-<span class="r-in"><span>crit <span class="op">=</span> <span class="va">City</span>, ColV <span class="op">=</span> <span class="va">Col</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">cyclic_chart</span><span class="op">(</span><span class="va">bdtemp</span>,</span></span>
+<span class="r-in"><span>  Period <span class="op">=</span> <span class="va">Month</span>, Value <span class="op">=</span> <span class="va">Temperature</span>,</span></span>
+<span class="r-in"><span>  crit <span class="op">=</span> <span class="va">City</span>, ColV <span class="op">=</span> <span class="va">Col</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="cyclic_chart-1.png" alt="" width="700" height="433"></span>
 </code></pre></div>
     </div>

@@ -12,20 +12,14 @@ Change the plot's title, subtitle, or caption using ggplot2::labs().
 For example: ggplot2::labs(title = &quot;My Plot&quot;,
 subtitle = &quot;My Subtitle&quot;)
 You can change the title of the legend by adding
-ggplot2::labs(color = &quot;Legend Title&quot;).
-To change the legend's position, add theme(legend.position = &quot;POSITION&quot;).
-Valid positions are top, bottom, right, and left,
-excluding more complex options."><meta property="og:description" content="This function will plot time of events on a 24 hour clock to show which
+ggplot2::labs(color = &quot;Legend Title&quot;)."><meta property="og:description" content="This function will plot time of events on a 24 hour clock to show which
 events took place at what times. The hands are colored by a
 qualitative (factor) vector.
 Change the plot's title, subtitle, or caption using ggplot2::labs().
 For example: ggplot2::labs(title = &quot;My Plot&quot;,
 subtitle = &quot;My Subtitle&quot;)
 You can change the title of the legend by adding
-ggplot2::labs(color = &quot;Legend Title&quot;).
-To change the legend's position, add theme(legend.position = &quot;POSITION&quot;).
-Valid positions are top, bottom, right, and left,
-excluding more complex options."><meta property="og:image" content="https://mahmudstat.github.io/clockplot/logo.png"></head><body>
+ggplot2::labs(color = &quot;Legend Title&quot;)."></head><body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
 
@@ -59,7 +53,8 @@ excluding more complex options."><meta property="og:image" content="https://mahm
 </nav><div class="container template-reference-topic">
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-      <img src="../logo.png" class="logo" alt=""><h1>Clock Chart, Hands Colored by a Factor</h1>
+
+      <h1>Clock Chart, Hands Colored by a Factor</h1>
       <small class="dont-index">Source: <a href="https://github.com/mahmudstat/clockplot/blob/main/R/clock_chart_qlt.R" class="external-link"><code>R/clock_chart_qlt.R</code></a></small>
       <div class="d-none name"><code>clock_chart_qlt.Rd</code></div>
     </div>
@@ -70,10 +65,7 @@ events took place at what times. The hands are colored by a
 qualitative (factor) vector.
 Change the plot's title, subtitle, or caption using <code><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ggplot2::labs()</a></code>. <br>
 For example: <code>ggplot2::labs(title = "My Plot",</code> <br><code>subtitle = "My Subtitle")</code>
-You can change the title of the legend by adding <br><code>ggplot2::labs(color = "Legend Title")</code>.
-To change the legend's position, add <code>theme(legend.position = "POSITION")</code>. <br>
-Valid positions are <code>top</code>, <code>bottom</code>, <code>right</code>, and <code>left</code>,
-excluding more complex options.</p>
+You can change the title of the legend by adding <br><code>ggplot2::labs(color = "Legend Title")</code>.</p>
     </div>
 
     <div class="section level2">
@@ -106,17 +98,15 @@ with <code>ggplot2</code> functions and themes.</p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
-    <div class="dont-index"><p><code><a href="clock_chart_col.html">clock_chart_col()</a></code> for coloring by a numeric variable,
-<code><a href="clock_chart_qnt.html">clock_chart_qnt()</a></code> for coloring and modifying length by a numeric variable,
-<code><a href="clock_chart.html">clock_chart()</a></code> for the simplest clock chart</p></div>
+    <div class="dont-index"><p><code><a href="clock_chart_col.html">clock_chart_col()</a></code> for coloring and <code><a href="clock_chart_qnt.html">clock_chart_qnt()</a></code> for more options.</p></div>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># A plot showing sms receiving times based on</span></span></span>
 <span class="r-in"><span><span class="co"># criteria (type/sender/invoked)</span></span></span>
-<span class="r-in"><span><span class="fu">clock_chart_qlt</span><span class="op">(</span><span class="va">smsclock</span>, time <span class="op">=</span> <span class="va">time</span>, crit <span class="op">=</span> <span class="va">sender</span><span class="op">)</span><span class="op">+</span></span></span>
-<span class="r-in"><span><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"Sender"</span>, title <span class="op">=</span> <span class="st">"SMS's Received throughout th Day"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">clock_chart_qlt</span><span class="op">(</span><span class="va">smsclock</span>, time <span class="op">=</span> <span class="va">time</span>, crit <span class="op">=</span> <span class="va">sender</span><span class="op">)</span> <span class="op">+</span></span></span>
+<span class="r-in"><span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"Sender"</span>, title <span class="op">=</span> <span class="st">"SMS's Received throughout th Day"</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="clock_chart_qlt-1.png" alt="" width="700" height="433"></span>
 </code></pre></div>
     </div>

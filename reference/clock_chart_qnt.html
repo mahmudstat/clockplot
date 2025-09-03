@@ -9,7 +9,7 @@
 events took place at what times. The length and color of the hands are
 modified according to a numeric vector."><meta property="og:description" content="This function will plot time of events on a 24 hour clock to show which
 events took place at what times. The length and color of the hands are
-modified according to a numeric vector."><meta property="og:image" content="https://mahmudstat.github.io/clockplot/logo.png"></head><body>
+modified according to a numeric vector."></head><body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
 
@@ -43,7 +43,8 @@ modified according to a numeric vector."><meta property="og:image" content="http
 </nav><div class="container template-reference-topic">
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-      <img src="../logo.png" class="logo" alt=""><h1>Clock Chart, Length and Color Modified by Numeric Variables</h1>
+
+      <h1>Clock Chart, Length and Color Modified by Numeric Variables</h1>
       <small class="dont-index">Source: <a href="https://github.com/mahmudstat/clockplot/blob/main/R/clock_chart_qnt.R" class="external-link"><code>R/clock_chart_qnt.R</code></a></small>
       <div class="d-none name"><code>clock_chart_qnt.Rd</code></div>
     </div>
@@ -115,10 +116,14 @@ excluding more complex options.</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="fu">clock_chart_qnt</span><span class="op">(</span>data <span class="op">=</span> <span class="va">bdquake</span>, time <span class="op">=</span> <span class="va">hms</span>, len <span class="op">=</span> <span class="va">depth</span>,</span></span>
-<span class="r-in"><span>Col <span class="op">=</span> <span class="va">mag</span>, high <span class="op">=</span> <span class="st">"red"</span>, low <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">p1</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"Depth"</span>, size <span class="op">=</span> <span class="st">"Magnitude"</span>,</span></span>
-<span class="r-in"><span>title <span class="op">=</span> <span class="st">"Earthquakes in Bangladesh since 2023"</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="fu">clock_chart_qnt</span><span class="op">(</span></span></span>
+<span class="r-in"><span>  data <span class="op">=</span> <span class="va">bdquake</span>, time <span class="op">=</span> <span class="va">hms</span>, len <span class="op">=</span> <span class="va">depth</span>,</span></span>
+<span class="r-in"><span>  Col <span class="op">=</span> <span class="va">mag</span>, high <span class="op">=</span> <span class="st">"red"</span>, low <span class="op">=</span> <span class="st">"blue"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">p1</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  color <span class="op">=</span> <span class="st">"Depth"</span>, size <span class="op">=</span> <span class="st">"Magnitude"</span>,</span></span>
+<span class="r-in"><span>  title <span class="op">=</span> <span class="st">"Earthquakes in Bangladesh since 2023"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="clock_chart_qnt-1.png" alt="" width="700" height="433"></span>
 </code></pre></div>
     </div>
