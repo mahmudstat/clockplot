@@ -18,6 +18,9 @@ This function plots works corresponding to each day of the week.
 }
 \examples{
 set.seed(10)
-wtask <- c("Desk Work", "Field Work", "Visit", "Monitoring", "Rest", "Reporting", "Meeting")
+wtask <- c(
+  "Desk Work", "Field Work", "Visit", "Monitoring",
+  "Rest", "Reporting", "Meeting"
+)
 plan_week(wtask)
 }

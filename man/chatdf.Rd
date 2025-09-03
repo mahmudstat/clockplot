@@ -5,16 +5,15 @@
 \alias{chatdf}
 \title{Data Containing Chat Times of Two Individuals}
 \format{
-A data frame with 25 rows and 2 variables:
+A data frame with 25 rows and 3 variables:
 \describe{
 \item{name}{Name of the chat participant}
 \item{time}{Time in HH:MM:SS format}
 \item{turn}{Turn of the chat}
-...
 }
 }
 \source{
-{Randomly generated}
+Randomly generated
 }
 \usage{
 chatdf

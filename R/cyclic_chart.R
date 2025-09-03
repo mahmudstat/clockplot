@@ -8,9 +8,9 @@
 #' in a year.
 #'
 #' @seealso
-#'  [day_chart()] for plotting values on a day by hours
-#'  [week_chart()] for plotting values in a week by days
-#'  [year_chart()] for plotting values in a year by months
+#'   [day_chart()] for plotting values on a day by hours
+#'   [week_chart()] for plotting values in a week by days
+#'   [year_chart()] for plotting values in a year by months
 #'
 #' @param df A data frame
 #' @param Period A list of periodical values such as hours of the day, days of

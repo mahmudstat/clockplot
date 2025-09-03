@@ -12,15 +12,15 @@ from January, obviously). If you have it in a data frame, you need to
 extract it (one way is this: \code{data$mvalue})}
 
 \item{lgnm}{Title of legend. The legend position can also be changed by
-adding \code{legend.position = "top"}, where the accepted positions are
-\code{top}, \code{bottom}, \code{left}, and \code{right}.}
+adding \code{legend.position = "top"}, \cr
+where the accepted positions are \code{top}, \code{bottom}, \code{left}, and \code{right}.}
 
 \item{width}{Width of bars}
 
 \item{high}{The color name for the high values. The default is \code{red}}
 
 \item{low}{The color name for the high values. The default is \code{green}.
-#' The color names can be vice-versa or other colors, depending on the context.}
+The color names can be vice-versa or other colors, depending on the context.}
 }
 \value{
 A \code{ggplot} object, which can be further modified

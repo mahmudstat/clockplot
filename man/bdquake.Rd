@@ -21,6 +21,6 @@ A data frame with 13 rows and 5 variables:
 bdquake
 }
 \description{
-A dataset containing earthquakes magnitude, dpeth, and location information.
+A dataset containing earthquakes magnitude, depth, and location information.
 }
 \keyword{datasets}

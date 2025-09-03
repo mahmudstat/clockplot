@@ -17,7 +17,7 @@ A data frame with 82 rows and 7 variables:
 }
 }
 \source{
-{Phone Messages}
+Phone Messages
 }
 \usage{
 smsclock

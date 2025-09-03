@@ -3,14 +3,13 @@
 #' A dataset containing timings of chat by two individuals Abid and Abir
 #' The set contains 25 pushes by each individual
 #'
-#' @format A data frame with 25 rows and 2 variables:
+#' @format A data frame with 25 rows and 3 variables:
 #' \describe{
 #' \item{name}{Name of the chat participant}
 #' \item{time}{Time in HH:MM:SS format}
 #' \item{turn}{Turn of the chat}
-#' ...
 #' }
-#' @source {Randomly generated}
+#' @source Randomly generated
 "chatdf"
 
 #' Data of Times of Receiving of SMS
@@ -28,7 +27,7 @@
 #' \item{type}{The category of the sms; offer, info, ad, service etc.}
 #' \item{Title}{Message Title}
 #' }
-#' @source {Phone Messages}
+#' @source Phone Messages
 "smsclock"
 
 
@@ -41,14 +40,13 @@
 #' \item{Temperature}{Average monthly temperature}
 #' \item{Month}{Month of the year}
 #' \item{City}{Name of the city}
-#' ...
 #' }
 #' @source \href{https://www.weatherbase.com/weather/weather.php3?s=032914&refer=/}{Weather Base}
 "bdtemp"
 
 #' Data of Earthquakes in and around Bangladesh
 #'
-#' A dataset containing earthquakes magnitude, dpeth, and location information.
+#' A dataset containing earthquakes magnitude, depth, and location information.
 #'
 #' @format A data frame with 13 rows and 5 variables:
 #' \describe{
@@ -79,7 +77,7 @@
 #' \item{Arrival}{The time of arrival}
 #' \item{Zone}{East/West}
 #' }
-#' @source {Bangladesh Railway}
+#' @source Bangladesh Railway
 "brintcity"
 
 #' Data of git commits in this repository

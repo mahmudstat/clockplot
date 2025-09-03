@@ -5,9 +5,9 @@
 #' The color names can be vice versa or other colors, depending on the context.
 #'
 #' @seealso
-#'  [week_chart()] for plotting values in a week by days
-#'  [year_chart()] for plotting values on in a year by months
-#'  [cyclic_chart()] for plotting values by arbitrary period
+#'   [week_chart()] for plotting values in a week by days
+#'   [year_chart()] for plotting values on in a year by months
+#'   [cyclic_chart()] for plotting values by arbitrary period
 #'
 #' @param hvalue A numeric vector having values at each of 24 hours (starts
 #' from 6 am)

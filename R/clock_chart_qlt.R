@@ -3,27 +3,25 @@
 #' This function will plot time of events on a 24 hour clock to show which
 #' events took place at what times. The hands are colored by a
 #' qualitative (factor) vector.
-#'
-#' Change the title, subtitle or the caption of the plot with
-#' `ggplot2::labs()`. Change the legend title by adding
-#' `ggplot2::labs(color = "TITLE")`. Add
-#' or modify legend by `theme(legend.position = "POSITION")`; the valid
-#' position names in `ggplot2` are `top`, `bottom`, `right`, and `left`,
-#' excluding more complex options.
-#'
-
+#' Change the plot's title, subtitle, or caption using `ggplot2::labs()`. \cr
+#' For example: `ggplot2::labs(title = "My Plot",` \cr
+#' `subtitle = "My Subtitle")`
+#' You can change the title of the legend by adding \cr
+#' `ggplot2::labs(color = "Legend Title")`.
 #' @seealso
-#'  [clock_chart_col()] for coloring by a numeric variable,
-#'  [clock_chart_qnt()] for coloring and modifying length by a numeric variable,
-#'  [clock_chart()] for the simplest clock chart
+#'   [clock_chart_col()] for coloring by a numeric variable,
+#'   [clock_chart_qnt()] for coloring and modifying length by a numeric variable,
+#'   [clock_chart()] for the simplest clock chart
 #'
 #' @param data A data frame
 #' @param time Time in 24 hours. The allowed time formats for these family
 #' of charts are `HH:MM:SS`, `HH:MM` or even `H:M` (such as `12;30:09`
 #' or `9:3`).
 #' @param crit The qualitative vector by which hands will be colored.
+#'
 #' @returns A `ggplot` object, which can be further modified
 #' with `ggplot2` functions and themes.
+#'
 #' @name clock_chart_qlt
 NULL
 #' @examples
@@ -31,7 +29,6 @@ NULL
 #' # criteria (type/sender/invoked)
 #' clock_chart_qlt(smsclock, time = time, crit = sender)+
 #' ggplot2::labs(color = "Sender", title = "SMS's Received throughout th Day")
-
 #' @export
 clock_chart_qlt<- function(data, time, crit){
   crit = dplyr::pull(data, {{ crit }})

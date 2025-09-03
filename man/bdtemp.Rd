@@ -10,7 +10,6 @@ A data frame with 36 rows and 3 variables:
 \item{Temperature}{Average monthly temperature}
 \item{Month}{Month of the year}
 \item{City}{Name of the city}
-...
 }
 }
 \source{

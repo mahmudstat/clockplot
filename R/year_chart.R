@@ -2,21 +2,19 @@
 #'
 #' This function plots values corresponding to each month on a rose plot.
 #'
-#'
 #' @seealso
-#'  [day_chart()] for plotting values on a day by hours
-#'  [week_chart()] for plotting values in a week by days
-#'  [cyclic_chart()] for plotting values by arbitrary period
+#'   [day_chart()] for plotting values on a day by hours
+#'   [week_chart()] for plotting values in a week by days
+#'   [cyclic_chart()] for plotting values by arbitrary period
 #'
 #' @param mvalue A numeric vector having values in each month of the year (starts
 #' from January, obviously). If you have it in a data frame, you need to
 #' extract it (one way is this: `data$mvalue`)
 #' @param lgnm Title of legend. The legend position can also be changed by
-#' adding `legend.position = "top"`, where the accepted positions are
-#' `top`, `bottom`, `left`, and `right`.
+#' adding `legend.position = ""`.
 #' @param high The color name for the high values. The default is `red`
 #' @param low The color name for the high values. The default is `green`.
-#' #' The color names can be vice-versa or other colors, depending on the context.
+#' The color names can be vice versa or other colors, depending on the context.
 #' @param width Width of bars
 #' @returns A `ggplot` object, which can be further modified
 #' with `ggplot2` functions and themes.

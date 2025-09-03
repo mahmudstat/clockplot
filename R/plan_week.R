@@ -9,7 +9,10 @@
 NULL
 #' @examples
 #' set.seed(10)
-#' wtask <- c("Desk Work", "Field Work", "Visit", "Monitoring", "Rest", "Reporting", "Meeting")
+#' wtask <- c(
+#'   "Desk Work", "Field Work", "Visit", "Monitoring",
+#'   "Rest", "Reporting", "Meeting"
+#' )
 #' plan_week(wtask)
 #' @export
 plan_week <- function(wtask){

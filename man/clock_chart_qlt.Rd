@@ -23,13 +23,13 @@ with \code{ggplot2} functions and themes.
 This function will plot time of events on a 24 hour clock to show which
 events took place at what times. The hands are colored by a
 qualitative (factor) vector.
-}
-\details{
-Change the title, subtitle or the caption of the plot with
-\code{ggplot2::labs()}. Change the legend title by adding
-\code{ggplot2::labs(color = "TITLE")}. Add
-or modify legend by \code{theme(legend.position = "POSITION")}; the valid
-position names in \code{ggplot2} are \code{top}, \code{bottom}, \code{right}, and \code{left},
+Change the plot's title, subtitle, or caption using \code{ggplot2::labs()}. \cr
+For example: \verb{ggplot2::labs(title = "My Plot",} \cr
+\verb{subtitle = "My Subtitle")}
+You can change the title of the legend by adding \cr
+\code{ggplot2::labs(color = "Legend Title")}.
+To change the legend's position, add \code{theme(legend.position = "POSITION")}. \cr
+Valid positions are \code{top}, \code{bottom}, \code{right}, and \code{left},
 excluding more complex options.
 }
 \examples{
