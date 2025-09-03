@@ -225,18 +225,24 @@ We see that in the next chart.</p>
 magnitude and change length by the depth of the earthquake
 hypocenter.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/clock_chart_qnt.html">clock_chart_qnt</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">bdquake</span>, time <span class="op">=</span> <span class="va">hms</span>, len <span class="op">=</span> <span class="va">depth</span>,</span>
-<span>Col <span class="op">=</span> <span class="va">mag</span>, high <span class="op">=</span> <span class="st">"red"</span>, low <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/clock_chart_qnt.html">clock_chart_qnt</a></span><span class="op">(</span></span>
+<span>  data <span class="op">=</span> <span class="va">bdquake</span>, time <span class="op">=</span> <span class="va">hms</span>, len <span class="op">=</span> <span class="va">depth</span>,</span>
+<span>  Col <span class="op">=</span> <span class="va">mag</span>, high <span class="op">=</span> <span class="st">"red"</span>, low <span class="op">=</span> <span class="st">"blue"</span></span>
+<span><span class="op">)</span></span></code></pre></div>
 <p>The <code>high</code> and <code>low</code> color names can be vice
 versa or other colors, depending on the context. To use a single color
 for all lines, use same value for <code>high</code> and
 <code>low</code></p>
 <p><strong>The custom plot</strong></p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/clock_chart_qnt.html">clock_chart_qnt</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">bdquake</span>, time <span class="op">=</span> <span class="va">hms</span>, len <span class="op">=</span> <span class="va">depth</span>,</span>
-<span>Col <span class="op">=</span> <span class="va">mag</span>, high <span class="op">=</span> <span class="st">"red"</span>, low <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span></span>
-<span><span class="va">p1</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"Depth"</span>, size <span class="op">=</span> <span class="st">"Magnitude"</span>,</span>
-<span>title <span class="op">=</span> <span class="st">"Earthquakes in Bangladesh since 2023"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/clock_chart_qnt.html">clock_chart_qnt</a></span><span class="op">(</span></span>
+<span>  data <span class="op">=</span> <span class="va">bdquake</span>, time <span class="op">=</span> <span class="va">hms</span>, len <span class="op">=</span> <span class="va">depth</span>,</span>
+<span>  Col <span class="op">=</span> <span class="va">mag</span>, high <span class="op">=</span> <span class="st">"red"</span>, low <span class="op">=</span> <span class="st">"blue"</span></span>
+<span><span class="op">)</span></span>
+<span><span class="va">p1</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span>
+<span>  color <span class="op">=</span> <span class="st">"Depth"</span>, size <span class="op">=</span> <span class="st">"Magnitude"</span>,</span>
+<span>  title <span class="op">=</span> <span class="st">"Earthquakes in Bangladesh since 2023"</span></span>
+<span><span class="op">)</span></span></code></pre></div>
 <p><img src="clockplot_files/figure-html/clock-chart-qnt-1.png" width="576" style="display: block; margin: auto;"></p>
 <p>If you do not have two variables for <code>len</code> and
 <code>Col</code>, use one single variable for both options.</p>
@@ -263,7 +269,7 @@ and a small part (100 rows) extracted. To see the modified data, visit
 link</a>.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">acdt</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv</a></span><span class="op">(</span><span class="st">"https://raw.githubusercontent.com/mahmudstat/open-analysis/main/data/usacc.csv"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/clock_chart_qnt.html">clock_chart_qnt</a></span><span class="op">(</span><span class="va">acdt</span>, time <span class="op">=</span> <span class="va">Time</span>, len <span class="op">=</span> <span class="va">Humidity...</span> , Col <span class="op">=</span> <span class="va">Temperature.F.</span><span class="op">)</span><span class="op">+</span></span>
+<span><span class="fu"><a href="../reference/clock_chart_qnt.html">clock_chart_qnt</a></span><span class="op">(</span><span class="va">acdt</span>, time <span class="op">=</span> <span class="va">Time</span>, len <span class="op">=</span> <span class="va">Humidity...</span>, Col <span class="op">=</span> <span class="va">Temperature.F.</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>size <span class="op">=</span> <span class="st">"Humidity"</span>, color <span class="op">=</span> <span class="st">"Temperature"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="clockplot_files/figure-html/clock-chart-acdt-1.png" width="576" style="display: block; margin: auto;"></p>
 <!--
@@ -305,8 +311,8 @@ to `clock_chart_len()`.
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> 03-09-2024 Tuesday 13:15:00 Airtel No      offer AirtelTune</span></span></code></pre></div>
 <p>Now let us plot times with respect to message title.</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/clock_chart_qlt.html">clock_chart_qlt</a></span><span class="op">(</span><span class="va">smsclock</span>, time <span class="op">=</span> <span class="va">time</span>, crit <span class="op">=</span> <span class="va">Title</span><span class="op">)</span><span class="op">+</span></span>
-<span><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"Sender"</span>, title <span class="op">=</span> <span class="st">"SMS's Received throughout the Day"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/clock_chart_qlt.html">clock_chart_qlt</a></span><span class="op">(</span><span class="va">smsclock</span>, time <span class="op">=</span> <span class="va">time</span>, crit <span class="op">=</span> <span class="va">Title</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"Sender"</span>, title <span class="op">=</span> <span class="st">"SMS's Received throughout the Day"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="clockplot_files/figure-html/clock-chart-qlt-1.png" width="576" style="display: block; margin: auto;"></p>
 <p>This makes it convenient to see which types of messages were sent
 when. Certain types of messages, such as Supper_Offer, are always sent
@@ -318,11 +324,11 @@ the <code>ggplot2</code> package.</p>
 <p>We can use the following to see the visual relationship between
 message Sender and the Day of the week.</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/clock_chart_qlt.html">clock_chart_qlt</a></span><span class="op">(</span><span class="va">smsclock</span>, time <span class="op">=</span> <span class="va">time</span>, crit <span class="op">=</span> <span class="va">sender</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">day</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/clock_chart_qlt.html">clock_chart_qlt</a></span><span class="op">(</span><span class="va">smsclock</span>, time <span class="op">=</span> <span class="va">time</span>, crit <span class="op">=</span> <span class="va">sender</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">day</span><span class="op">)</span></span></code></pre></div>
 <p>Or we may be interested to see the association between message title
 and the time when they are sent.</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/clock_chart_qlt.html">clock_chart_qlt</a></span><span class="op">(</span><span class="va">smsclock</span>, time <span class="op">=</span> <span class="va">time</span>, crit <span class="op">=</span> <span class="va">sender</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">Title</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/clock_chart_qlt.html">clock_chart_qlt</a></span><span class="op">(</span><span class="va">smsclock</span>, time <span class="op">=</span> <span class="va">time</span>, crit <span class="op">=</span> <span class="va">sender</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">Title</span><span class="op">)</span></span></code></pre></div>
 <p><strong>Instructions from the beginning which args to use in
 labs.</strong></p>
 </div>
@@ -335,12 +341,14 @@ labs.</strong></p>
 </h4>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">Col</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#0040ff"</span>, <span class="st">"#00bfff"</span>, <span class="st">"#8000ff"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/cyclic_chart.html">cyclic_chart</a></span><span class="op">(</span><span class="va">bdtemp</span>, Period <span class="op">=</span> <span class="va">Month</span>, Value <span class="op">=</span> <span class="va">Temperature</span>,</span>
-<span>crit <span class="op">=</span> <span class="va">City</span>, ColV <span class="op">=</span> <span class="va">Col</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="../reference/cyclic_chart.html">cyclic_chart</a></span><span class="op">(</span><span class="va">bdtemp</span>,</span>
+<span>  Period <span class="op">=</span> <span class="va">Month</span>, Value <span class="op">=</span> <span class="va">Temperature</span>,</span>
+<span>  crit <span class="op">=</span> <span class="va">City</span>, ColV <span class="op">=</span> <span class="va">Col</span></span>
+<span><span class="op">)</span></span></code></pre></div>
 <p><img src="clockplot_files/figure-html/cyclic-chart-1.png" width="576" style="display: block; margin: auto;"></p>
 <p>Or we can also make day or week charts.</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">value</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fl">15</span><span class="op">:</span><span class="fl">30</span>,<span class="fl">24</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">value</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fl">15</span><span class="op">:</span><span class="fl">30</span>, <span class="fl">24</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/day_chart.html">day_chart</a></span><span class="op">(</span>hvalue <span class="op">=</span> <span class="va">value</span>, high <span class="op">=</span> <span class="st">"blue"</span>, low <span class="op">=</span> <span class="st">"yellow"</span>, width <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span></span></code></pre></div>
 <p><img src="clockplot_files/figure-html/dayc-1.png" width="576" style="display: block; margin: auto;"></p>
 <p>To see all the available functions, run
