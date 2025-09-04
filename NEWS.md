@@ -1,4 +1,4 @@
-# clockplot (development version)
+# clockplot 0.7.2
 
 * Started GHA for automated `check()`ing
 
