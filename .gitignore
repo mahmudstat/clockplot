@@ -4,6 +4,5 @@
 .Ruserdata
 inst/doc
 docs
-month_chart.Rd
 *.tar.gz
 clean_data.Rd

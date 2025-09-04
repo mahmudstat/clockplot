@@ -12,6 +12,7 @@ Also check out [keep note](https://keep.google.com/u/1/#NOTE/1Hj4tuKO1Is743Xui9a
 - devtools::spell_check()
 - devtools::build_readme()
 - urlchecker::url_check(".")
+- devtools::check(args = c("--as-cran", "--no-manual")) # most important command to run locally
 
 ## Know Isues
 
