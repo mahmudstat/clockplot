@@ -2,7 +2,6 @@
 
 export(clock_chart)
 export(clock_chart_col)
-export(clock_chart_len)
 export(clock_chart_qlt)
 export(clock_chart_qnt)
 export(cyclic_chart)

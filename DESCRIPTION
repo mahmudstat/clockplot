@@ -12,7 +12,7 @@ Description: Provides a novel visualization technique for plotting timestamped e
     daily patterns, event clustering, and gaps in temporal data. The package
     also generalizes this approach to create cyclic charts for other periods,
     including weekly and monthly cycles, enabling effective event planning and
-    pattern analysis across multiple timeframes.
+    pattern analysis across multiple time frames.
 License: MIT + file LICENSE
 Imports:
     dplyr,
