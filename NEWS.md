@@ -1,5 +1,6 @@
 # clockplot 0.7.2
 
+* Deprecated *month_chart* and *clock_chart_len* before CRAN submission
 * Started GHA for automated `check()`ing
 
 # 0.7.0

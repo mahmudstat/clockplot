@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# clockplot <a href="#"><img src="man/figures/logo.png" align="right" height="100" /></a>
+# clockplot <a href="#"><img src="man/figures/hexlogo.png" align="right" height="100" /></a>
 
 <!-- badges: start -->
 
