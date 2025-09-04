@@ -1,5 +1,7 @@
 # clockplot (development version)
 
+# 0.7.0
+
 * Updated URLS to redirects
 * Added return type to all exported functions.
 * Documented and described all the functions.

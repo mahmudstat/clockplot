@@ -11,3 +11,7 @@
 ^LICENSE\.md$
 ^Notes\.md$
 ^cran-comments\.md$
+^.*\.tex$
+^.*\.log$
+^.*\.aux$
+^.*\.toc$
