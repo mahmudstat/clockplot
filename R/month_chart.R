@@ -12,8 +12,7 @@
 #' @param low The color name for the high values. The default is `green`.
 #' The color names can be vice versa or other colors, depending on the context.
 #' @return A circular chart showing values in each month of the year.
-#' @name month_chart
-NULL
+#'
 #' @examples
 #' Days <- 1:30
 #' expense <- c(
