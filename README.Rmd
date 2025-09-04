@@ -16,9 +16,12 @@ knitr::opts_chunk$set(
 # clockplot <a href="#"><img src="man/figures/logo.png" align="right" height="100" /></a>
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/mahmudstat/clockplot/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/mahmudstat/clockplot/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The *clockplot* is designed to visualize event times on a circular clock chart, helping you create day, week, or month charts for analyzing patterns or planning events. It’s perfect for time-based data, from personal schedules to periodic trend analysis.
+A novel visualization technique for plotting timestamped events on a 24-hour circular clock face. The *clockplot* package helps you uncover daily patterns, event clusters, and gaps in your temporal data.
+
+The approach generalizes to other cycles—like weeks and months—making it an essential tool for visualizing rhythms and planning events across any timeframe.
 
 ## Installation
 

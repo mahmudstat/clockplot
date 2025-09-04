@@ -1,5 +1,7 @@
 # clockplot (development version)
 
+* Started GHA for automated `check()`ing
+
 # 0.7.0
 
 * Updated URLS to redirects
