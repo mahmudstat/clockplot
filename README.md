@@ -6,6 +6,8 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/mahmudstat/clockplot/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/mahmudstat/clockplot/actions/workflows/R-CMD-check.yaml)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17087377.svg)](https://doi.org/10.5281/zenodo.17087377)
+
 <!-- badges: end -->
 
 A novel visualization technique for plotting timestamped events on a
