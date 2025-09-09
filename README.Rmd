@@ -25,6 +25,12 @@ The approach generalizes to other cycles—like weeks and months—making it an 
 
 ## Installation
 
+You can install the latest version from CRAN with:
+
+```r
+install.packages("clockplot")
+```
+
 You can install the development version of clockplot from [GitHub](https://github.com/) with:
 
 ``` r

@@ -16,3 +16,4 @@
 ^.*\.aux$
 ^.*\.toc$
 ^dev$
+^CRAN-SUBMISSION$

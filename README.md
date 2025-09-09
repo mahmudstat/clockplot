@@ -18,6 +18,12 @@ timeframe.
 
 ## Installation
 
+You can install the latest version from CRAN with:
+
+``` r
+install.packages("clockplot")
+```
+
 You can install the development version of clockplot from
 [GitHub](https://github.com/) with:
 
