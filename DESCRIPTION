@@ -1,7 +1,7 @@
 Package: clockplot
 Type: Package
 Title: Plot Event Times on a 24-Hour Clock
-Version: 0.7.2
+Version: 0.7.2.9000
 Authors@R: person(given = c("Abdullah", "Al"),
                     family = "Mahmud",
                     role = c("aut", "cre", "cph"),
