@@ -19,7 +19,10 @@ Also check out [keep note](https://keep.google.com/u/1/#NOTE/1Hj4tuKO1Is743Xui9a
 
 ### rhub 
 
-- rhub::rhub_check(gh_url = NULL, platforms = NULL)
+- rhub::rhub_check(gh_url = NULL, platforms = NULL) # USe options from
+https://cran.r-project.org/web/checks/check_results_clockplot.html or 
+https://cran.r-project.org/web/checks/check_flavors.html#r-devel-linux-x86_64-fedora-clang
+
 
 See `?rhub::rhubv2`, `?rhub::rhub_check`, 
 
