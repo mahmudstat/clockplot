@@ -17,11 +17,9 @@
 #' of charts are `HH:MM:SS`, `HH:MM` or even `H:M` (such as `12;30:09`
 #' or `9:3`), although the SS part is ignored due to having
 #' negligible impact on the final plot).
-#' @param Col Color name for the lines. The default is `black`.
+#' @param Col A single color name for the lines. The default is `black`.
 #' @returns A `ggplot` object, which can be further modified
 #' with `ggplot2` functions and themes.
-#' @name clock_chart
-NULL
 #'
 #' @examples
 #' p1 <- clock_chart(smsclock, time) # Using package built-in data
@@ -29,8 +27,8 @@ NULL
 #' #  Add clock_chart(brintcity %>% filter(Origin == "Dhaka"), time = Departure)
 #' @export
 clock_chart <- function(data, time, Col = "black") {
-  if (!is.data.frame(data)) {
-    stop("`data` must be a data frame", call. = FALSE)
+  if (!inherits(data, "data.frame")) {
+    stop("`data` must be a data frame or tibble", call. = FALSE)
   }
 
   mydata <- conv_data(data = data, time = {{ time }})

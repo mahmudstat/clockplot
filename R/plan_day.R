@@ -2,7 +2,8 @@
 #'
 #' This function plots works corresponding to each hour on a rose plot.
 #'
-#' @param dwork A character vector of length 24, with names of work at each hour (starting 6 AM).
+#' @param dwork A character vector of length 24, with activity names for each
+#' hour starting from 6 AM and ending at 5 AM the next day.
 #' @param width Width of bars.
 #' @param brdcol Color of bar border. Use `NA` for no border.
 #'
@@ -27,10 +28,13 @@ plan_day <- function(dwork, width = 1, brdcol = "grey") {
   df <- tibble::tibble(hours, dwork) %>%
     dplyr::mutate(hours = factor(hours, levels = hours))
 
-  # Compute angles for labels
-  angles <- seq(90, -270, length.out = 24)  # rotates around the circle
+  # Calculate smart angles for text labels
+  angles <- 90 - 360 * (seq_along(hours) - 0.5) / length(hours)
+  angles <- ifelse(angles > 90, angles + 180, angles)
+  angles <- ifelse(angles < -90, angles + 180, angles)
 
-  ggplot2::ggplot(df, ggplot2::aes(x = hours, y = 1, fill = dwork)) +
+  # Create plot
+  p <- ggplot2::ggplot(df, ggplot2::aes(x = hours, y = 1, fill = dwork)) +
     ggplot2::geom_col(width = width, color = brdcol) +
     ggplot2::coord_polar("x", start = 270) +
     ggplot2::geom_text(
@@ -47,4 +51,6 @@ plan_day <- function(dwork, width = 1, brdcol = "grey") {
       axis.title = ggplot2::element_blank(),
       legend.position = "none"
     )
+
+  return(p)
 }

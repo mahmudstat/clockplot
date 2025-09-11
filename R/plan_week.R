@@ -5,8 +5,6 @@
 #' @param wtask A factor variable having values on each day of the week.
 #' @returns A `ggplot` object, which can be further modified
 #' with `ggplot2` functions and themes.
-#' @name plan_week
-NULL
 #' @examples
 #' set.seed(10)
 #' wtask <- c(
@@ -16,6 +14,8 @@ NULL
 #' plan_week(wtask)
 #' @export
 plan_week <- function(wtask) {
+  # Input validation
+  stopifnot("wtask must have exactly 7 elements" = length(wtask) == 7)
   # Week Skeleton
   # Task of seven days starting from Saturday
   days <- paste(c("Satur", "Sun", "Mon", "Tues", "Wednes", "Thurs", "Fri"), "day", sep = "")
@@ -28,16 +28,16 @@ plan_week <- function(wtask) {
     ggplot2::geom_col(width = 1, color = "white") +
     ggplot2::coord_polar() +
     ggplot2::theme(
-      axis.ticks.x = element_blank(),
-      axis.text.x = element_text(face = "bold"),
-      axis.text.y = element_blank(),
-      axis.ticks.y = element_blank(),
-      axis.title = element_blank(),
-      panel.border = element_blank(),
+      axis.ticks.x = ggplot2::element_blank(),
+      axis.text.x = ggplot2::element_text(face = "bold"),
+      axis.text.y = ggplot2::element_blank(),
+      axis.ticks.y = ggplot2::element_blank(),
+      axis.title = ggplot2::element_blank(),
+      panel.border = ggplot2::element_blank(),
       legend.position = "none"
     ) +
     ggplot2::geom_text(
-      label = wtask, position = position_stack(vjust = 0.5),
+      label = wtask, position = ggplot2::position_stack(vjust = 0.5),
       color = "black", angle = angle
     ) #+
   # scale_fill_brewer(palette = {{col}}, direction = -1)

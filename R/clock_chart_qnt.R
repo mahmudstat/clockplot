@@ -25,13 +25,11 @@
 #' @param Col Optional. A numeric vector to change color. This option will be
 #' discontinued.
 #' @param high The color name for the high values. The default is `red`.
-#' @param low The color name for the high values. The default is `green`.
+#' @param low The color name for the low values. The default is `green`.
 #' The color names can be vice versa or other colors, depending on the context.
 #' To use a single color for all lines, use same value for `high` and `low`.
 #' @returns A `ggplot` object, which can be further modified
 #' with `ggplot2` functions and themes.
-#' @name clock_chart_qnt
-NULL
 #' @examples
 #' p1 <- clock_chart_qnt(
 #'   data = bdquake, time = hms, len = depth,
@@ -41,12 +39,14 @@ NULL
 #'   color = "Depth", size = "Magnitude",
 #'   title = "Earthquakes in Bangladesh since 2023"
 #' )
+#' @importFrom rlang is_null enquo quo_is_null
 #' @export
-clock_chart_qnt <- function(data, time, len, Col, high = "red", low = "green") {
+clock_chart_qnt <- function(data, time, len, Col = NULL, high = "red", low = "green") {
   if (!inherits(data, "data.frame")) {
     stop("`data` must be a data frame or tibble")
   }
   mydata <- conv_data_len(data = data, time = {{ time }}, len = {{ len }})
+
   clock <- basic_clock() +
     ggplot2::geom_segment(
       data = mydata,
@@ -55,14 +55,26 @@ clock_chart_qnt <- function(data, time, len, Col, high = "red", low = "green") {
         xend = .data$x1, yend = .data$y1,
         color = {{ len }}
       )
-    ) +
-    ggplot2::geom_point(
-      data = mydata,
-      ggplot2::aes(.data$x1, .data$y1,
-                   color = {{ len }}, size = {{ Col }}
+    )
+
+  # Handle the optional Col parameter
+  if (!rlang::is_null(rlang::enquo(Col)) && !rlang::quo_is_null(rlang::enquo(Col))) {
+    clock <- clock +
+      ggplot2::geom_point(
+        data = mydata,
+        ggplot2::aes(.data$x1, .data$y1, color = {{ len }}, size = {{ Col }})
       )
-    ) +
+  } else {
+    clock <- clock +
+      ggplot2::geom_point(
+        data = mydata,
+        ggplot2::aes(.data$x1, .data$y1, color = {{ len }})
+      )
+  }
+
+  clock <- clock +
     ggplot2::scale_color_gradient(high = high, low = low) +
     ggplot2::theme(legend.position = "bottom")
+
   return(clock)
 }

@@ -12,13 +12,11 @@
 #' Saturday
 #' @param lgnm Title of legend
 #' @param high The color name for the high values. The default is `red`
-#' @param low The color name for the high values. The default is `green`.
+#' @param low The color name for the low values. The default is `green`.
 #' The color names can be vice versa or other colors, depending on the context.
 #' @param width The width of bars.
 #' @returns A `ggplot` object, which can be further modified
 #' with `ggplot2` functions and themes.
-#' @name week_chart
-NULL
 #' @examples
 #' set.seed(10)
 #' wtemp <- sample(10:40, 7)
@@ -26,7 +24,10 @@ NULL
 #' @export
 week_chart <- function(wvalue, lgnm = "Value",
                        high = "yellow", low = "green", width = 0.9) {
-  stopifnot("Give a numeric vector" = is.numeric(wvalue))
+  stopifnot(
+    "wvalue must be numeric" = is.numeric(wvalue),
+    "wvalue must have exactly 7 elements (one for each day)" = length(wvalue) == 7
+  )
   days <- paste(c("Satur", "Sun", "Mon", "Tues", "Wednes", "Thurs", "Fri"), "day", sep = "")
   df <- tibble::tibble(days, wvalue) %>%
     dplyr::mutate(days = factor(days, levels = days))

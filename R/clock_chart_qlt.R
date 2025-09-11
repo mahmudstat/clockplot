@@ -20,8 +20,6 @@
 #' @returns A `ggplot` object, which can be further modified
 #' with `ggplot2` functions and themes.
 #'
-#' @name clock_chart_qlt
-NULL
 #' @examples
 #' # A plot showing sms receiving times based on
 #' # criteria (type/sender/invoked)
@@ -29,8 +27,10 @@ NULL
 #'   ggplot2::labs(color = "Sender", title = "SMS's Received throughout th Day")
 #' @export
 clock_chart_qlt <- function(data, time, crit) {
-  crit <- dplyr::pull(data, {{ crit }})
-  if (length(unique(crit)) > 5) warning("No. of categories is more than 5 and may not be distinguished well. Try clock_chart() function instead?")
+  crit_vector <- dplyr::pull(data, {{ crit }})
+  if (length(unique(crit_vector)) > 5) {
+    warning("No. of categories is more than 5 and may not be distinguished well. Try clock_chart() function instead?")
+  }
   mydata <- conv_data(data = data, time = {{ time }})
   clock <- basic_clock() +
     ggplot2::geom_segment(

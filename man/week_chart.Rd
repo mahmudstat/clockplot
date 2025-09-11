@@ -14,7 +14,7 @@ Saturday}
 
 \item{high}{The color name for the high values. The default is \code{red}}
 
-\item{low}{The color name for the high values. The default is \code{green}.
+\item{low}{The color name for the low values. The default is \code{green}.
 The color names can be vice versa or other colors, depending on the context.}
 
 \item{width}{The width of bars.}

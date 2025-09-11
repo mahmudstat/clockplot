@@ -16,15 +16,15 @@
 #' @param width Width of bars
 #' @returns A `ggplot` object, which can be further modified
 #' with `ggplot2` functions and themes.
-#' @name day_chart
 #' @examples
 #' value <- sample(15:30, 24, replace = TRUE)
 #' day_chart(hvalue = value, high = "blue", low = "yellow", width = 0.8)
 #' @export
 day_chart <- function(hvalue, high = "blue", low = "yellow", width = 0.8) {
   stopifnot("hvalue must be numeric" = is.numeric(hvalue))
-  if (length(hvalue) != 24) stop("hvalue must have length 24 (one per hour)")
-
+  if (length(hvalue) != 24) {
+    stop("hvalue must have length 24 (one per hour), but has length ", length(hvalue))
+  }
   # Create labels for 24 hours (6 AM to 5 AM next day)
   hours <- c(paste0(6:11, " AM"), "12 PM",
              paste0(1:11, " PM"), "12 AM",

@@ -7,7 +7,8 @@
 plan_day(dwork, width = 1, brdcol = "grey")
 }
 \arguments{
-\item{dwork}{A character vector of length 24, with names of work at each hour (starting 6 AM).}
+\item{dwork}{A character vector of length 24, with activity names for each
+hour starting from 6 AM and ending at 5 AM the next day.}
 
 \item{width}{Width of bars.}
 

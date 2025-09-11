@@ -14,7 +14,7 @@ of charts are \code{HH:MM:SS}, \code{HH:MM} or even \code{H:M} (such as \verb{12
 or \code{9:3}), although the SS part is ignored due to having
 negligible impact on the final plot).}
 
-\item{Col}{Color name for the lines. The default is \code{black}.}
+\item{Col}{A single color name for the lines. The default is \code{black}.}
 }
 \value{
 A \code{ggplot} object, which can be further modified
