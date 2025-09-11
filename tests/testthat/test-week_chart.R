@@ -16,18 +16,24 @@ test_that("week_chart validates input type", {
   expect_no_error(week_chart(as.numeric(1:7)))
 })
 
-test_that("week_chart returns ggplot object", {
-  wv <- sample(10, 7)
-
-  # Capture the output
+test_that("week_chart creates correct plot structure", {
+  wv <- c(10, 20, 15, 25, 30, 5, 12)
   p <- week_chart(wv)
 
-  # Test the return type
+  # Test that it's a ggplot
   expect_s3_class(p, "ggplot")
 
-  # Test that it has basic ggplot components (more robust than checking internal data)
-  expect_true("layers" %in% names(p))
-  expect_true("scales" %in% names(p))
+  # Test that the data is correct
+  expect_equal(nrow(p$data), 7)
+  expect_equal(p$data$wvalue, wv)
+  expect_equal(levels(p$data$days),
+               c("Saturday", "Sunday", "Monday", "Tuesday",
+                 "Wednesday", "Thursday", "Friday"))
+
+  # Test that it has the expected geoms (more robust than checking internal structure)
+  layer_types <- sapply(p$layers, function(x) class(x$geom)[1])
+  expect_true("GeomCol" %in% layer_types)
+  expect_true("GeomText" %in% layer_types)
 })
 
 test_that("week_chart handles edge cases", {
