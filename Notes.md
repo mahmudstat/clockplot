@@ -14,6 +14,18 @@ Also check out [keep note](https://keep.google.com/u/1/#NOTE/1Hj4tuKO1Is743Xui9a
 - urlchecker::url_check(".")
 - devtools::check(args = c("--as-cran", "--no-manual")) # most important command to run locally
 
+## Strict Checks
+
+### rhub 
+
+See `?rhub::rhubv2`
+
+• Add the workflow file to git using `git add <filename>`.
+• Commit it to git using `git commit`.
+• Push the commit to GitHub using `git push`.
+• Call rhub::rhub_doctor() to check that you have set up R-hub correctly.
+• Call rhub::rhub_check() to check your package.
+
 ## Know Isues
 
 - `/Example/clock_chart_qnt not found` occurrs if `library()` is not used
@@ -143,5 +155,6 @@ Next version
 16. Add Linetype by variable
 17. If manu events occur at sams time, show them by jutter / other manipulation 
 18. remove needed len from conv_data()
+19. *qnt (if len is not given, show error, suggest simple chart)
 https://cran.r-p
 roject.org/src/contrib/Archive/ggplot2/

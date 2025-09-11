@@ -8,7 +8,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-Provides a novel visualization technique for plotting timestamped events on a 24-hour circular clock face. This is particularly useful for analyzing daily patterns, event clustering, and gaps in temporal data. The package also generalizes this approach to create cyclic charts for other periods, including weekly and monthly cycles, enabling effective event planning and pattern analysis across multiple timeframes.
+Provides a novel visualization technique for plotting timestamped events on a 24-hour circular clock face. This is particularly useful for analyzing daily patterns, event clustering, and gaps in temporal data. The package also generalizes this approach to create cyclic charts for other periods, including weekly and monthly cycles, enabling effective event planning and pattern analysis across multiple time frames.
 }
 \seealso{
 Useful links:
