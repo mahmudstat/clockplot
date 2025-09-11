@@ -1,5 +1,7 @@
 # clockplot (development version)
 
+* Fixed curly braces issue from `week_chart()`
+
 # clockplot 0.7.2
 
 * The first version is [published](https://cran.r-project.org/web/packages/clockplot/index.html); [Read the blog](https://portal.statmania.info/blog/posts/clockplot.html)

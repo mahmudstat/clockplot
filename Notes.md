@@ -18,7 +18,7 @@ Also check out [keep note](https://keep.google.com/u/1/#NOTE/1Hj4tuKO1Is743Xui9a
 
 ### rhub 
 
-See `?rhub::rhubv2`
+See `?rhub::rhubv2`, `?rhub::rhub_check`, 
 
 • Add the workflow file to git using `git add <filename>`.
 • Commit it to git using `git commit`.
