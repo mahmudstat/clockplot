@@ -37,25 +37,33 @@ NULL
 #'
 #' @export
 clock_chart_col <- function(data, time, crit, high = "red", low = "green") {
+  crit_name <- deparse(substitute(crit))
   mydata <- conv_data_col(data = data, time = {{ time }}, colby = {{ crit }})
+
   clock <- basic_clock() +
     ggplot2::geom_segment(
       data = mydata,
-      aes(
+      ggplot2::aes(
         x = .data$x0, y = .data$y0,
         xend = .data$x1, yend = .data$y1,
-        color = {{ crit }}
+        color = .data[[crit_name]]
       )
     ) +
     ggplot2::geom_point(
       data = mydata,
-      ggplot2::aes(.data$x1, .data$y1,
-        color = {{ crit }},
-        size = {{ crit }}
+      ggplot2::aes(
+        x = .data$x1, y = .data$y1,
+        color = .data[[crit_name]],
+        size = .data[[crit_name]]
       )
     ) +
-    ggplot2::scale_color_gradient(high = {{ high }}, low = {{ low }}) +
+    ggplot2::scale_color_gradient(high = high, low = low) +
     ggplot2::theme(legend.position = "bottom") +
-    ggplot2::labs(size = "Indicator", color = "")
+    ggplot2::labs(
+      size = crit_name,
+      color = crit_name
+    )
+
   return(clock)
 }
+

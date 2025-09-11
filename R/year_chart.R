@@ -7,45 +7,45 @@
 #'   [week_chart()] for plotting values in a week by days
 #'   [cyclic_chart()] for plotting values by arbitrary period
 #'
-#' @param mvalue A numeric vector having values in each month of the year (starts
-#' from January, obviously). If you have it in a data frame, you need to
-#' extract it (one way is this: `data$mvalue`)
-#' @param lgnm Title of legend.
-#' @param high The color name for the high values. The default is `red`
-#' @param low The color name for the high values. The default is `green`.
-#' The color names can be vice versa or other colors, depending on the context.
-#' @param width Width of bars
-#' @returns A `ggplot` object, which can be further modified
-#' with `ggplot2` functions and themes.
-#' @name year_chart
-NULL
+#' @param mvalue A numeric vector of length 12, with values for each month (Jan–Dec).
+#'   If you have it in a data frame, extract it (e.g. `data$mvalue`).
+#' @param lgnm Title of the legend (default `"Value"`).
+#' @param high Color name for high values (default `"yellow"`).
+#' @param low Color name for low values (default `"green"`).
+#' @param width Width of bars.
+#'
+#' @returns A `ggplot` object, which can be further modified with `ggplot2` functions.
+#'
 #' @examples
-#' syltmp <- c(18.4, 20.8, 24.3, 26.0, 26.8, 27.6, 28.0, 28.2, 27.9, 26.7, 23.3, 19.7)
+#' syltmp <- c(18.4, 20.8, 24.3, 26.0, 26.8, 27.6, 28.0,
+#'             28.2, 27.9, 26.7, 23.3, 19.7)
 #' year_chart(mvalue = syltmp)
 #' @export
 year_chart <- function(mvalue, lgnm = "Value", width = 0.9,
                        high = "yellow", low = "green") {
-  Months <- c(
-    "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
-  )
-  Months <- keep_fct_order(Months)
-  # mvalue is a vector. If you have it in a data frame, use dataframe$mvalue
-  df <- tibble::tibble(Months, mvalue) %>%
-    dplyr::mutate(days = factor(Months, levels = Months))
-  chart <- df %>% ggplot2::ggplot(ggplot2::aes(Months, mvalue, fill = mvalue)) +
+  stopifnot("mvalue must be numeric" = is.numeric(mvalue),
+            "mvalue must have length 12" = length(mvalue) == 12)
+
+  Months <- factor(month.name, levels = month.name)
+
+  df <- tibble::tibble(Months, mvalue)
+
+  chart <- ggplot2::ggplot(df, ggplot2::aes(x = Months, y = mvalue, fill = mvalue)) +
     ggplot2::geom_col(width = width) +
-    ggplot2::scale_fill_gradient(high = {{ high }}, low = {{ low }}, name = {{ lgnm }}) +
+    ggplot2::scale_fill_gradient(high = high, low = low, name = lgnm) +
     ggplot2::coord_polar("x", start = 270) +
-    ggplot2::theme(
-      axis.ticks.x = element_blank(),
-      axis.text.y = element_blank(),
-      axis.ticks.y = element_blank(),
-      axis.title = element_blank(),
-      legend.position = "bottom"
+    ggplot2::geom_text(
+      ggplot2::aes(label = mvalue),
+      position = ggplot2::position_stack(vjust = 0.8),
+      color = "black", size = 3
     ) +
-    ggplot2::geom_text(label = mvalue, position = position_stack(vjust = 0.8), color = "black")
-  # You can also add your own custom legend title by adding the following code
-  # + scale_fill_gradient(name = "NAME")
+    ggplot2::theme(
+      axis.ticks.x = ggplot2::element_blank(),
+      axis.text.y = ggplot2::element_blank(),
+      axis.ticks.y = ggplot2::element_blank(),
+      axis.title = ggplot2::element_blank(),
+      legend.position = "bottom"
+    )
+
   return(chart)
 }

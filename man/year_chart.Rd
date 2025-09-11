@@ -7,28 +7,26 @@
 year_chart(mvalue, lgnm = "Value", width = 0.9, high = "yellow", low = "green")
 }
 \arguments{
-\item{mvalue}{A numeric vector having values in each month of the year (starts
-from January, obviously). If you have it in a data frame, you need to
-extract it (one way is this: \code{data$mvalue})}
+\item{mvalue}{A numeric vector of length 12, with values for each month (Jan–Dec).
+If you have it in a data frame, extract it (e.g. \code{data$mvalue}).}
 
-\item{lgnm}{Title of legend.}
+\item{lgnm}{Title of the legend (default \code{"Value"}).}
 
-\item{width}{Width of bars}
+\item{width}{Width of bars.}
 
-\item{high}{The color name for the high values. The default is \code{red}}
+\item{high}{Color name for high values (default \code{"yellow"}).}
 
-\item{low}{The color name for the high values. The default is \code{green}.
-The color names can be vice versa or other colors, depending on the context.}
+\item{low}{Color name for low values (default \code{"green"}).}
 }
 \value{
-A \code{ggplot} object, which can be further modified
-with \code{ggplot2} functions and themes.
+A \code{ggplot} object, which can be further modified with \code{ggplot2} functions.
 }
 \description{
 This function plots values corresponding to each month on a rose plot.
 }
 \examples{
-syltmp <- c(18.4, 20.8, 24.3, 26.0, 26.8, 27.6, 28.0, 28.2, 27.9, 26.7, 23.3, 19.7)
+syltmp <- c(18.4, 20.8, 24.3, 26.0, 26.8, 27.6, 28.0,
+            28.2, 27.9, 26.7, 23.3, 19.7)
 year_chart(mvalue = syltmp)
 }
 \seealso{

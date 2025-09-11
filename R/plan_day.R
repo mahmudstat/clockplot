@@ -2,42 +2,49 @@
 #'
 #' This function plots works corresponding to each hour on a rose plot.
 #'
-#' @param dwork A character vector having names of work at each of 24 hours (starts
-#' from 6 am)
-#' @param width Width of bars
-#' @param brdcol Color of bar border. To have no (transparent color), use `NA`
+#' @param dwork A character vector of length 24, with names of work at each hour (starting 6 AM).
+#' @param width Width of bars.
+#' @param brdcol Color of bar border. Use `NA` for no border.
+#'
 #' @returns A `ggplot` object, which can be further modified
-#' with `ggplot2` functions and themes.
-#' @name plan_day
-NULL
+#'   with `ggplot2` functions and themes.
+#'
 #' @examples
+#' set.seed(123)
 #' work <- sample(c("Study", "Adda", "Entertainment", "Games", "Exercise", "Meal"),
 #'   size = 24, replace = TRUE
 #' )
 #' plan_day(dwork = work, brdcol = NA)
 #' @export
 plan_day <- function(dwork, width = 1, brdcol = "grey") {
-  ampm <- c(rep(" AM", 6), rep(" PM", 12), rep(" AM", 6))
-  hour <- c(6:12, 1:12, 1:5)
-  hours <- paste0(c(6:12, 1:5), ampm)
-  angle <- c(seq(90, 1, length.out = 7), seq(345, 110, length.out = 17))
-  df <- tibble(hours, {{ dwork }}, angle)
-  df %>%
-    mutate(hours = factor(hours, levels = hours)) %>%
-    ggplot(aes(x = hours, y = 1, fill = dwork)) +
-    geom_col(width = width, color = brdcol) +
-    # Use color = NA for transparent color
-    coord_polar("x", start = 270) +
-    theme(
-      axis.ticks.x = element_blank(),
-      axis.text.y = element_blank(),
-      axis.ticks.y = element_blank(),
-      axis.title = element_blank(),
+  stopifnot("dwork must be a character vector of length 24" =
+              is.character(dwork) && length(dwork) == 24)
+
+  hours <- c(paste0(6:11, " AM"), "12 PM",
+             paste0(1:11, " PM"), "12 AM",
+             paste0(1:5, " AM"))
+
+  df <- tibble::tibble(hours, dwork) %>%
+    dplyr::mutate(hours = factor(hours, levels = hours))
+
+  # Compute angles for labels
+  angles <- seq(90, -270, length.out = 24)  # rotates around the circle
+
+  ggplot2::ggplot(df, ggplot2::aes(x = hours, y = 1, fill = dwork)) +
+    ggplot2::geom_col(width = width, color = brdcol) +
+    ggplot2::coord_polar("x", start = 270) +
+    ggplot2::geom_text(
+      ggplot2::aes(label = dwork),
+      position = ggplot2::position_stack(vjust = 0.5),
+      angle = angles,
+      color = "black", size = 3
+    ) +
+    ggplot2::scale_fill_brewer(palette = "Set2") +
+    ggplot2::theme(
+      axis.ticks.x = ggplot2::element_blank(),
+      axis.text.y = ggplot2::element_blank(),
+      axis.ticks.y = ggplot2::element_blank(),
+      axis.title = ggplot2::element_blank(),
       legend.position = "none"
-    ) +
-    geom_text(
-      label = dwork, position = position_stack(vjust = 0.5),
-      color = "black", angle = angle
-    ) +
-    scale_fill_brewer(palette = "Set2")
+    )
 }

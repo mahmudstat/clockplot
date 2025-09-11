@@ -18,6 +18,8 @@ Also check out [keep note](https://keep.google.com/u/1/#NOTE/1Hj4tuKO1Is743Xui9a
 
 ### rhub 
 
+- rhub::rhub_check(gh_url = NULL, platforms = NULL)
+
 See `?rhub::rhubv2`, `?rhub::rhub_check`, 
 
 • Add the workflow file to git using `git add <filename>`.
@@ -155,6 +157,6 @@ Next version
 16. Add Linetype by variable
 17. If manu events occur at sams time, show them by jutter / other manipulation 
 18. remove needed len from conv_data()
-19. *qnt (if len is not given, show error, suggest simple chart)
+19. *qnt (if len is not given, show error, suggest simple chart); try merging again 
 https://cran.r-p
 roject.org/src/contrib/Archive/ggplot2/

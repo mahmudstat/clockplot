@@ -7,12 +7,11 @@
 plan_day(dwork, width = 1, brdcol = "grey")
 }
 \arguments{
-\item{dwork}{A character vector having names of work at each of 24 hours (starts
-from 6 am)}
+\item{dwork}{A character vector of length 24, with names of work at each hour (starting 6 AM).}
 
-\item{width}{Width of bars}
+\item{width}{Width of bars.}
 
-\item{brdcol}{Color of bar border. To have no (transparent color), use \code{NA}}
+\item{brdcol}{Color of bar border. Use \code{NA} for no border.}
 }
 \value{
 A \code{ggplot} object, which can be further modified
@@ -22,6 +21,7 @@ with \code{ggplot2} functions and themes.
 This function plots works corresponding to each hour on a rose plot.
 }
 \examples{
+set.seed(123)
 work <- sample(c("Study", "Adda", "Entertainment", "Games", "Exercise", "Meal"),
   size = 24, replace = TRUE
 )

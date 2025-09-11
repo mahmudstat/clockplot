@@ -22,11 +22,12 @@
 #' of charts are `HH:MM:SS`, `HH:MM` or even `H:M` (such as `12;30:09`
 #' or `9:3`).
 #' @param len The numeric vector by which hands will be modified and colored.
-#' @param Col The color of line segments and points.
-#' @param high The color name for the high values. The default is `red`
+#' @param Col Optional. A numeric vector to change color. This option will be
+#' discontinued.
+#' @param high The color name for the high values. The default is `red`.
 #' @param low The color name for the high values. The default is `green`.
 #' The color names can be vice versa or other colors, depending on the context.
-#' To use a single color for all lines, use same value for `high` and `low`
+#' To use a single color for all lines, use same value for `high` and `low`.
 #' @returns A `ggplot` object, which can be further modified
 #' with `ggplot2` functions and themes.
 #' @name clock_chart_qnt
@@ -58,10 +59,10 @@ clock_chart_qnt <- function(data, time, len, Col, high = "red", low = "green") {
     ggplot2::geom_point(
       data = mydata,
       ggplot2::aes(.data$x1, .data$y1,
-        color = {{ len }}, size = {{ Col }}
+                   color = {{ len }}, size = {{ Col }}
       )
     ) +
-    ggplot2::scale_color_gradient(high = {{ high }}, low = {{ low }}) +
+    ggplot2::scale_color_gradient(high = high, low = low) +
     ggplot2::theme(legend.position = "bottom")
   return(clock)
 }
