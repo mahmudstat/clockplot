@@ -59,6 +59,14 @@
 <li>devtools::check(args = c(“–as-cran”, “–no-manual”)) # most important command to run locally</li>
 </ul></div>
 <div class="section level2">
+<h2 id="strict-checks">Strict Checks<a class="anchor" aria-label="anchor" href="#strict-checks"></a></h2>
+<div class="section level3">
+<h3 id="rhub">rhub<a class="anchor" aria-label="anchor" href="#rhub"></a></h3>
+<p>See <code>?rhub::rhubv2</code></p>
+<p>• Add the workflow file to git using <code>git add &lt;filename&gt;</code>. • Commit it to git using <code>git commit</code>. • Push the commit to GitHub using <code>git push</code>. • Call rhub::rhub_doctor() to check that you have set up R-hub correctly. • Call rhub::rhub_check() to check your package.</p>
+</div>
+</div>
+<div class="section level2">
 <h2 id="know-isues">Know Isues<a class="anchor" aria-label="anchor" href="#know-isues"></a></h2>
 <ul><li>
 <code>/Example/clock_chart_qnt not found</code> occurrs if <code><a href="https://rdrr.io/r/base/library.html" class="external-link">library()</a></code> is not used</li>
@@ -158,7 +166,7 @@
 <div class="section level3">
 <h3 id="ref">Ref<a class="anchor" aria-label="anchor" href="#ref"></a></h3>
 <p><a href="https://stackoverflow.com/questions/25489042/linking-to-other-packages-in-documentation-in-roxygen2-in-r" class="external-link uri">https://stackoverflow.com/questions/25489042/linking-to-other-packages-in-documentation-in-roxygen2-in-r</a></p>
-<p>Next version 1. Use 3 variable for length, color, point size 2. <em>qlt modify length by numeric, color by qlt 3. Qlt: if duplicate time, jitter length 4. qlt: letvuser choose colors 5. draw legend lines —-, ———, ————– to denote length 6. </em>qnt length and color by different variable 7. Give user conv data 8. Show work at arbitrary time; also show time as text in front of line. ———————–12:34 10. Cyclic charts lollipop type 11. Color by factor, length by numeric 12. Group together functions by @family 13. Show example from cran pkg 14. Qnt, plot two numeric (e.g. upload, download speed by time) 15. rename quake data, keep date, rearrange col 16. Add Linetype by variable 17. If manu events occur at sams time, show them by jutter / other manipulation 18. remove needed len from conv_data() <a href="https://cran.r-p" class="external-link uri">https://cran.r-p</a> roject.org/src/contrib/Archive/ggplot2/</p>
+<p>Next version 1. Use 3 variable for length, color, point size 2. <em>qlt modify length by numeric, color by qlt 3. Qlt: if duplicate time, jitter length 4. qlt: letvuser choose colors 5. draw legend lines —-, ———, ————– to denote length 6. </em>qnt length and color by different variable 7. Give user conv data 8. Show work at arbitrary time; also show time as text in front of line. ———————–12:34 10. Cyclic charts lollipop type 11. Color by factor, length by numeric 12. Group together functions by @family 13. Show example from cran pkg 14. Qnt, plot two numeric (e.g. upload, download speed by time) 15. rename quake data, keep date, rearrange col 16. Add Linetype by variable 17. If manu events occur at sams time, show them by jutter / other manipulation 18. remove needed len from conv_data() 19. *qnt (if len is not given, show error, suggest simple chart) <a href="https://cran.r-p" class="external-link uri">https://cran.r-p</a> roject.org/src/contrib/Archive/ggplot2/</p>
 </div>
 </div>
 </div>
