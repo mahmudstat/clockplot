@@ -14,6 +14,7 @@ Also check out [keep note](https://keep.google.com/u/1/#NOTE/1Hj4tuKO1Is743Xui9a
 - urlchecker::url_check(".")
 - devtools::check(remote = TRUE, manual = TRUE)
 - devtools::check(args = c("--as-cran", "--no-manual")) # most important command to run locally
+- rhub::rhub_check() # Do it for all cran flavors (listed below) and all available options
 
 ## Strict Checks
 
@@ -164,3 +165,25 @@ Next version
 19. *qnt (if len is not given, show error, suggest simple chart); try merging again 
 https://cran.r-p
 roject.org/src/contrib/Archive/ggplot2/
+
+
+## CRAN Flavors
+
+### Version 0.8.3
+
+cran_check_flavors <- c(
+  "r-devel-linux-x86_64-debian-gcc", # done, passed
+  "r-devel-linux-x86_64-debian-clang", # done, passed
+  "r-devel-linux-x86_64-fedora-clang", # not available
+  "r-devel-linux-x86_64-fedora-gcc", # NA, 
+  "r-patched-linux-x86_64", # done, passed
+  "r-release-linux-x86_64", # done, passed 
+  "r-oldrel-linux-x86_64", # NA
+  "r-devel-windows-x86_64", # done, 
+  "r-release-windows-x86_64", # done, passed
+  "r-oldrel-windows-x86_64", # done, passed
+  "r-release-macos-x86_64", # done, passed
+  "r-oldrel-macos-x86_64", # done, passed
+  "r-release-macos-arm64", # done, passed
+  "r-oldrel-macos-arm64" # done, 
+)
