@@ -177,9 +177,44 @@
 <h2 id="cran-flavors">CRAN Flavors<a class="anchor" aria-label="anchor" href="#cran-flavors"></a></h2>
 <div class="section level3">
 <h3 id="version-083">Version 0.8.3<a class="anchor" aria-label="anchor" href="#version-083"></a></h3>
-<p>cran_check_flavors &lt;- c( “r-devel-linux-x86_64-debian-gcc”, # done, passed “r-devel-linux-x86_64-debian-clang”, # done, passed “r-devel-linux-x86_64-fedora-clang”, # not available “r-devel-linux-x86_64-fedora-gcc”, # NA, “r-patched-linux-x86_64”, # done, passed “r-release-linux-x86_64”, # done, passed “r-oldrel-linux-x86_64”, # NA “r-devel-windows-x86_64”, # done, “r-release-windows-x86_64”, # done, passed “r-oldrel-windows-x86_64”, # done, passed “r-release-macos-x86_64”, # done, passed “r-oldrel-macos-x86_64”, # done, passed “r-release-macos-arm64”, # done, passed “r-oldrel-macos-arm64” # done, )</p>
+<p>cran_check_flavors &lt;- c( “r-devel-linux-x86_64-debian-gcc”, # done, passed “r-devel-linux-x86_64-debian-clang”, # done, passed “r-devel-linux-x86_64-fedora-clang”, # not available “r-devel-linux-x86_64-fedora-gcc”, # NA, “r-patched-linux-x86_64”, # done, passed “r-release-linux-x86_64”, # done, passed “r-oldrel-linux-x86_64”, # NA “r-devel-windows-x86_64”, # done, “r-release-windows-x86_64”, # done, passed “r-oldrel-windows-x86_64”, # done, passed “r-release-macos-x86_64”, # done, passed “r-oldrel-macos-x86_64”, # done, passed “r-release-macos-arm64”, # done, passed “r-oldrel-macos-arm64” # done, passed )</p>
 </div>
 </div>
+<div class="section level2">
+<h2 id="rhub-platforms">rhub platforms<a class="anchor" aria-label="anchor" href="#rhub-platforms"></a></h2>
+<p>See rhub::rhub_platforms() for the list of platforms</p>
+<p>Can run multiple at once, like # rhub::rhub_check(gh_url = NULL, platforms = c(“clang17”, “clang18”))</p>
+<ol style="list-style-type: decimal"><li>linux # done, passed</li>
+<li>m1-san # done, passed</li>
+<li>macos # done, passed</li>
+<li>macos-arm64 # done, passed</li>
+<li>windows # done, passed</li>
+<li>atlas # done, passed</li>
+<li>c23 # done, passed</li>
+<li>clang-asan # done, passed</li>
+<li>clang-ubsan # done, passed</li>
+<li>clang16 # done, passed</li>
+<li>clang17 # done, passed</li>
+<li>clang18 # done, passed</li>
+<li>clang19 # done, passed</li>
+<li>clang20 # done, passed</li>
+<li>donttest # done, passed</li>
+<li>gcc-asan # done, passed</li>
+<li>gcc13 # done, passed</li>
+<li>gcc14 # done, passed</li>
+<li>gcc15 # done, passed</li>
+<li>intel # done, passed</li>
+<li>mkl # done, passed</li>
+<li>nold # done, passed</li>
+<li>noremap # done, passed</li>
+<li>nosuggests # done, # builds vignettes without suggested packages, so expects errors</li>
+<li>rchk # done, failed, # Memory protection only, not a problem</li>
+<li>ubuntu-clang # done, passed</li>
+<li>ubuntu-gcc12 # done, passed</li>
+<li>ubuntu-next # done, passed</li>
+<li>ubuntu-release # done, passed</li>
+<li>valgrind # done, passed</li>
+</ol></div>
 </div>
 
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
