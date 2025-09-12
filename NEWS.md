@@ -1,4 +1,4 @@
-# clockplot (development version)
+# clockplot 0.8.3
 
 * Fixed curly braces issue from `week_chart()`
 
