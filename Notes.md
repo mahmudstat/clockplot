@@ -185,5 +185,42 @@ cran_check_flavors <- c(
   "r-release-macos-x86_64", # done, passed
   "r-oldrel-macos-x86_64", # done, passed
   "r-release-macos-arm64", # done, passed
-  "r-oldrel-macos-arm64" # done, 
+  "r-oldrel-macos-arm64" # done, passed
 )
+
+## rhub platforms
+
+See rhub::rhub_platforms() for the list of platforms
+
+Can run multiple at once, like # rhub::rhub_check(gh_url = NULL, platforms = c("clang17", "clang18"))
+
+1.  linux # done, passed
+2.  m1-san # done, passed
+3.  macos # done, passed
+4.  macos-arm64 # done, passed
+5.  windows # done, passed
+6.  atlas # done, passed
+7.  c23 # done, passed
+8.  clang-asan # done, passed
+9.  clang-ubsan # done, passed
+10. clang16 # done, passed
+11. clang17 # done, passed
+12. clang18 # done, passed
+13. clang19 # done, passed
+14. clang20 # done, passed
+15. donttest # done, passed
+16. gcc-asan # done, passed
+17. gcc13 # done, passed
+18. gcc14 # done, passed
+19. gcc15 # done, passed
+20. intel # done, passed
+21. mkl # done, passed
+22. nold # done, passed
+23. noremap # done, passed
+24. nosuggests # done, # builds vignettes without suggested packages, so expects errors
+25. rchk  # done, failed, # Memory protection only, not a problem
+26. ubuntu-clang # done, passed
+27. ubuntu-gcc12 # done, passed
+28. ubuntu-next # done, passed
+29. ubuntu-release # done, passed
+30. valgrind # done, passed
