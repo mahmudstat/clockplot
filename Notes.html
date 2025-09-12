@@ -13,7 +13,7 @@
 
     <a class="navbar-brand me-2" href="index.html">clockplot</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.8.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.8.3</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,6 +58,7 @@
 <li>urlchecker::url_check(“.”)</li>
 <li>devtools::check(remote = TRUE, manual = TRUE)</li>
 <li>devtools::check(args = c(“–as-cran”, “–no-manual”)) # most important command to run locally</li>
+<li>rhub::rhub_check() # Do it for all cran flavors (listed below) and all available options</li>
 </ul></div>
 <div class="section level2">
 <h2 id="strict-checks">Strict Checks<a class="anchor" aria-label="anchor" href="#strict-checks"></a></h2>
@@ -170,6 +171,13 @@
 <h3 id="ref">Ref<a class="anchor" aria-label="anchor" href="#ref"></a></h3>
 <p><a href="https://stackoverflow.com/questions/25489042/linking-to-other-packages-in-documentation-in-roxygen2-in-r" class="external-link uri">https://stackoverflow.com/questions/25489042/linking-to-other-packages-in-documentation-in-roxygen2-in-r</a></p>
 <p>Next version 1. Use 3 variable for length, color, point size 2. <em>qlt modify length by numeric, color by qlt 3. Qlt: if duplicate time, jitter length 4. qlt: letvuser choose colors 5. draw legend lines —-, ———, ————– to denote length 6. </em>qnt length and color by different variable 7. Give user conv data 8. Show work at arbitrary time; also show time as text in front of line. ———————–12:34 10. Cyclic charts lollipop type 11. Color by factor, length by numeric 12. Group together functions by @family 13. Show example from cran pkg 14. Qnt, plot two numeric (e.g. upload, download speed by time) 15. rename quake data, keep date, rearrange col 16. Add Linetype by variable 17. If manu events occur at sams time, show them by jutter / other manipulation 18. remove needed len from conv_data() 19. *qnt (if len is not given, show error, suggest simple chart); try merging again <a href="https://cran.r-p" class="external-link uri">https://cran.r-p</a> roject.org/src/contrib/Archive/ggplot2/</p>
+</div>
+</div>
+<div class="section level2">
+<h2 id="cran-flavors">CRAN Flavors<a class="anchor" aria-label="anchor" href="#cran-flavors"></a></h2>
+<div class="section level3">
+<h3 id="version-083">Version 0.8.3<a class="anchor" aria-label="anchor" href="#version-083"></a></h3>
+<p>cran_check_flavors &lt;- c( “r-devel-linux-x86_64-debian-gcc”, # done, passed “r-devel-linux-x86_64-debian-clang”, # done, passed “r-devel-linux-x86_64-fedora-clang”, # not available “r-devel-linux-x86_64-fedora-gcc”, # NA, “r-patched-linux-x86_64”, # done, passed “r-release-linux-x86_64”, # done, passed “r-oldrel-linux-x86_64”, # NA “r-devel-windows-x86_64”, # done, “r-release-windows-x86_64”, # done, passed “r-oldrel-windows-x86_64”, # done, passed “r-release-macos-x86_64”, # done, passed “r-oldrel-macos-x86_64”, # done, passed “r-release-macos-arm64”, # done, passed “r-oldrel-macos-arm64” # done, )</p>
 </div>
 </div>
 </div>
