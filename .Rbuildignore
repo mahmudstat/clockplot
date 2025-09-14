@@ -7,7 +7,6 @@
 ^docs$
 ^pkgdown$
 ^\.github$
-^NEWS\.md$
 ^LICENSE\.md$
 ^Notes\.md$
 ^cran-comments\.md$
@@ -17,3 +16,4 @@
 ^.*\.toc$
 ^dev$
 ^CRAN-SUBMISSION$
+^revdep$

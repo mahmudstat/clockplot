@@ -5,6 +5,8 @@
 
 <!-- badges: start -->
 
+[![CRAN
+status](https://www.r-pkg.org/badges/version/clockplot)](https://cran.r-project.org/package=dplyr)
 [![R-CMD-check](https://github.com/mahmudstat/clockplot/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/mahmudstat/clockplot/actions/workflows/R-CMD-check.yaml)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17087377.svg)](https://doi.org/10.5281/zenodo.17087377)
 
