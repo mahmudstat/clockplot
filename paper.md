@@ -1,5 +1,13 @@
 # Summary
 
+------------------------------------------------------------------------
+
+title: ‘clockplot: An R package to Plot Event Times on a 24-Hour Clock’
+tags: - R - visualization - timestamp authors: - name: Abdullah Al
+Mahmud orcid: 0000-0003-2814-8798 affiliation: 1 affiliations: - name:
+Bangladesh Cadet College index: 1 date: 05 December 2025 bibliography:
+paper.bib
+
 Visualization is a fundamental component of statistical analysis and
 prediction, enabling clear data description and informed model
 selection. While various methods exist for visualizing event data, there
@@ -37,20 +45,21 @@ analysis:
 
 # Available Software
 
-While several R packages offer circular or radial visualization
-capabilities, they are either too general-purpose or not specifically
-designed for timestamp data:
+While several R and Python packages offer circular or radial
+visualization capabilities, they are either too general-purpose or not
+specifically designed for timestamp data:
 
 - **General circular plotting**: Packages like `circular` and `plotrix`
-  provide basic circular plotting but require extensive data
-  transformation for timestamp visualization.
+  provide basic circular plotting \[@R-plotrix\]; @R-circular\] but
+  require extensive data transformation for timestamp visualization.
 - **Polar coordinates**: `ggplot2` with `coord_polar()` can create
   circular plots, but requires manual conversion of timestamps to
-  radians and lacks specialized aesthetics for event data.
+  radians and lacks specialized aesthetics for event data\[@ggplot2\].
 - **Specialized but limited**: Packages like `chron` and `lubridate`
-  handle time data but don’t provide circular visualization methods.
+  handle time data but don’t provide circular visualization methods
+  \[@lubridate\].
 - **CircadiPy**: deals with rhythmic data, but does not create circular
-  visualizations.
+  visualizations\[@carvalho2024circadipy\].
 
 The package provides specialized visualization methods for multivariate
 data including **colored point aesthetics** (mapping variables to
@@ -148,11 +157,11 @@ The example analyses use data from public repositories including the US
 Accidents Dataset and earthquake data from the United States Geological
 Survey (USGS).
 
-We are grateful to the Comprehensive R Archive Network (CRAN) team for
-maintaining the infrastructure that supports open source software
-distribution and reproducibility in R. We also acknowledge GitHub for
-providing the collaborative platform used to develop, maintain, and
-share the source code for this package.
+We are grateful to the Comprehensive R Archive Network (CRAN)
+\[@R-base\] team for maintaining the infrastructure that supports open
+source software distribution and reproducibility in R. We also
+acknowledge GitHub for providing the collaborative platform used to
+develop, maintain, and share the source code for this package.
 
 # **Conflict of Interest**
 
