@@ -1,6 +1,3 @@
-<!-- Example Paper -->
-<!-- https://joss.readthedocs.io/en/latest/example_paper.html -->
-
 ---
 title: 'clockplot: An R package to Plot Event Times on a 24-Hour Clock'
 tags:
