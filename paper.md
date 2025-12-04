@@ -33,10 +33,10 @@ Visualizing temporal patterns in timestamped event data presents unique challeng
 
 While several R and Python packages offer circular or radial visualization capabilities, they are either too general-purpose or not specifically designed for timestamp data:
 
-- **General circular plotting**: Packages like `circular` and `plotrix` provide basic circular plotting [@R-plotrix]; @R-circular] but require extensive data transformation for timestamp visualization.
-- **Polar coordinates**: `ggplot2` with `coord_polar()` can create circular plots, but requires manual conversion of timestamps to radians and lacks specialized aesthetics for event data[@ggplot2].
+- **General circular plotting**: Packages like `circular` and `plotrix` provide basic circular plotting [@R-plotrix; @R-circular] but require extensive data transformation for timestamp visualization.
+- **Polar coordinates**: `ggplot2` with `coord_polar()` can create circular plots, but requires manual conversion of timestamps to radians and lacks specialized aesthetics for event data [@ggplot2].
 - **Specialized but limited**: Packages like `chron` and `lubridate` handle time data but don't provide circular visualization methods [@lubridate].
-- **CircadiPy**: deals with rhythmic data, but does not create circular visualizations[@carvalho2024circadipy]. 
+- **CircadiPy**: deals with rhythmic data, but does not create circular visualizations [@carvalho2024circadipy]. 
 
 The package provides specialized visualization methods for multivariate data including **colored point aesthetics** (mapping variables to hue/size/shape) and **modifiable clock hand lengths** (representing magnitude or intensity at each timestamp). These features enable clear differentiation of multiple variables on the same 24-hour clock face while maintaining intuitive interpretation of temporal patterns.
 
