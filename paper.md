@@ -111,7 +111,7 @@ Figure 3 plots qualitative data, showing not only when SMS messages were receive
 
 ![Timestamps of Incoming SMS and Senders](figures/sms.png)
 
-# Usage
+# Usage 
 
 Complete documentation with all parameters and examples is available at [mahmudstat.github.io/clockplot](https://mahmudstat.github.io/clockplot).
 
