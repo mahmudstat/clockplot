@@ -17,3 +17,6 @@
 ^dev$
 ^CRAN-SUBMISSION$
 ^revdep$
+^paper\.md$
+^paper\.bib$
+^figures$
