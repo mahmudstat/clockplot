@@ -4,12 +4,12 @@ Visualization is a fundamental component of statistical analysis and
 prediction, enabling clear data description and informed model
 selection. While various methods exist for visualizing event data, there
 is a notable gap in representing events on a clock face. In this paper,
-we introduce clockplot, an R package for plotting timestamped events on
-a 24-hour circular clock face. This approach offers a powerful way to
+we introduce `clockplot`, an R package for plotting timestamped events
+on a 24-hour circular clock face. This approach offers a powerful way to
 perceive the precise timing of events and facilitates intuitive
-comparisons with other events. The clockplot is particularly useful for
-analyzing daily patterns, event clustering, and temporal gaps. For event
-times, it is significantly more revealing than conventional
+comparisons with other events. The `clockplot` is particularly useful
+for analyzing daily patterns, event clustering, and temporal gaps. For
+event times, it is significantly more revealing than conventional
 visualizations like bar or pie charts. This package also generalizes the
 clockplot approach to create cyclic charts for other time frames,
 including weekly and monthly cycles. This functionality enables
@@ -62,7 +62,7 @@ while maintaining intuitive interpretation of temporal patterns.
 
 # Acceptable Data Type
 
-clockplot handles two primary data types:
+`clockplot` handles two primary data types:
 
 ## 1. Timestamped Event Data
 
@@ -166,7 +166,8 @@ Timestamps of Incoming SMS and Senders
 
 # Usage
 
-Complete documentation with all parameters and examples is available at
+Complete documentation with all arguments, options, and examples is
+available at
 [mahmudstat.github.io/clockplot](https://mahmudstat.github.io/clockplot).
 
 # Acknowledgments
