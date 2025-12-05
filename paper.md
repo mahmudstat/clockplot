@@ -76,6 +76,8 @@ system logs, or biological rhythms:
 | 3   | 16:46:37 | 7   | 21:44:36 |
 | 4   | 08:57:52 | 8   | 12:45:15 |
 
+Sample Univariate Timestamps
+
 ## 2. Multivariate Time Series Data
 
 For visualizing continuous measurements at specific times, such as
@@ -85,6 +87,8 @@ environmental monitoring or physiological data:
 |----------|-------------|----------|-------------|
 | 21:12:27 | 20.1°C      | 03:16:57 | 21.4°C      |
 | 02:20:09 | 20.2°C      | 03:35:33 | 20.6°C      |
+
+Sample Multivariate Timestamps
 
 # Features
 
@@ -173,9 +177,11 @@ Survey (USGS).
 
 We are grateful to the Comprehensive R Archive Network (CRAN)
 \[@R-base\] team for maintaining the infrastructure that supports open
-source software distribution and reproducibility in R. We also
-acknowledge GitHub for providing the collaborative platform used to
-develop, maintain, and share the source code for this package.
+source software distribution and reproducibility in R. We thank the
+tidyverse \[@wickham2019welcome\] ecosystem for providing essential data
+manipulation and visualization functionalities. We also acknowledge
+GitHub for providing the collaborative platform used to develop,
+maintain, and share the source code for this package.
 
 # **Conflict of Interest**
 
