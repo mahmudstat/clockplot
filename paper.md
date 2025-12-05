@@ -13,7 +13,8 @@ affiliations:
    index: 1
 date: 05 December 2025
 bibliography: paper.bib
-nocite: "@*"
+
+---
 
 # Summary
 
