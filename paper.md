@@ -1,13 +1,5 @@
 # Summary
 
-------------------------------------------------------------------------
-
-title: ‘clockplot: An R package to Plot Event Times on a 24-Hour Clock’
-tags: - R - visualization - timestamp authors: - name: Abdullah Al
-Mahmud orcid: 0000-0003-2814-8798 affiliation: 1 affiliations: - name:
-Bangladesh Cadet College index: 1 date: 05 December 2025 bibliography:
-paper.bib nocite: “@\*”
-
 Visualization is a fundamental component of statistical analysis and
 prediction, enabling clear data description and informed model
 selection. While various methods exist for visualizing event data, there
