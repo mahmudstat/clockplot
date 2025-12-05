@@ -32,7 +32,7 @@ Visualizing temporal patterns in timestamped event data presents unique challeng
 
 While several R and Python packages offer circular or radial visualization capabilities, they are either too general-purpose or not specifically designed for timestamp data:
 
-- **General circular plotting**: Packages like `circular` and `plotrix` provide basic circular plotting [@R-plotrix; @R-circular] but require extensive data transformation for timestamp visualization.
+- **General circular plotting**: Packages like `circular` and `plotrix` provide basic circular plotting [@R-plotrix; @R-circular], but require extensive data transformation for timestamp visualization.
 - **Polar coordinates**: `ggplot2` with `coord_polar()` can create circular plots, but requires manual conversion of timestamps to radians and lacks specialized aesthetics for event data [@ggplot2].
 - **Specialized but limited**: Packages like `chron` and `lubridate` handle time data but don't provide circular visualization methods [@lubridate].
 - **CircadiPy**: deals with rhythmic data, but does not create circular visualizations [@carvalho2024circadipy]. 
@@ -84,11 +84,11 @@ acdt %>% ggplot(aes(Time, Humidity...))+
 
 Figure 1 reveals several important patterns:
 
-1. **Clear temporal clustering**: Accidents peak during evening rush hours (5-7 PM) and show a secondary morning peak (8-9 AM)
-2. **Critical gaps**: Noticeably fewer accidents occur between 2-5 AM
+1. **Clear temporal clustering**: Accidents peak during morning rush hours (5-9 AM)
+2. **Critical gaps**: Noticeably fewer accidents occur between 9 PM to 4 AM
 3. **Multivariate encoding**: Each point encodes two additional variables:
    - **Point size** represents humidity levels
-   - **Point color** represents temperature (red = warmer, blue = cooler)
+   - **Point color** represents temperature (red = warmer, green = cooler)
 4. **Cross-midnight continuity**: The natural connection between late-night (11 PM) and early-morning (1-2 AM) accidents is preserved
 
 The plot enables immediate identification of high-risk periods while simultaneously showing how environmental factors correlate with accident frequency—a multidimensional insight difficult to achieve with traditional linear timelines.
@@ -98,6 +98,18 @@ Similar conclusions can be drawn from Figure 2.
 
 ![Recent Earthquakes in Bngladesh](figures/quake.png)
 
+The visualization reveals significant temporal patterns in seismic activity:
+
+1. **Temporal gaps**: The most prominent gaps in earthquake occurrence are observed between **5 PM to 9 PM** and **10 PM to 2 AM**, with no recorded earthquakes during these periods in the sample data.
+
+2. **Multivariate encoding**: The plot encodes two seismic parameters:
+   - **Clock hand length** represents earthquake depth (longer hands = deeper epicenters)
+   - **Point size** corresponds to magnitude (larger points = stronger earthquakes)
+
+3. **Analytical insights**: This representation enables simultaneous analysis of **when** earthquakes occur and their **physical characteristics** (depth and magnitude), revealing potential correlations between time of day and seismic parameters.
+
+This exemplifies the package's capability for multivariate temporal visualization, where traditional linear timelines would require separate plots for each variable.
+
 Figure 3 plots qualitative data, showing not only when SMS messages were received but also who sent them.
 
 
@@ -106,8 +118,6 @@ Figure 3 plots qualitative data, showing not only when SMS messages were receive
 # Usage 
 
 Complete documentation with all parameters and examples is available at [mahmudstat.github.io/clockplot](https://mahmudstat.github.io/clockplot).
-
-# Citations
 
 
 # Acknowledgments
