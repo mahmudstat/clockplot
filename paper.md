@@ -47,6 +47,8 @@ clockplot handles two primary data types:
 
 For analyzing patterns in event occurrences, such as website visits, system logs, or biological rhythms:
 
+: Sample Univariate Timestamps
+
 | ID | Time      | ID | Time      |
 |----|-----------|----|-----------|
 | 1  | 21:12:27  | 5  | 03:16:57  |
@@ -57,6 +59,8 @@ For analyzing patterns in event occurrences, such as website visits, system logs
 ## 2. Multivariate Time Series Data
 
 For visualizing continuous measurements at specific times, such as environmental monitoring or physiological data:
+
+: Sample Multivariate Timestamps
 
 | Time      | Temperature | Time      | Temperature |
 |-----------|-------------|-----------|-------------|
@@ -124,7 +128,7 @@ Complete documentation with all parameters and examples is available at [mahmuds
 
 The example analyses use data from public repositories including the US Accidents Dataset and earthquake data from the United States Geological Survey (USGS).
 
-We are grateful to the Comprehensive R Archive Network (CRAN) [@R-base] team for maintaining the infrastructure that supports open source software distribution and reproducibility in R. We also acknowledge GitHub for providing the collaborative platform used to develop, maintain, and share the source code for this package.
+We are grateful to the Comprehensive R Archive Network (CRAN) [@R-base] team for maintaining the infrastructure that supports open source software distribution and reproducibility in R. We thank the tidyverse [@wickham2019welcome] ecosystem for providing essential data manipulation and visualization functionalities. We also acknowledge GitHub for providing the collaborative platform used to develop, maintain, and share the source code for this package.
 
 # **Conflict of Interest**
 
