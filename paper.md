@@ -6,7 +6,7 @@ tags:
   - timestamp
 authors:
   - name: Abdullah Al Mahmud
-    orcid: 0000-0003-2814-8798
+    orcid: 0000-0003-2814-8798  
     affiliation: 1
 affiliations:
  - name: Bangladesh Cadet College
@@ -18,7 +18,7 @@ bibliography: paper.bib
 
 # Summary
 
-Visualization is a fundamental component of statistical analysis and prediction, enabling clear data description and informed model selection. While various methods exist for visualizing event data, there is a notable gap in representing events on a clock face. In this paper, we introduce clockplot, an R package for plotting timestamped events on a 24-hour circular clock face. This approach offers a powerful way to perceive the precise timing of events and facilitates intuitive comparisons with other events. The clockplot is particularly useful for analyzing daily patterns, event clustering, and temporal gaps. For event times, it is significantly more revealing than conventional visualizations like bar or pie charts. This package also generalizes the clockplot approach to create cyclic charts for other time frames, including weekly and monthly cycles. This functionality enables effective event planning and pattern analysis across multiple periods, providing a new and insightful tool for temporal data analysis.
+Visualization is a fundamental component of statistical analysis and prediction, enabling clear data description and informed model selection. While various methods exist for visualizing event data, there is a notable gap in representing events on a clock face. In this paper, we introduce `clockplot`, an R package for plotting timestamped events on a 24-hour circular clock face. This approach offers a powerful way to perceive the precise timing of events and facilitates intuitive comparisons with other events. The `clockplot` is particularly useful for analyzing daily patterns, event clustering, and temporal gaps. For event times, it is significantly more revealing than conventional visualizations like bar or pie charts. This package also generalizes the clockplot approach to create cyclic charts for other time frames, including weekly and monthly cycles. This functionality enables effective event planning and pattern analysis across multiple periods, providing a new and insightful tool for temporal data analysis.
 
 # Statement of Need
 
@@ -41,7 +41,7 @@ The package provides specialized visualization methods for multivariate data inc
 
 # Acceptable Data Type
 
-clockplot handles two primary data types:
+`clockplot` handles two primary data types:
 
 ## 1. Timestamped Event Data
 
@@ -121,7 +121,7 @@ Figure 3 plots qualitative data, showing not only when SMS messages were receive
 
 # Usage 
 
-Complete documentation with all parameters and examples is available at [mahmudstat.github.io/clockplot](https://mahmudstat.github.io/clockplot).
+Complete documentation with all arguments, options, and examples is available at [mahmudstat.github.io/clockplot](https://mahmudstat.github.io/clockplot).
 
 
 # Acknowledgments
