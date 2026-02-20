@@ -116,7 +116,6 @@ This exemplifies the package's capability for multivariate temporal visualizatio
 
 Figure 3 plots qualitative data, showing not only when SMS messages were received but also who sent them.
 
-
 ![Timestamps of Incoming SMS and Senders](figures/sms.png)
 
 # Usage 
