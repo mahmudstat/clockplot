@@ -10,13 +10,13 @@
 Source:
 [`DESCRIPTION`](https://github.com/mahmudstat/clockplot/blob/main/DESCRIPTION)
 
-Mahmud AA (2025). *clockplot: Plot Event Times on a 24-Hour Clock*. R
+Mahmud AA (2026). *clockplot: Plot Event Times on a 24-Hour Clock*. R
 package version 0.8.3, <https://github.com/mahmudstat/clockplot/>.
 
     @Manual{,
       title = {clockplot: Plot Event Times on a 24-Hour Clock},
       author = {Abdullah Al Mahmud},
-      year = {2025},
+      year = {2026},
       note = {R package version 0.8.3},
       url = {https://github.com/mahmudstat/clockplot/},
     }

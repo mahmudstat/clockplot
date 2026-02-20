@@ -184,7 +184,7 @@ look on it.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/clock_chart.html">clock_chart</a></span><span class="op">(</span><span class="va">smsclock</span>, <span class="va">time</span>, Col <span class="op">=</span> <span class="st">"green"</span><span class="op">)</span></span>
 <span><span class="va">p1</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"SMS Receiving Times"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="clockplot_files/figure-html/clock-chart-1.png" class="r-plt" width="576" style="display: block; margin: auto;"></p>
+<p><img src="clockplot_files/figure-html/clock-chart-1.png" class="r-plt" alt="" width="576" style="display: block; margin: auto;"></p>
 <p>The chart shows when the messages are sent. The largest break is seen
 during the night time (approximately 11 PM to 6 AM). Only one (01)
 message is received from 2:30 PM to 4:30 PM. Other than a few
@@ -214,7 +214,7 @@ may want to color it by a <code>numeric</code> variable.
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/clock_chart_col.html">clock_chart_col</a></span><span class="op">(</span><span class="va">bdquake</span>, time <span class="op">=</span> <span class="va">hms</span>, crit <span class="op">=</span> <span class="va">mag</span><span class="op">)</span></span>
 <span><span class="va">p</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>size <span class="op">=</span> <span class="st">"Magnitude"</span>, title <span class="op">=</span> <span class="st">"Earthquakes in Bangladesh since 2023"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="clockplot_files/figure-html/clock-chart-col-1.png" class="r-plt" width="576" style="display: block; margin: auto;"></p>
+<p><img src="clockplot_files/figure-html/clock-chart-col-1.png" class="r-plt" alt="" width="576" style="display: block; margin: auto;"></p>
 <p>It would be great if we could modify the length of the hands as well.
 We see that in the next chart.</p>
 </div>
@@ -243,7 +243,7 @@ for all lines, use same value for <code>high</code> and
 <span>  color <span class="op">=</span> <span class="st">"Depth"</span>, size <span class="op">=</span> <span class="st">"Magnitude"</span>,</span>
 <span>  title <span class="op">=</span> <span class="st">"Earthquakes in Bangladesh since 2023"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="clockplot_files/figure-html/clock-chart-qnt-1.png" class="r-plt" width="576" style="display: block; margin: auto;"></p>
+<p><img src="clockplot_files/figure-html/clock-chart-qnt-1.png" class="r-plt" alt="" width="576" style="display: block; margin: auto;"></p>
 <p>If you do not have two variables for <code>len</code> and
 <code>Col</code>, use one single variable for both options.</p>
 <p>As is evident from the chart, the size of the points represents the
@@ -271,7 +271,7 @@ link</a>.</p>
 <code class="sourceCode R"><span><span class="va">acdt</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv</a></span><span class="op">(</span><span class="st">"https://raw.githubusercontent.com/mahmudstat/open-analysis/main/data/usacc.csv"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/clock_chart_qnt.html">clock_chart_qnt</a></span><span class="op">(</span><span class="va">acdt</span>, time <span class="op">=</span> <span class="va">Time</span>, len <span class="op">=</span> <span class="va">Humidity...</span>, Col <span class="op">=</span> <span class="va">Temperature.F.</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>size <span class="op">=</span> <span class="st">"Humidity"</span>, color <span class="op">=</span> <span class="st">"Temperature"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="clockplot_files/figure-html/clock-chart-acdt-1.png" class="r-plt" width="576" style="display: block; margin: auto;"></p>
+<p><img src="clockplot_files/figure-html/clock-chart-acdt-1.png" class="r-plt" alt="" width="576" style="display: block; margin: auto;"></p>
 <!--
 
 ### Modified Length
@@ -313,7 +313,7 @@ to `clock_chart_len()`.
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/clock_chart_qlt.html">clock_chart_qlt</a></span><span class="op">(</span><span class="va">smsclock</span>, time <span class="op">=</span> <span class="va">time</span>, crit <span class="op">=</span> <span class="va">Title</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"Sender"</span>, title <span class="op">=</span> <span class="st">"SMS's Received throughout the Day"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="clockplot_files/figure-html/clock-chart-qlt-1.png" class="r-plt" width="576" style="display: block; margin: auto;"></p>
+<p><img src="clockplot_files/figure-html/clock-chart-qlt-1.png" class="r-plt" alt="" width="576" style="display: block; margin: auto;"></p>
 <p>This makes it convenient to see which types of messages were sent
 when. Certain types of messages, such as Supper_Offer, are always sent
 around the same time (4:30 PM to 6 PM). Other messages are spread
@@ -345,12 +345,12 @@ labs.</strong></p>
 <span>  Period <span class="op">=</span> <span class="va">Month</span>, Value <span class="op">=</span> <span class="va">Temperature</span>,</span>
 <span>  crit <span class="op">=</span> <span class="va">City</span>, ColV <span class="op">=</span> <span class="va">Col</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="clockplot_files/figure-html/cyclic-chart-1.png" class="r-plt" width="576" style="display: block; margin: auto;"></p>
+<p><img src="clockplot_files/figure-html/cyclic-chart-1.png" class="r-plt" alt="" width="576" style="display: block; margin: auto;"></p>
 <p>Or we can also make day or week charts.</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">value</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fl">15</span><span class="op">:</span><span class="fl">30</span>, <span class="fl">24</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/day_chart.html">day_chart</a></span><span class="op">(</span>hvalue <span class="op">=</span> <span class="va">value</span>, high <span class="op">=</span> <span class="st">"blue"</span>, low <span class="op">=</span> <span class="st">"yellow"</span>, width <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span></span></code></pre></div>
-<p><img src="clockplot_files/figure-html/dayc-1.png" class="r-plt" width="576" style="display: block; margin: auto;"></p>
+<p><img src="clockplot_files/figure-html/dayc-1.png" class="r-plt" alt="" width="576" style="display: block; margin: auto;"></p>
 <p>To see all the available functions, run
 <code>getNamespaceExports("clockplot")</code> and then use
 <code>?function_name</code> to know more about it and see and run
