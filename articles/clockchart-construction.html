@@ -18,8 +18,8 @@
     }
   };
 </script><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="clockchart-construction">
 </head>
@@ -283,13 +283,217 @@ completes one cycle of the task.</p>
 <p>Thus, 15 minutes on the clock says <span class="math inline">\(\frac{15}{60} = \frac14\)</span> th or <span class="math inline">\(25\%\)</span> work, 30 means <span class="math inline">\(\frac{30}{60} = \frac12 = 0.5\)</span> or <span class="math inline">\(50\%\)</span> work, and 50 means <span class="math inline">\(\frac{50}{60}\)</span> or <span class="math inline">\(83\%\)</span> work have been completed.</p>
 <p>The task is further complicated due to the clock and angles rotating
 in opposite directions.</p>
-<!-- THIS CONVERSION may have an issue 
-
-`ifelse(.data$minute<10, .data$minute * 5/30, .data$minute * 5/300)`
-
-MAY DEPEND ON OLD TIME FORMAT HHMM hrs
--->
+<p>In trigonometry, angles start at 0° on the positive X-axis and
+increase counter-clockwise. But a clock starts at 12 o’clock (positive
+Y-axis) and moves clockwise. To reconcile this, we need a coordinate
+transformation.</p>
 </div>
+</div>
+<div class="section level3">
+<h3 id="the-complete-coordinate-conversion-algorithm">The Complete Coordinate Conversion Algorithm<a class="anchor" aria-label="anchor" href="#the-complete-coordinate-conversion-algorithm"></a>
+</h3>
+<p>We convert <code>HH:MM:SS</code> to <code>(x, y)</code> coordinates
+on the unit circle as follows:</p>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Parse time to fractional hours since midnight</strong>
+<ul>
+<li>
+<code>timc = hour + minute/60</code> (seconds are ignored as
+visually negligible)</li>
+<li>Example: <code>17:30</code> → <code>17.5</code> hours</li>
+</ul>
+</li>
+<li>
+<strong>Map fractional hours to radians (clockwise from 12
+o’clock)</strong>
+<ul>
+<li>The clock has 24 hours = 2π radians</li>
+<li>12 AM (midnight) = 0 hours = π/2 radians (pointing up)</li>
+<li>6 AM = 6 hours = 0 radians (pointing right)</li>
+<li>12 PM = 12 hours = 3π/2 radians (pointing down)</li>
+<li>6 PM = 18 hours = π radians (pointing left)</li>
+<li>Formula: <code>time_angle = (6 - timc) * π/12</code> for
+<code>0 ≤ timc ≤ 6</code>
+</li>
+<li>Formula: <code>time_angle = (30 - timc) * π/12</code> for
+<code>6 &lt; timc ≤ 24</code>
+</li>
+<li>This piecewise formula handles the clock’s discontinuity at 6 AM/6
+PM</li>
+</ul>
+</li>
+<li>
+<strong>Convert to Cartesian coordinates</strong>
+<ul>
+<li><code>x = r * cos(time_angle)</code></li>
+<li><code>y = r * sin(time_angle)</code></li>
+<li>Where r = 0.95 for event points, r = 1.0 for clock skeleton</li>
+<li>The segment from origin <code>(0, 0)</code> to <code>(x, y)</code>
+forms the “clock hand”</li>
+</ul>
+</li>
+</ol>
+<p>This algorithm is implemented in <code>conv_data()</code>,
+<code>conv_data_col()</code>, and <code>conv_data_len()</code> in
+<code>R/conv_data.R</code>.</p>
+</div>
+<div class="section level3">
+<h3 id="mapping-to-ggplot2-aesthetics">Mapping to <code>ggplot2</code> Aesthetics<a class="anchor" aria-label="anchor" href="#mapping-to-ggplot2-aesthetics"></a>
+</h3>
+<p>Once we have <code>(x0, y0, x1, y1)</code> for each event (where
+<code>(x0, y0) = (0, 0)</code> and <code>(x1, y1)</code> is the tip of
+the clock hand), the chart functions map these to <code>ggplot2</code>
+geoms:</p>
+<table class="table">
+<colgroup>
+<col width="18%">
+<col width="30%">
+<col width="26%">
+<col width="13%">
+<col width="11%">
+</colgroup>
+<thead><tr class="header">
+<th>Function</th>
+<th><code>geom_segment</code></th>
+<th><code>geom_point</code></th>
+<th>Color</th>
+<th>Size</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><code><a href="../reference/clock_chart.html">clock_chart()</a></code></td>
+<td>Fixed color</td>
+<td>Fixed color</td>
+<td>
+<code>Col</code> arg</td>
+<td>Constant</td>
+</tr>
+<tr class="even">
+<td><code><a href="../reference/clock_chart_col.html">clock_chart_col()</a></code></td>
+<td>Mapped to <code>crit</code>
+</td>
+<td>Mapped to <code>crit</code>
+</td>
+<td>Gradient <code>high</code>/<code>low</code>
+</td>
+<td>Mapped to <code>crit</code>
+</td>
+</tr>
+<tr class="odd">
+<td><code><a href="../reference/clock_chart_qnt.html">clock_chart_qnt()</a></code></td>
+<td>Mapped to <code>len</code> (color)</td>
+<td>Mapped to <code>len</code> (color), <code>Col</code> (size)</td>
+<td>Gradient <code>high</code>/<code>low</code>
+</td>
+<td>Mapped to <code>Col</code> or <code>len</code>
+</td>
+</tr>
+<tr class="even">
+<td><code><a href="../reference/clock_chart_qlt.html">clock_chart_qlt()</a></code></td>
+<td>Mapped to <code>crit</code> (factor)</td>
+<td>Mapped to <code>crit</code> (factor)</td>
+<td>Discrete (brewer)</td>
+<td>Constant</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>basic_clock()</code> function (in
+<code>R/basic_clock.R</code>) builds the static clock face: - Circle via
+<code>geom_path</code> on 96 points (24 hours × 4 quarters) - Hour
+labels via <code>geom_text</code> at radius 1.1 - Hour ticks via
+<code>geom_point</code> at radius 1.0 - Quarter-hour ticks via
+<code>geom_point</code> at radius 1.0, size 0.6 -
+<code>theme(aspect.ratio = 1)</code> + blank axes for a clean clock
+face</p>
+</div>
+<div class="section level3">
+<h3 id="cyclic-and-period-charts-different-geometry">Cyclic and Period Charts: Different Geometry<a class="anchor" aria-label="anchor" href="#cyclic-and-period-charts-different-geometry"></a>
+</h3>
+<p>The cyclic charts (<code><a href="../reference/cyclic_chart.html">cyclic_chart()</a></code>,
+<code><a href="../reference/day_chart.html">day_chart()</a></code>, <code><a href="../reference/week_chart.html">week_chart()</a></code>,
+<code><a href="../reference/year_chart.html">year_chart()</a></code>) use a fundamentally different approach:
+<strong>polar bar charts</strong> (<code><a href="https://ggplot2.tidyverse.org/reference/coord_radial.html" class="external-link">coord_polar()</a></code>) rather
+than clock hands.</p>
+<ul>
+<li>
+<code><a href="../reference/cyclic_chart.html">cyclic_chart()</a></code>: General-purpose; maps any periodic
+variable (hours, days, months) to angle via <code><a href="https://ggplot2.tidyverse.org/reference/coord_radial.html" class="external-link">coord_polar()</a></code>,
+values to radius via <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_col()</a></code>
+</li>
+<li>
+<code><a href="../reference/day_chart.html">day_chart()</a></code>: 24-hour rose plot; fixed hour labels (6
+AM–5 AM); <code>geom_col</code> with gradient fill</li>
+<li>
+<code><a href="../reference/week_chart.html">week_chart()</a></code>: 7-day rose plot; fixed day labels
+(Saturday–Friday); <code>geom_col</code> with gradient fill</li>
+<li>
+<code><a href="../reference/year_chart.html">year_chart()</a></code>: 12-month rose plot;
+<code>month.name</code> labels; <code>geom_col</code> with gradient
+fill</li>
+<li>
+<code><a href="../reference/plan_day.html">plan_day()</a></code>/<code><a href="../reference/plan_week.html">plan_week()</a></code>: Categorical
+planning tools; <code>geom_col</code> with <code>fill = activity</code>
++ <code>geom_text</code> for labels; uses
+<code>scale_fill_brewer("Set2")</code>
+</li>
+</ul>
+<p>These do <strong>not</strong> use the complex-number coordinate
+conversion. They rely entirely on <code><a href="https://ggplot2.tidyverse.org/reference/coord_radial.html" class="external-link">ggplot2::coord_polar()</a></code> to
+map linear positions to angles.</p>
+</div>
+<div class="section level3">
+<h3 id="design-decisions-and-rationale">Design Decisions and Rationale<a class="anchor" aria-label="anchor" href="#design-decisions-and-rationale"></a>
+</h3>
+<table class="table">
+<colgroup>
+<col width="47%">
+<col width="52%">
+</colgroup>
+<thead><tr class="header">
+<th>Decision</th>
+<th>Rationale</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>
+<strong>24-hour clock</strong> (not 12-hour)</td>
+<td>Avoids AM/PM ambiguity; natural for timestamps; matches
+<code>HH:MM:SS</code> format</td>
+</tr>
+<tr class="even">
+<td><strong>Ignore seconds</strong></td>
+<td>Visual angle change &lt; 0.1°; adds noise without insight</td>
+</tr>
+<tr class="odd">
+<td><strong>Complex numbers for skeleton</strong></td>
+<td>
+<code>exp(1i * θ)</code> elegantly generates circle points; simpler
+than <code>sin</code>/<code>cos</code> loops</td>
+</tr>
+<tr class="even">
+<td><strong>Hand length ∈ [0.5, 0.95]</strong></td>
+<td>
+<code>0.5</code> avoids origin clutter; <code>0.95</code> leaves
+room for labels at 1.1</td>
+</tr>
+<tr class="odd">
+<td><strong>Single hand (hour + minute fraction)</strong></td>
+<td>Traditional clocks have two hands; here minute is encoded as
+fractional hour position — cleaner for dense events</td>
+</tr>
+<tr class="even">
+<td><strong><code><a href="https://ggplot2.tidyverse.org/reference/coord_radial.html" class="external-link">coord_polar()</a></code> for cyclic charts</strong></td>
+<td>Standard ggplot2 pattern; leverages existing polar coordinate
+system</td>
+</tr>
+<tr class="odd">
+<td><strong>Factor warning at &gt;5 categories</strong></td>
+<td>Human color discrimination limit; suggests
+<code><a href="../reference/clock_chart.html">clock_chart()</a></code> instead</td>
+</tr>
+</tbody>
+</table>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
@@ -302,7 +506,7 @@ MAY DEPEND ON OLD TIME FORMAT HHMM hrs
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
     </footer>

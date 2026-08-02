@@ -46,6 +46,7 @@ trigonometric form of the equation is \\sin^2 \theta + cos^2 \theta =
 however, is more convenient.
 
 ``` r
+
 k <- 100
 timepoint <- exp(1i * 2 * pi * (k:1) / k)
 plot(timepoint, pch = 19, type = "b")
@@ -71,6 +72,7 @@ having minor contribution, is ignored.
 First, let us see the output with 24 hour marks.
 
 ``` r
+
 k <- 24
 hour <- exp(1i * 2 * pi * (k:1) / k)
 plot(hour, pch = 19)
@@ -85,6 +87,7 @@ also mark some points for minutes.
 First, let us create the required data frame
 
 ``` r
+
 k <- 24 # Hours
 subk <- 24 * 4 # Fraction of hours
 times <- exp(1i * 2 * pi * (k:1) / k)
@@ -127,6 +130,7 @@ We then place the data into two data frames `subtimes` and `dfclock`,
 since they are unequal dimensions.
 
 ``` r
+
 library(ggplot2) # Load the package ggplot2
 p1 <- dfclock %>% ggplot() +
   geom_path(data = subtimes, aes(Re(SubT), Im(SubT))) +
@@ -157,6 +161,7 @@ The points corresponding to the hours are labelled AM or PM using the
 function. We do not need the axis labels and ticks. Let us remove them:
 
 ``` r
+
 p1 + theme(
   axis.text.x = element_blank(),
   axis.ticks.x = element_blank(),
@@ -192,6 +197,7 @@ separate the parts of time into `HH`, `MM`, and `SS`. We accomplish that
 using the `dplyr` and `tidyr` package.
 
 ``` r
+
 # Data to check on
 chkdf <- data.frame(
   time = c("06:00:00", "12:00:00", "17:30:00", "00:05:25"),
@@ -247,3 +253,103 @@ completed.
 
 The task is further complicated due to the clock and angles rotating in
 opposite directions.
+
+In trigonometry, angles start at 0° on the positive X-axis and increase
+counter-clockwise. But a clock starts at 12 o’clock (positive Y-axis)
+and moves clockwise. To reconcile this, we need a coordinate
+transformation.
+
+### The Complete Coordinate Conversion Algorithm
+
+We convert `HH:MM:SS` to `(x, y)` coordinates on the unit circle as
+follows:
+
+1.  **Parse time to fractional hours since midnight**
+    - `timc = hour + minute/60` (seconds are ignored as visually
+      negligible)
+    - Example: `17:30` → `17.5` hours
+2.  **Map fractional hours to radians (clockwise from 12 o’clock)**
+    - The clock has 24 hours = 2π radians
+    - 12 AM (midnight) = 0 hours = π/2 radians (pointing up)
+    - 6 AM = 6 hours = 0 radians (pointing right)
+    - 12 PM = 12 hours = 3π/2 radians (pointing down)
+    - 6 PM = 18 hours = π radians (pointing left)
+    - Formula: `time_angle = (6 - timc) * π/12` for `0 ≤ timc ≤ 6`
+    - Formula: `time_angle = (30 - timc) * π/12` for `6 < timc ≤ 24`
+    - This piecewise formula handles the clock’s discontinuity at 6 AM/6
+      PM
+3.  **Convert to Cartesian coordinates**
+    - `x = r * cos(time_angle)`
+    - `y = r * sin(time_angle)`
+    - Where r = 0.95 for event points, r = 1.0 for clock skeleton
+    - The segment from origin `(0, 0)` to `(x, y)` forms the “clock
+      hand”
+
+This algorithm is implemented in `conv_data()`, `conv_data_col()`, and
+`conv_data_len()` in `R/conv_data.R`.
+
+### Mapping to `ggplot2` Aesthetics
+
+Once we have `(x0, y0, x1, y1)` for each event (where
+`(x0, y0) = (0, 0)` and `(x1, y1)` is the tip of the clock hand), the
+chart functions map these to `ggplot2` geoms:
+
+| Function | `geom_segment` | `geom_point` | Color | Size |
+|----|----|----|----|----|
+| [`clock_chart()`](https://mahmudstat.github.io/clockplot/reference/clock_chart.md) | Fixed color | Fixed color | `Col` arg | Constant |
+| [`clock_chart_col()`](https://mahmudstat.github.io/clockplot/reference/clock_chart_col.md) | Mapped to `crit` | Mapped to `crit` | Gradient `high`/`low` | Mapped to `crit` |
+| [`clock_chart_qnt()`](https://mahmudstat.github.io/clockplot/reference/clock_chart_qnt.md) | Mapped to `len` (color) | Mapped to `len` (color), `Col` (size) | Gradient `high`/`low` | Mapped to `Col` or `len` |
+| [`clock_chart_qlt()`](https://mahmudstat.github.io/clockplot/reference/clock_chart_qlt.md) | Mapped to `crit` (factor) | Mapped to `crit` (factor) | Discrete (brewer) | Constant |
+
+The `basic_clock()` function (in `R/basic_clock.R`) builds the static
+clock face: - Circle via `geom_path` on 96 points (24 hours × 4
+quarters) - Hour labels via `geom_text` at radius 1.1 - Hour ticks via
+`geom_point` at radius 1.0 - Quarter-hour ticks via `geom_point` at
+radius 1.0, size 0.6 - `theme(aspect.ratio = 1)` + blank axes for a
+clean clock face
+
+### Cyclic and Period Charts: Different Geometry
+
+The cyclic charts
+([`cyclic_chart()`](https://mahmudstat.github.io/clockplot/reference/cyclic_chart.md),
+[`day_chart()`](https://mahmudstat.github.io/clockplot/reference/day_chart.md),
+[`week_chart()`](https://mahmudstat.github.io/clockplot/reference/week_chart.md),
+[`year_chart()`](https://mahmudstat.github.io/clockplot/reference/year_chart.md))
+use a fundamentally different approach: **polar bar charts**
+([`coord_polar()`](https://ggplot2.tidyverse.org/reference/coord_radial.html))
+rather than clock hands.
+
+- [`cyclic_chart()`](https://mahmudstat.github.io/clockplot/reference/cyclic_chart.md):
+  General-purpose; maps any periodic variable (hours, days, months) to
+  angle via
+  [`coord_polar()`](https://ggplot2.tidyverse.org/reference/coord_radial.html),
+  values to radius via
+  [`geom_col()`](https://ggplot2.tidyverse.org/reference/geom_bar.html)
+- [`day_chart()`](https://mahmudstat.github.io/clockplot/reference/day_chart.md):
+  24-hour rose plot; fixed hour labels (6 AM–5 AM); `geom_col` with
+  gradient fill
+- [`week_chart()`](https://mahmudstat.github.io/clockplot/reference/week_chart.md):
+  7-day rose plot; fixed day labels (Saturday–Friday); `geom_col` with
+  gradient fill
+- [`year_chart()`](https://mahmudstat.github.io/clockplot/reference/year_chart.md):
+  12-month rose plot; `month.name` labels; `geom_col` with gradient fill
+- [`plan_day()`](https://mahmudstat.github.io/clockplot/reference/plan_day.md)/[`plan_week()`](https://mahmudstat.github.io/clockplot/reference/plan_week.md):
+  Categorical planning tools; `geom_col` with `fill = activity` +
+  `geom_text` for labels; uses `scale_fill_brewer("Set2")`
+
+These do **not** use the complex-number coordinate conversion. They rely
+entirely on
+[`ggplot2::coord_polar()`](https://ggplot2.tidyverse.org/reference/coord_radial.html)
+to map linear positions to angles.
+
+### Design Decisions and Rationale
+
+| Decision | Rationale |
+|----|----|
+| **24-hour clock** (not 12-hour) | Avoids AM/PM ambiguity; natural for timestamps; matches `HH:MM:SS` format |
+| **Ignore seconds** | Visual angle change \< 0.1°; adds noise without insight |
+| **Complex numbers for skeleton** | `exp(1i * θ)` elegantly generates circle points; simpler than `sin`/`cos` loops |
+| **Hand length ∈ \[0.5, 0.95\]** | `0.5` avoids origin clutter; `0.95` leaves room for labels at 1.1 |
+| **Single hand (hour + minute fraction)** | Traditional clocks have two hands; here minute is encoded as fractional hour position — cleaner for dense events |
+| **[`coord_polar()`](https://ggplot2.tidyverse.org/reference/coord_radial.html) for cyclic charts** | Standard ggplot2 pattern; leverages existing polar coordinate system |
+| **Factor warning at \>5 categories** | Human color discrimination limit; suggests [`clock_chart()`](https://mahmudstat.github.io/clockplot/reference/clock_chart.md) instead |

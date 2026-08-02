@@ -13,6 +13,7 @@ timeframe.
 You can install the latest version from CRAN with:
 
 ``` r
+
 install.packages("clockplot")
 ```
 
@@ -20,6 +21,7 @@ You can install the development version of clockplot from
 [GitHub](https://github.com/) with:
 
 ``` r
+
 # install.packages("pak")
 pak::pak("mahmudstat/clockplot")
 ```
@@ -42,6 +44,7 @@ a small part (100 rows) extracted. To see the modified data, visit [this
 link](https://raw.githubusercontent.com/mahmudstat/open-analysis/main/data/usacc.csv).
 
 ``` r
+
 library(clockplot)
 acdt <- read.csv("https://raw.githubusercontent.com/mahmudstat/open-analysis/main/data/usacc.csv")
 clock_chart_qnt(acdt, time = Time, len = Humidity..., Col = Temperature.F.) +
