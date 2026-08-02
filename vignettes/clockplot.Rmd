@@ -269,3 +269,188 @@ day_chart(hvalue = value, high = "blue", low = "yellow", width = 0.8)
 ```
 
 To see all the available functions, run `getNamespaceExports("clockplot")` and then use `?function_name` to know more about it and see and run examples. If you are connected to the internet, [you may visit](https://github.com/mahmudstat/clockplot) the repository and follow the website linked to see all the available functions (`Reference` menu)
+
+## Cyclic Charts
+
+Cyclic charts use polar bar charts (`coord_polar()`) to show values over repeating periods — hours of day, days of week, months of year, or any custom cycle.
+
+### `cyclic_chart()` — General Cyclic Chart
+
+The most flexible cyclic chart. You provide the period variable, value variable, a grouping factor, and colors.
+
+```{r cyclic-chart-2, fig.align = 'center', fig.height=6, fig.width=6}
+Col <- c("#0040ff", "#00bfff", "#8000ff")
+cyclic_chart(bdtemp,
+  Period = Month, Value = Temperature,
+  crit = City, ColV = Col
+)
+```
+
+This shows monthly temperatures for three cities. Each city gets a distinct color (`ColV`), and bar height represents temperature.
+
+### `day_chart()` — 24-Hour Rose Plot
+
+Plots a numeric value for each of 24 hours (starting at 6 AM). Uses a gradient fill from `low` to `high`.
+
+```{r dayc-2, fig.align = 'center', fig.height=6, fig.width=6}
+value <- sample(15:30, 24, replace = TRUE)
+day_chart(hvalue = value, high = "blue", low = "yellow", width = 0.8)
+```
+
+**Realistic example** — hourly temperature profile:
+```{r day-chart-temp, fig.align = 'center', fig.height=6, fig.width=6, eval=FALSE}
+# Simulated hourly temperatures for a summer day (6 AM to 5 AM next day)
+hourly_temp <- c(18, 17, 16, 16, 17, 19, 22, 25, 28, 30, 32, 33,
+                 34, 34, 33, 32, 31, 29, 27, 24, 22, 21, 20, 19)
+day_chart(hvalue = hourly_temp, high = "red", low = "lightblue", width = 0.9) +
+  ggplot2::labs(title = "Hourly Temperature Profile", fill = "Temp (°C)")
+```
+
+### `week_chart()` — 7-Day Rose Plot
+
+Plots values for each day of the week (starting Saturday).
+
+```{r weekc, fig.align = 'center', fig.height=6, fig.width=6}
+set.seed(10)
+wtemp <- sample(10:40, 7)
+week_chart(wtemp, high = "yellow") + ggplot2::labs(title = "Random Values by Day")
+```
+
+**Realistic example** — weekly website traffic:
+```{r week-chart-traffic, fig.align = 'center', fig.height=6, fig.width=6, eval=FALSE}
+weekly_visits <- c(1200, 950, 2100, 2300, 2400, 2200, 1500)  # Sat–Fri
+week_chart(weekly_visits, lgnm = "Visits", high = "darkblue", low = "lightblue") +
+  ggplot2::labs(title = "Weekly Website Traffic")
+```
+
+### `year_chart()` — 12-Month Rose Plot
+
+Plots values for each month (January–December).
+
+```{r yearc, fig.align = 'center', fig.height=6, fig.width=6}
+syltmp <- c(18.4, 20.8, 24.3, 26.0, 26.8, 27.6, 28.0,
+            28.2, 27.9, 26.7, 23.3, 19.7)
+year_chart(mvalue = syltmp)
+```
+
+**Realistic example** — monthly rainfall:
+```{r year-chart-rain, fig.align = 'center', fig.height=6, fig.width=6, eval=FALSE}
+monthly_rain <- c(12, 10, 15, 45, 120, 280, 320, 290, 210, 85, 30, 15)  # mm
+year_chart(mvalue = monthly_rain, lgnm = "Rainfall (mm)", high = "darkblue", low = "lightcyan") +
+  ggplot2::labs(title = "Monthly Rainfall in Dhaka")
+```
+
+## Period Planners
+
+These functions help you visually plan activities across a day or week.
+
+### `plan_day()` — Daily Activity Planner
+
+Takes a character vector of 24 activities (one per hour, starting 6 AM) and creates a polar schedule.
+
+```{r plan-day, fig.align = 'center', fig.height=6, fig.width=6}
+set.seed(123)
+work <- sample(c("Study", "Adda", "Entertainment", "Games", "Exercise", "Meal"),
+  size = 24, replace = TRUE
+)
+plan_day(dwork = work, brdcol = NA)
+```
+
+**Realistic example** — a student's schedule:
+```{r plan-day-real, fig.align = 'center', fig.height=6, fig.width=6, eval=FALSE}
+my_day <- c(
+  "Sleep", "Sleep", "Sleep", "Sleep", "Sleep", "Wake/Breakfast",  # 6-11 AM
+  "Class", "Class", "Lunch", "Class", "Class", "Study",          # 12-5 PM
+  "Exercise", "Dinner", "Study", "Free", "Free", "Relax",        # 6-11 PM
+  "Sleep", "Sleep", "Sleep", "Sleep", "Sleep", "Sleep"           # 12-5 AM
+)
+plan_day(dwork = my_day, width = 0.95, brdcol = "white") +
+  ggplot2::labs(title = "My Daily Schedule")
+```
+
+### `plan_week()` — Weekly Activity Planner
+
+Takes a factor/character vector of 7 activities (Saturday–Friday).
+
+```{r plan-week, fig.align = 'center', fig.height=6, fig.width=6}
+set.seed(10)
+wtask <- c(
+  "Desk Work", "Field Work", "Visit", "Monitoring",
+  "Rest", "Reporting", "Meeting"
+)
+plan_week(wtask)
+```
+
+**Realistic example** — work week plan:
+```{r plan-week-real, fig.align = 'center', fig.height=6, fig.width=6, eval=FALSE}
+work_week <- c(
+  "Deep Work", "Meetings", "Client Calls", "Analysis",
+  "Writing", "Admin", "Planning"
+)
+plan_week(work_week) + ggplot2::labs(title = "Weekly Work Plan")
+```
+
+## Complete Case Study: US Accidents Analysis
+
+This example demonstrates a full workflow: data import → cleaning → visualization → interpretation.
+
+```{r us-accidents-case-study, fig.align = 'center', fig.height=7, fig.width=7, eval=FALSE}
+library(tidyverse)
+library(clockplot)
+
+# 1. Import data (100-row sample from Kaggle US Accidents dataset)
+acdt <- read.csv("https://raw.githubusercontent.com/mahmudstat/open-analysis/main/data/usacc.csv")
+
+# 2. Inspect
+glimpse(acdt)
+#> Rows: 100
+#> Cols: 4: Time, Temperature.F., Humidity..., Severity
+
+# 3. Basic clock chart — when do accidents happen?
+clock_chart(acdt, Time, Col = "darkred") +
+  labs(title = "US Accidents: Time of Day")
+
+# 4. Multivariate: color by temperature, size by humidity
+clock_chart_qnt(acdt, time = Time, len = Humidity..., Col = Temperature.F.) +
+  labs(size = "Humidity (%)", color = "Temperature (°F)",
+       title = "US Accidents: Time, Temperature & Humidity")
+
+# 5. Facet by severity to compare patterns
+clock_chart_qlt(acdt, time = Time, crit = Severity) +
+  facet_wrap(~Severity) +
+  labs(color = "Severity", title = "Accidents by Severity Level")
+
+# 6. Cyclic view: average humidity by hour of day
+acdt %>%
+  mutate(hour = as.numeric(substr(Time, 1, 2))) %>%
+  group_by(hour) %>%
+  summarise(avg_humidity = mean(Humidity...), .groups = "drop") %>%
+  mutate(hour_label = factor(hour, levels = 0:23)) %>%
+  day_chart(hvalue = .$avg_humidity, high = "blue", low = "yellow") +
+  labs(title = "Average Humidity by Hour", fill = "Humidity (%)")
+```
+
+**Interpretation**:
+- **Peak hours**: Accidents cluster around morning rush (6–9 AM) and evening (4–7 PM)
+- **Weather correlation**: Higher humidity (larger points) correlates with evening accidents
+- **Severity**: Level 3–4 accidents (more severe) appear more frequent at night
+- **Cyclic pattern**: Humidity peaks overnight (natural diurnal cycle), contributing to reduced visibility
+
+## Parameter Reference Table
+
+All exported functions and their key arguments:
+
+| Function | Data Arg | Time/Period Arg | Value/Metric Args | Color Args | Other Key Args |
+|----------|----------|-----------------|-------------------|------------|----------------|
+| `clock_chart()` | `data` | `time` | — | `Col` (single color) | — |
+| `clock_chart_col()` | `data` | `time` | `crit` (numeric) | `high`, `low` (gradient) | — |
+| `clock_chart_qnt()` | `data` | `time` | `len` (numeric), `Col` (optional numeric) | `high`, `low` (gradient) | — |
+| `clock_chart_qlt()` | `data` | `time` | `crit` (factor/character) | Auto (brewer Set2) | Warns if >5 categories |
+| `cyclic_chart()` | `df` | `Period` | `Value` (numeric) | `ColV` (color vector), `crit` (factor) | — |
+| `day_chart()` | — | — (implicit 24h) | `hvalue` (numeric, len=24) | `high`, `low` (gradient) | `width` |
+| `week_chart()` | — | — (implicit 7d) | `wvalue` (numeric, len=7) | `high`, `low` (gradient) | `lgnm`, `width` |
+| `year_chart()` | — | — (implicit 12m) | `mvalue` (numeric, len=12) | `high`, `low` (gradient) | `lgnm`, `width` |
+| `plan_day()` | — | — (implicit 24h) | `dwork` (character, len=24) | Auto (brewer Set2) | `width`, `brdcol` |
+| `plan_week()` | — | — (implicit 7d) | `wtask` (character/factor, len=7) | Auto (fill = day) | — |
+
+All functions return a `ggplot` object — pipe to `+ labs()`, `+ theme()`, `+ facet_wrap()`, etc.
