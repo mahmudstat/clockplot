@@ -15,6 +15,8 @@ Also check out [keep note](https://keep.google.com/u/1/#NOTE/1Hj4tuKO1Is743Xui9a
 - devtools::check(remote = TRUE, manual = TRUE)
 - devtools::check(args = c("--as-cran", "--no-manual")) # most important command to run locally
 - rhub::rhub_check() # Do it for all cran flavors (listed below) and all available options
+- devtools::build_vignettes()
+
 
 ## Strict Checks
 
@@ -224,3 +226,78 @@ Can run multiple at once, like # rhub::rhub_check(gh_url = NULL, platforms = c("
 28. ubuntu-next # done, passed
 29. ubuntu-release # done, passed
 30. valgrind # done, passed
+
+
+# AGY Suggestions
+
+  Below is a breakdown of suggested improvements across architecture, data robustness, API design, code  
+  quality, and testing.                                                                                  
+  ──────                                                                                                 
+  ### 1. Data Processing & Time Parsing Robustness                                                       
+                                                                                                         
+  • Vectorized Time Parsing without String Splitting:                                                    
+  In conv_data.R, conv_data() parses time by running hms::parse_hm() followed by                         
+  tidyr::separate_wider_delim(cols = time, delim = ":").                                                 
+      • Issue: Coercing time objects to strings and splitting by ":" is brittle if users pass native hms,
+      difftime, POSIXct, or pre-formatted time strings. Furthermore, seconds are ignored during string   
+      splitting.                                                                                         
+      • Recommendation: Parse into fractional hours elapsed since midnight directly:                     
+        # Support POSIXct, hms, or character strings                                                     
+        seconds_from_midnight <- as.numeric(hms::as_hms(time_vec))                                       
+        timc <- seconds_from_midnight / 3600                                                             
+        This is faster, handles seconds naturally, and accepts any standard datetime/time object.        
+                                                                                                         
+  ──────                                                                                                 
+  ### 2. DRY Architecture & Code Cleanup                                                                 
+                                                                                                         
+  • Refactor Duplicated Transformation Logic:                                                            
+  Functions conv_data(), conv_data_col(), and conv_data_len() in conv_data.R duplicate trigonometric     
+  angle calculations (time_angle, x1, y1).                                                               
+      • Recommendation: Consolidate this logic into a single internal helper function (e.g.,             
+      compute_clock_coords(data, time_col)).                                                             
+  • Remove Dead & Unused Code:                                                                           
+      • data_clock.R contains only # Not necessary now.                                                  
+      • conv_data.R defines an unused data frame lgl.                                                    
+      • basic_clock.R and plan_week.R contain commented-out legacy code.                                 
+                                                                                                         
+  ──────                                                                                                 
+  ### 3. API & Syntax Consistency                                                                        
+                                                                                                         
+  • Standardize Parameter Naming:                                                                        
+      • Data frames: clock_chart.R uses data, while cyclic_chart.R uses df.                              
+      • Variable names: cyclic_chart() uses PascalCase (Period, Value, ColV), whereas the rest of the    
+      package uses lowercase/snake_case (time, len, crit, high, low). Standardizing on snake_case across 
+      all exported functions improves developer ergonomics.                                              
+  • Replace Legacy Base R Expression Capturing:                                                          
+  In clock_chart_col.R:                                                                                  
+
+Resume with -c (or command below):
+agy --conversation=86852f8d-13a6-42c9-9f1a-cb745b71d2df
+
+    crit_name <- deparse(substitute(crit)) # Legacy syntax
+  
+      • Recommendation: Upgrade to rlang::as_label(rlang::enquo(crit)) for compatibility with complex    
+      tidyverse expressions.
+  • **Dynamic Label Angles in plan_week.R**:
+  plan_week() currently uses hardcoded text angles (c(56, 5, 320, 90, 40, 350, 115)), while plan_day.R   
+  calculates label angles dynamically. Using dynamic angle calculations in plan_week() will ensure text  
+  labels align properly.
+  ──────
+  ### 4. Testing & CRAN Readiness
+  
+  • Clean Up Duplicate Tests & Expand Coverage:
+      • test-clock_chart.R contains duplicate test_that() blocks (lines 3–14 and 29–33).
+      • test-plan_week.R tests the local variable type rather than the plan_week() plot output.          
+      • Add test coverage for missing values (NA handling), varied time formats ("14:30", "14:30:00",    
+      hms), and functions such as year_chart() and day_chart().
+  
+  ──────
+  ### 5. Enhancements for Future Releases
+  
+  1. Jitter / Stacking for Simultaneous Events:
+  When multiple events occur at the exact same timestamp, clock hands overlay directly on top of each    
+  other. Introducing optional alpha transparency or a radial jitter/dodge option would make point density
+  clearer.
+  2. Clock Face Customization:
+  Allow options to adjust the starting hour (e.g., 12 AM at top vs 6 AM at top) or toggle between 12-hour
+  AM/PM and 24-hour display labels.
